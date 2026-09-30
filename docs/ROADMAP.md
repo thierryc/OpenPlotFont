@@ -8,15 +8,17 @@ The format is draft `0.2`; file names end in `.plotfont.json`. Glyphs 4 and late
 | M2 — Format validation | Schema and semantic checks for ordered strokes, curves, fills/holes, mappings, spacing, anchors, JSON user data, and endpoints | Implemented. Fixtures cover malformed geometry, versions, and invalid references. Physical tool settings remain outside font data. |
 | M3 — Native Hershey port | Roman Simplex in a new local Glyphs source; exact upstream revision, attribution, mappings, stroke order, direction, and spacing | Complete: native Glyphs 4.1 source populated and saved through MCP; 97 glyphs / 95 mappings, 1,117 points. Native comparison and exact saved-package tests pass. Integral normalization avoids native coordinate serialization loss. |
 | M4 — Glyphs export | Script exporting one selected master or resolved static instance, validated before saving; compare source/export | Complete for one selected master: actual script executed on a copy in Glyphs 4.1; native source reopening, comparison, curve/fill/metadata fixtures and kerning exceptions passed. Native JSON export retained as a conformance example. Instance interpolation and plug-in packaging remain deferred. |
-| M5 — Interchange | Reference SVG, physical scaling, axis conversion, independent strokes, fallback, loops, joins, mixed fills, consumer checklist | Renderer and fixtures implemented; SVG interpreted by macOS Quick Look. A separate JavaScript consumer verifies generated geometry and deliberate corruption in CI. Native Glyphs specimen comparison and independent font-aware consumer validation remain pending. |
+| M5 — Interchange | Reference SVG, physical scaling, axis conversion, independent strokes, fallback, loops, joins, mixed fills, consumer checklist | Complete for reference interchange: native-export rendering equals the source reference, independent JavaScript consumption passes, and final specimens render in macOS Quick Look. Curves, joins, fill holes, scaling, fallback and bounds are covered by tests. Production consumer integrations and hardware profiles remain separate work. |
 
-## Next acceptance steps
+## Completed acceptance evidence
 
-1. Create and save an empty project font manually, or expose a Glyphs MCP new-font creation capability. Computer Use access was denied; the existing MCP interface requires a saved document. Do not use unrelated documents as import targets.
-2. Populate all 96 upstream records plus an original fallback, preserving fractional coordinates and advances. Save the editable source under `fonts/hershey-roman-simplex/`.
-3. Verify that the source opens in Glyphs 4. Compare every source path/node, mapping, and advance against the pinned dataset.
-4. Run the export script on that source. Compare every exported operation, curve, anchor, endpoint annotation, and user-data record; test group kerning and exception precedence natively.
-5. Compare SVG specimens with the native source and validate the JSON with an independently developed font-aware consumer before a stable format release.
+- Native authoring source: `fonts/hershey-roman-simplex/HersheyRomanSimplex.glyphspackage`, populated and saved through MCP in Glyphs 4.1 build 4107.
+- Reopened native source and actual export-script entry point compared against all 97 glyphs / 95 mappings and the pinned upstream dataset.
+- Native cubic/quadratic curves, compound fills, holes, anchors, user data, connection references, fractional widths, group kerning and zero exceptions qualified on a disposable copy. Fixtures and a compact report are retained under `tests/fixtures/`.
+- Saved-source tests verify exact integral Hershey geometry; SVG tests verify correspondence between native export and source, with a separate Node.js consumer and macOS Quick Look review.
+- [Curated specimens](../examples/specimens/README.md) provide reviewable interchange results.
+
+All five initial milestones are complete within their documented scope. The format remains draft `0.2`; this is not a stable format release or certification of a machine workflow. Native qualification is specific to Glyphs 4.1; later versions require qualification. Portable CI verifies fixtures and tools, rather than launching Glyphs.
 
 ## Retained questions
 

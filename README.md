@@ -26,11 +26,11 @@ This project defines the PlotFont format and the workflow for editing fonts in G
 
 ## Project status
 
-Confirmed requirements: `.plotfont.json`, draft version `0.2`, Glyphs **4 and later**, and Hershey Roman Simplex as the first repertoire. The format remains an unreleased draft.
+Confirmed requirements: `.plotfont.json`, draft version `0.2`, Glyphs **4 and later**, and Hershey Roman Simplex as the first repertoire. The five initial milestones are complete within the [documented scope](docs/ROADMAP.md). The format remains an unreleased draft.
 
 Implemented here: JSON Schema, semantic validation, a source-pinned Hershey data import, an SVG reference renderer, and a selected-master Glyphs export script. Guarded native import, atomic publication, source/export comparison, and independent JavaScript SVG interchange checks are included. The native Hershey `.glyphspackage` source has been populated, verified, and saved through Glyphs MCP in Glyphs 4.1. Native source reopening, the actual export-script entry point, and curve/metadata/kerning qualification passed. The [native export](examples/hershey-roman-simplex.plotfont.json) is a curated conformance artifact. Standalone document creation still requires Glyphs because MCP scripts need an existing document binding.
 
-See the [milestone plan and completion evidence](docs/ROADMAP.md), [Hershey provenance](fonts/hershey-roman-simplex/README.md), [JSON Schema](schemas/plotfont-0.2.schema.json), and [export script instructions](docs/GLYPHS_EXPORT_SCRIPT.md).
+Review the [SVG specimens](examples/specimens/README.md). See the [milestone plan and completion evidence](docs/ROADMAP.md), [Hershey provenance](fonts/hershey-roman-simplex/README.md), [JSON Schema](schemas/plotfont-0.2.schema.json), and [export script instructions](docs/GLYPHS_EXPORT_SCRIPT.md).
 
 ## Run locally
 

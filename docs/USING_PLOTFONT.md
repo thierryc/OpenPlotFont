@@ -37,7 +37,7 @@ Use `python3 -m plotfont render FONT.plotfont.json "Text" -o output/text.svg --c
 
 Each independent stroke receives a separate path. Closed centerlines receive `Z`; fills receive a compound path with their fill rule and no boundary stroke. `--join` merges only declared, coincident adjacent endpoints and rejects gaps requiring a connector policy. Preview width is visual only.
 
-SVG specimens have been interpreted independently by macOS Quick Look. This verifies geometry interchange, not native font-aware integration or machine operation.
+The final [SVG specimens](../examples/specimens/README.md) were interpreted independently by macOS Quick Look. A separate Node.js font consumer checks the native-exported JSON against SVG geometry. This verifies reference interchange; production application integration and machine operation need their own tests.
 
 ## Consumer verification
 

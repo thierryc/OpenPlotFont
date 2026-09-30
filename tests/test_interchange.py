@@ -26,6 +26,14 @@ class IndependentInterchangeTests(unittest.TestCase):
         result = self.check(ROOT/'fonts/hershey-roman-simplex/HersheyRomanSimplex.plotfont.json', text)
         self.assertEqual(result.returncode, 0, result.stderr)
 
+    def test_native_export_render_matches_source_reference(self):
+        text = ''.join(chr(u) for u in range(32,127))+'\nHershey 0123456789 ☃'
+        source = load(ROOT/'fonts/hershey-roman-simplex/HersheyRomanSimplex.plotfont.json')
+        native = load(ROOT/'examples/hershey-roman-simplex.plotfont.json')
+        self.assertEqual(render_svg(source,text,8),render_svg(native,text,8))
+        result = self.check(ROOT/'examples/hershey-roman-simplex.plotfont.json',text)
+        self.assertEqual(result.returncode,0,result.stderr)
+
     def test_curves_fills_holes_and_independent_script_paths(self):
         for name, text in [('mixed', 'i i'), ('script', 'un\nun'), ('minimal', 'AA ☃')]:
             result = self.check(ROOT/'examples'/f'{name}.plotfont.json', text)
