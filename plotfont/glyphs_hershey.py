@@ -3,11 +3,12 @@
 from contextlib import ExitStack
 from pathlib import Path
 
-from .hershey import import_roman_simplex
+from .hershey import import_hershey
 from .validation import ValidationError
 
 
-def populate_hershey(font, source, expected_destination, *, glyph_type, layer_type, path_type, node_type, line_type):
+def populate_hershey(font, source, expected_destination, *, glyph_type, layer_type, path_type, node_type, line_type,
+                     face="roman-simplex"):
     actual = getattr(font, 'filepath', None)
     if not actual or Path(str(actual)).resolve() != Path(expected_destination).resolve():
         raise ValidationError('Hershey import: document must be the exact saved project destination')
@@ -24,7 +25,7 @@ def populate_hershey(font, source, expected_destination, *, glyph_type, layer_ty
                     or len(getattr(layer, 'guides', [])) or getattr(layer, 'backgroundImage', None)
                     or background):
                 raise ValidationError('Hershey import: empty font required; existing artwork is never replaced')
-    data = import_roman_simplex(source)
+    data = import_hershey(source, face)
     master = font.masters[0]
     prepared = []
     # Build everything detached; reject missing precision support before changing font.

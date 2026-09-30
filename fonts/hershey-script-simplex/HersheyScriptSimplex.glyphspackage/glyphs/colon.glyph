@@ -1,0 +1,37 @@
+{
+glyphname = colon;
+layers = (
+{
+layerId = "5A815AAD-0115-44A0-A6F3-7BB9B3E3B6DD";
+shapes = (
+{
+closed = 0;
+nodes = (
+(300,700,l),
+(250,650,l),
+(300,600,l),
+(350,650,l),
+(300,700,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(150,100,l),
+(100,50,l),
+(150,0,l),
+(200,50,l),
+);
+},
+);
+width = 550;
+},
+);
+unicode = 58;
+userData = {
+org.plotfont.hershey = {
+row = 26;
+sourceId = 2762;
+};
+};
+}

@@ -9,6 +9,22 @@ REVISION = "1356bf2f83d380fcef68c887e88675eb9d445d86"
 SOURCE_SHA256 = "8718fb129c0f6bce89c84fe41bc467e39534d215a6f7c3220cc5789a8a7d8618"
 SOURCE = "https://github.com/kamalmostafa/hershey-fonts"
 
+# Each supported face has independently pinned bytes and explicit mapping/metrics.
+# Other Hershey repertoires must not inherit the printable-ASCII mapping silently.
+FACES = {
+    "roman-simplex": {"file": "rowmans.jhf", "family": "Hershey Roman Simplex",
+                      "sha256": SOURCE_SHA256, "xHeight": 700, "descender": -420},
+    "roman-duplex": {"file": "rowmand.jhf", "family": "Hershey Roman Duplex",
+                     "sha256": "c56497b162a3831f0da2e189ada4a7335ce81b1c3c1cf380b2ced04287313d2e",
+                     "xHeight": 700, "descender": -420},
+    "roman-triplex": {"file": "rowmant.jhf", "family": "Hershey Roman Triplex",
+                      "sha256": "703d6a641334bce32ae8347900b6ec743d4672f898266796853f26f53918b52a",
+                      "xHeight": 700, "descender": -420},
+    "script-simplex": {"file": "scripts.jhf", "family": "Hershey Script Simplex",
+                       "sha256": "6b391b2ea3a0771cf18caff0ed111db3d05681fa586d423a740cc0b2b155a873",
+                       "xHeight": 450, "descender": -600},
+}
+
 
 ASCII_NAMES = dict(zip(range(32, 65), (
     'space exclam quotedbl numbersign dollar percent ampersand quotesingle parenleft parenright '
@@ -47,12 +63,21 @@ def parse_jhf(source):
 
 
 def import_roman_simplex(path):
+    """Retained compatibility entry point for the first face."""
+    return import_hershey(path, "roman-simplex")
+
+
+def import_hershey(path, face="roman-simplex"):
+    if face not in FACES:
+        raise ValidationError(f"Unsupported Hershey face: {face}")
+    settings = FACES[face]
+    label = settings["family"].removeprefix("Hershey ")
     raw = Path(path).read_bytes()
-    if hashlib.sha256(raw).hexdigest() != SOURCE_SHA256:
-        raise ValidationError("Roman Simplex source differs from the pinned upstream data; provenance would be incorrect")
+    if hashlib.sha256(raw).hexdigest() != settings["sha256"]:
+        raise ValidationError(f"{label} source differs from the pinned upstream data; provenance would be incorrect")
     records = parse_jhf(raw.decode("ascii"))
     if len(records) != 96:
-        raise ValidationError("Roman Simplex source must contain all 96 records")
+        raise ValidationError(f"{label} source must contain all 96 records")
     # Source capitals run y=-12..9. Baseline 9; exactly 50 font units per coordinate; native saves stay integral.
     scale = 50
     glyphs = [{"name": ".notdef", "unicodes": [], "advanceWidth": 600,
@@ -69,12 +94,13 @@ def import_roman_simplex(path):
             "userData": {"org.plotfont.hershey": {"row": row, "sourceId": record["sourceId"]}},
         })
     return validate({
-        "format": "PlotFont", "version": "0.2", "id": "hershey-roman-simplex-regular",
-        "familyName": "Hershey Roman Simplex", "styleName": "Regular", "unitsPerEm": 1470,
-        "metrics": {"ascender": 1260, "descender": -420, "capHeight": 1050, "xHeight": 14 * scale, "lineGap": 210},
+        "format": "PlotFont", "version": "0.2", "id": f"hershey-{face}-regular",
+        "familyName": settings["family"], "styleName": "Regular", "unitsPerEm": 1470,
+        "metrics": {"ascender": 1260, "descender": settings["descender"], "capHeight": 1050,
+                    "xHeight": settings["xHeight"], "lineGap": 210},
         "missingGlyph": ".notdef", "glyphs": glyphs, "kerning": [],
         "metadata": {"source": SOURCE, "sourceRevision": REVISION,
-                     "sourceFile": "hershey-fonts/rowmans.jhf", "sourceSha256": hashlib.sha256(raw).hexdigest(),
+                     "sourceFile": "hershey-fonts/" + settings["file"], "sourceSha256": hashlib.sha256(raw).hexdigest(),
                      "license": "Hershey permissive terms; see vendor/hershey/NOTICE.txt; not MIT",
                      "attribution": "Hershey glyphs: Dr. A. V. Hershey; JHF data representation: James Hurt, Cognition, Inc.",
                      "mapping": "Rows 0–94 map to U+0020–U+007E; row 95 retained unencoded; .notdef is original PlotFont artwork.",

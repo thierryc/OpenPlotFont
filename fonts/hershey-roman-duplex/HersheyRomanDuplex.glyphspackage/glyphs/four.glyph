@@ -1,0 +1,56 @@
+{
+glyphname = four;
+layers = (
+{
+layerId = "5E99C474-4734-4B17-B825-F95089EF30DC";
+shapes = (
+{
+closed = 0;
+nodes = (
+(650,900,l),
+(650,0,l),
+(700,0,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(700,1050,l),
+(700,0,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(700,1050,l),
+(150,250,l),
+(900,250,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(650,900,l),
+(200,250,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(200,300,l),
+(900,300,l),
+(900,250,l),
+);
+},
+);
+width = 1000;
+},
+);
+unicode = 52;
+userData = {
+org.plotfont.hershey = {
+row = 20;
+sourceId = 2704;
+};
+};
+}

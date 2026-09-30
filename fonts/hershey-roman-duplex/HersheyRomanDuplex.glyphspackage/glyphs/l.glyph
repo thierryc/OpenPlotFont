@@ -1,0 +1,34 @@
+{
+glyphname = l;
+layers = (
+{
+layerId = "5E99C474-4734-4B17-B825-F95089EF30DC";
+shapes = (
+{
+closed = 0;
+nodes = (
+(200,1050,l),
+(200,0,l),
+(250,0,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(200,1050,l),
+(250,1050,l),
+(250,0,l),
+);
+},
+);
+width = 450;
+},
+);
+unicode = 108;
+userData = {
+org.plotfont.hershey = {
+row = 76;
+sourceId = 2612;
+};
+};
+}

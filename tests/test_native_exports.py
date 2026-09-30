@@ -2,15 +2,18 @@
 import unittest
 from plotfont import load
 from plotfont.comparison import compare_fonts
+from plotfont.hershey import FACES
 from test_plotfont import ROOT
 
 
 class NativeExportArtifactTests(unittest.TestCase):
     def test_hershey_native_export_matches_pinned_preparation(self):
-        expected = load(ROOT/'fonts/hershey-roman-simplex/HersheyRomanSimplex.plotfont.json')
-        actual = load(ROOT/'examples/hershey-roman-simplex.plotfont.json')
-        self.assertTrue(compare_fonts(expected, actual))
-        self.assertEqual(actual['metadata']['exportWarnings'], [])
+        for face, settings in FACES.items():
+            with self.subTest(face=face):
+                expected = load(ROOT/'fonts'/('hershey-'+face)/(settings['family'].replace(' ', '')+'.plotfont.json'))
+                actual = load(ROOT/'examples'/('hershey-'+face+'.plotfont.json'))
+                self.assertTrue(compare_fonts(expected, actual))
+                self.assertEqual(actual['metadata']['exportWarnings'], [])
 
     def test_native_curves_fills_and_metadata(self):
         font = load(ROOT/'tests/fixtures/native-qualification.plotfont.json')

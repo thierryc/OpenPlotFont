@@ -1,0 +1,25 @@
+{
+glyphname = backslash;
+layers = (
+{
+layerId = "5A815AAD-0115-44A0-A6F3-7BB9B3E3B6DD";
+shapes = (
+{
+closed = 0;
+nodes = (
+(0,1050,l),
+(700,-150,l),
+);
+},
+);
+width = 700;
+},
+);
+unicode = 92;
+userData = {
+org.plotfont.hershey = {
+row = 60;
+sourceId = 804;
+};
+};
+}

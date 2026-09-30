@@ -1,0 +1,30 @@
+{
+glyphname = comma;
+layers = (
+{
+layerId = "5A815AAD-0115-44A0-A6F3-7BB9B3E3B6DD";
+shapes = (
+{
+closed = 0;
+nodes = (
+(150,0,l),
+(100,50,l),
+(150,100,l),
+(200,50,l),
+(200,0,l),
+(150,-100,l),
+(50,-200,l),
+);
+},
+);
+width = 550;
+},
+);
+unicode = 44;
+userData = {
+org.plotfont.hershey = {
+row = 12;
+sourceId = 2761;
+};
+};
+}

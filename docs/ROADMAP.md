@@ -18,7 +18,11 @@ The format is draft `0.2`; file names end in `.plotfont.json`. Glyphs 4 and late
 - Saved-source tests verify exact integral Hershey geometry; SVG tests verify correspondence between native export and source, with a separate Node.js consumer and macOS Quick Look review.
 - [Curated specimens](../examples/specimens/README.md) provide reviewable interchange results.
 
-All five initial milestones are complete within their documented scope. The format remains draft `0.2`; this is not a stable format release or certification of a machine workflow. Native qualification is specific to Glyphs 4.1; later versions require qualification. Portable CI verifies fixtures and tools, rather than launching Glyphs.
+All five initial milestones are complete within their documented scope. The format remains draft `0.2`; this is not a stable format release or certification of a machine workflow. Native qualification covers Glyphs 4.1 and the additional-font workflow in 4.1.1; later versions require qualification. Portable CI verifies fixtures and tools, rather than launching Glyphs.
+
+## Additional Hershey faces
+
+Roman Duplex, Roman Triplex, and Script Simplex extend the [font catalog](../fonts/README.md). Each source was created with MCP `create_document`, populated, saved, reopened, and exported through the real export script on a copy in Glyphs 4.1.1 build 4108. Each face has 97 glyphs / 95 mappings; saved point counts including the original fallback are 2,236, 3,269, and 2,130 respectively. Individually pinned source digests and full upstream terms accompany the ports. Tests cover every source point and saved node, native-export semantics, separate strokes, face selection, modified-data rejection, Script descenders, and independent SVG consumption. No joining annotations or kerning are invented.
 
 ## Retained questions
 

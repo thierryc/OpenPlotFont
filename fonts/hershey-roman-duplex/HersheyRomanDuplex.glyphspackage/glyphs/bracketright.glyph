@@ -1,0 +1,46 @@
+{
+glyphname = bracketright;
+layers = (
+{
+layerId = "5E99C474-4734-4B17-B825-F95089EF30DC";
+shapes = (
+{
+closed = 0;
+nodes = (
+(450,1250,l),
+(450,-350,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(500,1250,l),
+(500,-350,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(150,1250,l),
+(500,1250,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(150,-350,l),
+(500,-350,l),
+);
+},
+);
+width = 700;
+},
+);
+unicode = 93;
+userData = {
+org.plotfont.hershey = {
+row = 61;
+sourceId = 2224;
+};
+};
+}

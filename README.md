@@ -28,7 +28,7 @@ This project defines the PlotFont format and the workflow for editing fonts in G
 
 Confirmed requirements: `.plotfont.json`, draft version `0.2`, Glyphs **4 and later**, and Hershey Roman Simplex as the first repertoire. The five initial milestones are complete within the [documented scope](docs/ROADMAP.md). The format remains an unreleased draft.
 
-Implemented here: JSON Schema, semantic validation, a source-pinned Hershey data import, an SVG reference renderer, and a selected-master Glyphs export script. Guarded native import, atomic publication, source/export comparison, and independent JavaScript SVG interchange checks are included. The native Hershey `.glyphspackage` source has been populated, verified, and saved through Glyphs MCP in Glyphs 4.1. Native source reopening, the actual export-script entry point, and curve/metadata/kerning qualification passed. The [native export](examples/hershey-roman-simplex.plotfont.json) is a curated conformance artifact. Standalone document creation still requires Glyphs because MCP scripts need an existing document binding.
+Implemented here: JSON Schema, semantic validation, a source-pinned Hershey data import, an SVG reference renderer, and a selected-master Glyphs export script. Guarded native import, atomic publication, source/export comparison, and independent JavaScript SVG interchange checks are included. Four [Hershey faces](fonts/README.md) have editable `.glyphspackage` sources and native JSON exports: Roman Simplex, Roman Duplex, Roman Triplex, and Script Simplex. Native source reopening, the actual export-script entry point, and curve/metadata/kerning qualification passed. The additional faces were created, populated, saved, and verified through Glyphs MCP in Glyphs 4.1.1. MCP builds advertising `create_document` and `document.create.v1` can create blank fonts directly; population uses a saved document binding.
 
 Review the [SVG specimens](examples/specimens/README.md). See the [milestone plan and completion evidence](docs/ROADMAP.md), [Hershey provenance](fonts/hershey-roman-simplex/README.md), [JSON Schema](schemas/plotfont-0.2.schema.json), and [export script instructions](docs/GLYPHS_EXPORT_SCRIPT.md).
 
@@ -37,14 +37,15 @@ Review the [SVG specimens](examples/specimens/README.md). See the [milestone pla
 Python 3.10 or later; the library and CLI use only the standard library. Run from this repository:
 
 ```sh
-python3 -m plotfont validate examples/*.plotfont.json fonts/hershey-roman-simplex/*.plotfont.json
+python3 -m plotfont validate examples/*.plotfont.json fonts/hershey-*/*.plotfont.json
 python3 -m plotfont render fonts/hershey-roman-simplex/HersheyRomanSimplex.plotfont.json "Hello PlotFont!" -o output/specimen.svg --cap-height 8
 python3 -m plotfont render examples/script.plotfont.json un -o output/joined.svg --join
+python3 -m plotfont import-hershey vendor/hershey/scripts.jhf --face script-simplex -o output/HersheyScriptSimplex.plotfont.json
 python3 -m pip install -r requirements-dev.txt
 python3 -m unittest discover -s tests -v
 ```
 
-Render sizes are in millimetres. Existing output is preserved unless the CLI receives `--force`. Fills are SVG areas for review, not generated machining trajectories. Joining is opt-in and currently requires declared endpoints to coincide; it does not invent connecting geometry. General shaping, instance interpolation, an importer into Glyphs, DXF/HPGL/G-code converters, and device control are not implemented.
+Render sizes are in millimetres. Existing output is preserved unless the CLI receives `--force`. Fills are SVG areas for review, not generated machining trajectories. Joining is opt-in and currently requires declared endpoints to coincide; it does not invent connecting geometry. The guarded Hershey importer populates empty project sources; a general PlotFont JSON importer into Glyphs, general shaping, instance interpolation, DXF/HPGL/G-code converters, and device control are not implemented.
 
 ## Licensing
 

@@ -1,0 +1,76 @@
+{
+glyphname = M;
+layers = (
+{
+layerId = "5E99C474-4734-4B17-B825-F95089EF30DC";
+shapes = (
+{
+closed = 0;
+nodes = (
+(200,1050,l),
+(200,0,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(250,800,l),
+(250,0,l),
+(200,0,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(250,800,l),
+(600,0,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(200,1050,l),
+(600,150,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(1000,1050,l),
+(600,150,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(950,800,l),
+(600,0,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(950,800,l),
+(950,0,l),
+(1000,0,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(1000,1050,l),
+(1000,0,l),
+);
+},
+);
+width = 1200;
+},
+);
+unicode = 77;
+userData = {
+org.plotfont.hershey = {
+row = 45;
+sourceId = 2513;
+};
+};
+}

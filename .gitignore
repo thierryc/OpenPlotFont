@@ -14,3 +14,5 @@ output/
 *.glyphsbackup
 *.egg-info/
 **/*.glyphspackage/UIState.plist
+**/* (Autosaved).glyphspackage/
+**/* (Autosaved).glyphs

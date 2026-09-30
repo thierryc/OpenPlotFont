@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 from . import load, render_svg, ValidationError
-from .hershey import import_roman_simplex
+from .hershey import FACES, import_hershey
 from .storage import write_output, write_font
 from .comparison import compare_fonts
 
@@ -28,6 +28,7 @@ def main():
     render.add_argument("--force", action="store_true")
     convert = sub.add_parser("import-hershey")
     convert.add_argument("source")
+    convert.add_argument("--face", choices=tuple(FACES), default="roman-simplex")
     convert.add_argument("-o", "--output", required=True)
     convert.add_argument("--force", action="store_true")
     args = parser.parse_args()
@@ -42,7 +43,7 @@ def main():
         elif args.command == "render":
             write_output(args.output, render_svg(load(args.font), args.text, args.cap_height, join=args.join), force=args.force, create_parents=True)
         else:
-            write_font(args.output, import_roman_simplex(args.source), force=args.force, create_parents=True)
+            write_font(args.output, import_hershey(args.source, args.face), force=args.force, create_parents=True)
     except (ValidationError, OSError, UnicodeError) as error:
         parser.exit(1, f"plotfont: {error}\n")
 

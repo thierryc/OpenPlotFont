@@ -1,0 +1,41 @@
+{
+glyphname = asciicircum;
+layers = (
+{
+layerId = "5A815AAD-0115-44A0-A6F3-7BB9B3E3B6DD";
+shapes = (
+{
+closed = 0;
+nodes = (
+(300,750,l),
+(400,900,l),
+(500,750,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(150,600,l),
+(400,850,l),
+(650,600,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(400,850,l),
+(400,0,l),
+);
+},
+);
+width = 800;
+},
+);
+unicode = 94;
+userData = {
+org.plotfont.hershey = {
+row = 62;
+sourceId = 2262;
+};
+};
+}

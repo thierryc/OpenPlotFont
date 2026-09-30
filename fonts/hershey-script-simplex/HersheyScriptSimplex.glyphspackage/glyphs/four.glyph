@@ -1,0 +1,40 @@
+{
+glyphname = four;
+layers = (
+{
+layerId = "5A815AAD-0115-44A0-A6F3-7BB9B3E3B6DD";
+shapes = (
+{
+closed = 0;
+nodes = (
+(800,1000,l),
+(500,0,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(850,1050,l),
+(550,0,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(850,1050,l),
+(100,300,l),
+(900,300,l),
+);
+},
+);
+width = 1050;
+},
+);
+unicode = 52;
+userData = {
+org.plotfont.hershey = {
+row = 20;
+sourceId = 2754;
+};
+};
+}

@@ -1,0 +1,16 @@
+{
+glyphname = space;
+layers = (
+{
+layerId = "5A815AAD-0115-44A0-A6F3-7BB9B3E3B6DD";
+width = 800;
+},
+);
+unicode = 32;
+userData = {
+org.plotfont.hershey = {
+row = 0;
+sourceId = 699;
+};
+};
+}

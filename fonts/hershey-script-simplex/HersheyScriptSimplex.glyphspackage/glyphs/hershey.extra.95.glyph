@@ -1,0 +1,35 @@
+{
+glyphname = hershey.extra.95;
+layers = (
+{
+layerId = "5A815AAD-0115-44A0-A6F3-7BB9B3E3B6DD";
+shapes = (
+{
+closed = 0;
+nodes = (
+(300,1050,l),
+(200,1000,l),
+(150,900,l),
+(150,800,l),
+(200,700,l),
+(300,650,l),
+(400,650,l),
+(500,700,l),
+(550,800,l),
+(550,900,l),
+(500,1000,l),
+(400,1050,l),
+(300,1050,l),
+);
+},
+);
+width = 700;
+},
+);
+userData = {
+org.plotfont.hershey = {
+row = 95;
+sourceId = 718;
+};
+};
+}

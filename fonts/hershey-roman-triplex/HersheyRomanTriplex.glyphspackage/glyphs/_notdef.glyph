@@ -1,0 +1,20 @@
+{
+glyphname = .notdef;
+layers = (
+{
+layerId = "DD414EC6-D711-456B-8002-2EF028AD06EC";
+shapes = (
+{
+closed = 1;
+nodes = (
+(50,0,l),
+(50,1000,l),
+(550,1000,l),
+(550,0,l),
+);
+},
+);
+width = 600;
+},
+);
+}

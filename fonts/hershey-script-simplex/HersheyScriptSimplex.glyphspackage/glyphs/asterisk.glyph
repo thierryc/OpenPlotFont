@@ -1,0 +1,39 @@
+{
+glyphname = asterisk;
+layers = (
+{
+layerId = "5A815AAD-0115-44A0-A6F3-7BB9B3E3B6DD";
+shapes = (
+{
+closed = 0;
+nodes = (
+(500,1050,l),
+(500,450,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(250,900,l),
+(750,600,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(750,900,l),
+(250,600,l),
+);
+},
+);
+width = 850;
+},
+);
+unicode = 42;
+userData = {
+org.plotfont.hershey = {
+row = 10;
+sourceId = 2773;
+};
+};
+}

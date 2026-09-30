@@ -1,0 +1,30 @@
+{
+glyphname = grave;
+layers = (
+{
+layerId = "5A815AAD-0115-44A0-A6F3-7BB9B3E3B6DD";
+shapes = (
+{
+closed = 0;
+nodes = (
+(450,1050,l),
+(350,950,l),
+(300,850,l),
+(300,800,l),
+(350,750,l),
+(400,800,l),
+(350,850,l),
+);
+},
+);
+width = 550;
+},
+);
+unicode = 96;
+userData = {
+org.plotfont.hershey = {
+row = 64;
+sourceId = 2766;
+};
+};
+}

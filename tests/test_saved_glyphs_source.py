@@ -1,19 +1,24 @@
 """Regression checks on the Glyphs-4-native saved source, not a constructed file."""
 import unittest
 from pathlib import Path
-from plotfont.hershey import import_roman_simplex
+from plotfont.hershey import FACES, import_hershey
 from test_plotfont import ROOT
 
 
 class SavedGlyphsTests(unittest.TestCase):
     def test_native_saved_source_preserves_entire_repertoire_exactly(self):
+        for face, settings in FACES.items():
+            with self.subTest(face=face):
+                self.check_saved_source(face, settings)
+
+    def check_saved_source(self, face, settings):
         try:
             from openstep_plist import loads
         except ImportError:
             self.skipTest('Install requirements-dev.txt to inspect the native saved source')
-        package = ROOT/'fonts/hershey-roman-simplex/HersheyRomanSimplex.glyphspackage'
+        package = ROOT/'fonts'/('hershey-'+face)/(settings['family'].replace(' ', '')+'.glyphspackage')
         info = loads((package/'fontinfo.plist').read_text())
-        reference = import_roman_simplex(ROOT/'vendor/hershey/rowmans.jhf')
+        reference = import_hershey(ROOT/'vendor/hershey'/settings['file'], face)
         self.assertEqual(int(info['unitsPerEm']), reference['unitsPerEm'])
         self.assertEqual(info['properties'][0]['values'][0]['value'], reference['familyName'])
         master = info['fontMaster'][0]

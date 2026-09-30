@@ -1,0 +1,28 @@
+{
+glyphname = period;
+layers = (
+{
+layerId = "5A815AAD-0115-44A0-A6F3-7BB9B3E3B6DD";
+shapes = (
+{
+closed = 0;
+nodes = (
+(250,100,l),
+(200,50,l),
+(250,0,l),
+(300,50,l),
+(250,100,l),
+);
+},
+);
+width = 500;
+},
+);
+unicode = 46;
+userData = {
+org.plotfont.hershey = {
+row = 14;
+sourceId = 710;
+};
+};
+}

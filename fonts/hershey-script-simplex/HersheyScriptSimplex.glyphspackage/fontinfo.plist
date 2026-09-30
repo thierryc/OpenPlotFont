@@ -1,0 +1,94 @@
+{
+.appVersion = "4108";
+.formatVersion = 4;
+date = "2026-09-30 21:44:24 +0000";
+fontMaster = (
+{
+id = "5A815AAD-0115-44A0-A6F3-7BB9B3E3B6DD";
+metricValues = (
+{
+pos = 1260;
+},
+{
+pos = -600;
+},
+{
+pos = 1050;
+},
+{
+pos = 450;
+},
+);
+name = Regular;
+},
+);
+instances = (
+{
+id = "92B0C829-40D5-4EF2-BCF8-E39FBDC6C719";
+instanceInterpolations = {
+"5A815AAD-0115-44A0-A6F3-7BB9B3E3B6DD" = 1;
+};
+properties = (
+{
+key = styleNames;
+values = (
+{
+language = dflt;
+value = Regular;
+},
+);
+},
+);
+},
+);
+metrics = (
+{
+type = ascender;
+},
+{
+type = descender;
+},
+{
+type = "cap height";
+},
+{
+type = "x-height";
+},
+);
+properties = (
+{
+key = familyNames;
+values = (
+{
+language = dflt;
+value = "Hershey Script Simplex";
+},
+);
+},
+);
+unitsPerEm = 1470;
+userData = {
+org.plotfont.font = {
+id = "hershey-script-simplex-regular";
+lineGap = 210;
+metadata = {
+attribution = "Hershey glyphs: Dr. A. V. Hershey; JHF data representation: James Hurt, Cognition, Inc.";
+coordinateTransform = {
+scale = 50;
+sourceBaselineY = 9;
+sourceCapTopY = -12;
+};
+license = "Hershey permissive terms; see vendor/hershey/NOTICE.txt; not MIT";
+mapping = "Rows 0–94 map to U+0020–U+007E; row 95 retained unencoded; .notdef is original PlotFont artwork.";
+source = "https://github.com/kamalmostafa/hershey-fonts";
+sourceFile = "hershey-fonts/scripts.jhf";
+sourceRevision = 1356bf2f83d380fcef68c887e88675eb9d445d86;
+sourceSha256 = 6b391b2ea3a0771cf18caff0ed111db3d05681fa586d423a740cc0b2b155a873;
+};
+missingGlyph = .notdef;
+styleName = Regular;
+};
+};
+versionMajor = 1;
+versionMinor = 0;
+}
