@@ -174,7 +174,7 @@ First apply advances, kerning, placement, and scaling. Then evaluate both endpoi
 
 An approved join becomes a continuous trajectory in the generated drawing, with no pen-up travel across the join. Other strokes remain separate. A consumer that does not support joining must still render the original glyph strokes correctly. Joining and trajectory optimization must not conflict: preserve the assembled script chain's direction and sequence unless the user explicitly permits changing them.
 
-See [script.plotfont.json](../examples/script.plotfont.json) for two illustrative curved glyphs whose exit and following entry coincide at their normal advances. This example describes proposed data and behavior; there is no joining renderer yet.
+See [script.plotfont.json](../examples/script.plotfont.json) for two illustrative curved glyphs whose exit and following entry coincide at their normal advances. The reference renderer implements opt-in joining for coincident declared endpoints; nonzero gaps require a connector policy and are rejected.
 
 ## Named points and user data
 

@@ -28,7 +28,7 @@ This project defines the PlotFont format and the workflow for editing fonts in G
 
 Confirmed requirements: `.plotfont.json`, draft version `0.2`, Glyphs **4 and later**, and Hershey Roman Simplex as the first repertoire. The format remains an unreleased draft.
 
-Implemented here: JSON Schema, semantic validation, a source-pinned Hershey data import, an SVG reference renderer, and a selected-master Glyphs export script. The exporter has offline adapter tests; it has **not been executed in Glyphs**. The native Hershey `.glyphs` source is pending: the verified Glyphs MCP interface can edit existing documents but cannot create a new font document. No native port or source-to-export round trip is claimed.
+Implemented here: JSON Schema, semantic validation, a source-pinned Hershey data import, an SVG reference renderer, and a selected-master Glyphs export script. Guarded native import, atomic publication, source/export comparison, and independent JavaScript SVG interchange checks are included. The exporter has offline adapter tests; it has **not been executed in Glyphs**. The native Hershey `.glyphs` source is pending: the verified Glyphs MCP interface can edit existing documents but cannot create a new font document. No native port or source-to-export round trip is claimed.
 
 See the [milestone plan and completion evidence](docs/ROADMAP.md), [Hershey provenance](fonts/hershey-roman-simplex/README.md), [JSON Schema](schemas/plotfont-0.2.schema.json), and [export script instructions](docs/GLYPHS_EXPORT_SCRIPT.md).
 

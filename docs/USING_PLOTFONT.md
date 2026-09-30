@@ -51,3 +51,15 @@ Use the [minimal](../examples/minimal.plotfont.json), [script](../examples/scrip
 - Save/reload preserves font identity, copy, layout settings, anchors, and user data. This is a downstream application requirement; the renderer produces a drawing, not an editable text project.
 
 Plot-It is a possible concept-testing application in a separate repository. Its integration, interface, machine support, and development roadmap belong to that project. Compatibility must be established through testing rather than assumed from this specification.
+
+## Independent interchange checks
+
+[verify_svg.mjs](../scripts/verify_svg.mjs) is a separate Node.js implementation of scalar mapping, fallback, kerning, line metrics, physical scaling, operation ordering, and contour serialization expectations. It reads JSON directly and does not import the Python implementation. Tests compare all printable Hershey glyphs, mixed fills/holes, curves, spaces, fallback, and multiple lines against the produced SVG, and deliberately corrupt geometry/fill rules to verify failures. This is cross-implementation test evidence within this repository, not certification of a third-party font-aware application.
+
+```sh
+node scripts/verify_svg.mjs fonts/hershey-roman-simplex/HersheyRomanSimplex.plotfont.json output/specimen.svg "Hello PlotFont!" 8
+```
+
+Use the same text and cap height as the Python render command. The checker checks default independent strokes; opt-in joined output has separate Python tests. Node.js is a development/test dependency only; normal library and CLI use remains standard-library Python. CI installs Node.js explicitly so these checks cannot silently skip there.
+
+Centerline previews use round caps and joins. This makes half the preview width a sufficient padding around the geometry/control-point hull, avoiding unbounded miter extensions at sharp corners. Fills retain area and rule, with no generated tool coverage paths.

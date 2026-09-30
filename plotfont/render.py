@@ -98,7 +98,7 @@ def render_svg(font, text, cap_height_mm=12, *, join=False, margin_mm=2, stroke_
             pieces.extend(c[0] + " " + " ".join(fmt(v) for v in c[1:]) for c in commands)
             if closed:
                 pieces.append("Z")
-        attributes = (f'fill="none" stroke="black" stroke-width="{fmt(stroke_width_mm)}"'
+        attributes = (f'fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="{fmt(stroke_width_mm)}"'
                       if drawing["kind"] == "stroke"
                       else f'fill="black" stroke="none" fill-rule="{drawing["fillRule"]}"')
         elements.append(f'  <path data-glyph="{escape(drawing["glyph"], quote=True)}" {attributes} d="{" ".join(pieces)}"/>')
