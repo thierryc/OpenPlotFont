@@ -6,13 +6,13 @@ The format is draft `0.2`; file names end in `.plotfont.json`. Glyphs 4 and late
 | --- | --- | --- |
 | M1 — Foundation | Required metadata, compatibility rules, MIT for original works, separate imported-font terms, clean public foundation | Complete: documentation and examples validated and published at [thierryc/PlotFont](https://github.com/thierryc/PlotFont), with a clean initial public history. |
 | M2 — Format validation | Schema and semantic checks for ordered strokes, curves, fills/holes, mappings, spacing, anchors, JSON user data, and endpoints | Implemented. Fixtures cover malformed geometry, versions, and invalid references. Physical tool settings remain outside font data. |
-| M3 — Native Hershey port | Roman Simplex in a new local Glyphs source; exact upstream revision, attribution, mappings, stroke order, direction, and spacing | Pinned data and reproducible JSON import are ready. Native `.glyphs` creation is blocked by the verified MCP interface lacking a new-font action. No existing user font was used as a target. |
+| M3 — Native Hershey port | Roman Simplex in a new local Glyphs source; exact upstream revision, attribution, mappings, stroke order, direction, and spacing | Pinned data, reproducible JSON import, and a guarded native population script with full-repertoire adapter tests are ready. Native `.glyphs` creation is blocked by the verified MCP interface lacking a new-font action. No existing user font was used as a target. |
 | M4 — Glyphs export | Script exporting one selected master or resolved static instance, validated before saving; compare source/export | Selected-master script implemented and tested offline. Native Hershey export/comparison awaits M3. Resolved instance interpolation and plug-in packaging are deferred. |
 | M5 — Interchange | Reference SVG, physical scaling, axis conversion, independent strokes, fallback, loops, joins, mixed fills, consumer checklist | Renderer and fixtures implemented; SVG interpreted by macOS Quick Look. Native Glyphs specimen comparison and independent font-aware consumer validation remain pending. |
 
 ## Next acceptance steps
 
-1. Add or expose an authorized Glyphs MCP new-font creation capability. Create the project font without modifying other documents.
+1. Create and save an empty project font manually, or expose a Glyphs MCP new-font creation capability. Computer Use access was denied; the existing MCP interface requires a saved document. Do not use unrelated documents as import targets.
 2. Populate all 96 upstream records plus an original fallback, preserving fractional coordinates and advances. Save the editable source under `fonts/hershey-roman-simplex/`.
 3. Verify that the source opens in Glyphs 4. Compare every source path/node, mapping, and advance against the pinned dataset.
 4. Run the export script on that source. Compare every exported operation, curve, anchor, endpoint annotation, and user-data record; test group kerning and exception precedence natively.

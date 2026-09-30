@@ -32,3 +32,7 @@ python3 -m plotfont validate output/HersheyRomanSimplex.plotfont.json
 ```
 
 Tests compare every prepared path, point, advance, source identifier, and mapping with the pinned data. Reference specimens cover uppercase/lowercase, punctuation, and numerals. macOS Quick Look interpreted the SVG successfully. Native Glyphs creation, reopen verification, and source-to-export comparisons are the remaining acceptance work.
+
+## Prepared native import
+
+[Import Hershey Roman Simplex.py](../../scripts/Import%20Hershey%20Roman%20Simplex.py) populates only an empty, single-master font already saved at this directory's `HersheyRomanSimplex.glyphs` path. It rejects any other document and refuses to overwrite glyphs. It restores the native layer rounding flags after retaining fractional geometry, then compares the exported result against every pinned source record. It neither creates nor saves a document. Native execution is pending; tests use SDK-shaped doubles.
