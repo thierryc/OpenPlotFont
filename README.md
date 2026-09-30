@@ -17,6 +17,8 @@ This project defines the PlotFont format and the workflow for editing fonts in G
 ## Start here
 
 - [Format specification](docs/PLOTFONT_FORMAT.md): purpose, draft JSON structure, units, strokes, curves, spacing, and validation rules.
+- [OpenType layout](docs/PLOTFONT_LAYOUT.md): self-contained feature rules, glyph-ID mappings, HarfBuzz positioning and explicit layout modes.
+- [Layout demo](examples/layout-demo.plotfont.json): original fixture for substitutions, marks, language rules and cursive positioning.
 - [Glyphs and export workflow](docs/GLYPHS_AND_EXPORT.md): how to design open paths, prepare an exporter, and produce drawing formats.
 - [Using PlotFont in other software](docs/USING_PLOTFONT.md): consumer responsibilities, geometry interchange, and reproducible text layout.
 - [Minimal font example](examples/minimal.plotfont.json): an illustrative `A`, space, and fallback glyph.
@@ -26,17 +28,22 @@ This project defines the PlotFont format and the workflow for editing fonts in G
 
 ## Project status
 
-Confirmed requirements: `.plotfont.json`, draft version `0.2`, Glyphs **4 and later**, and Hershey Roman Simplex as the first repertoire. The five initial milestones are complete within the [documented scope](docs/ROADMAP.md). The format remains an unreleased draft.
+Confirmed requirements: `.plotfont.json`, Glyphs **4 and later**, and Hershey Roman Simplex as the first repertoire. The five initial milestones are complete within the [documented scope](docs/ROADMAP.md). The format remains an unreleased draft. Optional OpenType layout is implemented in draft `0.3`; existing geometry-only fonts remain valid as `0.2`.
 
 Implemented here: JSON Schema, semantic validation, a source-pinned Hershey data import, an SVG reference renderer, and a selected-master Glyphs export script. Guarded native import, atomic publication, source/export comparison, and independent JavaScript SVG interchange checks are included. Four [Hershey faces](fonts/README.md) have editable `.glyphspackage` sources and native JSON exports: Roman Simplex, Roman Duplex, Roman Triplex, and Script Simplex. Native source reopening, the actual export-script entry point, and curve/metadata/kerning qualification passed. The additional faces were created, populated, saved, and verified through Glyphs MCP in Glyphs 4.1.1. MCP builds advertising `create_document` and `document.create.v1` can create blank fonts directly; population uses a saved document binding.
 
 Review the [SVG specimens](examples/specimens/README.md). See the [milestone plan and completion evidence](docs/ROADMAP.md), [Hershey provenance](fonts/hershey-roman-simplex/README.md), [JSON Schema](schemas/plotfont-0.2.schema.json), and [export script instructions](docs/GLYPHS_EXPORT_SCRIPT.md).
 
+Draft 0.3 adds self-contained OpenType feature data, HarfBuzz shaping, positioned-run JSON and shaped SVG rendering. The [original layout demo](fonts/layout-demo/README.md) includes an editable Glyphs source, portable compiled fixture and [native export](examples/layout-demo-native.plotfont.json). The native compiler omits this demo's Latin `curs` rule; its export preserves the source and reports that limitation. Cursive positioning is covered by the portable fixture.
+
 ## Run locally
 
-Python 3.10 or later; the library and CLI use only the standard library. Run from this repository:
+Python 3.10 or later. Geometry-only tools use the standard library; OpenType validation and shaping use optional FontTools and uharfbuzz dependencies. Run from this repository:
 
 ```sh
+python3 -m pip install '.[shaping]'
+python3 -m plotfont render examples/layout-demo.plotfont.json 'fi AA' --layout opentype -o output/layout.svg
+python3 -m plotfont shape examples/layout-demo.plotfont.json fi -o output/run.json
 python3 -m plotfont validate examples/*.plotfont.json fonts/hershey-*/*.plotfont.json
 python3 -m plotfont render fonts/hershey-roman-simplex/HersheyRomanSimplex.plotfont.json "Hello PlotFont!" -o output/specimen.svg --cap-height 8
 python3 -m plotfont render examples/script.plotfont.json un -o output/joined.svg --join
@@ -45,7 +52,7 @@ python3 -m pip install -r requirements-dev.txt
 python3 -m unittest discover -s tests -v
 ```
 
-Render sizes are in millimetres. Existing output is preserved unless the CLI receives `--force`. Fills are SVG areas for review, not generated machining trajectories. Joining is opt-in and currently requires declared endpoints to coincide; it does not invent connecting geometry. The guarded Hershey importer populates empty project sources; a general PlotFont JSON importer into Glyphs, general shaping, instance interpolation, DXF/HPGL/G-code converters, and device control are not implemented.
+Render sizes are in millimetres. Existing output is preserved unless the CLI receives `--force`. Fills are SVG areas for review, not generated machining trajectories. Joining is opt-in and currently requires declared endpoints to coincide; it does not invent connecting geometry. The guarded Hershey importer populates empty project sources; a general PlotFont JSON importer into Glyphs, mixed-script/bidirectional segmentation, automatic font fallback, instance interpolation, DXF/HPGL/G-code converters, and device control are not implemented.
 
 ## Licensing
 
@@ -64,18 +71,14 @@ Questions to explore before choosing an export strategy:
 
 The companion would be a visual layout aid. Its preview stroke width would not define the physical pen or cutter size; PlotFont geometry and destination tool settings would remain the source for machine output. Companion-font export and compatibility with these applications are open research questions, not implemented features.
 
-## Open question: OpenType features and text shaping
+## OpenType features and remaining questions
 
-Which OpenType features make sense for PlotFont and its companion font, which should be optional, and which should remain unsupported? How should glyph substitutions, special ligatures, and other typographic elements be represented so design previews and plotted output agree?
+Draft 0.3 preserves compiled static OpenType rules and optional authoring source inside the JSON. [The layout profile](docs/PLOTFONT_LAYOUT.md) implements substitutions, language assignments, mark attachment and cursive placement with HarfBuzz. It selects the matching PlotFont drawings; independent strokes and fill intent remain intact. Named anchors alone do not define attachment rules, and cursive placement does not authorize a pen-down connection.
 
-Questions to investigate:
+Remaining questions:
 
-- Which substitutions should we support: standard, discretionary, and contextual ligatures; contextual alternates; stylistic sets; localized forms; or alternate numeral styles? Which are useful for the first font repertoire, and which add complexity without a clear plotting use case?
-- How should unencoded alternate and ligature glyphs be selected? Should PlotFont carry feature rules, reference a companion OpenType font for shaping, or accept a resolved glyph sequence from a shaping engine?
-- How should kerning, cursive attachment, and mark positioning interact with advances, named anchors, and script entry/exit points? How do we distinguish typographic placement from an intentional pen-down connection?
-- How should special ligatures preserve drawing order, independent strokes, and filled regions? How should a saved project retain the original text, selected features, and resulting glyph choices so editing remains reproducible?
-- How should fallback to another font work for missing characters or scripts, including matching size and baseline and preserving the identity of the font used for each glyph? This is separate from substituting one glyph for another within a font.
-- Which features require shaping behavior beyond the current simple left-to-right scalar lookup, and how should consumers report unsupported rules rather than silently produce different lettering?
-- Should preview-only features be allowed, or must every enabled companion-font feature have an equivalent PlotFont rendering path?
-
-Feature support, shaping-engine integration, and fallback policy remain open design questions. The current draft stores resolved static glyph geometry, simple mappings, and numeric kerning; it does not implement OpenType feature execution.
+- Which feature preferences should particular font families recommend?
+- How should consumers segment mixed scripts and bidirectional text and choose fallback fonts?
+- How should shaped glyph clusters interact with continuous script drawing and deferred dots/crossbars?
+- How should Plot-It save text, feature choices, font identity and resolved runs reproducibly?
+- Should a companion preview font be exported automatically, and how should its stroke width be chosen?

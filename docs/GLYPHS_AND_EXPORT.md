@@ -21,7 +21,7 @@ The script implements the selected-master portion of this contract; native accep
 3. Resolve advances and metrics into numbers. Include exported glyphs, their names, all Unicode mappings, and a fallback glyph. Preserve unencoded glyphs when referenced by the exported font.
 4. Translate each authored centerline path into one stroke and each authored filled region into a fill operation containing its closed contours and explicit fill rule. Preserve start points, direction, open/closed state, holes, and operation order. Map line segments to `L`, quadratic segments to `Q`, and cubic segments to `C` using their actual control points. Handle implied points explicitly.
 5. Preserve source coordinates: upward Y, baseline at zero. Do not rescale or flatten curves at this stage.
-6. Resolve kerning groups and exceptions into effective glyph pairs. Report unsupported shaping features and source objects instead of silently omitting them.
+6. Resolve kerning groups and exceptions into effective glyph pairs. For geometry-only 0.2 export, report unsupported shaping features and source objects instead of silently omitting them. For 0.3, attach a matching compiled static font and preserve authoring feature source through [the implemented layout export](GLYPHS_EXPORT_SCRIPT.md#optional-03-layout-export).
 7. Validate the complete file, report diagnostics with glyph and path names, and write `.plotfont.json` deterministically.
 8. Render a specimen to SVG for comparison with the source before publishing an export.
 

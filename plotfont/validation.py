@@ -68,7 +68,8 @@ def validate(font):
     object_at(font, "$")
     json_value(font)
     require(font.get("format") == "PlotFont", "$.format", "expected PlotFont")
-    require(font.get("version") == "0.2", "$.version", "unsupported version; expected 0.2")
+    require(font.get("version") in ("0.2", "0.3"), "$.version", "unsupported version; expected 0.2 or 0.3")
+    require("layout" not in font or font["version"] == "0.3", "$.layout", "layout requires version 0.3")
     for key in ("id", "familyName", "styleName", "missingGlyph"):
         text(font.get(key), "$." + key)
     upm = font.get("unitsPerEm")
@@ -157,6 +158,9 @@ def validate(font):
         require(identity not in pairs, at, "duplicate kerning pair")
         pairs.add(identity)
         require(number(pair.get("value")), at, "invalid kerning value")
+    if "layout" in font:
+        from .layout import validate_layout
+        validate_layout(font)
     return font
 
 

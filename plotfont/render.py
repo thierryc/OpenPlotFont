@@ -6,8 +6,15 @@ from html import escape
 from .validation import validate, number, ValidationError
 
 
-def render_svg(font, text, cap_height_mm=12, *, join=False, margin_mm=2, stroke_width_mm=0.3):
+def render_svg(font, text, cap_height_mm=12, *, join=False, margin_mm=2, stroke_width_mm=0.3,
+               layout_mode='simple', direction='ltr', script='Latn', language='en', features=None):
     validate(font)
+    if layout_mode not in ('simple', 'opentype'):
+        raise ValidationError('layout: unsupported layout mode')
+    if layout_mode == 'simple' and (features is not None or direction != 'ltr' or script != 'Latn' or language != 'en'):
+        raise ValidationError('layout: shaping settings require OpenType mode')
+    if layout_mode == 'opentype' and join:
+        raise ValidationError('layout: OpenType stroke joining requires a reviewed cluster/drawing schedule; unsupported')
     for label, value in (("cap height", cap_height_mm), ("margin", margin_mm), ("preview width", stroke_width_mm)):
         if not number(value) or value < 0 or (label != "margin" and value == 0):
             raise ValidationError(f"{label}: invalid physical size")
@@ -24,8 +31,7 @@ def render_svg(font, text, cap_height_mm=12, *, join=False, margin_mm=2, stroke_
         xml_text(glyph["name"])
     scale = cap_height_mm / font["metrics"]["capHeight"]
     glyphs = {g["name"]: g for g in font["glyphs"]}
-    mapping = {int(u, 16): g for g in font["glyphs"] for u in g["unicodes"]}
-    kerning = {(p["left"], p["right"]): p["value"] for p in font.get("kerning", [])}
+    from .shaping import simple_run, shape_text
     line_height = font["metrics"]["ascender"] - font["metrics"]["descender"] + font["metrics"]["lineGap"]
     rows = text.replace("\r\n", "\n").replace("\r", "\n").split("\n")
     drawings = []
@@ -49,23 +55,23 @@ def render_svg(font, text, cap_height_mm=12, *, join=False, margin_mm=2, stroke_
         return result
 
     for row, line in enumerate(rows):
-        x = 0
+        run = (simple_run(font,line) if layout_mode == 'simple' else
+               shape_text(font,line,direction=direction,script=script,language=language,features=features))
         previous = None
         previous_mapped = False
-        for scalar in line:
-            mapped = ord(scalar) in mapping
-            glyph = mapping.get(ord(scalar), glyphs[font["missingGlyph"]])
-            if previous:
-                x += kerning.get((previous["name"], glyph["name"]), 0)
+        for item in run['glyphs']:
+            x = item['x']
+            mapped = item.get('joinable',False)
+            glyph = glyphs[item['name']]
             for index, operation in enumerate(glyph["strokes"]):
                 kind = operation.get("kind", "stroke")
                 records = [operation] if kind == "stroke" else operation["contours"]
                 total_commands += sum(len(r["commands"]) for r in records)
                 if total_commands > 1000000:
                     raise ValidationError("layout: drawing exceeds one million commands")
-                paths = [(transform(r["commands"], x, row * line_height), r["closed"]) for r in records]
+                paths = [(transform(r["commands"], x, row * line_height - item['y']), r["closed"]) for r in records]
                 can_join = (join and kind == "stroke" and index == 0 and previous and mapped and previous_mapped
-                            and scalar != " " and previous["name"] != "space"
+                            and previous["name"] != "space"
                             and "exit" in previous.get("connections", {})
                             and "entry" in glyph.get("connections", {})
                             and drawings and drawings[-1]["kind"] == "stroke")
@@ -77,10 +83,9 @@ def render_svg(font, text, cap_height_mm=12, *, join=False, margin_mm=2, stroke_
                     drawings[-1]["paths"][-1][0].extend(paths[0][0][1:])
                 else:
                     drawings.append({"kind": kind, "paths": paths, "fillRule": operation.get("fillRule"), "glyph": glyph["name"]})
-            x += glyph["advanceWidth"]
-            bounds_x.append(x * scale)
             previous = glyph
-            previous_mapped = mapped and scalar != " "
+            previous_mapped = mapped
+        bounds_x.append(run['xAdvance'] * scale)
     # Control-point hulls conservatively bound Bézier curves without flattening.
     pad = margin_mm + stroke_width_mm / 2
     left, top = min(bounds_x) - pad, min(bounds_y) - pad

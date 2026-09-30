@@ -1,0 +1,2 @@
+pos base A <anchor 300 700> mark @TOP;
+pos ligature f_i <anchor 250 700> mark @TOP ligComponent <anchor 700 700> mark @TOP;

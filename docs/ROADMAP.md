@@ -1,6 +1,6 @@
 # PlotFont milestones
 
-The format is draft `0.2`; file names end in `.plotfont.json`. Glyphs 4 and later is the authoring target. Plot-It is an independent concept-testing application with its own roadmap.
+Geometry-only fonts retain draft `0.2`; optional OpenType layout uses draft `0.3`. file names end in `.plotfont.json`. Glyphs 4 and later is the authoring target. Plot-It is an independent concept-testing application with its own roadmap.
 
 | Milestone | Deliverables and acceptance | Current evidence / remaining work |
 | --- | --- | --- |
@@ -18,16 +18,24 @@ The format is draft `0.2`; file names end in `.plotfont.json`. Glyphs 4 and late
 - Saved-source tests verify exact integral Hershey geometry; SVG tests verify correspondence between native export and source, with a separate Node.js consumer and macOS Quick Look review.
 - [Curated specimens](../examples/specimens/README.md) provide reviewable interchange results.
 
-All five initial milestones are complete within their documented scope. The format remains draft `0.2`; this is not a stable format release or certification of a machine workflow. Native qualification covers Glyphs 4.1 and the additional-font workflow in 4.1.1; later versions require qualification. Portable CI verifies fixtures and tools, rather than launching Glyphs.
+All five initial milestones are complete within their documented scope. The format remains an unreleased draft; this is not a stable format release or certification of a machine workflow. Native qualification covers Glyphs 4.1 and the additional-font workflow in 4.1.1; later versions require qualification. Portable CI verifies fixtures and tools, rather than launching Glyphs.
 
 ## Additional Hershey faces
 
 Roman Duplex, Roman Triplex, and Script Simplex extend the [font catalog](../fonts/README.md). Each source was created with MCP `create_document`, populated, saved, reopened, and exported through the real export script on a copy in Glyphs 4.1.1 build 4108. Each face has 97 glyphs / 95 mappings; saved point counts including the original fallback are 2,236, 3,269, and 2,130 respectively. Individually pinned source digests and full upstream terms accompany the ports. Tests cover every source point and saved node, native-export semantics, separate strokes, face selection, modified-data rejection, Script descenders, and independent SVG consumption. No joining annotations or kerning are invented.
 
+## M6 — Self-contained OpenType layout
+
+Implemented in draft 0.3: optional compiled static OpenType payload with exact glyph-ID mapping, feature/script/language manifest and preserved authoring source; FontTools validation; HarfBuzz shaping and positioned-run JSON; SVG rendering with shaped advances/offsets; optional Glyphs adapter attachment. Existing 0.2 exports remain usable. Original fixtures and tests cover substitutions, contextual rules, localized forms, marks, ligature attachment, cursive positioning, RTL runs, digest/mapping errors and kerning exactly once. See [the layout specification](PLOTFONT_LAYOUT.md).
+
+Automatic instance resolution, automatic compilation from the menu, multi-run bidi segmentation, automatic fallback and shaped pen-path joining are deferred. Companion preview-font generation remains separate.
+
+M6 is complete within this scope. The [native layout demo](../fonts/layout-demo/README.md) was created and saved in Glyphs 4.1.1 through MCP, exported through a source-bound typed static job and converted by the actual 0.3 export-script entry point on a copy. Its ligatures, alternates, localized forms, contextual substitutions, numeral widths, marks and kerning match the portable fixture. The native compiler omits this demo's Latin `curs` block; its code is preserved, the omission is warned, and requesting that feature fails. The portable compiler includes and tests cursive placement. Native receipt and verification samples are retained in [the qualification report](../tests/fixtures/native-layout-report.json).
+
 ## Retained questions
 
 - Should export automatically create an OpenType companion for design previews?
-- Which OpenType features, substitutions, ligatures, and shaping behaviors make sense?
+- Which per-family feature preferences, fallback and mixed-script policies should consumers adopt?
 - How should Plot-It save font references and preserve reproducible text layout?
 - Which CAD versions and machine profiles should future converters target?
 

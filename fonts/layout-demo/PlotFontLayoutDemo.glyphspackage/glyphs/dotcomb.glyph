@@ -1,0 +1,24 @@
+{
+glyphname = dotcomb;
+layers = (
+{
+anchors = (
+{
+name = _top;
+},
+);
+layerId = "94B5FEB3-5126-4837-91FD-1907FD582C8B";
+shapes = (
+{
+closed = 0;
+nodes = (
+(-20,0,l),
+(20,0,l),
+);
+},
+);
+width = 0;
+},
+);
+unicode = 775;
+}

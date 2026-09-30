@@ -88,7 +88,7 @@ class AdapterTests(unittest.TestCase):
         with self.assertRaisesRegex(ValidationError, 'metadata must be an object'):
             export_font(font, 'master', {'line':'line'})
         font = font_fixture()
-        font.features = [Obj(name='liga', disabled=False), Obj(name='dlig', disabled=True)]
+        font.features = [Obj(name='liga', active=True), Obj(name='dlig', active=False)]
         result = export_font(font, 'master', {'line':'line'})
         self.assertEqual(result['metadata']['exportWarnings'], ['OpenType features not executed: liga'])
 

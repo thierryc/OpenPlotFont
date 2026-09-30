@@ -1,4 +1,4 @@
-# PlotFont format — draft 0.2
+# PlotFont format — drafts 0.2 and 0.3
 
 Status: draft specification, implemented for validation and reference rendering; subject to review before stable release.
 
@@ -19,7 +19,7 @@ The minimal example is [minimal.plotfont.json](../examples/minimal.plotfont.json
 | Field | Type | Meaning |
 | --- | --- | --- |
 | `format` | string | Must equal `PlotFont` |
-| `version` | string | Exact format version, currently draft `0.2` |
+| `version` | string | Exact format version: draft `0.2` or `0.3` |
 | `id` | string | Stable font identifier within a consumer's catalog |
 | `familyName` | string | Display family name |
 | `styleName` | string | Display style name |
@@ -29,6 +29,7 @@ The minimal example is [minimal.plotfont.json](../examples/minimal.plotfont.json
 | `glyphs` | array | Collection of unique glyph records; collection order is for editing, not drawing |
 | `kerning` | array, optional | Explicit glyph-name pairs and adjustments |
 | `metadata` | object, optional | Author, provenance, copyright, license, source details |
+| `layout` | object, optional in 0.3 only | Self-contained compiled static OpenType layout; see [layout specification](PLOTFONT_LAYOUT.md) |
 
 All table fields are required except those marked optional. Identification strings must be nonempty; glyph names and Unicode mappings must be unique. Provenance and license details are strongly recommended for redistribution but are not required by the draft schema.
 
@@ -70,7 +71,7 @@ Each glyph is a self-contained description of its identity, spacing, ordered dra
 
 Unicode strings use 4–6 digits with no `U+` prefix and the shortest length of at least four digits. They must describe scalar values from `0000` through `10FFFF`, excluding `D800`–`DFFF`. Each scalar maps to at most one glyph; multiple scalars may map to one glyph. `unicodes: []` is valid for unencoded glyphs.
 
-The initial consumer profile is simple left-to-right scalar lookup. It does not specify ligatures, combining-mark positioning, bidirectional layout, OpenType shaping, variable fonts, or Unicode normalization. Consumers must document any normalization or case substitution they apply; case substitution is not an implicit format behavior.
+The `simple` consumer profile uses left-to-right scalar lookup. Draft 0.3 additionally defines optional [OpenType layout](PLOTFONT_LAYOUT.md) for ligatures, alternates, contextual substitutions and mark/cursive positioning. Simple mode executes none of these rules. Mixed-script/bidirectional run segmentation and variable fonts remain outside the reference implementation. Consumers must document any normalization or case substitution they apply; case substitution is not an implicit format behavior.
 
 An unsupported scalar uses `missingGlyph`. Space is a real encoded glyph with an advance and no strokes. A consumer handles line breaks outside glyph lookup. Tabs need an explicit consumer policy.
 
@@ -168,7 +169,7 @@ Drawing endpoints are not automatically script connection points. The first path
 
 For draft 0.2, `strokeIndex` indexes the ordered operations in `strokes`. Entry must reference the start of the first operation and exit the end of the last operation; both referenced operations must be open `stroke` records, never fills or fill contours. Either connection may be omitted, preventing joining on that side. This restriction preserves drawing order. A glyph with later dots, crossbars, or fills cannot declare an exit on an earlier body stroke in this draft; designing deferred finishing operations needs a future explicit scheduling model.
 
-Connections are optional layout information, not machine commands or automatic OpenType cursive shaping. The default renderer draws all strokes independently. A consumer with a user-enabled script-joining mode may join only adjacent, explicitly mapped glyphs on the same text line, with a declared exit on the left and entry on the right. Spaces, line breaks, and substituted missing glyphs break the chain.
+Connections are optional drawing information, not machine commands or OpenType cursive positioning rules. The 0.3 renderer rejects joining in OpenType mode until a cluster-aware drawing schedule is defined. The default renderer draws all strokes independently. A consumer with a user-enabled script-joining mode may join only adjacent, explicitly mapped glyphs on the same text line, with a declared exit on the left and entry on the right. Spaces, line breaks, and substituted missing glyphs break the chain.
 
 First apply advances, kerning, placement, and scaling. Then evaluate both endpoints in document space. A basic joining mode may keep the pen down only when the endpoints coincide within a documented numeric tolerance; that tolerance must not authorize a visible connecting segment. A nonzero gap requires an explicit connector policy and preview, such as a straight line or a separately designed curve. The file does not prescribe such a connector or authorize snapping, changing spacing, moving points, or guessing tangents.
 
@@ -196,7 +197,7 @@ These optional metadata fields are supported by the validator and reference rend
 
 ## Spacing and kerning
 
-Place a glyph at the current horizontal origin, advance by `advanceWidth`, then apply any pair adjustment before the next glyph. Kerning records have `left`, `right`, and `value`; names must exist in the glyph collection and pairs must be unique. Negative values reduce the gap. Missing pairs contribute zero.
+In simple mode, place a glyph at the current horizontal origin, advance by `advanceWidth`, then apply any pair adjustment before the next glyph. In OpenType mode, use the shaped advances and offsets; never apply these pair adjustments again. Kerning records have `left`, `right`, and `value`; names must exist in the glyph collection and pairs must be unique. Negative values reduce the gap. Missing pairs contribute zero.
 
 ```json
 {"left": "A", "right": "V", "value": -50}
@@ -208,7 +209,7 @@ Group kerning and metrics expressions from Glyphs are resolved into numeric glyp
 
 The semantic validator checks the version, required fields and types, metric constraints, unique names and Unicode mappings, fallback existence, operation kinds and record structures, command names and arities, numeric values, stroke structure, and kerning references. Fill operations require supported fill rules and nonempty closed contours. It also checks connection indices and endpoint restrictions (including rejection of fills), unique anchor names and finite coordinates, and JSON-object user data. A glyph without strokes cannot declare connections. Consumers should bound file size, operation, contour and command counts, and metadata depth before rendering.
 
-Preserve coincident endpoints and path boundaries during conversion. Reject unsupported source objects with an actionable message instead of silently dropping them. The [JSON Schema](../schemas/plotfont-0.2.schema.json) validates structure; [semantic validation](../plotfont/validation.py) additionally checks geometry, canonical Unicode scalars, and cross-references.
+Preserve coincident endpoints and path boundaries during conversion. Reject unsupported source objects with an actionable message instead of silently dropping them. The [0.2 schema](../schemas/plotfont-0.2.schema.json) and [0.3 schema](../schemas/plotfont-0.3.schema.json) validate structure; [semantic validation](../plotfont/validation.py) additionally checks geometry, canonical Unicode scalars, and cross-references.
 
 ## Information outside the format
 
@@ -220,9 +221,11 @@ Optional metadata can record authorship and provenance. A metadata license strin
 
 Draft `0.2` supersedes unreleased draft `0.1` to introduce mixed stroke/fill operations. Existing stroke-only records are unchanged and may be migrated by validating them and updating the file version; no geometry conversion is needed. Fill records introduce new semantics, so a `0.1`-only reader must reject `0.2`. A `0.2` reader without fill support must reject fonts containing fill operations. Never use unknown-field tolerance to discard drawing intent. No released standard or implemented reader is changed by this revision.
 
+Draft `0.3` retains all 0.2 geometry and adds optional `layout`. A 0.2-only consumer must reject version 0.3, even if it could otherwise ignore fields. Geometry-only 0.2 files need no migration. A 0.3 file without layout behaves like 0.2. Unknown layout profiles are errors, and an unsupported OpenType renderer must report the limitation rather than silently substitute simple rendering.
+
 ## Questions before format release
 
-- Decide whether provenance fields beyond the currently required identity fields should become mandatory. The confirmed extension is `.plotfont.json`; this implementation accepts exactly version `0.2` and rejects other versions.
-- Decide which shaping requirements belong in the initial release; Hershey Roman Simplex is the first repertoire; see the [OpenType questions in the README](../README.md#open-question-opentype-features-and-text-shaping).
+- Decide whether provenance fields beyond the currently required identity fields should become mandatory. The confirmed extension is `.plotfont.json`; this implementation accepts versions `0.2` and `0.3` and rejects other versions.
+- Decide which shaping requirements belong in the initial release; Hershey Roman Simplex is the first repertoire; see the [OpenType questions in the README](../README.md#opentype-features-and-remaining-questions).
 - Confirm the entry/exit restrictions and whether deferred finishing operations need a later scheduling model.
 - Review the implemented schema and semantic checks with independent font-aware consumers before declaring a stable release.

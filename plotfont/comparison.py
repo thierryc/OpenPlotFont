@@ -13,6 +13,8 @@ def compare_fonts(expected, actual, *, tolerance=1e-9):
     def canonical(font):
         result = {k: font[k] for k in ('format', 'version', 'id', 'familyName', 'styleName', 'unitsPerEm', 'metrics', 'missingGlyph')}
         result['kerning'] = font.get('kerning', [])
+        if 'layout' in font:
+            result['layout'] = font['layout']
         result['glyphs'] = []
         for glyph in sorted(font['glyphs'], key=lambda g: g['name']):
             record = dict(glyph)

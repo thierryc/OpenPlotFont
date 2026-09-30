@@ -1,0 +1,19 @@
+{
+glyphname = A.alt;
+layers = (
+{
+layerId = "94B5FEB3-5126-4837-91FD-1907FD582C8B";
+shapes = (
+{
+closed = 0;
+nodes = (
+(50,0,l),
+(300,600,l),
+(550,0,l),
+);
+},
+);
+width = 600;
+},
+);
+}

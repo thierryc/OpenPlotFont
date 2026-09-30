@@ -1,0 +1,5 @@
+languagesystem DFLT dflt;
+languagesystem latn dflt;
+languagesystem latn TRK;
+markClass acutecomb <anchor 0 0> @TOP;
+markClass dotcomb <anchor 0 0> @TOP;

@@ -15,7 +15,7 @@ from plotfont.glyphs_export import export_font
 from plotfont.storage import write_font
 
 
-def main(font=None, destination=None, master_id=None):
+def main(font=None, destination=None, master_id=None, *, layout_bytes=None, glyph_order=None, feature_settings=None):
     font = Glyphs.font if font is None else font
     if font is None:
         raise RuntimeError("Open a font in Glyphs before running this script.")
@@ -29,7 +29,8 @@ def main(font=None, destination=None, master_id=None):
                 if master_id is not None else font.selectedFontMaster)
     if selected is None:
         raise RuntimeError("Select a master before exporting.")
-    data = export_font(font, selected.id, {"line": LINE, "curve": CURVE, "qcurve": QCURVE, "offcurve": OFFCURVE})
+    data = export_font(font, selected.id, {"line": LINE, "curve": CURVE, "qcurve": QCURVE, "offcurve": OFFCURVE},
+                       layout_bytes=layout_bytes,glyph_order=glyph_order,feature_settings=feature_settings)
     for warning in data["metadata"]["exportWarnings"]:
         print("PlotFont warning:", warning)
     # Existing output is deliberately preserved; change destination for another export.

@@ -1,0 +1,21 @@
+{
+glyphname = zero.tnum;
+layers = (
+{
+layerId = "94B5FEB3-5126-4837-91FD-1907FD582C8B";
+shapes = (
+{
+closed = 0;
+nodes = (
+(100,0,l),
+(100,700,l),
+(500,700,l),
+(500,0,l),
+(100,0,l),
+);
+},
+);
+width = 600;
+},
+);
+}

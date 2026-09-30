@@ -1,0 +1,20 @@
+{
+glyphname = u;
+layers = (
+{
+layerId = "94B5FEB3-5126-4837-91FD-1907FD582C8B";
+shapes = (
+{
+closed = 0;
+nodes = (
+(0,0,l),
+(0,-100,l),
+(400,100,l),
+);
+},
+);
+width = 500;
+},
+);
+unicode = 117;
+}

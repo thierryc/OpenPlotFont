@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "PlotFont draft 0.2",
+  "title": "PlotFont draft 0.3",
   "description": "Structural constraints; use the semantic validator for Unicode, references, uniqueness, finite numbers, and resource limits.",
   "type": "object",
   "properties": {
@@ -8,7 +8,7 @@
       "const": "PlotFont"
     },
     "version": {
-      "const": "0.2"
+      "const": "0.3"
     },
     "id": {
       "type": "string",
@@ -79,7 +79,9 @@
     "metadata": {
       "type": "object"
     },
-    "layout": false
+    "layout": {
+      "$ref": "#/$defs/layout"
+    }
   },
   "required": [
     "format",
@@ -537,6 +539,243 @@
         "left",
         "right",
         "value"
+      ]
+    },
+    "feature": {
+      "type": "object",
+      "properties": {
+        "tag": {
+          "type": "string",
+          "pattern": "^[ -~]{4}$"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recommendedValue": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4294967295
+        }
+      },
+      "required": [
+        "tag"
+      ]
+    },
+    "system": {
+      "type": "object",
+      "properties": {
+        "table": {
+          "enum": [
+            "GSUB",
+            "GPOS"
+          ]
+        },
+        "script": {
+          "type": "string",
+          "pattern": "^[ -~]{4}$"
+        },
+        "language": {
+          "type": "string",
+          "pattern": "^[ -~]{4}$"
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[ -~]{4}$"
+          },
+          "uniqueItems": true
+        },
+        "requiredFeature": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[ -~]{4}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "table",
+        "script",
+        "language",
+        "features",
+        "requiredFeature"
+      ]
+    },
+    "sourceBlock": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "code": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "automatic": {
+          "type": "boolean"
+        },
+        "disabled": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "name",
+        "code",
+        "notes",
+        "automatic",
+        "disabled"
+      ]
+    },
+    "layoutSource": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "enum": [
+            "fea",
+            "glyphs-feature-source-v1"
+          ]
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "compiledSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "content": {
+          "type": [
+            "string",
+            "object"
+          ]
+        }
+      },
+      "required": [
+        "format",
+        "sha256",
+        "compiledSha256",
+        "content"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "format": {
+                "const": "fea"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "type": "string"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "properties": {
+                  "prefixes": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/sourceBlock"
+                    }
+                  },
+                  "classes": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/sourceBlock"
+                    }
+                  },
+                  "features": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/sourceBlock"
+                    }
+                  }
+                },
+                "required": [
+                  "prefixes",
+                  "classes",
+                  "features"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "const": "opentype-static-v1"
+        },
+        "font": {
+          "type": "object",
+          "properties": {
+            "encoding": {
+              "const": "base64"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "data": {
+              "type": "string",
+              "minLength": 16,
+              "maxLength": 11184812
+            }
+          },
+          "required": [
+            "encoding",
+            "sha256",
+            "data"
+          ]
+        },
+        "glyphOrder": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 65535,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/feature"
+          }
+        },
+        "systems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/system"
+          }
+        },
+        "source": {
+          "$ref": "#/$defs/layoutSource"
+        }
+      },
+      "required": [
+        "profile",
+        "font",
+        "glyphOrder",
+        "features",
+        "systems"
       ]
     }
   }

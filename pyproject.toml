@@ -4,10 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "plotfont"
-version = "0.2.0"
+version = "0.3.0"
 description = "Validation, reference SVG rendering, and Glyphs export for PlotFont"
 requires-python = ">=3.10"
 license = {text = "MIT"}
+
+[project.optional-dependencies]
+shaping = ["fonttools>=4.54,<5", "uharfbuzz>=0.39,<1"]
 
 [project.scripts]
 plotfont = "plotfont.__main__:main"

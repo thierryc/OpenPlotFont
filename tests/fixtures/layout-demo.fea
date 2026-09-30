@@ -1,0 +1,36 @@
+languagesystem DFLT dflt;
+languagesystem latn dflt;
+languagesystem latn TRK;
+markClass acutecomb <anchor 0 0> @TOP;
+markClass dotcomb <anchor 0 0> @TOP;
+feature liga {
+sub f i by f_i;
+} liga;
+feature ss01 {
+sub A by A.alt;
+} ss01;
+feature salt {
+sub A from [A.alt];
+} salt;
+feature calt {
+lookupflag IgnoreMarks; sub A A' by A.alt;
+} calt;
+feature tnum {
+sub zero by zero.tnum;
+} tnum;
+feature locl {
+script latn; language TRK; sub i by i.trk;
+} locl;
+feature kern {
+pos A A -80;
+} kern;
+feature mark {
+pos base A <anchor 300 700> mark @TOP;
+pos ligature f_i <anchor 250 700> mark @TOP ligComponent <anchor 700 700> mark @TOP;
+} mark;
+feature mkmk {
+pos mark acutecomb <anchor 0 150> mark @TOP;
+} mkmk;
+feature curs {
+pos cursive u <anchor 0 0> <anchor 400 100>; pos cursive n <anchor 0 0> <anchor 400 0>;
+} curs;

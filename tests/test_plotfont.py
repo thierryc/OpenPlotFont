@@ -195,14 +195,17 @@ class SchemaTests(unittest.TestCase):
             import jsonschema
         except ImportError:
             self.skipTest("Install requirements-dev.txt to verify the JSON Schema")
-        schema = json.loads((ROOT / "schemas/plotfont-0.2.schema.json").read_text())
-        jsonschema.Draft202012Validator.check_schema(schema)
+        schemas = {version:json.loads((ROOT/'schemas'/f'plotfont-{version}.schema.json').read_text())
+                   for version in ('0.2','0.3')}
+        for schema in schemas.values():
+            jsonschema.Draft202012Validator.check_schema(schema)
         for path in list((ROOT / "examples").glob("*.json")) + list((ROOT / "fonts").rglob("*.json")):
-            jsonschema.validate(json.loads(path.read_text()),schema)
+            value = json.loads(path.read_text())
+            jsonschema.validate(value,schemas[value['version']])
         font = example()
         font["glyphs"][2]["strokes"][0]["commands"].append(["M",1,2])
         with self.assertRaises(jsonschema.ValidationError):
-            jsonschema.validate(font,schema)
+            jsonschema.validate(font,schemas['0.2'])
 
 
 if __name__ == "__main__":

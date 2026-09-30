@@ -84,7 +84,19 @@ def operations_from_paths(paths, plan=None):
     return result
 
 
-def export_font(font, master_id, node_types):
+def feature_source(font):
+    """Snapshot authored blocks; compilation and automatic generation stay separate."""
+    result = {}
+    for key, native in (('prefixes','featurePrefixes'),('classes','classes'),('features','features')):
+        result[key] = [{'name':str(block.name), 'code':str(block.code or ''),
+                        'automatic':bool(getattr(block,'automatic',False)),
+                        'disabled':not bool(getattr(block,'active',True)),
+                        'notes':str(getattr(block,'notes','') or '')}
+                       for block in getattr(font,native,[])]
+    return result
+
+
+def export_font(font, master_id, node_types, *, layout_bytes=None, glyph_order=None, feature_settings=None):
     """Export one exact master; never save or edit the source font."""
     master = next((m for m in font.masters if m.id == master_id), None)
     if master is None:
@@ -164,7 +176,7 @@ def export_font(font, master_id, node_types):
                     if value != 0:
                         pairs.append({"left": left.name, "right": right.name, "value": float(value)})
                     break
-    active_features = [feature.name for feature in font.features if not feature.disabled]
+    active_features = [str(feature.name) for feature in font.features if feature.active]
     result = {"format": "PlotFont", "version": "0.2", "id": meta.get("id", ""),
               "familyName": font.familyName, "styleName": meta.get("styleName", master.name),
               "unitsPerEm": int(font.upm), "metrics": {
@@ -178,4 +190,12 @@ def export_font(font, master_id, node_types):
     result = json.loads(json.dumps(result, allow_nan=False))
     result["metadata"]["glyphsMasterId"] = str(master_id)
     result["metadata"]["exportWarnings"] = (["OpenType features not executed: " + ", ".join(active_features)] if active_features else [])
-    return validate(result)
+    validate(result)
+    if layout_bytes is not None:
+        from .layout import attach_layout
+        result = attach_layout(result,layout_bytes,glyph_order=glyph_order,source=feature_source(font),
+                               source_format='glyphs-feature-source-v1',feature_settings=feature_settings)
+        compiled = {entry['tag'] for entry in result['layout']['features']}
+        omitted = sorted(set(active_features)-compiled)
+        result['metadata']['exportWarnings'] = (["Active source features absent from compiled layout: " + ", ".join(omitted)] if omitted else [])
+    return result

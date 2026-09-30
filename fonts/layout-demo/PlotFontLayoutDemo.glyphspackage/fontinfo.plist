@@ -1,0 +1,133 @@
+{
+.appVersion = "4108";
+.formatVersion = 4;
+date = "2026-09-30 22:54:08 +0000";
+featurePrefixes = (
+{
+file = _PlotFontLanguagesAndMarks.fea;
+name = PlotFontLanguagesAndMarks;
+},
+);
+features = (
+{
+file = liga.fea;
+tag = liga;
+},
+{
+file = ss01.fea;
+tag = ss01;
+},
+{
+file = salt.fea;
+tag = salt;
+},
+{
+file = calt.fea;
+tag = calt;
+},
+{
+file = tnum.fea;
+tag = tnum;
+},
+{
+file = locl.fea;
+tag = locl;
+},
+{
+file = kern.fea;
+tag = kern;
+},
+{
+file = mark.fea;
+tag = mark;
+},
+{
+file = mkmk.fea;
+tag = mkmk;
+},
+{
+file = curs.fea;
+tag = curs;
+},
+);
+fontMaster = (
+{
+id = "94B5FEB3-5126-4837-91FD-1907FD582C8B";
+metricValues = (
+{
+pos = 800;
+},
+{
+pos = -200;
+},
+{
+pos = 700;
+},
+{
+pos = 500;
+},
+);
+name = Regular;
+},
+);
+instances = (
+{
+id = "B64EC3CD-5159-43FF-8F9F-0B2FD04EE865";
+instanceInterpolations = {
+"94B5FEB3-5126-4837-91FD-1907FD582C8B" = 1;
+};
+properties = (
+{
+key = styleNames;
+values = (
+{
+language = dflt;
+value = Regular;
+},
+);
+},
+);
+},
+);
+metrics = (
+{
+type = ascender;
+},
+{
+type = descender;
+},
+{
+type = "cap height";
+},
+{
+type = "x-height";
+},
+);
+properties = (
+{
+key = familyNames;
+values = (
+{
+language = dflt;
+value = "PlotFont Layout Demo";
+},
+);
+},
+);
+unitsPerEm = 1000;
+userData = {
+org.plotfont.font = {
+id = "org.plotfont.layout-demo.regular";
+lineGap = 200;
+metadata = {
+author = "Thierry Charbonnel";
+license = MIT;
+purpose = "Original conformance fixture; strokes are intentionally simple.";
+};
+missingGlyph = .notdef;
+styleName = Regular;
+};
+};
+versionMajor = 1;
+versionMinor = 0;
+}
