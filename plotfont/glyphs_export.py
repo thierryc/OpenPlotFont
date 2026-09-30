@@ -6,8 +6,11 @@ from .validation import validate, ValidationError
 
 def plain(value):
     """Convert property-list containers; reject non-JSON binary/editor objects."""
-    if value is None or isinstance(value, (str, bool, int, float)):
-        return value
+    if value is None:
+        return None
+    for kind in (str, bool, int, float):
+        if isinstance(value, kind):
+            return kind(value)
     if hasattr(value, "keys"):
         if not all(isinstance(k, str) for k in value.keys()):
             raise ValidationError("Glyphs user data: expected string keys")
@@ -70,7 +73,7 @@ def operations_from_paths(paths, plan=None):
             raise ValidationError("operation must reference paths")
         for index in indices:
             if type(index) is not int or not 0 <= index < len(paths) or index in used:
-                raise ValidationError("invalid or duplicate annotated path index")
+                raise ValidationError(f"invalid or duplicate annotated path index {index!r} ({type(index).__name__}), path count {len(paths)}")
             used.add(index)
         if item["kind"] == "stroke":
             result.append({"kind": "stroke", **paths[indices[0]]})

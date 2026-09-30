@@ -52,8 +52,7 @@ def populate_hershey(font, source, expected_destination, *, glyph_type, layer_ty
                 for command in operation['commands']:
                     path.nodes.append(node_type(tuple(command[1:]), type=line_type))
                 layer.shapes.append(path)
-            glyph.layers[master.id] = layer
-            prepared.append(glyph)
+            prepared.append((glyph, layer))
         for placeholder in placeholders:
             del font.glyphs[placeholder.name]
         font.familyName = data['familyName']
@@ -65,6 +64,7 @@ def populate_hershey(font, source, expected_destination, *, glyph_type, layer_ty
             'id': data['id'], 'styleName': data['styleName'], 'missingGlyph': data['missingGlyph'],
             'lineGap': data['metrics']['lineGap'], 'metadata': data['metadata'],
         }
-        for glyph in prepared:
+        for glyph, layer in prepared:
             font.glyphs.append(glyph)
+            glyph.layers[master.id] = layer
     return data

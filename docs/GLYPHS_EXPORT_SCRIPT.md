@@ -1,6 +1,6 @@
 # Selected-master export script
 
-Target: Glyphs 4+. [Export PlotFont.py](../scripts/Export%20PlotFont.py) is an implemented workspace script, with its adapter in [glyphs_export.py](../plotfont/glyphs_export.py). It has been syntax-checked and tested against SDK-shaped doubles, **not executed natively**. A Glyphs importer and export plug-in are not included.
+Target: Glyphs 4+. [Export PlotFont.py](../scripts/Export%20PlotFont.py) is an implemented workspace script, with its adapter in [glyphs_export.py](../plotfont/glyphs_export.py). It has been executed on a font copy in Glyphs 4.1 build 4107 through MCP. Native source/export and saved-source reopen comparisons passed; SDK-shaped doubles add portable regression coverage. A Glyphs importer and export plug-in are not included.
 
 ## Qualification and setup
 
@@ -50,15 +50,15 @@ This example assumes a single open stroke. Entry must reference the first operat
 - One exact selected master; components decomposed on copies after cycle/missing-reference checks. Hints/corner components and unresolved shapes are rejected.
 - Lines, cubic curves, and quadratic curves including implied intermediate points. An explicit on-curve start is required; paths beginning off-curve are rejected rather than silently rotated.
 - Fractional coordinates and advances retained; no physical scaling, flattening, stroke expansion, or fill trajectory generation.
-- Group kerning resolved into glyph pairs, with stored glyph exceptions preceding class values. Native exception behavior still needs qualification.
+- Group kerning resolved into glyph pairs, with stored glyph exceptions preceding class values. Native group kerning and explicit zero exceptions passed qualification.
 - All enabled glyphs and the fallback exported. Active OpenType features produce warnings; they are not executed or serialized as rules.
-- Semantic validation and UTF-8 encoding complete before publication. A same-directory temporary file is flushed and atomically linked to the new destination; failures remove staging files. Existing files and symlinks are preserved. Filesystems must support hard links; otherwise publication fails clearly. Native runtime qualification is still pending.
+- Semantic validation and UTF-8 encoding complete before publication. A same-directory temporary file is flushed and atomically linked to the new destination; failures remove staging files. Existing files and symlinks are preserved. Filesystems must support hard links; otherwise publication fails clearly. Atomic publication was exercised by the native export script.
 
 ## API evidence and acceptance
 
 API choices were checked against the official [Glyphs SDK Python documentation](https://docu.glyphsapp.com/) and SDK revision `0f5422db727b78cb42abfb386f33ae0b382b0c4d`, particularly `GSLayer.copyDecomposedLayer`, `GSNode.type`, `GSGlyph.unicodes`, user data, anchors, and `GSFont.kerningForPair`. Node types use imported SDK constants.
 
-The connected application reported Glyphs 4.1 build 4107 and native-script support. Its MCP workflow requires an existing document binding and provides no standalone new-font action. Therefore the native Hershey port and exporter round trip remain pending. Offline tests establish adapter behavior, not Objective-C bridge behavior or successful native export. Before claiming support, follow [the next acceptance steps](ROADMAP.md#next-acceptance-steps).
+The connected application reported Glyphs 4.1 build 4107 and native-script support. Its MCP workflow requires an existing document binding and provides no standalone new-font action. After a project document was created in Glyphs, MCP populated, saved, reopened, and exported it successfully. The [qualification script](../scripts/Qualify%20Native%20PlotFont.py) checks cubic and implied quadratic curves, fill holes, anchors, user data, endpoints, fractional spacing, group kerning, and zero exceptions on an invisible copy. [Native-exported fixtures](../tests/fixtures/native-qualification.plotfont.json) and [the report](../tests/fixtures/native-qualification-report.json) preserve the result. CI tests those snapshots; CI does not run Glyphs. Later Glyphs versions require their own qualification.
 
 ## Compare a source reference and export
 
@@ -67,3 +67,5 @@ python3 -m plotfont compare fonts/hershey-roman-simplex/HersheyRomanSimplex.plot
 ```
 
 The comparison validates both files, then checks identity, metrics, mappings, every operation and coordinate, advances, kerning, anchors, connections, user data, and provenance. Glyph collection order has no drawing semantics and is compared by name; operation, contour, command, and mapping order remain significant. Omitted stroke kinds and empty optional glyph metadata are normalized. Only `glyphsMasterId` and `exportWarnings` diagnostics are excluded. Numeric comparison uses absolute tolerance `1e-9` font units. A mismatch reports its JSON path.
+
+`main(font=None, destination=None, master_id=None)` allows MCP qualification on a copy with an explicit exact master. The menu action still defaults to the current font, selected master, and user-data destination. Qualification writes only new files under `output/`; choose new filenames or move prior local outputs before rerunning. It does not publish files or save the source.

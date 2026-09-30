@@ -1,0 +1,17 @@
+{
+  "glyphs": 97,
+  "mappings": 95,
+  "reopenedSourceVerified": true,
+  "sourceUnchangedVerified": true,
+  "checks": [
+    "cubic",
+    "implied-quadratic",
+    "fill-holes",
+    "anchors",
+    "user-data",
+    "connections",
+    "fractional-spacing",
+    "group-kerning",
+    "zero-exception"
+  ]
+}

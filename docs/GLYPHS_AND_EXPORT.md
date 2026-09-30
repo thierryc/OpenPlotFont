@@ -1,6 +1,6 @@
 # Editing in Glyphs and exporting PlotFont
 
-Target: Glyphs **4 and later**. A selected-master Python export script is included, with offline adapter tests. Native execution and the Hershey source-to-export comparison are pending. The format stores one resolved static font per file; resolved instance export is a later task. See [script setup and annotations](GLYPHS_EXPORT_SCRIPT.md).
+Target: Glyphs **4 and later**. A selected-master Python export script is included, with offline adapter tests. Native execution, source reopening, and Hershey source-to-export comparison passed in Glyphs 4.1. The format stores one resolved static font per file; resolved instance export is a later task. See [script setup and annotations](GLYPHS_EXPORT_SCRIPT.md).
 
 ## Design the source in Glyphs
 
@@ -8,13 +8,13 @@ Keep the editable `.glyphs` or `.glyphspackage` source. Glyphs supports open pat
 
 Start with a small specimen: `A`, `O`, a curved glyph, a descender, space, and `.notdef`. Review it as stroke geometry, since a filled font preview does not show the intended pen trajectories reliably.
 
-For mixed glyphs, author centerlines and filled boundaries as distinct intended operations. Keep the connectable handwriting body open. A closed path may be a centerline loop or a fill boundary: mark its intent explicitly rather than classifying every closed path as filled. Group the outer boundary and holes of each filled region into one compound fill operation. Filled parts may retain regular outline-font geometry; do not infer a centerline from them. The draft annotation convention is documented in [the script instructions](GLYPHS_EXPORT_SCRIPT.md); its native round trip remains to be verified.
+For mixed glyphs, author centerlines and filled boundaries as distinct intended operations. Keep the connectable handwriting body open. A closed path may be a centerline loop or a fill boundary: mark its intent explicitly rather than classifying every closed path as filled. Group the outer boundary and holes of each filled region into one compound fill operation. Filled parts may retain regular outline-font geometry; do not infer a centerline from them. The draft annotation convention is documented in [the script instructions](GLYPHS_EXPORT_SCRIPT.md); its native round trip passed qualification.
 
 Do not expand the centerlines into thick outlines before PlotFont export. Conventional outline-font export can give application-dependent results for open contours. Read geometry directly from the editable source rather than using an OTF/TTF round trip to preserve pen paths. The [Glyphs discussion on unclosed outlines](https://forum.glyphsapp.com/t/export-a-singleline-font-with-unclosed-outlines/24814) explains that open/closed behavior depends on the application interpreting compiled outlines.
 
 ## Export contract
 
-The script implements the selected-master portion of this contract; native acceptance checks remain pending:
+The script implements the selected-master portion of this contract; native acceptance checks passed for the Hershey source and dedicated fixtures:
 
 1. Select one master or resolved static instance explicitly. Do not export every master layer as another stroke.
 2. Work on a copy of the layer. Resolve components and their transforms; fail on unresolved references, cycles, or unsupported shapes.
@@ -25,9 +25,9 @@ The script implements the selected-master portion of this contract; native accep
 7. Validate the complete file, report diagnostics with glyph and path names, and write `.plotfont.json` deterministically.
 8. Render a specimen to SVG for comparison with the source before publishing an export.
 
-The exporter should also preserve the author's path order as the `strokes` array and carry supported glyph user data, named anchors, and explicit entry/exit endpoint annotations. The Glyphs user-data convention is specified in the script instructions and tested with adapter doubles; native storage/export verification is pending. Do not infer joining intent from nearby points or anchor names. When resolving components or changing path indices, remap endpoint references and validate them against the final exported geometry; report references that no longer identify permitted endpoints.
+The exporter should also preserve the author's path order as the `strokes` array and carry supported glyph user data, named anchors, and explicit entry/exit endpoint annotations. The Glyphs user-data convention is specified in the script instructions and tested with adapter doubles; native anchors, endpoint metadata, and JSON-compatible user data passed qualification. Do not infer joining intent from nearby points or anchor names. When resolving components or changing path indices, remap endpoint references and validate them against the final exported geometry; report references that no longer identify permitted endpoints.
 
-The script can be inspected and installed for qualification, but this project has not yet executed it in Glyphs. Glyphs API usage was checked against the official SDK documentation; offline tests do not establish native runtime compatibility. The official [export documentation](https://handbook.glyphsapp.com/export/) describes existing export options; it does not establish native PlotFont support.
+The script can be inspected and installed for qualification, but this project has executed it on a copy in Glyphs 4.1. Glyphs API usage was checked against the official SDK documentation; portable tests complement the recorded native qualification. The official [export documentation](https://handbook.glyphsapp.com/export/) describes existing export options; it does not establish native PlotFont support.
 
 ## Converting a PlotFont to a drawing
 
