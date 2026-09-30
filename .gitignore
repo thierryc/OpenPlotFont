@@ -13,3 +13,4 @@ output/
 *.log
 *.glyphsbackup
 *.egg-info/
+**/*.glyphspackage/UIState.plist

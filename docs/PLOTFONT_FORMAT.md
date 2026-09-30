@@ -192,7 +192,7 @@ Each anchor has a unique nonempty `name`, finite `x` and `y` coordinates in font
 
 Glyph, anchor, and connection-point `userData` are JSON objects whose values may be any JSON value. Use namespaced keys, such as `org.plotfont.authoring`, to avoid collisions. Store notes, tags, source point identifiers, or editor settings here. Preserve these objects when importing, editing, and exporting; consumers may ignore unfamiliar keys. User data must never override standard geometry, order, spacing, or connection semantics, contain executable instructions, or control a machine. Geometry-affecting features need defined versioned fields rather than private user-data conventions.
 
-These optional metadata fields are supported by the validator and reference renderer. The Glyphs adapter preserves them in offline tests; native export verification remains pending.
+These optional metadata fields are supported by the validator and reference renderer. The Glyphs adapter preserves them in native Glyphs 4.1 qualification and portable regression tests.
 
 ## Spacing and kerning
 
