@@ -4,7 +4,7 @@ The format is draft `0.2`; file names end in `.plotfont.json`. Glyphs 4 and late
 
 | Milestone | Deliverables and acceptance | Current evidence / remaining work |
 | --- | --- | --- |
-| M1 — Foundation | Required metadata, compatibility rules, MIT for original works, separate imported-font terms, clean public foundation | Documentation and examples are consistent; publication targets `thierryc/PlotFont`. |
+| M1 — Foundation | Required metadata, compatibility rules, MIT for original works, separate imported-font terms, clean public foundation | Complete: documentation and examples validated and published at [thierryc/PlotFont](https://github.com/thierryc/PlotFont), with a clean initial public history. |
 | M2 — Format validation | Schema and semantic checks for ordered strokes, curves, fills/holes, mappings, spacing, anchors, JSON user data, and endpoints | Implemented. Fixtures cover malformed geometry, versions, and invalid references. Physical tool settings remain outside font data. |
 | M3 — Native Hershey port | Roman Simplex in a new local Glyphs source; exact upstream revision, attribution, mappings, stroke order, direction, and spacing | Pinned data and reproducible JSON import are ready. Native `.glyphs` creation is blocked by the verified MCP interface lacking a new-font action. No existing user font was used as a target. |
 | M4 — Glyphs export | Script exporting one selected master or resolved static instance, validated before saving; compare source/export | Selected-master script implemented and tested offline. Native Hershey export/comparison awaits M3. Resolved instance interpolation and plug-in packaging are deferred. |
