@@ -169,6 +169,8 @@ def export_font(font, master_id, node_types):
                   "capHeight": float(master.capHeight), "xHeight": float(master.xHeight), "lineGap": meta.get("lineGap", 0)},
               "missingGlyph": meta.get("missingGlyph", ".notdef"), "glyphs": glyphs, "kerning": pairs,
               "metadata": meta.get("metadata", {})}
+    if not isinstance(result["metadata"], dict):
+        raise ValidationError("org.plotfont.font.metadata must be an object")
     # Copy before adding export diagnostics; never mutate font.userData.
     result = json.loads(json.dumps(result, allow_nan=False))
     result["metadata"]["glyphsMasterId"] = master_id

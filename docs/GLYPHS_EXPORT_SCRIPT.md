@@ -52,10 +52,18 @@ This example assumes a single open stroke. Entry must reference the first operat
 - Fractional coordinates and advances retained; no physical scaling, flattening, stroke expansion, or fill trajectory generation.
 - Group kerning resolved into glyph pairs, with stored glyph exceptions preceding class values. Native exception behavior still needs qualification.
 - All enabled glyphs and the fallback exported. Active OpenType features produce warnings; they are not executed or serialized as rules.
-- Semantic validation completes before the output file is opened. Native file-write failures are reported by Python; choose a writable destination.
+- Semantic validation and UTF-8 encoding complete before publication. A same-directory temporary file is flushed and atomically linked to the new destination; failures remove staging files. Existing files and symlinks are preserved. Filesystems must support hard links; otherwise publication fails clearly. Native runtime qualification is still pending.
 
 ## API evidence and acceptance
 
 API choices were checked against the official [Glyphs SDK Python documentation](https://docu.glyphsapp.com/) and SDK revision `0f5422db727b78cb42abfb386f33ae0b382b0c4d`, particularly `GSLayer.copyDecomposedLayer`, `GSNode.type`, `GSGlyph.unicodes`, user data, anchors, and `GSFont.kerningForPair`. Node types use imported SDK constants.
 
 The connected application reported Glyphs 4.1 build 4107 and native-script support. Its MCP workflow requires an existing document binding and provides no standalone new-font action. Therefore the native Hershey port and exporter round trip remain pending. Offline tests establish adapter behavior, not Objective-C bridge behavior or successful native export. Before claiming support, follow [the next acceptance steps](ROADMAP.md#next-acceptance-steps).
+
+## Compare a source reference and export
+
+```sh
+python3 -m plotfont compare fonts/hershey-roman-simplex/HersheyRomanSimplex.plotfont.json output/native.plotfont.json
+```
+
+The comparison validates both files, then checks identity, metrics, mapping order, every operation and coordinate, advances, kerning, anchors, connections, user data, and provenance. Omitted stroke kinds and empty optional glyph metadata are normalized. Only `glyphsMasterId` and `exportWarnings` diagnostics are excluded. Numeric comparison uses absolute tolerance `1e-9` font units. A mismatch reports its JSON path.

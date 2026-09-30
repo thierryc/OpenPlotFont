@@ -76,6 +76,16 @@ class AdapterTests(unittest.TestCase):
         with self.assertRaisesRegex(ValidationError,'master does not exist'):
             export_font(font,'missing',{'line':'line'})
 
+    def test_invalid_font_metadata_and_feature_warnings(self):
+        font = font_fixture()
+        font.userData['org.plotfont.font']['metadata'] = []
+        with self.assertRaisesRegex(ValidationError, 'metadata must be an object'):
+            export_font(font, 'master', {'line':'line'})
+        font = font_fixture()
+        font.features = [Obj(name='liga', disabled=False), Obj(name='dlig', disabled=True)]
+        result = export_font(font, 'master', {'line':'line'})
+        self.assertEqual(result['metadata']['exportWarnings'], ['OpenType features not executed: liga'])
+
     def test_binary_userdata_is_actionable(self):
         with self.assertRaisesRegex(ValidationError,'binary'):
             plain({'image':b'cannot serialize'})

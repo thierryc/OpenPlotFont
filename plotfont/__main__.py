@@ -6,13 +6,9 @@ from pathlib import Path
 
 from . import load, render_svg, ValidationError
 from .hershey import import_roman_simplex
+from .storage import write_output, write_font
+from .comparison import compare_fonts
 
-
-def write(path, content, force=False):
-    destination = Path(path)
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    with destination.open("w" if force else "x", encoding="utf-8") as stream:
-        stream.write(content)
 
 
 def main():
@@ -20,6 +16,9 @@ def main():
     sub = parser.add_subparsers(dest="command", required=True)
     check = sub.add_parser("validate")
     check.add_argument("fonts", nargs="+")
+    compare = sub.add_parser("compare")
+    compare.add_argument("reference")
+    compare.add_argument("export")
     render = sub.add_parser("render")
     render.add_argument("font")
     render.add_argument("text")
@@ -37,11 +36,14 @@ def main():
             for path in args.fonts:
                 font = load(path)
                 print(f"{path}: valid PlotFont 0.2 ({len(font['glyphs'])} glyphs)")
+        elif args.command == "compare":
+            compare_fonts(load(args.reference), load(args.export))
+            print("Source and export semantics match.")
         elif args.command == "render":
-            write(args.output, render_svg(load(args.font), args.text, args.cap_height, join=args.join), args.force)
+            write_output(args.output, render_svg(load(args.font), args.text, args.cap_height, join=args.join), force=args.force, create_parents=True)
         else:
-            write(args.output, json.dumps(import_roman_simplex(args.source), indent=2, ensure_ascii=False, allow_nan=False) + "\n", args.force)
-    except (ValidationError, OSError) as error:
+            write_font(args.output, import_roman_simplex(args.source), force=args.force, create_parents=True)
+    except (ValidationError, OSError, UnicodeError) as error:
         parser.exit(1, f"plotfont: {error}\n")
 
 

@@ -12,6 +12,7 @@ from GlyphsApp import Glyphs, LINE, CURVE, QCURVE, OFFCURVE
 # Run this workspace script in Glyphs 4. Keep its sibling package in place.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from plotfont.glyphs_export import export_font
+from plotfont.storage import write_font
 
 
 def main():
@@ -31,9 +32,7 @@ def main():
     for warning in data["metadata"]["exportWarnings"]:
         print("PlotFont warning:", warning)
     # Existing output is deliberately preserved; change destination for another export.
-    encoded = json.dumps(data, indent=2, ensure_ascii=False, allow_nan=False) + "\n"
-    with Path(destination).open("x", encoding="utf-8") as stream:
-        stream.write(encoded)
+    write_font(destination, data)
     print("Exported", len(data["glyphs"]), "glyphs to", destination)
 
 
