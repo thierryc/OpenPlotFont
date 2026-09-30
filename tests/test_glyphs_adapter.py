@@ -9,6 +9,12 @@ from plotfont import ValidationError
 
 
 class GlyphList(list):
+    def __delitem__(self, key):
+        if isinstance(key, str):
+            self.remove(self[key])
+        else:
+            super().__delitem__(key)
+
     def __getitem__(self, key):
         if isinstance(key, str):
             return next((g for g in self if g.name == key), None)
@@ -85,6 +91,19 @@ class AdapterTests(unittest.TestCase):
         font.features = [Obj(name='liga', disabled=False), Obj(name='dlig', disabled=True)]
         result = export_font(font, 'master', {'line':'line'})
         self.assertEqual(result['metadata']['exportWarnings'], ['OpenType features not executed: liga'])
+
+    def test_native_none_unicode_is_unencoded(self):
+        font = font_fixture()
+        font.glyphs[0].unicodes = None
+        self.assertEqual(export_font(font, 'master', {'line':'line'})['glyphs'][0]['unicodes'], [])
+
+    def test_native_string_master_id_is_normalized(self):
+        class NativeString(str):
+            pass
+        font = font_fixture()
+        font.masters[0].id = NativeString('master')
+        result = export_font(font, font.masters[0].id, {'line':'line'})
+        self.assertIs(type(result['metadata']['glyphsMasterId']), str)
 
     def test_binary_userdata_is_actionable(self):
         with self.assertRaisesRegex(ValidationError,'binary'):

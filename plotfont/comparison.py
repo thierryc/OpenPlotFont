@@ -14,7 +14,7 @@ def compare_fonts(expected, actual, *, tolerance=1e-9):
         result = {k: font[k] for k in ('format', 'version', 'id', 'familyName', 'styleName', 'unitsPerEm', 'metrics', 'missingGlyph')}
         result['kerning'] = font.get('kerning', [])
         result['glyphs'] = []
-        for glyph in font['glyphs']:
+        for glyph in sorted(font['glyphs'], key=lambda g: g['name']):
             record = dict(glyph)
             record['strokes'] = [{**op, 'kind': op.get('kind', 'stroke')} for op in glyph['strokes']]
             for optional, default in (('anchors', []), ('userData', {}), ('connections', {})):

@@ -1,0 +1,32 @@
+{
+glyphname = T;
+layers = (
+{
+layerId = "51A37294-7DB0-4D17-8AEF-A1FA6FE6A775";
+shapes = (
+{
+closed = 0;
+nodes = (
+(400,1050,l),
+(400,0,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(50,1050,l),
+(750,1050,l),
+);
+},
+);
+width = 800;
+},
+);
+unicode = 84;
+userData = {
+org.plotfont.hershey = {
+row = 52;
+sourceId = 520;
+};
+};
+}

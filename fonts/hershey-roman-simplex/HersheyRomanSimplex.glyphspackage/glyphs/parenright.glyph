@@ -1,0 +1,33 @@
+{
+glyphname = parenright;
+layers = (
+{
+layerId = "51A37294-7DB0-4D17-8AEF-A1FA6FE6A775";
+shapes = (
+{
+closed = 0;
+nodes = (
+(150,1250,l),
+(250,1150,l),
+(350,1000,l),
+(450,800,l),
+(500,550,l),
+(500,350,l),
+(450,100,l),
+(350,-100,l),
+(250,-250,l),
+(150,-350,l),
+);
+},
+);
+width = 700;
+},
+);
+unicode = 41;
+userData = {
+org.plotfont.hershey = {
+row = 9;
+sourceId = 722;
+};
+};
+}

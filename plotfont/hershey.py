@@ -10,6 +10,14 @@ SOURCE_SHA256 = "8718fb129c0f6bce89c84fe41bc467e39534d215a6f7c3220cc5789a8a7d861
 SOURCE = "https://github.com/kamalmostafa/hershey-fonts"
 
 
+ASCII_NAMES = dict(zip(range(32, 65), (
+    'space exclam quotedbl numbersign dollar percent ampersand quotesingle parenleft parenright '
+    'asterisk plus comma hyphen period slash zero one two three four five six seven eight nine '
+    'colon semicolon less equal greater question at').split()))
+ASCII_NAMES.update({91:'bracketleft',92:'backslash',93:'bracketright',94:'asciicircum',95:'underscore',96:'grave',
+                    123:'braceleft',124:'bar',125:'braceright',126:'asciitilde'})
+ASCII_NAMES.update({u: chr(u) for u in (*range(65,91), *range(97,123))})
+
 def parse_jhf(source):
     records = []
     for row, line in enumerate(source.splitlines()):
@@ -45,14 +53,14 @@ def import_roman_simplex(path):
     records = parse_jhf(raw.decode("ascii"))
     if len(records) != 96:
         raise ValidationError("Roman Simplex source must contain all 96 records")
-    # Source capitals run y=-12..9. Baseline 9; exactly 1000/21 font units per coordinate.
-    scale = 1000 / 21
+    # Source capitals run y=-12..9. Baseline 9; exactly 50 font units per coordinate; native saves stay integral.
+    scale = 50
     glyphs = [{"name": ".notdef", "unicodes": [], "advanceWidth": 600,
                "strokes": [{"closed": True, "commands": [["M", 50, 0], ["L", 50, 1000], ["L", 550, 1000], ["L", 550, 0]]}]}]
     for row, record in enumerate(records):
         code = row + 32
         glyphs.append({
-            "name": "space" if code == 32 else (f"uni{code:04X}" if code <= 126 else "hershey.extra.95"),
+            "name": ASCII_NAMES[code] if code <= 126 else "hershey.extra.95",
             "unicodes": [f"{code:04X}"] if code <= 126 else [],
             "advanceWidth": (record["right"] - record["left"]) * scale,
             "strokes": [{"closed": False, "commands": [
@@ -62,8 +70,8 @@ def import_roman_simplex(path):
         })
     return validate({
         "format": "PlotFont", "version": "0.2", "id": "hershey-roman-simplex-regular",
-        "familyName": "Hershey Roman Simplex", "styleName": "Regular", "unitsPerEm": 1400,
-        "metrics": {"ascender": 1200, "descender": -400, "capHeight": 1000, "xHeight": 14 * scale, "lineGap": 200},
+        "familyName": "Hershey Roman Simplex", "styleName": "Regular", "unitsPerEm": 1470,
+        "metrics": {"ascender": 1260, "descender": -420, "capHeight": 1050, "xHeight": 14 * scale, "lineGap": 210},
         "missingGlyph": ".notdef", "glyphs": glyphs, "kerning": [],
         "metadata": {"source": SOURCE, "sourceRevision": REVISION,
                      "sourceFile": "hershey-fonts/rowmans.jhf", "sourceSha256": hashlib.sha256(raw).hexdigest(),

@@ -18,7 +18,11 @@ def main():
     if int(Glyphs.versionNumber) < 4 or Glyphs.font is None:
         raise RuntimeError('Open the saved blank project font in Glyphs 4 or later.')
     font = Glyphs.font
-    destination = ROOT / 'fonts/hershey-roman-simplex/HersheyRomanSimplex.glyphs'
+    destinations = [ROOT / ('fonts/hershey-roman-simplex/HersheyRomanSimplex' + extension)
+                    for extension in ('.glyphs', '.glyphspackage')]
+    destination = next((p for p in destinations if str(p) == str(font.filepath)), None)
+    if destination is None:
+        raise RuntimeError('Open the saved Hershey Roman Simplex project source.')
     reference = populate_hershey(font, ROOT / 'vendor/hershey/rowmans.jhf', destination,
                                  glyph_type=GSGlyph, layer_type=GSLayer, path_type=GSPath,
                                  node_type=GSNode, line_type=LINE)

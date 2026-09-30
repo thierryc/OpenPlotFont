@@ -26,7 +26,7 @@ The minimal example is [minimal.plotfont.json](../examples/minimal.plotfont.json
 | `unitsPerEm` | positive integer | Font coordinate scale |
 | `metrics` | object | `ascender`, `descender`, `capHeight`, `xHeight`, `lineGap` |
 | `missingGlyph` | string | Name of an existing fallback glyph |
-| `glyphs` | array | Ordered collection of unique glyph records |
+| `glyphs` | array | Collection of unique glyph records; collection order is for editing, not drawing |
 | `kerning` | array, optional | Explicit glyph-name pairs and adjustments |
 | `metadata` | object, optional | Author, provenance, copyright, license, source details |
 

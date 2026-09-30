@@ -1,0 +1,90 @@
+{
+.appVersion = "4107";
+.formatVersion = 4;
+date = "2026-09-30 18:22:58 +0000";
+fontMaster = (
+{
+id = "51A37294-7DB0-4D17-8AEF-A1FA6FE6A775";
+metricValues = (
+{
+over = 16;
+pos = 1260;
+},
+{
+over = 16;
+pos = 1050;
+},
+{
+over = 16;
+pos = 700;
+},
+{
+over = -16;
+},
+{
+over = -16;
+pos = -420;
+},
+{
+},
+);
+name = Regular;
+},
+);
+metrics = (
+{
+type = ascender;
+},
+{
+type = "cap height";
+},
+{
+type = "x-height";
+},
+{
+type = baseline;
+},
+{
+type = descender;
+},
+{
+type = "italic angle";
+},
+);
+properties = (
+{
+key = familyNames;
+values = (
+{
+language = dflt;
+value = "Hershey Roman Simplex";
+},
+);
+},
+);
+unitsPerEm = 1470;
+userData = {
+org.plotfont.font = {
+id = "hershey-roman-simplex-regular";
+lineGap = 210;
+metadata = {
+attribution = "Hershey glyphs: Dr. A. V. Hershey; JHF data representation: James Hurt, Cognition, Inc.";
+coordinateTransform = {
+scale = 50;
+sourceBaselineY = 9;
+sourceCapTopY = -12;
+};
+license = "Hershey permissive terms; see vendor/hershey/NOTICE.txt; not MIT";
+mapping = "Rows 0–94 map to U+0020–U+007E; row 95 retained unencoded; .notdef is original PlotFont artwork.";
+source = "https://github.com/kamalmostafa/hershey-fonts";
+sourceFile = "hershey-fonts/rowmans.jhf";
+sourceRevision = 1356bf2f83d380fcef68c887e88675eb9d445d86;
+sourceSha256 = 8718fb129c0f6bce89c84fe41bc467e39534d215a6f7c3220cc5789a8a7d8618;
+};
+missingGlyph = .notdef;
+styleName = Regular;
+};
+};
+versionMajor = 1;
+versionMinor = 0;
+}

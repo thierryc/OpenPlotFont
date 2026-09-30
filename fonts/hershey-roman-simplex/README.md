@@ -1,6 +1,6 @@
 # Hershey Roman Simplex preparation
 
-[HersheyRomanSimplex.plotfont.json](HersheyRomanSimplex.plotfont.json) is a reproducible JSON preparation from pinned upstream stroke data. It is **not a Glyphs-generated export**. The editable `.glyphs` port remains pending a new-font capability in Glyphs MCP; no native source file is included yet.
+[HersheyRomanSimplex.plotfont.json](HersheyRomanSimplex.plotfont.json) is a reproducible JSON preparation from pinned upstream stroke data. It is **not a Glyphs-generated export**. The editable [Glyphs package](HersheyRomanSimplex.glyphspackage/fontinfo.plist) was populated and saved through Glyphs MCP in Glyphs 4.1 build 4107. All 97 glyphs passed native source/export comparison and saved-file geometry tests.
 
 ## Source, mapping, and rights
 
@@ -14,7 +14,7 @@ Hershey geometry retains the upstream acknowledgment and redistribution terms, i
 
 JHF stores a five-character identifier, three-character pair count, a left/right bearing pair, and coordinate pairs measured relative to ASCII `R`. The pair ` R` lifts the pen. Every source run becomes a distinct open stroke; even coincident endpoints remain open unless the source explicitly defines closure. Point order and direction are unchanged.
 
-The normalization uses scale `1000 / 21`, source baseline Y = 9, and cap top Y = −12:
+The normalization uses scale `50`, source baseline Y = 9, and cap top Y = −12:
 
 ```text
 x_font = (x_source − left_bearing) × scale
@@ -22,7 +22,7 @@ y_font = (9 − y_source) × scale
 advanceWidth = (right_bearing − left_bearing) × scale
 ```
 
-Upward Y, baseline zero, cap height 1000, units per em 1400. Fractional positions and advances are preserved. Selected line metrics are ascender 1200, descender −400, x-height `14 × scale`, and line gap 200; they are preparation choices, not upstream font metrics. No kerning or invented joining annotations are added.
+Upward Y, baseline zero, cap height 1050, units per em 1470. All Hershey positions and advances are integral with this scale. Selected line metrics are ascender 1260, descender −420, x-height `14 × scale`, and line gap 210; they are preparation choices, not upstream font metrics. No kerning or invented joining annotations are added.
 
 ## Reproduce and verify
 
@@ -31,8 +31,14 @@ python3 -m plotfont import-hershey vendor/hershey/rowmans.jhf -o output/HersheyR
 python3 -m plotfont validate output/HersheyRomanSimplex.plotfont.json
 ```
 
-Tests compare every prepared path, point, advance, source identifier, and mapping with the pinned data. Reference specimens cover uppercase/lowercase, punctuation, and numerals. macOS Quick Look interpreted the SVG successfully. Native Glyphs creation, reopen verification, and source-to-export comparisons are the remaining acceptance work.
+Tests compare every prepared path, point, advance, source identifier, and mapping with the pinned data. Reference specimens cover uppercase/lowercase, punctuation, and numerals. macOS Quick Look interpreted the SVG successfully. Native population and source-to-export comparison passed. Saved-package tests check every node, path, mapping, advance, metric, and source record.
 
 ## Prepared native import
 
-[Import Hershey Roman Simplex.py](../../scripts/Import%20Hershey%20Roman%20Simplex.py) populates only an empty, single-master font already saved at this directory's `HersheyRomanSimplex.glyphs` path. It rejects any other document and refuses to overwrite glyphs. It restores the native layer rounding flags after retaining fractional geometry, then compares the exported result against every pinned source record. It neither creates nor saves a document. Native execution is pending; tests use SDK-shaped doubles.
+[Import Hershey Roman Simplex.py](../../scripts/Import%20Hershey%20Roman%20Simplex.py) populates only an empty, single-master font already saved at this directory's `HersheyRomanSimplex.glyphs` or `HersheyRomanSimplex.glyphspackage` path. Verified blank template glyphs may be replaced; existing artwork and glyph metadata are rejected. It rejects any other document and refuses to overwrite glyphs. It restores the native layer rounding flags after retaining fractional geometry, then compares the exported result against every pinned source record. It neither creates nor saves a document. The same adapter was qualified through native MCP scripts. Regression tests additionally use SDK-shaped doubles.
+
+Glyph names use the conventional ASCII names used by Glyphs (`A`, `a`, `zero`, `exclam`, etc.). These names are project mapping choices; upstream JHF supplies numeric identifiers rather than glyph names. Native font collection order may differ from source row order; `org.plotfont.hershey.row` retains the exact source row. Drawing order remains each glyph's path order. Both `.glyphs` and `.glyphspackage` authoring sources are supported.
+
+## Native storage precision
+
+Glyphs 4.1 saves coordinates with three decimal places. The initial `1000 / 21` normalization introduced up to `0.0004762` font-unit error on save. The first unreleased asset now uses 50 units per JHF coordinate and cap height 1050, preserving the same physical Hershey proportions while saving every point exactly. This changes the asset's font-unit scale, not draft format `0.2`. Use a file digest for reproducible font references. Arbitrary fractional authoring remains subject to the editor's native save precision; the exporter preserves the in-memory values it receives.

@@ -129,7 +129,7 @@ def export_font(font, master_id, node_types):
                     raise ValidationError(f"{glyph.name} path {path_index}: unsupported native node type")
                 nodes.append((kind, float(node.position.x), float(node.position.y)))
             paths.append({"closed": bool(path.closed), "commands": node_commands(nodes, bool(path.closed))})
-        record = {"name": glyph.name, "unicodes": [f"{int(u, 16):04X}" for u in glyph.unicodes],
+        record = {"name": glyph.name, "unicodes": [f"{int(u, 16):04X}" for u in (glyph.unicodes or [])],
                   "advanceWidth": float(layer.width), "strokes": operations_from_paths(paths, annotations.get("operations"))}
         if data:
             record["userData"] = data
@@ -173,6 +173,6 @@ def export_font(font, master_id, node_types):
         raise ValidationError("org.plotfont.font.metadata must be an object")
     # Copy before adding export diagnostics; never mutate font.userData.
     result = json.loads(json.dumps(result, allow_nan=False))
-    result["metadata"]["glyphsMasterId"] = master_id
+    result["metadata"]["glyphsMasterId"] = str(master_id)
     result["metadata"]["exportWarnings"] = (["OpenType features not executed: " + ", ".join(active_features)] if active_features else [])
     return validate(result)

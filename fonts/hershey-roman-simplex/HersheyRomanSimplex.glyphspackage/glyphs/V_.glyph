@@ -1,0 +1,32 @@
+{
+glyphname = V;
+layers = (
+{
+layerId = "51A37294-7DB0-4D17-8AEF-A1FA6FE6A775";
+shapes = (
+{
+closed = 0;
+nodes = (
+(50,1050,l),
+(450,0,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(850,1050,l),
+(450,0,l),
+);
+},
+);
+width = 900;
+},
+);
+unicode = 86;
+userData = {
+org.plotfont.hershey = {
+row = 54;
+sourceId = 522;
+};
+};
+}

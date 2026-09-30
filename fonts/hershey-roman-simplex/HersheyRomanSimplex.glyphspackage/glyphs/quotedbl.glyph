@@ -1,0 +1,32 @@
+{
+glyphname = quotedbl;
+layers = (
+{
+layerId = "51A37294-7DB0-4D17-8AEF-A1FA6FE6A775";
+shapes = (
+{
+closed = 0;
+nodes = (
+(200,1050,l),
+(200,700,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(600,1050,l),
+(600,700,l),
+);
+},
+);
+width = 800;
+},
+);
+unicode = 34;
+userData = {
+org.plotfont.hershey = {
+row = 2;
+sourceId = 717;
+};
+};
+}

@@ -66,4 +66,4 @@ The connected application reported Glyphs 4.1 build 4107 and native-script suppo
 python3 -m plotfont compare fonts/hershey-roman-simplex/HersheyRomanSimplex.plotfont.json output/native.plotfont.json
 ```
 
-The comparison validates both files, then checks identity, metrics, mapping order, every operation and coordinate, advances, kerning, anchors, connections, user data, and provenance. Omitted stroke kinds and empty optional glyph metadata are normalized. Only `glyphsMasterId` and `exportWarnings` diagnostics are excluded. Numeric comparison uses absolute tolerance `1e-9` font units. A mismatch reports its JSON path.
+The comparison validates both files, then checks identity, metrics, mappings, every operation and coordinate, advances, kerning, anchors, connections, user data, and provenance. Glyph collection order has no drawing semantics and is compared by name; operation, contour, command, and mapping order remain significant. Omitted stroke kinds and empty optional glyph metadata are normalized. Only `glyphsMasterId` and `exportWarnings` diagnostics are excluded. Numeric comparison uses absolute tolerance `1e-9` font units. A mismatch reports its JSON path.

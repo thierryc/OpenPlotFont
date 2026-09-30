@@ -13,6 +13,16 @@ from test_glyphs_adapter import GlyphList
 
 
 class Layers(list):
+    def __setitem__(self, key, value):
+        if isinstance(key, str):
+            value.layerId = key
+            for i, layer in enumerate(self):
+                if layer.layerId == key:
+                    return super().__setitem__(i, value)
+            self.append(value)
+        else:
+            super().__setitem__(key, value)
+
     def __getitem__(self, key):
         return next((x for x in self if x.layerId == key), None) if isinstance(key, str) else super().__getitem__(key)
 
@@ -62,6 +72,36 @@ class NativeImportTests(unittest.TestCase):
                 self.assertFalse(glyph.layers['master'].temporarilyDisableRounding)
             with self.assertRaisesRegex(ValidationError, 'empty font'):
                 populate(font, path)
+
+    def test_blank_native_template_and_truthy_empty_proxies(self):
+        class Proxy(list):
+            def __bool__(self):
+                return True
+        font = fixture('/project/font.glyphspackage')
+        glyph = Glyph('A')
+        layer = Layer()
+        layer.shapes = Proxy()
+        layer.anchors = Proxy()
+        layer.hasBackground = lambda: False
+        layer.layerId = 'master'
+        glyph.layers.append(layer)
+        font.glyphs.append(glyph)
+        reference = populate(font, '/project/font.glyphspackage')
+        self.assertTrue(compare_fonts(reference, export_font(font, 'master', {'line':'line'})))
+        self.assertEqual(len(font.glyphs), 97)
+        self.assertEqual(len(font.glyphs['A'].layers), 1)
+
+    def test_nonempty_template_is_preserved(self):
+        font = fixture('/project/font.glyphspackage')
+        glyph = Glyph('A')
+        layer = Layer()
+        layer.shapes.append(Obj(nodes=[]))
+        glyph.layers.append(layer)
+        font.glyphs.append(glyph)
+        with self.assertRaisesRegex(ValidationError, 'existing artwork'):
+            populate(font, '/project/font.glyphspackage')
+        self.assertEqual(font.glyphs[0].name, 'A')
+        self.assertEqual(len(layer.shapes), 1)
 
     def test_reject_unrelated_document_without_changes(self):
         font = fixture('/some/other/font.glyphs')

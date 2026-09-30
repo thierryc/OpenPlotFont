@@ -1,0 +1,25 @@
+{
+glyphname = underscore;
+layers = (
+{
+layerId = "51A37294-7DB0-4D17-8AEF-A1FA6FE6A775";
+shapes = (
+{
+closed = 0;
+nodes = (
+(0,-100,l),
+(800,-100,l),
+);
+},
+);
+width = 800;
+},
+);
+unicode = 95;
+userData = {
+org.plotfont.hershey = {
+row = 63;
+sourceId = 999;
+};
+};
+}

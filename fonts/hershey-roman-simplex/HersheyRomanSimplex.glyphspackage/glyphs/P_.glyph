@@ -1,0 +1,40 @@
+{
+glyphname = P;
+layers = (
+{
+layerId = "51A37294-7DB0-4D17-8AEF-A1FA6FE6A775";
+shapes = (
+{
+closed = 0;
+nodes = (
+(200,1050,l),
+(200,0,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(200,1050,l),
+(650,1050,l),
+(800,1000,l),
+(850,950,l),
+(900,850,l),
+(900,700,l),
+(850,600,l),
+(800,550,l),
+(650,500,l),
+(200,500,l),
+);
+},
+);
+width = 1050;
+},
+);
+unicode = 80;
+userData = {
+org.plotfont.hershey = {
+row = 48;
+sourceId = 516;
+};
+};
+}

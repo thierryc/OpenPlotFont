@@ -151,7 +151,7 @@ class HersheyTests(unittest.TestCase):
         self.assertEqual(len(font["glyphs"]), 97)
         self.assertEqual(sum(len(g["unicodes"]) for g in font["glyphs"]), 95)
         self.assertEqual(font["glyphs"][-1]["unicodes"], [])
-        scale = 1000/21
+        scale = 50
         for record, glyph in zip(records,font["glyphs"][1:]):
             self.assertAlmostEqual(glyph["advanceWidth"] / scale,record["right"]-record["left"])
             for stroke, op in zip(record["strokes"],glyph["strokes"]):

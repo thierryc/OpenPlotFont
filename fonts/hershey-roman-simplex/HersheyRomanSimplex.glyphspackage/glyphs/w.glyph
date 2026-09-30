@@ -1,0 +1,46 @@
+{
+glyphname = w;
+layers = (
+{
+layerId = "51A37294-7DB0-4D17-8AEF-A1FA6FE6A775";
+shapes = (
+{
+closed = 0;
+nodes = (
+(150,700,l),
+(350,0,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(550,700,l),
+(350,0,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(550,700,l),
+(750,0,l),
+);
+},
+{
+closed = 0;
+nodes = (
+(950,700,l),
+(750,0,l),
+);
+},
+);
+width = 1100;
+},
+);
+unicode = 119;
+userData = {
+org.plotfont.hershey = {
+row = 87;
+sourceId = 623;
+};
+};
+}

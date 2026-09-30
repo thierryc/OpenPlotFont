@@ -11,8 +11,19 @@ def populate_hershey(font, source, expected_destination, *, glyph_type, layer_ty
     actual = getattr(font, 'filepath', None)
     if not actual or Path(str(actual)).resolve() != Path(expected_destination).resolve():
         raise ValidationError('Hershey import: document must be the exact saved project destination')
-    if len(font.glyphs) != 0 or len(font.masters) != 1:
-        raise ValidationError('Hershey import: an empty font with exactly one master is required; existing glyphs are never replaced')
+    if len(font.masters) != 1:
+        raise ValidationError('Hershey import: an empty font with exactly one master is required')
+    placeholders = list(font.glyphs)
+    for glyph in placeholders:
+        if len(glyph.userData):
+            raise ValidationError('Hershey import: empty font required; existing glyph metadata is never replaced')
+        for layer in glyph.layers:
+            background = getattr(layer, 'hasBackground', False)
+            background = background() if callable(background) else background
+            if (len(layer.shapes) or len(layer.anchors) or len(getattr(layer, 'hints', []))
+                    or len(getattr(layer, 'guides', [])) or getattr(layer, 'backgroundImage', None)
+                    or background):
+                raise ValidationError('Hershey import: empty font required; existing artwork is never replaced')
     data = import_roman_simplex(source)
     master = font.masters[0]
     prepared = []
@@ -41,8 +52,10 @@ def populate_hershey(font, source, expected_destination, *, glyph_type, layer_ty
                 for command in operation['commands']:
                     path.nodes.append(node_type(tuple(command[1:]), type=line_type))
                 layer.shapes.append(path)
-            glyph.layers.append(layer)
+            glyph.layers[master.id] = layer
             prepared.append(glyph)
+        for placeholder in placeholders:
+            del font.glyphs[placeholder.name]
         font.familyName = data['familyName']
         font.upm = data['unitsPerEm']
         master.name = data['styleName']
