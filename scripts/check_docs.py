@@ -7,6 +7,8 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 errors = []
 for source in ROOT.rglob('*.md'):
+    if source.relative_to(ROOT).parts[0] == 'output':
+        continue
     if any(part.startswith('.') for part in source.relative_to(ROOT).parts):
         continue
     content = source.read_text(encoding='utf-8')
