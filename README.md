@@ -37,9 +37,12 @@ Review the [SVG specimens](examples/specimens/README.md). See the [milestone pla
 
 Draft 0.3 adds self-contained OpenType feature data, HarfBuzz shaping, positioned-run JSON and shaped SVG rendering. The [original layout demo](fonts/layout-demo/README.md) includes an editable Glyphs source, portable compiled fixture and [native export](examples/layout-demo-native.plotfont.json). The native compiler omits this demo's Latin `curs` rule; its export preserves the source and reports that limitation. Cursive positioning is covered by the portable fixture.
 
-The current local font export is `output/PlotFontLayoutDemo.plotfont.json`
-(draft 0.3), matching the retained native example. Superseded generated font
-exports have been removed. Plugin builds live in `output/build/` and current
+The current local font exports in `output/` all use draft 0.3: Roman Simplex,
+Roman Duplex, Roman Triplex, Script Simplex, and the PlotFont layout demo.
+The Hershey files preserve the retained native examples with their format
+version migrated to 0.3; the layout demo retains its compiled layout payload.
+`HERSHEY-NOTICE.txt` accompanies the exported Hershey data. Superseded generated
+font exports have been removed. Plugin builds live in `output/build/` and current
 qualification reports in `output/qualification/`. These generated files are
 ignored by Git; curated examples and compatibility fixtures remain tracked.
 The Glyphs plugin exports geometry-only 0.3; the scripted compiled-layout
