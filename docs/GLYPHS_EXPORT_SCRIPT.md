@@ -2,6 +2,11 @@
 
 Target: Glyphs 4+. [Export PlotFont.py](../scripts/Export%20PlotFont.py) is an implemented workspace script, with its adapter in [glyphs_export.py](../plotfont/glyphs_export.py). It has been executed on a font copy in Glyphs 4.1 build 4107 through MCP. Native source/export and saved-source reopen comparisons passed; SDK-shaped doubles add portable regression coverage. A [geometry export plugin](GLYPHS_EXPORT_PLUGIN.md) is also implemented; app-loader/menu qualification remains pending. A general PlotFont importer is not included.
 
+The current format is **0.3**. Use plugin 0.1.1 for geometry-only 0.3 exports.
+This script produces 0.3 when matching compiled layout bytes are supplied;
+its geometry-only default remains legacy 0.2 for the existing qualification and
+reproduction workflow. Do not equate a 0.3 version field with compiled shaping.
+
 ## Qualification and setup
 
 Keep this repository intact: the script imports its sibling `plotfont` package. Add the script to the Glyphs Scripts menu using a symlink that resolves to this repository script, or run it in the Glyphs scripting environment with its actual file path. Do not copy it alone. Open a project-owned font, select one master, and set the following font user data (using Glyphs' Python scripting environment):

@@ -1,6 +1,6 @@
 # Hershey Roman Simplex preparation
 
-[HersheyRomanSimplex.plotfont.json](HersheyRomanSimplex.plotfont.json) is a reproducible JSON preparation from pinned upstream stroke data. It is **not a Glyphs-generated export**. The editable [Glyphs package](HersheyRomanSimplex.glyphspackage/fontinfo.plist) was populated and saved through Glyphs MCP in Glyphs 4.1 build 4107. All 97 glyphs passed native source/export comparison and saved-file geometry tests.
+[HersheyRomanSimplex.plotfont.json](HersheyRomanSimplex.plotfont.json) is a reproducible JSON preparation from pinned upstream stroke data. It is **not a Glyphs-generated export**. This retained preparation uses legacy draft 0.2; the current format is draft 0.3, and [plugin 0.1.1](../../docs/GLYPHS_EXPORT_PLUGIN.md) exports the editable source as geometry-only 0.3. The editable [Glyphs package](HersheyRomanSimplex.glyphspackage/fontinfo.plist) was populated and saved through Glyphs MCP in Glyphs 4.1 build 4107. All 97 glyphs passed native source/export comparison and saved-file geometry tests.
 
 ## Source, mapping, and rights
 

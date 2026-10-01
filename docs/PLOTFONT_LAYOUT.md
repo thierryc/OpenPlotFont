@@ -123,8 +123,8 @@ open question in its separate project.
 ## Tools and verification
 
 Install optional dependencies with `python3 -m pip install '.[shaping]'`.
-FontTools validates/attaches compiled layout; uharfbuzz executes it. The 0.2
-geometry workflow still uses the standard library. Validation of a 0.3 file
+FontTools validates/attaches compiled layout; uharfbuzz executes it. Geometry-only
+0.3 and legacy 0.2 workflows use the standard library. Validation of a 0.3 file
 containing layout requires FontTools even when selecting simple rendering.
 
 ```sh

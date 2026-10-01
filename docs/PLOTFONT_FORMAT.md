@@ -1,6 +1,12 @@
-# PlotFont format — drafts 0.2 and 0.3
+# PlotFont format — draft 0.3
 
 Status: draft specification, implemented for validation and reference rendering; subject to review before stable release.
+
+Version **0.3** is the current draft and the Glyphs plugin's only output version.
+It supports geometry-only fonts and fonts with optional compiled OpenType
+`layout`. Version 0.2 remains accepted by the reader for existing fonts and
+compatibility fixtures. The geometry rules below apply to both versions unless
+an explicit version restriction is stated.
 
 ## What a PlotFont describes
 
@@ -14,12 +20,12 @@ The format represents reusable font geometry. A composed SVG or DXF represents a
 
 The confirmed extension is `.plotfont.json`. Files are UTF-8 JSON objects. Reject duplicate JSON property names rather than allowing parser-dependent interpretations. No executable code, external geometry references, or embedded device commands are allowed.
 
-The minimal example is [minimal.plotfont.json](../examples/minimal.plotfont.json). Its glyphs are illustrative drawings, not a complete font.
+The retained 0.2 [minimal example](../examples/minimal.plotfont.json) illustrates the geometry shared with 0.3; its glyphs are illustrative drawings, not a complete font. The [native layout demo](../examples/layout-demo-native.plotfont.json) is a complete 0.3 conformance fixture with optional compiled layout.
 
 | Field | Type | Meaning |
 | --- | --- | --- |
 | `format` | string | Must equal `PlotFont` |
-| `version` | string | Exact format version: draft `0.2` or `0.3` |
+| `version` | string | Current draft: `0.3`; legacy `0.2` is also accepted by the reader |
 | `id` | string | Stable font identifier within a consumer's catalog |
 | `familyName` | string | Display family name |
 | `styleName` | string | Display style name |
@@ -121,7 +127,7 @@ Each stroke contains `closed` (boolean) and `commands` (array). Commands are abs
 | Quadratic | `["Q", cx, cy, x, y]` | Draw quadratic Bézier segment |
 | Cubic | `["C", c1x, c1y, c2x, c2y, x, y]` | Draw cubic Bézier segment |
 
-Every stroke or fill contour starts with exactly one `M` and contains at least one drawing command. A later `M` is invalid: start a new stroke or contour instead. All numbers must be finite. Relative coordinates, SVG shorthand, arcs, and a `Z` command are outside draft 0.2.
+Every stroke or fill contour starts with exactly one `M` and contains at least one drawing command. A later `M` is invalid: start a new stroke or contour instead. All numbers must be finite. Relative coordinates, SVG shorthand, arcs, and a `Z` command are outside draft 0.3 and its legacy 0.2 geometry model.
 
 `closed: false` means stop at the final endpoint and raise the pen by default. The explicit script-joining mode described below may continue from a declared exit into the next glyph's declared entry. `closed: true` adds a straight segment back to the initial point if needed, then raises the pen. A curved closing segment must be encoded explicitly as `Q` or `C` ending at the initial point. Never add closure because two endpoints look close. An open stroke may intentionally return to its start; its open status still remains explicit.
 
@@ -167,7 +173,7 @@ Drawing endpoints are not automatically script connection points. The first path
 }
 ```
 
-For draft 0.2, `strokeIndex` indexes the ordered operations in `strokes`. Entry must reference the start of the first operation and exit the end of the last operation; both referenced operations must be open `stroke` records, never fills or fill contours. Either connection may be omitted, preventing joining on that side. This restriction preserves drawing order. A glyph with later dots, crossbars, or fills cannot declare an exit on an earlier body stroke in this draft; designing deferred finishing operations needs a future explicit scheduling model.
+In draft 0.3 and legacy 0.2, `strokeIndex` indexes the ordered operations in `strokes`. Entry must reference the start of the first operation and exit the end of the last operation; both referenced operations must be open `stroke` records, never fills or fill contours. Either connection may be omitted, preventing joining on that side. This restriction preserves drawing order. A glyph with later dots, crossbars, or fills cannot declare an exit on an earlier body stroke in this draft; designing deferred finishing operations needs a future explicit scheduling model.
 
 Connections are optional drawing information, not machine commands or OpenType cursive positioning rules. The 0.3 renderer rejects joining in OpenType mode until a cluster-aware drawing schedule is defined. The default renderer draws all strokes independently. A consumer with a user-enabled script-joining mode may join only adjacent, explicitly mapped glyphs on the same text line, with a declared exit on the left and entry on the right. Spaces, line breaks, and substituted missing glyphs break the chain.
 
@@ -203,13 +209,13 @@ In simple mode, place a glyph at the current horizontal origin, advance by `adva
 {"left": "A", "right": "V", "value": -50}
 ```
 
-Group kerning and metrics expressions from Glyphs are resolved into numeric glyph-pair values before export. Draft 0.2 carries resolved geometry and spacing for one static font, not Glyphs components or expressions.
+Group kerning and metrics expressions from Glyphs are resolved into numeric glyph-pair values before export. Draft 0.3 carries resolved geometry and spacing for one static font, not Glyphs components or expressions. Optional compiled layout supplies shaping in OpenType mode.
 
 ## Validation before use
 
 The semantic validator checks the version, required fields and types, metric constraints, unique names and Unicode mappings, fallback existence, operation kinds and record structures, command names and arities, numeric values, stroke structure, and kerning references. Fill operations require supported fill rules and nonempty closed contours. It also checks connection indices and endpoint restrictions (including rejection of fills), unique anchor names and finite coordinates, and JSON-object user data. A glyph without strokes cannot declare connections. Consumers should bound file size, operation, contour and command counts, and metadata depth before rendering.
 
-Preserve coincident endpoints and path boundaries during conversion. Reject unsupported source objects with an actionable message instead of silently dropping them. The [0.2 schema](../schemas/plotfont-0.2.schema.json) and [0.3 schema](../schemas/plotfont-0.3.schema.json) validate structure; [semantic validation](../plotfont/validation.py) additionally checks geometry, canonical Unicode scalars, and cross-references.
+Preserve coincident endpoints and path boundaries during conversion. Reject unsupported source objects with an actionable message instead of silently dropping them. The current [0.3 schema](../schemas/plotfont-0.3.schema.json) and legacy [0.2 schema](../schemas/plotfont-0.2.schema.json) validate structure; [semantic validation](../plotfont/validation.py) additionally checks geometry, canonical Unicode scalars, and cross-references.
 
 ## Information outside the format
 
@@ -222,6 +228,13 @@ Optional metadata can record authorship and provenance. A metadata license strin
 Draft `0.2` supersedes unreleased draft `0.1` to introduce mixed stroke/fill operations. Existing stroke-only records are unchanged and may be migrated by validating them and updating the file version; no geometry conversion is needed. Fill records introduce new semantics, so a `0.1`-only reader must reject `0.2`. A `0.2` reader without fill support must reject fonts containing fill operations. Never use unknown-field tolerance to discard drawing intent. No released standard or implemented reader is changed by this revision.
 
 Draft `0.3` retains all 0.2 geometry and adds optional `layout`. A 0.2-only consumer must reject version 0.3, even if it could otherwise ignore fields. Geometry-only 0.2 files need no migration. A 0.3 file without layout behaves like 0.2. Unknown layout profiles are errors, and an unsupported OpenType renderer must report the limitation rather than silently substitute simple rendering.
+
+To migrate valid geometry-only data to 0.3, change `version` to `"0.3"` and
+validate against the 0.3 schema and semantic validator. Coordinates, drawing
+intent, order, metrics and metadata require no conversion. This migration does
+not add shaping: compiled layout must be attached through the separately
+validated layout workflow. The retained 0.2 examples remain unchanged so
+compatibility coverage is reproducible.
 
 ## Questions before format release
 

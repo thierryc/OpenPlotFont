@@ -2,6 +2,13 @@
 
 PlotFont is a proposed font-data interchange format. An application can consume its JSON directly or receive a drawing generated from it. The contracts below define consumer responsibilities. This repository includes a Python reader, semantic validator, and reference SVG renderer; machine preparation belongs downstream.
 
+The current draft is **v0.3**. A consumer must support geometry-only v0.3 files
+without requiring `layout`; compiled OpenType shaping is optional and explicit.
+The reference reader also accepts legacy v0.2 fonts. Validate new data with the
+[v0.3 schema](../schemas/plotfont-0.3.schema.json) and semantic validator, and
+reject other unsupported versions before drawing. A version change alone does
+not add layout rules or authorize connecting pen strokes.
+
 ## Load, lay out, and render
 
 ```text

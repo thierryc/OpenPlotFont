@@ -1,6 +1,6 @@
 # PlotFont milestones
 
-Geometry-only fonts retain draft `0.2`; optional OpenType layout uses draft `0.3`. file names end in `.plotfont.json`. Glyphs 4 and later is the authoring target. Plot-It is an independent concept-testing application with its own roadmap.
+The current format is draft **0.3**, supporting geometry-only fonts and optional compiled OpenType layout. Plugin 0.1.1 exports 0.3 only; existing 0.2 font preparations, examples and script defaults remain supported compatibility material. File names end in `.plotfont.json`. Glyphs 4 and later is the authoring target. Plot-It is an independent concept-testing application with its own roadmap.
 
 | Milestone | Deliverables and acceptance | Current evidence / remaining work |
 | --- | --- | --- |

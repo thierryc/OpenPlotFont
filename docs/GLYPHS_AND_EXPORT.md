@@ -2,6 +2,17 @@
 
 Target: Glyphs **4 and later**. A selected-master Python export script and [geometry export plugin](GLYPHS_EXPORT_PLUGIN.md) are included, with offline adapter tests. Native execution, source reopening, and Hershey source-to-export comparison passed in Glyphs 4.1. The plugin's class/action passed direct MCP qualification in 4.1.1 and installation was verified; startup and visible export-tab qualification remain pending. The format stores one resolved static font per file; resolved instance export is a later task. See [script setup and annotations](GLYPHS_EXPORT_SCRIPT.md).
 
+For new geometry exports, use the **v0.3-only plugin** (plugin release 0.1.1).
+For optional compiled OpenType layout, use the source-bound scripted workflow.
+The tool versions and output versions are separate:
+
+| Export route | PlotFont output | OpenType layout |
+| --- | --- | --- |
+| Glyphs 4 plugin 0.1.1 | 0.3 only | Geometry only; active feature warnings retained |
+| Export script with matching compiled font | 0.3 | Validated compiled layout and authoring source |
+| Export script without compiled font | Legacy 0.2 | Geometry only |
+| Pinned Hershey data preparation | Legacy 0.2 | Geometry only; retained for reproduction and compatibility |
+
 ## Design the source in Glyphs
 
 Keep the editable `.glyphs` or `.glyphspackage` source. Glyphs supports open paths, node and handle editing, metrics, and Unicode assignments. Draw the trajectories you want the pen to follow; use separate paths when the pen must lift. Keep loops closed only when the design requires them. Set consistent baseline, cap height, advances, and spacing. These editing capabilities are documented in the [official Glyphs Handbook](https://handbook.glyphsapp.com/en/single-page/).
@@ -21,7 +32,7 @@ The script implements the selected-master portion of this contract; native accep
 3. Resolve advances and metrics into numbers. Include exported glyphs, their names, all Unicode mappings, and a fallback glyph. Preserve unencoded glyphs when referenced by the exported font.
 4. Translate each authored centerline path into one stroke and each authored filled region into a fill operation containing its closed contours and explicit fill rule. Preserve start points, direction, open/closed state, holes, and operation order. Map line segments to `L`, quadratic segments to `Q`, and cubic segments to `C` using their actual control points. Handle implied points explicitly.
 5. Preserve source coordinates: upward Y, baseline at zero. Do not rescale or flatten curves at this stage.
-6. Resolve kerning groups and exceptions into effective glyph pairs. For geometry-only 0.2 export, report unsupported shaping features and source objects instead of silently omitting them. For 0.3, attach a matching compiled static font and preserve authoring feature source through [the implemented layout export](GLYPHS_EXPORT_SCRIPT.md#optional-03-layout-export).
+6. Resolve kerning groups and exceptions into effective glyph pairs. For geometry-only export, including the v0.3 plugin, report uncompiled shaping features and unsupported source objects instead of silently omitting them. To include optional v0.3 layout, attach a matching compiled static font and preserve authoring feature source through [the implemented layout export](GLYPHS_EXPORT_SCRIPT.md#optional-03-layout-export).
 7. Validate the complete file, report diagnostics with glyph and path names, and write `.plotfont.json` deterministically.
 8. Render a specimen to SVG for comparison with the source before publishing an export.
 

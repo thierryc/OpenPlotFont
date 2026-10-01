@@ -1,6 +1,6 @@
 # PlotFont
 
-PlotFont is a proposed portable font format for pen plotters and CAD/CAM workflows. A glyph can mix centerline strokes and filled shapes. It records drawing intent and order; the destination software generates fill paths using the actual tool size.
+PlotFont v0.3 is a draft portable font format for pen plotters and CAD/CAM workflows. A glyph can mix centerline strokes and filled shapes. It records drawing intent and order; the destination software generates fill paths using the actual tool size. OpenType layout is optional: a v0.3 font may contain geometry alone or include compiled text-layout rules.
 
 The intended workflow is:
 
@@ -29,11 +29,11 @@ This project defines the PlotFont format and the workflow for editing fonts in G
 
 ## Project status
 
-Confirmed requirements: `.plotfont.json`, Glyphs **4 and later**, and Hershey Roman Simplex as the first repertoire. The five initial milestones are complete within the [documented scope](docs/ROADMAP.md). The format remains an unreleased draft. Optional OpenType layout is implemented in draft `0.3`; existing geometry-only fonts remain valid as `0.2`.
+Confirmed requirements: `.plotfont.json`, Glyphs **4 and later**, and Hershey Roman Simplex as the first repertoire. The five initial milestones and optional layout milestone are complete within the [documented scope](docs/ROADMAP.md). The current format is unreleased draft **0.3**. Existing 0.2 fonts remain supported for compatibility; new plugin exports use 0.3 only.
 
-Implemented here: JSON Schema, semantic validation, a source-pinned Hershey data import, an SVG reference renderer, and a selected-master Glyphs export script. Guarded native import, atomic publication, source/export comparison, and independent JavaScript SVG interchange checks are included. Four [Hershey faces](fonts/README.md) have editable `.glyphspackage` sources and native JSON exports: Roman Simplex, Roman Duplex, Roman Triplex, and Script Simplex. Native source reopening, the actual export-script entry point, and curve/metadata/kerning qualification passed. The additional faces were created, populated, saved, and verified through Glyphs MCP in Glyphs 4.1.1. MCP builds advertising `create_document` and `document.create.v1` can create blank fonts directly; population uses a saved document binding.
+Implemented here: JSON Schema, semantic validation, a source-pinned Hershey data import, an SVG reference renderer, a selected-master Glyphs export script, and a v0.3-only Glyphs 4 export plugin. Guarded native import, atomic publication, source/export comparison, and independent JavaScript SVG interchange checks are included. Four [Hershey faces](fonts/README.md) have editable `.glyphspackage` sources and native JSON exports: Roman Simplex, Roman Duplex, Roman Triplex, and Script Simplex. Native source reopening, the actual export-script entry point, and curve/metadata/kerning qualification passed. The additional faces were created, populated, saved, and verified through Glyphs MCP in Glyphs 4.1.1. MCP builds advertising `create_document` and `document.create.v1` can create blank fonts directly; population uses a saved document binding.
 
-Review the [SVG specimens](examples/specimens/README.md). See the [milestone plan and completion evidence](docs/ROADMAP.md), [Hershey provenance](fonts/hershey-roman-simplex/README.md), [JSON Schema](schemas/plotfont-0.2.schema.json), and [export script instructions](docs/GLYPHS_EXPORT_SCRIPT.md).
+Review the [SVG specimens](examples/specimens/README.md). See the [milestone plan and completion evidence](docs/ROADMAP.md), [Hershey provenance](fonts/hershey-roman-simplex/README.md), [v0.3 JSON Schema](schemas/plotfont-0.3.schema.json), and [export plugin instructions](docs/GLYPHS_EXPORT_PLUGIN.md). The [script workflow](docs/GLYPHS_EXPORT_SCRIPT.md) adds optional compiled layout.
 
 Draft 0.3 adds self-contained OpenType feature data, HarfBuzz shaping, positioned-run JSON and shaped SVG rendering. The [original layout demo](fonts/layout-demo/README.md) includes an editable Glyphs source, portable compiled fixture and [native export](examples/layout-demo-native.plotfont.json). The native compiler omits this demo's Latin `curs` rule; its export preserves the source and reports that limitation. Cursive positioning is covered by the portable fixture.
 
