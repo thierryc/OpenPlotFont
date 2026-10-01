@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220.680952381mm" height="14.9666666667mm" viewBox="-2.15 -10.15 220.680952381 14.9666666667">
+<metadata>Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
+
+Hershey fonts data (./hershey-fonts/*)
+
+Source: http://emergent.unpythonic.net/software/hershey
+
+------------------------------------------------------------------------------
+
+USE RESTRICTION:
+	This distribution of the Hershey Fonts may be used by anyone for
+	any purpose, commercial or otherwise, providing that:
+		1. The following acknowledgements must be distributed with
+			the font data:
+			- The Hershey Fonts were originally created by Dr.
+				A. V. Hershey while working at the U. S.
+				National Bureau of Standards.
+			- The format of the Font data in this distribution
+				was originally created by
+					James Hurt
+					Cognition, Inc.
+					900 Technology Park Drive
+					Billerica, MA 01821
+					(mit-eddie!ci-dandelion!hurt)
+		2. The font data in this distribution may be converted into
+			any other format *EXCEPT* the format distributed by
+			the U.S. NTIS (which organization holds the rights
+			to the distribution and use of the font data in that
+			particular format). Not that anybody would really
+			*want* to use their format... each point is described
+			in eight bytes as &quot;xxx yyy:&quot;, where xxx and yyy are
+			the coordinate values as ASCII numbers.
+
+------------------------------------------------------------------------------
+
+The format of the files is described as follows:
+
+The structure is bascially as follows: each character consists of a number
+1-&gt;4000 (not all used) in column 0:4, the number of vertices in columns 5:7,
+the left hand position in column 8, the right hand position in column 9, and
+finally the vertices in single character pairs. All coordinates are given
+relative to the ascii value of &#x27;R&#x27;. If the coordinate value is &quot; R&quot; that
+indicates a pen up operation.
+
+As an example consider the 8th symbol
+
+8 9MWOMOV RUMUV ROQUQ
+
+It has 9 coordinate pairs (this includes the left and right position).
+The left position is &#x27;M&#x27; - &#x27;R&#x27; = -5
+The right position is &#x27;W&#x27; - &#x27;R&#x27; = 5
+The first coordinate is &quot;OM&quot; = (-3,-5)
+The second coordinate is &quot;OV&quot; = (-3,4)
+Raise the pen &quot; R&quot;
+Move to &quot;UM&quot; = (3,-5)
+Draw to &quot;UV&quot; = (3,4)
+Raise the pen &quot; R&quot;
+Move to &quot;OQ&quot; = (-3,-1)
+Draw to &quot;UQ&quot; = (3,-1)
+Drawing this out on a piece of paper will reveal it represents an &#x27;H&#x27;.
+
+</metadata>
+  <title></title>
+  <path data-glyph="hershey.033.12345" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 203.428571429 -6.09523809524 L 202.285714286 -5.71428571429 L 201.523809524 -4.95238095238 L 201.142857143 -3.80952380952 L 201.142857143 -3.04761904762 L 201.523809524 -1.90476190476 L 202.285714286 -1.14285714286 L 203.428571429 -0.761904761905 L 204.19047619 -0.761904761905 L 205.333333333 -1.14285714286 L 206.095238095 -1.90476190476 L 206.476190476 -3.04761904762 L 206.476190476 -3.80952380952 L 206.095238095 -4.95238095238 L 205.333333333 -5.71428571429 L 204.19047619 -6.09523809524 L 203.428571429 -6.09523809524"/>
+  <path data-glyph="hershey.034.12345" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 206.476190476 -5.71428571429 L 206.476190476 -1.14285714286 L 211.047619048 -1.14285714286 L 211.047619048 -5.71428571429 L 206.476190476 -5.71428571429"/>
+  <path data-glyph="hershey.035.12345" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 213.714285714 -6.47619047619 L 211.047619048 -1.90476190476 L 216.380952381 -1.90476190476 L 213.714285714 -6.47619047619"/>
+</svg>

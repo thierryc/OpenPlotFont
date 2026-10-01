@@ -1,0 +1,325 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="203.7mm" height="41.1976mm" viewBox="-4.8156 -15.854 203.7 41.1976">
+<metadata>Open Font License
+Custom stroke fonts by Shriinivas; derived from Square Grotesk and Pinyon Script as credited upstream. Font notice template has unfilled copyright fields; original declarations retained.
+
+Copyright (c) &lt;dates&gt;, &lt;Copyright Holder&gt; (&lt;URL|email&gt;),
+with Reserved Font Name &lt;Reserved Font Name&gt;.
+Copyright (c) &lt;dates&gt;, &lt;additional Copyright Holder&gt; (&lt;URL|email&gt;),
+with Reserved Font Name &lt;additional Reserved Font Name&gt;.
+Copyright (c) &lt;dates&gt;, &lt;additional Copyright Holder&gt; (&lt;URL|email&gt;).
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded, 
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+&quot;Font Software&quot; refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+&quot;Reserved Font Name&quot; refers to any names specified as such after the
+copyright statement(s).
+
+&quot;Original Version&quot; refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+&quot;Modified Version&quot; refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+&quot;Author&quot; refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION &amp; CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
+
+
+# Inkscape Extensions to Create Custom Stroke Fonts and Render Text Using Them
+
+These extensions allow the users to create and edit their own stroke fonts (including non-english ones) and render text using them. The fonts created with these extensions are compatible with the fonts used by the Hershey Text Effect (Copyright 2011, Windell H. Oskay, www.evilmadscientist.com) available in Inkscape 1.0. Three new custom fonts (including a cursive one) are prebundled with the extensions.
+
+### Compatible with Inkscape versions 1.4+
+
+# Installation
+
+1. Click on the Code button above the repository list
+2. Select Download Zip option and save the zip file to a local folder
+3. Locate the User Extensions folder, this can be found from the System option in Edit-&gt;Preference dialog. &lt;br&gt;
+4. Extract the contents of the folder within the downloaded zip file in the Inkscape user extension folder. For example: if your download file is inkscapestrokefont-master.zip, then opening the file will show a single folder called inkscapestrokefont-master. Double click this folder within the zip and extract all its contents in the extensions folder. So after extracting the zip, there should be 14 files and one 1 folder called &#x27;strokefontdata&#x27; added in the user extensions folder
+5. Restart inkscape if it was running
+
+# Usage
+
+After installation, the extensions appear under a new sub-menu &#x27;Custom Stroke Font&#x27; under Extensions menu of inkscape.&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Rendering Text&lt;br&gt;&lt;/b&gt;
+![Demo](https://github.com/Shriinivas/etc/blob/master/inkscapestrokefont/illustrations/strokefontrender.gif)
+To render a text string using the custom stroke fonts, use the Render Text extension. There are a number of options to taylor the rendering. &lt;br&gt;
+To have an aligned text, create rectangle(s) and select it (them) before invoking the render text tool. Now check the &#x27;Flow Text in Boxes&#x27; and select horizontal and vertical alignment options. If the &#x27;Create Extended Rectangles&#x27; option has a value oher than &#x27;None&#x27; and if the text does not fit the given set of rectangles, then new rectangles will be created in the selected direction to fit the entire text.&lt;br&gt;
+It&#x27;s possible to render an entire text file in stroke font with the &#x27;Render text from file&#x27; option. For large files, however, it might take considerable time for rendering. The resulting file size may also become quite large, since path of every letter is stored separately.&lt;br&gt;
+The extensions come with 3 pre-designed custom fonts. The existing Hershey Text fonts are also ported to the format required for these extensions. These fonts are available in the Render Text tool with prefix &#x27;Hershey&#x27;.&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Designing New Fonts&lt;br&gt; &lt;/b&gt;
+To create your own font you need to first create a template invoking &#x27;Create Font Design Template&#x27; extension.
+Then design the fonts with reference to the guides in the template. Each designed glyph should be a single SVG path
+(if there are multiple segments they need to be combined in a single path). The path should have the XML ID same as the
+character text. So A glyph representing A should have its ID set to &#x27;A&#x27; (without quotes). &lt;br&gt;
+You can duplicate the guides within the template to define new reference lines if that helps designing the font (example ScriptLastNodeOffset.svg and ScriptGlyphsAlignedWithEditExt.svg). But bear in mind, only the guides created by the Create Font Design Template extension will be used to calculate the offsets.&lt;br&gt;&lt;br&gt;
+After completing the design the &#x27;Generate Font Data&#x27; extension needs to be invoked to store the path data of the
+glyphs. The glyphs of a font are stored in an SVG file in strokefontdata subfolder within the user extensions folder. The name of the file is the same as the font name, so the font names have all the restrictions that are applicable to file names. If the file for the given font exists, the glyphs are added to it (or replaced if there exist any with the same IDs), if not a new xml file is created. &lt;br&gt;
+Glyphs can be designed incrementally and can have different templates. &lt;br&gt;&lt;br&gt;
+&lt;b&gt;Editing Stroke Font&lt;br&gt;&lt;/b&gt;
+Invoke Edit Stroke Font extension to edit an existing font. Choose the font to be edited from the drop down, and enter the number of rows and size. All the stroke font glyphs of the selected font are displayed in the given size, arranged in rows with row count corresponding to the user entered number. You can edit the path of the glyphs. The IDs are already set. If you want to create a new glyph reusing paths of an existing one, just give it the ID corresponding to the new glyph after editing.&lt;br&gt;
+To save the edited font invoke the Generate Font Data extension and (re)enter the exact font name. The Right Offset option value should always be Vertical Guide / Bounding box. The data generation process is the same as that for new fonts.&lt;br&gt; &lt;br&gt;
+
+The &lt;b&gt;Synchronize Font List&lt;/b&gt; extension should be used to synchronize the font list with the list of font data files (if the folder contents are changed externally)&lt;br&gt;
+
+&lt;b&gt;Sample Font Files&lt;br&gt;&lt;/b&gt;
+Please refer to the SVGs in the [fontsvg](https://github.com/Shriinivas/etc/tree/master/inkscapestrokefont/fontsvgs) folder for sample font design. The three bundled fonts use the same SVGs to
+generate the font data. &lt;br&gt;&lt;br&gt;
+
+&lt;b&gt;Interoperability with Inkscape 1.0 Hershey Text Extension &lt;br&gt;&lt;/b&gt;
+The generated font data is now in SVG format, which is compatible with the Inkscape 1.0 Hershey Text font file format. So you can use the Inkscape 1.0 SVG stroke font files with Render Text and Edit Stroke Font Extensions (also in Inskcape 0.92). Just 1) copy the new files in the strokefontdata subfolder of user extensions directory 2) execute the Synchronize Font List extension and 3) restart Inkscape &lt;br&gt;
+Also, if you design a stroke font with this extension then the generated font file can be used with Inkscape 1.0 Hershey Text extension by specifying the full font file path in the extension dialog.
+
+&lt;b&gt;Video Tutorials&lt;br&gt;&lt;/b&gt;
+Part1: https://youtu.be/iCsnYlVjWA0 &lt;br&gt;
+Part2: https://youtu.be/-7BjfxpUAfU &lt;br&gt;
+Part3: https://youtu.be/3YBaZfPpNjc &lt;br&gt;
+
+# Credits
+
+The custom stroke fonts are derived from: Square Grotesk and Pinyon Script available under Open Font License on https://fontlibrary.org/&lt;br&gt;&lt;br&gt;
+The Hershey Fonts are ported from hersheydata.py from Windell H. Oskay.&lt;br&gt;
+Here&#x27;s the acknowledgement:
+
+- The Hershey Fonts were originally created by Dr. A. V. Hershey while working at the U. S. National Bureau of Standards.
+- The format of the Font data in this distribution was originally created by&lt;br&gt;
+  James Hurt&lt;br&gt;
+  Cognition, Inc.&lt;br&gt;
+  900 Technology Park Drive&lt;br&gt;
+  Billerica, MA 01821&lt;br&gt;
+  (mit-eddie!ci-dandelion!hurt)&lt;br&gt;
+
+# Known Issues &amp; Workarounds
+
+- With the non-english characters, the Generate Font Data extension may produce an error. The workaround is: save the file,
+  re-open it and generate the data once again.&lt;br&gt;
+- If you are using Inkscape on windows, there could be problems rendering extended (e.g. non-english) characters (like ö or ß) with the text keyed in the input text box. A workaround is to create a text file with the text containing these characters and render the text using, &#x27;Render from file&#x27; option. &lt;br&gt;
+- If you are using Inkscape on windows, an extended (e.g. non-English) character in the First Glyph of Create Font Design Template extension may not work right. In such cases, you can enter the 4 digit hex unicode value of the first character (e.g. 00C0 for À) in the First Glyph field. You will get the unicode values of the characters from the Character Map.&lt;br&gt;
+- Currently there is no user interface for deleting or renaming the fonts. This can be done manually by deleteting or renaming the xml file in the strokefontdata folder followed by synchronization of the font list&lt;br&gt;
+
+Please exercise caution while using the tools; save your work, before invoking any of these extensions.&lt;br&gt;
+You may report the issues and defects on the Issues page here or in the comments section on the video tutorial.&lt;br&gt;
+Feedback and suggestions are most welcome!
+
+
+Copyright (c) 2011 by Sorkin Type Co (www.sorkintype.com),
+with Reserved Font Name &quot;Pinyon Script&quot;.
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded, 
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+&quot;Font Software&quot; refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+&quot;Reserved Font Name&quot; refers to any names specified as such after the
+copyright statement(s).
+
+&quot;Original Version&quot; refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+&quot;Modified Version&quot; refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+&quot;Author&quot; refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION &amp; CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
+</metadata>
+  <title>Hamburgefontsiv 0123456789
+A O Q gjpq é Å @ &amp; fi</title>
+  <path data-glyph="H" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 2.1824 -9.84 C 2.1824 -9.84 3.8464 -11.3168 5.44 -10.5232 C 6.5072 -9.992 4.3296 -9.1088 4.1104 -7.9232 C 3.9984 -7.824 4.3632 -6.9392 5.5408 -7.368 C 5.5408 -7.368 6.7616 -7.7792 7.4176 -8.3104 C 7.4176 -8.3104 10.3808 -10.9264 10.5824 -10.8352 C 10.5824 -10.8352 7.6032 -8.9328 4.8096 -4.624 C 4.8096 -4.624 1.4112 -0.1808 -0.7616 -0.08 C -0.7616 -0.08 -2.6656 0.1056 -2.3616 -1.2064 C -2.2848 -1.5392 -1.8544 -1.552 -1.7376 -1.4432 C -1.6144 -1.3296 -1.6192 -1.0064 -1.9904 -1.0736"/>
+  <path data-glyph="H" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 0.0128 -1.9648 C 0.0128 -1.9648 0.7536 -3.3792 3.9168 -4.1536 C 3.9168 -4.1536 9.0336 -5.4992 9.0336 -5.4992 C 9.0336 -5.4992 13.3168 -6.7584 15.3696 -8.9952 C 15.3696 -8.9952 17.912 -12.264 14.0576 -10.2608 C 13.6368 -10.0416 9.872 -6.8384 8.1424 -4.2544 C 6.592 -1.9392 6.2336 -1.1024 6.56 -0.4336 C 6.56 -0.4336 7.5696 0.912 9.488 -1.3424 C 9.488 -1.3424 10.5152 -2.4192 10.7328 -3.6992"/>
+  <path data-glyph="a" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 12.5712 -2.936 C 12.5712 -2.936 15.368 -5.8304 17.0896 -4.9984 C 17.1024 -5.0432 17.5248 -4.7808 17.16 -3.7696 C 17.16 -3.7696 17.8128 -5.152 16.488 -5.0944 C 16.1296 -5.0816 13.7552 -4.4928 12.1872 -1.4528 C 12.1872 -1.4528 11.6688 0 12.6928 0 C 12.8528 0 13.0512 -0.0576 13.3008 -0.1408 C 13.4224 -0.1792 14.5296 -0.7296 15.7584 -2.0992 C 17.1792 -3.6864 17.4992 -4 18.3568 -4.9536 C 18.28 -4.9728 15.2336 -1.184 15.2976 -0.4544 C 15.2976 -0.4544 15.2528 -0.0064 15.7712 0 C 15.9504 0 16.2128 -0.0256 16.5584 -0.1856 C 16.5584 -0.1856 18.0112 -0.8944 19.6368 -2.936"/>
+  <path data-glyph="m" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 19.6368 -2.936 C 19.6368 -2.936 21.2816 -4.9984 21.8192 -5.0944 C 22.1328 -5.1456 22.824 -4.9792 21.5568 -3.264 C 21.5568 -3.264 19.5408 -0.2752 19.5408 -0.2752 C 19.5792 -0.1024 21.9536 -2.6496 23.2592 -3.9872 C 24.4496 -5.1968 26.1072 -5.7408 25.7488 -4.352 C 25.3264 -2.9056 23.8096 -1.6192 22.8432 -0.256 C 22.824 -0.3072 25.4672 -3.0656 26.9008 -4.2432 C 29.3968 -6.2848 30.1072 -4.5952 27.912 -2.6816 C 27.6368 -2.4064 27.3424 -2.0992 27.08 -1.7984 C 25.576 -0.0384 26.9392 0.4672 28.2192 -0.2752 C 28.2192 -0.2752 29.5376 -1.2144 30.9008 -2.936"/>
+  <path data-glyph="b" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 33.064 -5.792 C 33.7488 -4.9664 40.6864 -9.2608 40.2 -11.9936 C 40.2128 -11.9936 39.3744 -13.6896 33.448 -6.176 C 33.448 -6.176 29.32 -1.4016 30.6512 -0.1472 C 30.6512 -0.1472 30.8496 -0.0064 31.208 0 C 31.9568 0.0064 33.4608 -0.3968 34.7856 -2.4128 C 35.816 -4.5184 35.2976 -4.8768 35.112 -4.8768 C 34.5744 -4.8768 34.7408 -2.4576 34.7216 -2.0352 C 34.792 -0.608 36.5584 -2.0912 37.1792 -2.936"/>
+  <path data-glyph="u" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 37.1792 -2.936 C 37.1792 -2.936 39.3296 -5.0624 39.3296 -5.0624 C 39.3296 -5.0624 37.3328 -2.9056 36.3216 -1.3248 C 36.1552 -1.0688 35.8352 0.0064 36.8592 0 C 38.7536 0.1024 41.736 -4.1216 42.8944 -5.0752 C 43.0992 -5.2416 39.8864 -1.7536 39.7264 -0.832 C 39.72 -0.7872 39.5664 -0.0192 40.2448 0 C 40.4432 0.0064 40.6992 -0.032 41.0512 -0.1856 C 41.4736 -0.3648 42.6128 -1.1184 44.1488 -2.936"/>
+  <path data-glyph="r" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 44.1488 -2.936 C 44.7568 -3.5888 45.3712 -4.4928 45.7232 -5.1584 C 46.248 -6.1568 45.256 -6.0928 45.2176 -5.3504 C 45.2112 -4.4864 46.984 -4.416 48.1488 -4.16 C 48.3728 -4.1024 44.4816 -1.504 45.0064 -0.4288 C 45.0064 -0.4288 45.2304 0.3776 46.6512 -0.3136 C 47.144 -0.5568 48.3024 -1.5216 49.5248 -2.936"/>
+  <path data-glyph="g" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 49.5248 -2.936 C 49.5248 -2.936 52.392 -5.1072 53.544 -5.1264 C 53.9984 -5.1328 54.6576 -4.7424 54.152 -3.5712 C 54.376 -3.7312 54.8816 -6.5088 51.528 -4.2624 C 51.2528 -4.0768 48.488 -1.7344 49.1344 -0.3776 C 49.1344 -0.3776 49.4992 0.5696 51.1376 -0.5824 C 51.1376 -0.5824 52.8976 -2.0544 53.2176 -2.4384 C 53.64 -2.944 55.4064 -4.7232 55.4832 -4.9024 C 55.3104 -5.2672 49.5184 3.7696 46.984 5.4336 C 44.3024 7.1936 43.5856 5.5488 45.2944 4.3328 C 45.7744 3.8848 49.32 2.1696 49.4992 2.1248 C 49.4992 2.1248 52.3472 0.8192 53.16 0.3264 C 54.2736 -0.352 56.3408 -2.2832 56.7248 -2.936"/>
+  <path data-glyph="e" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 56.5264 -2.1888 C 56.5264 -2.1888 58.2416 -2.5984 59.0864 -3.0464 C 59.8736 -3.4624 60.8656 -4.0128 60.8144 -4.7296 C 60.8144 -4.7296 60.7056 -5.632 59.1504 -4.9024 C 58.6448 -4.6656 56.6544 -3.296 56.2896 -1.6128 C 56.2896 -1.6128 55.9312 -0.0064 57.6464 0.0512 C 57.7424 0.0512 58.888 0.0192 60.2 -1.0048 C 60.2 -1.0048 61.3712 -2.008 62.0304 -2.936"/>
+  <path data-glyph="f" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 61.4288 -1.3696 C 61.832 -0.1984 60.8016 2.5728 60.8016 2.5728 C 60.0592 4.9728 58.5744 5.9456 58.5744 5.9456 C 56.9424 6.688 57.4608 5.0624 57.4608 5.0624 C 57.32 4.5056 63.7328 -5.28 66.4848 -9.2544 C 67.0928 -10.1312 69.0128 -13.0752 69.7744 -11.8272 C 70.1712 -10.5408 68.2576 -8.1408 68.2576 -8.1408 C 64.3856 -3.0784 62.3888 -2.6432 62.2032 -2.7008 C 62.12 -2.7328 61.7808 -2.624 61.6848 -3.2576 C 61.6848 -3.2576 61.9216 -3.5136 61.6592 -3.7696 C 61.6656 -3.8208 61.1088 -3.9488 61.3008 -2.8288 C 61.4096 -2.2656 62.0624 -1.5232 62.4336 -1.3888 C 62.8176 -1.248 64.6352 -0.7792 66.4016 -2.936"/>
+  <path data-glyph="o" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 70.3184 -2.8992 C 70.6832 -3.9808 70.92 -5.0688 69.7872 -5.0816 C 67.4704 -5.1072 64.6352 -0.2304 66.6448 0 C 66.984 0.0192 67.4384 -0.0512 68.008 -0.3136 C 68.6224 -0.6848 69.3968 -1.1264 70.1904 -2.6304 C 70.4464 -3.1232 69.1088 -2.1056 69.6208 -1.3696 C 69.672 -1.2992 70.3888 -0.8304 72.1872 -2.936"/>
+  <path data-glyph="n" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 72.1872 -2.936 C 72.2 -2.9872 74.0432 -5.1904 74.4848 -5.152 C 74.7984 -5.1264 74.9072 -4.7744 74.2096 -3.6544 C 74.2096 -3.6544 72.04 -0.1856 72.04 -0.1856 C 71.9312 0.1664 74.0816 -2.304 75.8352 -3.9872 C 77.48 -5.568 79.2976 -5.6704 77.9728 -3.6416 C 77.608 -3.1808 77.0448 -2.56 76.5264 -2.0096 C 75.1504 -0.544 75.6624 0.512 77.2496 -0.1344 C 77.7232 -0.3392 78.8496 -0.92 80.3856 -2.936"/>
+  <path data-glyph="t" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 80.3856 -2.936 C 80.3856 -2.936 84.7888 -8.6656 84.7888 -8.6656 C 84.7888 -8.6656 82.6256 -5.696 79.9824 -1.856 C 79.4896 -1.1328 78.9072 0 79.8672 0 C 80.0336 0 80.264 -0.0128 80.5328 -0.096 C 80.5328 -0.096 81.8 -0.3632 83.8224 -2.936"/>
+  <path data-glyph="t" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 82.1968 -6.656 C 82.1968 -6.656 86.1456 -6.656 86.1456 -6.656"/>
+  <path data-glyph="s" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 83.8224 -2.936 C 83.8224 -2.936 85.112 -4.5552 85.8816 -5.3584 C 86.08 -5.5632 86.3584 -5.6336 86.512 -5.9392 C 86.608 -6.1328 86.1936 -6.3184 86.0896 -5.5776 C 86.0896 -5.5776 85.864 -5.0864 85.888 -2.6256 C 85.9072 -0.8048 84.4128 0.2576 83.1008 -0.0096 C 83.1008 -0.0096 81.1264 -0.1952 82.3792 -1.5536 C 82.6832 -1.8832 83.0832 -1.8064 83.1504 -1.7776 C 83.2448 -1.7376 83.2064 -1.3744 82.7312 -1.504"/>
+  <path data-glyph="s" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 85.6736 -1.4752 C 85.6736 -1.4752 86.3552 -1.3344 86.5504 -1.384 C 86.88 -1.4672 87.4528 -1.6752 88.5104 -2.936"/>
+  <path data-glyph="i" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 88.5104 -2.936 C 88.5104 -2.936 90.5328 -5.024 90.5328 -5.024 C 89.3104 -3.3024 85.9888 -0.0896 88.0304 0 C 89.2656 0.16 91.2496 -1.8928 92.1136 -2.936"/>
+  <path data-glyph="i" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 92.5872 -7.3664 C 92.5296 -7.1872 92.3376 -7.0464 92.1648 -7.0464 C 91.992 -7.0464 91.896 -7.1872 91.9536 -7.3664 C 92.0112 -7.5392 92.1968 -7.68 92.376 -7.68 C 92.5488 -7.68 92.6448 -7.5392 92.5872 -7.3664 C 92.5872 -7.3664 92.5872 -7.3664 92.5872 -7.3664"/>
+  <path data-glyph="v" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 92.1136 -2.936 C 92.1136 -2.936 94.3728 -5.0688 94.3728 -5.0688 C 94.3728 -5.0688 91.5056 -1.9136 91.064 -1.2992 C 90.9872 -1.1968 90.3472 -0.0192 91.5632 0 C 93.1248 -0.064 94.488 -1.3056 95.7168 -2.1824 C 95.7168 -2.1824 97.0416 -3.7504 97.3616 -4.2688 C 97.5792 -4.6208 97.8288 -5.184 97.6304 -5.2096 C 97.4704 -5.2224 97.4192 -5.1264 96.7728 -4.0704 C 96.5424 -3.6992 94.7632 -1.216 96.4208 -1.3568 C 96.7792 -1.44 97.4512 -1.9312 98.3792 -2.936"/>
+  <path data-glyph="uni0030" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 114.8448 -3.7152 C 118.224 -9.296 115.896 -10.6848 115.5856 -10.784 C 113.4864 -11.4512 110.4496 -8.2256 109.3424 -5.8704 C 108.5056 -4.0928 107.816 -1.5568 108.9376 -0.2144 C 109.408 0.3472 112.7424 -0.2432 114.8448 -3.7152 C 114.8448 -3.7152 114.8448 -3.7152 114.8448 -3.7152"/>
+  <path data-glyph="uni0031" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 117.0016 -4.3184 C 118.1792 -4.9232 120.7744 -7.0416 123.5472 -10.888 C 121.2544 -7.2384 119.1296 -3.8416 116.9536 -0.368"/>
+  <path data-glyph="uni0032" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 129.1696 -7.056 C 129.1696 -7.056 127.872 -5.016 126.1936 -5.2 C 126.048 -5.216 124.6944 -5.9136 126.456 -8.2944 C 131.2144 -13.704 133.7168 -9.6096 130.9296 -6.3664 C 130.9296 -6.3664 128.9552 -3.8432 125.1232 -2.248 C 125.1232 -2.248 122.8384 -1.272 122.3136 0.1072 C 122.3136 0.1072 123.6944 -1.6064 125.7648 -1.5104 C 127.0352 -1.4528 126.4272 -1.2976 128.7648 -0.392 C 129.2624 -0.1984 130.7152 -0.464 131.4064 -2.32"/>
+  <path data-glyph="uni0033" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 137.952 -8.8176 C 137.8032 -7.568 136.1616 -5.2768 134.6448 -5.4144 C 134.6 -5.4176 132.8576 -6.1504 135.144 -8.8416 C 139.0128 -12.9632 142.032 -10.136 139.1424 -6.7712 C 139.1424 -6.7712 137.7728 -5.392 136.3344 -4.7472 C 135.6304 -4.432 134.7392 -3.8912 134.5968 -3.4144"/>
+  <path data-glyph="uni0033" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 136.4048 -4.7952 C 136.4048 -4.7952 138.5136 -5.352 138.5952 -3.5808 C 138.6208 -3.0176 137.9216 -0.3568 134.8112 1.2272 C 134.4688 1.4016 132.9072 2.1792 131.264 1.536 C 131.264 1.536 129.6704 0.8928 129.8848 0.4176 C 129.8848 0.4176 130.2416 -0.0112 130.336 0.584"/>
+  <path data-glyph="uni0034" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 148.016 -10.6016 C 148.016 -10.6016 143.184 -4.6288 142.0416 -4.272 C 142.0416 -4.272 140.0288 -3.4208 139.52 -4.272 C 139.4224 -4.4336 139.7888 -5.376 142.0736 -4.9472 C 142.1328 -4.9952 145.2928 -4.1584 145.9936 -3.9152 C 145.9936 -3.9152 148.968 -2.9856 150.4432 -4.3664"/>
+  <path data-glyph="uni0034" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 150.1824 -7.6752 C 150.1824 -7.6752 145.8496 -4.1056 143.5184 0.4416"/>
+  <path data-glyph="uni0035" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 160.392 -11.5408 C 160.0544 -10.7504 158.9104 -10.3472 158.6576 -10.312 C 157.3584 -10.1744 157.1568 -11.3168 154.6864 -9.6896 C 154.6864 -9.6896 155.2416 -10.7504 155.2416 -10.7504 C 155.2416 -10.7504 152.6 -5.8192 152.6 -5.8192 C 151.9504 -5.3312 151.5936 -4.8432 151.1344 -4.3552 C 153.5456 -7.688 156.7584 -6.52 156.3024 -3.648 C 156.0288 -1.9312 154.888 1.0912 151.2032 2.1584 C 150.0912 2.48 147.2976 2.6 147.0288 1.3328"/>
+  <path data-glyph="uni0036" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 169.5056 -9.4384 C 170.1824 -9.1152 170.264 -10.1424 170.0272 -10.464 C 169.8016 -10.7744 168.1904 -11.5728 165.6528 -9.5552 C 163.704 -8.0064 161.9488 -5.7408 161.6128 -3.6432 C 160.6576 2.3104 165.2512 -0.2224 167.2464 -3.152 C 169.4624 -6.4064 167.36 -8.2304 165.0928 -6.1776 C 164.6624 -5.7872 163.9344 -4.9408 163.7072 -3.832"/>
+  <path data-glyph="uni0037" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 172.7952 -10.7456 C 172.7952 -10.7456 172.7232 -8.984 170.8912 -7.1984 C 171.5712 -7.8768 172.0656 -8.6288 172.4496 -9.424 C 172.448 -9.4256 174.0864 -10.936 175.0672 -10.6016 C 176.12 -10.2448 177.424 -8.8304 179.4464 -10.7456 C 176.1408 -7.672 169.5584 -1.2432 173.5808 4.1536"/>
+  <path data-glyph="uni0038" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 183.5472 -6.104 C 183.7344 -6.136 184.6512 -6.0688 185.7136 -6.888 C 186.4144 -7.4288 187.0656 -8.288 187.0704 -9.2464 C 187.0704 -9.2464 187.0096 -12.0416 183.6064 -10.3888 C 183.1856 -10.0384 181.5952 -8.936 183.1664 -6.3424 C 183.1664 -6.3424 185.808 -2.8912 184.2144 -1.1056 C 184.2144 -1.1056 182.5712 0.7088 180.4528 -0.296 C 180.352 -0.3456 178.4784 -1.6288 180.048 -4.0816 C 180.0496 -4.0816 181.0544 -5.9072 183.5472 -6.104 C 183.5472 -6.104 183.5472 -6.104 183.5472 -6.104"/>
+  <path data-glyph="uni0039" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 195.7408 -7.7216 C 195.7408 -7.7008 193.1328 -4.0688 191.248 -4.5408 C 191.248 -4.5408 188.7072 -4.776 190.4912 -8.1248 C 190.4912 -8.1248 192.24 -11.3392 194.648 -10.8016 C 194.648 -10.8016 196.7344 -10.3632 195.472 -6.896 C 195.472 -6.896 193.6032 -1.9984 191.4496 -0.7536 C 191.4496 -0.7536 189.2896 0.648 187.8656 -0.5856 C 187.488 -0.912 187.2768 -1.3088 187.36 -1.6288 C 187.456 -1.9904 187.7984 -1.9312 187.848 -1.6112"/>
+  <path data-glyph="A" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M -0.9472 14.8336 C -0.0672 14.8304 -0.9392 13.9248 -1.384 14.7248 C -1.472 14.8832 -1.6208 16.5584 1.2576 15.7184 C 2.1664 15.4512 4.3536 13.7984 8.208 9.8944 C 8.208 9.8944 13.5088 4.8128 14.536 5.2496 C 14.536 5.2496 6.0544 15.8528 6.0544 15.8528 C 6.0544 15.8528 7.2496 13.5472 6.5248 11.7968 C 6.5248 11.7968 5.4656 8.7328 2.6032 9.4912 C 2.6032 9.4912 0.0512 10.5008 2.2 13.1264 C 2.568 13.576 4.0512 14.4224 5.7344 14.3888 C 5.7344 14.3888 8.5408 14.3392 10.2112 13.1936 C 11.2928 12.4512 11.7248 11.864 12.2304 10.5344"/>
+  <path data-glyph="O" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 31.5168 8.0832 C 31.5168 8.0832 33.1008 5.4864 30.2832 5.192 C 30.2832 5.192 26.3232 4.8416 22.3824 10.0176 C 20.512 12.4736 20.5216 14.9904 21.9408 15.7824 C 21.9408 15.7824 24.96 16.9616 28.6064 12.5408 C 28.6064 12.5408 31.2592 9.0224 29.5104 7.6048 C 29.5104 7.6048 27.4464 6.352 24.8128 9.7968 C 24.8128 9.7968 23.1744 12.3008 24.2784 14.4016"/>
+  <path data-glyph="Q" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 46.424 7.0704 C 46.528 7.808 44.3792 12.5248 41.3584 12.1904 C 37.2192 11.7344 43.5072 4.0016 47.4368 5.2848 C 47.6368 5.3504 51.0384 6.2928 47.1792 11.712 C 46.2032 13.0816 44.1648 14.7456 41.6352 15.5616 C 40.5168 15.9216 37.072 16.3696 37.024 15.1664 C 37.0064 14.736 37.9856 14.1216 41.488 15.4512 C 43.9952 16.224 48.5104 18.9456 50.512 16.8688"/>
+  <path data-glyph="g" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 56.8576 13.064 C 56.8576 13.064 59.7248 10.8928 60.8768 10.8736 C 61.3312 10.8672 61.9904 11.2576 61.4848 12.4288 C 61.7088 12.2688 62.2144 9.4912 58.8608 11.7376 C 58.5856 11.9232 55.8208 14.2656 56.4672 15.6224 C 56.4672 15.6224 56.832 16.5696 58.4704 15.4176 C 58.4704 15.4176 60.2304 13.9456 60.5504 13.5616 C 60.9728 13.056 62.7392 11.2768 62.816 11.0976 C 62.6432 10.7328 56.8512 19.7696 54.3168 21.4336 C 51.6352 23.1936 50.9184 21.5488 52.6272 20.3328 C 53.1072 19.8848 56.6528 18.1696 56.832 18.1248 C 56.832 18.1248 59.68 16.8192 60.4928 16.3264 C 61.6064 15.648 63.6736 13.7168 64.0576 13.064"/>
+  <path data-glyph="j" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 65.7856 11.072 C 65.7856 11.072 61.248 17.152 58.7456 19.936 C 57.8048 20.9792 55.3216 22.7328 54.4384 21.9456 C 53.5936 21.056 57.1712 19.2384 58.6304 18.6112 C 62.08 17.3504 64.8256 16.0528 67.1104 13.064"/>
+  <path data-glyph="j" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 67.6992 8.6336 C 67.6416 8.8128 67.456 8.9536 67.2832 8.9536 C 67.104 8.9536 67.008 8.8128 67.0656 8.6336 C 67.1296 8.4608 67.3152 8.32 67.488 8.32 C 67.6672 8.32 67.7568 8.4608 67.6992 8.6336 C 67.6992 8.6336 67.6992 8.6336 67.6992 8.6336"/>
+  <path data-glyph="p" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 67.1104 13.064 C 67.1104 13.064 70.784 8.5568 70.784 8.5568 C 70.784 8.5568 61.8496 20.9344 61.5552 21.344 C 62.2656 20.9152 67.1296 12.7744 71.7632 10.9184 C 72.576 10.6304 73.6256 11.104 72.2944 12.4864 C 71.9168 12.8768 69.5616 14.3168 69.344 15.1616 C 69.344 15.1616 68.9792 16.608 71.008 15.744 C 71.008 15.744 72.2432 15.0288 73.8688 13.064"/>
+  <path data-glyph="q" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 77.2864 13.696 C 77.2864 13.696 78.048 12.3904 78.0928 11.872 C 78.0928 11.872 78.4 10.1504 75.8592 11.2704 C 75.0336 11.6352 72.4736 13.9776 72.9536 15.6224 C 72.9536 15.6224 73.2352 16.7104 75.6416 15.0848 C 75.6416 15.0848 77.376 13.9584 78.2976 12.7936 C 78.7008 12.2944 79.5264 11.1168 79.3408 11.2192 C 79.1168 11.3472 71.872 20.1792 71.7312 20.8192 C 71.7312 20.8192 70.304 23.0464 72.7104 21.7856 C 72.7104 21.7856 75.5008 19.8592 76.4864 15.9872 C 76.4864 15.9872 76.608 15.6032 76.4864 15.2832 C 76.4864 15.2832 76.7232 16.768 78.3296 15.584 C 78.3296 15.584 79.5008 14.7664 80.768 13.064"/>
+  <path data-glyph=".notdef" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 90.368 16 L 90.368 4.8 L 96.768 4.8 L 96.768 16 Z"/>
+  <path data-glyph=".notdef" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 107.968 16 L 107.968 4.8 L 114.368 4.8 L 114.368 16 Z"/>
+  <path data-glyph="uni0040" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 130.3664 13.3472 C 130.3664 13.3472 130.7232 12.3952 130.6048 12.1216 C 130.4848 11.848 128.528 11.6864 126.9872 13.9904 C 126.8592 14.1808 126.2768 15.4704 126.8432 15.8576 C 127 15.9648 127.552 16.248 129.2352 14.5008 C 130.5968 13.0896 130.8352 12.8768 131.5328 12.1808 C 131.4672 12.1488 129.3728 15.04 129.248 15.2512 C 129.0592 15.568 129.4848 16.2976 130.5088 15.8464 C 135.6784 13.568 134.0512 7.84 128.4032 10.36 C 121.0112 14.8336 125.2704 20.688 130.9728 17.048 C 130.9728 17.048 133.8528 14.92 131.9136 13.6208"/>
+  <path data-glyph="uni0026" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 143.8016 15.6736 C 143.8656 15.424 148.5456 9.1264 149.5584 8.28 C 148.5872 9.2784 147.2624 10.272 144.2144 14.7648 C 144.256 14.728 145.8688 11.3056 144.7904 10.4016 C 144.24 9.9392 142.7648 9.7664 142.8608 12.3616 C 142.9744 15.3744 146.5248 16.3264 148.1488 14.2784 C 148.5968 13.7136 148.5184 12.9776 148.4672 12.8864 C 148.3536 12.68 148.24 12.6864 148.1472 12.7936 C 148.0816 12.8688 148.1616 13.0064 148.312 13.0352"/>
+  <path data-glyph="f" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 156.9568 14.6304 C 157.36 15.8016 156.3296 18.5728 156.3296 18.5728 C 155.5872 20.9728 154.1024 21.9456 154.1024 21.9456 C 152.4704 22.688 152.9888 21.0624 152.9888 21.0624 C 152.848 20.5056 159.2608 10.72 162.0128 6.7456 C 162.6208 5.8688 164.5408 2.9248 165.3024 4.1728 C 165.6992 5.4592 163.7856 7.8592 163.7856 7.8592 C 159.9136 12.9216 157.9168 13.3568 157.7312 13.2992 C 157.648 13.2672 157.3088 13.376 157.2128 12.7424 C 157.2128 12.7424 157.4496 12.4864 157.1872 12.2304 C 157.1936 12.1792 156.6368 12.0512 156.8288 13.1712 C 156.9376 13.7344 157.5904 14.4768 157.9616 14.6112 C 158.3456 14.752 160.1632 15.2208 161.9296 13.064"/>
+  <path data-glyph="i" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 161.9296 13.064 C 161.9296 13.064 163.952 10.976 163.952 10.976 C 162.7296 12.6976 159.408 15.9104 161.4496 16 C 162.6848 16.16 164.6688 14.1072 165.5328 13.064"/>
+  <path data-glyph="i" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 166.0064 8.6336 C 165.9488 8.8128 165.7568 8.9536 165.584 8.9536 C 165.4112 8.9536 165.3152 8.8128 165.3728 8.6336 C 165.4304 8.4608 165.616 8.32 165.7952 8.32 C 165.968 8.32 166.064 8.4608 166.0064 8.6336 C 166.0064 8.6336 166.0064 8.6336 166.0064 8.6336"/>
+</svg>

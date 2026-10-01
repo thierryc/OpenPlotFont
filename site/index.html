@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PlotFont — Fonts that follow the pen</title>
+  <meta name="description" content="An open font format for centerline lettering. Edit in Glyphs, export portable JSON, and explore 87 attributed stroke-font preparations.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="PlotFont — Fonts that follow the pen">
+  <meta property="og:description" content="Centerline strokes, editable fonts, portable JSON. A font catalog and Glyphs 4 exporter.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thierryc.github.io/PlotFont/">
+  <link rel="canonical" href="https://thierryc.github.io/PlotFont/">
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#top"><img src="assets/mark.svg" width="34" height="34" alt="">PlotFont</a>
+    <nav aria-label="Primary navigation">
+      <a href="#about">About</a><a href="#how">How it works</a><a href="#fonts">Fonts</a><a href="#install">Glyphs</a>
+      <a class="nav-github" href="https://github.com/thierryc/PlotFont">GitHub ↗</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> Open format · draft 0.3</p>
+        <h1>Fonts that<br>follow <em>the pen.</em></h1>
+        <p class="hero-lede">Lettering as paths to draw. Edit centerline strokes in Glyphs and export a portable font for plotting, engraving, and CAD/CAM workflows.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#fonts">Explore the fonts <span>↓</span></a><a class="button button-secondary" href="#install">Get the Glyphs exporter</a></div>
+      </div>
+      <figure class="hero-specimen">
+        <div class="specimen-toolbar"><span>Hershey Script Simplex</span><span>Centerline paths</span></div>
+        <div class="specimen-sheet"><img src="assets/hero.svg" alt="PlotFont drawn with the centerline strokes of Hershey Script Simplex"></div>
+        <figcaption><span><i class="legend-line"></i> Each path is a pen-down stroke</span><span>Dr. A. V. Hershey</span></figcaption>
+      </figure>
+    </section>
+    <div class="proof" aria-label="Project at a glance">
+      <div><strong>{{FONT_COUNT}}</strong><span>font preparations</span></div><div><strong>JSON</strong><span>portable font data</span></div><div><strong>Glyphs 4</strong><span>edit and export</span></div><div><strong>Curves</strong><span>stay editable</span></div>
+    </div>
+
+    <section class="section about" id="about">
+      <div><p class="kicker">What & why</p><h2>A font for<br>drawing letters.</h2></div>
+      <div class="about-copy"><p class="large-copy">A regular font describes the outline of a letter. A stroke font describes the path your pen follows.</p>
+        <p>PlotFont stores those paths, together with spacing, Unicode mappings, and drawing order, in a readable <code>.plotfont.json</code> file. Separate strokes keep their pen lifts. Loops remain loops. Curves remain curves.</p>
+        <p>A glyph can also include explicitly filled shapes and holes. Your drawing software sets the physical size and prepares fills for the actual tool. That keeps the font useful across different pens and machines.</p>
+        <a class="text-link" href="https://github.com/thierryc/PlotFont/blob/main/docs/PLOTFONT_FORMAT.md">Read the format specification ↗</a>
+      </div>
+    </section>
+
+    <section class="workflow" id="how">
+      <div class="section-heading"><div><p class="kicker">How it works</p><h2>Draw. Export. Use.</h2></div><p>One editable source, one portable font.<br>Your plotter application handles the machine.</p></div>
+      <ol class="workflow-list">
+        <li><span class="step-number">01</span><h3>Edit in Glyphs</h3><p>Open a catalog font or draw your own centerlines. Use a separate path wherever the pen should lift.</p><span class="file-label">.glyphs / .glyphspackage</span></li>
+        <li><span class="step-number">02</span><h3>Export PlotFont</h3><p>Choose a master and export its paths, metrics, and spacing with the Glyphs plugin.</p><span class="file-label">.plotfont.json</span></li>
+        <li><span class="step-number">03</span><h3>Prepare the drawing</h3><p>Lay out text and choose a size in your drawing software. The reference tools can render a specimen to SVG.</p><span class="file-label">SVG → your drawing workflow</span></li>
+      </ol>
+      <p class="workflow-note">PlotFont is a draft font format and authoring toolkit. Machine output and device control belong to consumer applications. The exporter reads authored paths; automatic outline-to-centerline conversion is not included.</p>
+    </section>
+
+    <section class="section catalog" id="fonts">
+      <div class="section-heading"><div><p class="kicker">The font catalog</p><h2>Lines with character.</h2></div><p>{{FONT_COUNT}} preparations from existing stroke sources: Hershey, EMS, Relief, CAD lettering, and independent designs. Some source adaptations share the same underlying design.</p></div>
+      <div class="catalog-tools" hidden>
+        <div class="search-field"><label for="font-search">Find a font</label><input id="font-search" type="search" placeholder="Name, designer, or license…" autocomplete="off"></div>
+        <div class="collection-field"><label for="font-collection">Collection</label><select id="font-collection"><option value="all">All collections</option><option value="Hershey">Hershey</option><option value="EMS">EMS</option><option value="Relief">Relief</option><option value="CAD">CAD</option><option value="Independent">Independent</option></select></div>
+        <p id="catalog-count" role="status" aria-live="polite">{{FONT_COUNT}} fonts</p>
+      </div>
+      <div class="catalog-grid">{{CATALOG}}</div>
+      <p class="empty-state" hidden>No fonts match. Try another name, designer, or collection.</p>
+      <div class="catalog-notes">
+        <p>Each ZIP includes PlotFont JSON, an editable Glyphs package, original source, full license notices, and specimens. Keep the notices with redistributed fonts. Font licenses remain their authors’ licenses.</p>
+        <details><summary>Coverage and preparation notes</summary><p>All 87 packages were saved and reopened in Glyphs 4.1.1, then compared with their source conversions. These are font preparations; physical plotting has not been tested. Fourteen non-Latin and symbol JHF sources use temporary private-use mappings, identified on their cards. Script sources preserve pen lifts; automatic joining and substitutions are not supplied by this catalog. SVG arcs are converted to curves with a documented tolerance.</p><p>EMS fonts are existing stroke derivatives. Regular Google Fonts outlines are not automatically converted into centerlines. Conversion details and upstream credits are retained in each ZIP.</p></details>
+      </div>
+    </section>
+
+    <section class="section install" id="install">
+      <div class="section-heading"><div><p class="kicker">Glyphs 4 exporter · v{{PLUGIN_VERSION}}</p><h2>From your editor<br>to your pen.</h2></div><p>The self-contained plugin exports one master as geometry-only PlotFont 0.3. Install it once; no repository checkout is needed afterwards.</p></div>
+      <div class="install-grid">
+        <div class="install-download"><a class="button button-primary" href="downloads/PlotFont-Glyphs-{{PLUGIN_VERSION}}.zip" download>Download the Glyphs plugin <span>↓</span></a><p class="small-copy">For Glyphs 4 on macOS. Open the ZIP to get <code>PlotFont.glyphsFileFormat</code>.</p><a class="text-link" href="https://github.com/thierryc/PlotFont/blob/main/docs/GLYPHS_EXPORT_PLUGIN.md">Plugin documentation ↗</a></div>
+        <ol class="install-steps"><li><h3>Install</h3><p>Drag <code>PlotFont.glyphsFileFormat</code> onto Glyphs 4 and accept the installation prompt.</p></li><li><h3>Restart Glyphs</h3><p>Save your work, then quit and reopen Glyphs to load the plugin.</p></li><li><h3>Export a font</h3><p>Open your source. Choose <strong>File → Export → PlotFont</strong>, select one master, and save to a new <code>.plotfont.json</code> filename. Existing files are preserved.</p></li></ol>
+      </div>
+      <p class="installation-status">Preview status: native export actions and installation were verified in Glyphs 4.1.1. Startup and the visible export tab still need qualification after restart. See the <a href="https://github.com/thierryc/PlotFont/blob/main/docs/GLYPHS_EXPORT_PLUGIN.md#verification-and-limits">current compatibility notes</a> and the <a href="https://handbook.glyphsapp.com/plugins/">Glyphs installation guide</a>.</p>
+      <details class="advanced-install"><summary>Build from source or use the export script</summary><div class="advanced-grid"><div><h3>Build the plugin</h3><p>Download or clone the repository. From its folder, run this with Python 3.10 or later:</p><pre><code>python3 scripts/build_glyphs_plugin.py</code></pre><p>Install the complete bundle from <code>output/build/PlotFont.glyphsFileFormat</code>.</p></div><div><h3>Install the workspace script</h3><p>Keep the repository intact. In Glyphs, use <strong>Script → Open Scripts Folder</strong>, then create a symlink there to <code>scripts/Export PlotFont.py</code> in your checkout. Refresh the menu with Option held while opening Script, then choose Reload Scripts.</p><p>Configure the font ID and a new absolute destination as described in the <a href="https://github.com/thierryc/PlotFont/blob/main/docs/GLYPHS_EXPORT_SCRIPT.md#qualification-and-setup">script setup guide</a>. The script imports the repository’s Python package, so copying the script alone will not work.</p><p>Its default geometry export is legacy 0.2; the explicit matching compiled-font workflow adds optional 0.3 OpenType layout.</p></div></div></details>
+    </section>
+    <section class="closing"><p class="kicker">Open source, open paths</p><h2>Make lettering move.</h2><a class="button button-secondary" href="https://github.com/thierryc/PlotFont">Explore the project ↗</a></section>
+  </main>
+  <footer><a class="brand" href="#top">PlotFont</a><p>Code & documentation: <a href="https://github.com/thierryc/PlotFont/blob/main/LICENSE">MIT</a>. Fonts retain their source licenses.</p><div><a href="https://ap.cx">ap.cx ↗</a><a href="https://github.com/thierryc/PlotFont">GitHub ↗</a></div></footer>
+</body>
+</html>

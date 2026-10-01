@@ -1,0 +1,200 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="204.508mm" height="42mm" viewBox="-2.15 -15.678 204.508 42">
+<metadata>Font name:               Cutlings Singularis
+License:                 SIL Open Font License http://scripts.sil.org/OFL
+Designed by:             Ellen Wasbo
+Link:                    http://cutlings.wasbo.net/
+Cutlings Singularis, Dualis and Pluralis by Ellen Wasbø; author credits and font license in readme.txt.
+
+
+Font names:		Cutlings Singularis, Dualis &amp; Pluralis
+License:		SIL Open Font License http://scripts.sil.org/OFL
+				This license permit you to use, modify and distribute the font freely as long as the resulting
+				font also remain under the Open Font License.
+Created by:		Ellen Wasbø
+Link:			http://cutlings.wasbo.net/ where you find instructions on how to use the svg-files.
+
+The ttf files of this bundle are just lookalike single line stroke fonts and can be used as any ttf font file. 
+The OTF_stickfonts have zero with and might look strange in some programs but could work well for a plotter 
+(drawing the lines twice). The stickfont can also after converting to path in Inkscape be converted to single line font by
+using the remove duplicat lines extension (http://cutlings.wasbo.net/inkscape-extension-removeduplicatelines/).
+
+The true single line fonts (drawing lines once) are the svg fonts in the SVGfonts folder. The svg files contain the SVG 1.1 
+format http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd
+These files could be used in Inkscape as single line fonts together with the Hershey Text extension or the Custom Stroke Fonts extension. 
+For your convenience, install the ttf fonts to enable Hershey Text guessing the correct svg-font if you just specify the path where it is. 
+Please note that nothing will show up if you try to display the svg file in a browser or in vector grafics software like Inkscape
+as the paths of the glyphs are hidden in the xml code.
+
+You could also pick the letters one-by-one from the glyph overview SVG files if you are reluctant to using Inkscape. 
+
+Copyright (c) &lt;dates&gt;, &lt;Copyright Holder&gt; (&lt;URL|email&gt;),
+with Reserved Font Name &lt;Reserved Font Name&gt;.
+Copyright (c) &lt;dates&gt;, &lt;additional Copyright Holder&gt; (&lt;URL|email&gt;),
+with Reserved Font Name &lt;additional Reserved Font Name&gt;.
+Copyright (c) &lt;dates&gt;, &lt;additional Copyright Holder&gt; (&lt;URL|email&gt;).
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded, 
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+&quot;Font Software&quot; refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+&quot;Reserved Font Name&quot; refers to any names specified as such after the
+copyright statement(s).
+
+&quot;Original Version&quot; refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+&quot;Modified Version&quot; refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+&quot;Author&quot; refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION &amp; CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
+</metadata>
+  <title>Hamburgefontsiv 0123456789
+A O Q gjpq é Å @ &amp; fi</title>
+  <path data-glyph="H" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 2.2064 -6.7576 C 3.6384 -6.532 8.1008 -5.7616 9.3808 -5.8312"/>
+  <path data-glyph="H" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 8.904 -12.4408 C 8.8 -7.3776 8.888 -2.444 9.224 2.3216"/>
+  <path data-glyph="H" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 2.16 -12.0456 C 2.4 -7.6792 2.784 -3.2392 2.16 0.6992"/>
+  <path data-glyph="a" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 15.7336 -3.2632 C 13.9496 -3.92 11.8216 -2.7848 11.8376 -1.6584 C 11.8776 0.7112 14.1416 -0.3664 15.8696 -1.0968"/>
+  <path data-glyph="a" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 11.9736 -4.5472 C 11.9736 -4.5472 12.5256 -6.9112 14.3176 -6.5192 C 15.8536 -6.1832 15.9416 -3.7752 15.9496 -2.7552 C 15.9576 -0.7048 16.0296 0.3864 16.7736 0.2768"/>
+  <path data-glyph="m" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 23.2928 -4.828 C 24.0448 -6.0704 24.8448 -6.8632 26.0128 -6.4448 C 27.8848 -5.3896 26.9088 -2.3832 27.3408 -0.1096"/>
+  <path data-glyph="m" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 19.2128 -3.6928 C 19.5136 -5.1368 21.3976 -6.7408 22.1888 -6.2832 C 23.9288 -5.2784 22.9968 -2.4384 23.3248 -0.2264"/>
+  <path data-glyph="m" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 18.8288 -5.9792 C 19.2048 -4.6496 19.2208 -2.376 19.2928 -0.2376"/>
+  <path data-glyph="b" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 29.9952 -4.2872 C 32.0832 -7.3848 34.4672 -5.5392 34.4512 -3.8056 C 34.4192 -0.2704 32.0832 1.0032 29.9712 -1.024"/>
+  <path data-glyph="b" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 30.1792 -11.188 C 30.2592 -7.5296 30.1472 -3.9688 29.9392 -0.4528"/>
+  <path data-glyph="u" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 40.9008 -6.048 C 40.7008 -3.9024 40.5248 -2.284 40.7008 -0.1384"/>
+  <path data-glyph="u" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 36.3248 -6.104 C 36.3248 -6.104 35.6368 -1.1544 37.5568 -0.3464 C 38.6288 0.1056 40.4048 -1.2984 40.4048 -1.2984"/>
+  <path data-glyph="r" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 43.4368 -4.7112 C 44.2448 -6.408 46.2848 -6.5312 47.3968 -5.7184"/>
+  <path data-glyph="r" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 43.3808 -6.1104 L 43.4368 -0.1216"/>
+  <path data-glyph="g" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 53.488 -6.8936 C 53.488 -6.8936 53.848 -1.3256 53.384 1.324 C 53.112 4.5328 51.6776 8.172 50.2272 5.072"/>
+  <path data-glyph="g" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 53.424 -5.3656 C 51.832 -8.2984 49.264 -5.4032 49.28 -3.6664 C 49.32 0.5824 51.928 -1.1528 53.528 -2.0736"/>
+  <path data-glyph="e" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 60.9264 -1.6224 C 60.9264 -1.172 58.0704 0.4376 56.9824 -1.1944 C 56.1184 -2.4888 55.5584 -4.872 57.3024 -6.04 C 58.6064 -6.9128 61.3344 -5.5632 61.0384 -5.264 C 59.9104 -4.6544 57.9408 -3.2264 56.4848 -2.2856"/>
+  <path data-glyph="f" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 63.66 -3.86 C 65.364 -4.0952 66.524 -4.704 67.788 -4.9792"/>
+  <path data-glyph="f" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 65.932 -9.5696 C 65.556 -9.5696 65.036 -7.4088 65.092 -5.9872 C 65.212 -2.7392 66.1 0.9648 65.428 4.144 C 65.084 5.7768 63.396 7.3736 63.396 7.3736"/>
+  <path data-glyph="o" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 72.5888 -6.08 C 72.5888 -6.08 69.3216 -5.1248 70.0016 -1.8776 C 70.3616 -0.1808 71.9456 0.132 73.2336 -0.02 C 74.5936 -0.1816 76.0176 -1.4608 76.0336 -3.2056 C 76.0416 -4.8992 73.4416 -6.1576 72.6336 -5.9848"/>
+  <path data-glyph="n" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 78.684 -4.8256 C 79.092 -5.7072 79.732 -6.5632 81.172 -6.5312 C 82.98 -6.492 82.356 -2.6768 82.636 -0.3464"/>
+  <path data-glyph="n" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 78.38 -6.256 C 78.564 -4.4904 78.764 -2.7736 78.54 -0.0864"/>
+  <path data-glyph="t" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 85.3992 -5.8496 C 86.5272 -5.788 87.1352 -5.3248 88.9512 -5.7936"/>
+  <path data-glyph="t" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 86.7032 -9.488 C 87.1832 -9.116 85.9752 -2.896 86.8472 -0.1848 C 87.3112 1.2472 90.0792 -0.42 89.8232 -0.98"/>
+  <path data-glyph="s" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 95.1904 -5.3848 C 94.6624 -6.436 92.2304 -5.8984 92.1744 -4.5736 C 92.1104 -2.9416 96.0464 -3.2328 96.0464 -1.6 C 96.0544 -0.5072 94.5504 0.26 93.4624 0.2504 C 92.7744 0.244 91.9584 -0.8152 91.9584 -0.8152"/>
+  <path data-glyph="i" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 99.308 -9.5304 C 99.308 -9.5304 98.268 -9.2648 98.34 -8.8192 C 98.452 -8.1032 99.396 -8.3704 99.932 -8.8584 C 100.356 -9.252 99.332 -9.728 99.332 -9.728"/>
+  <path data-glyph="i" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 98.34 -0.0152 C 99.196 -0.1376 99.948 -0.3112 101.076 -0.2944"/>
+  <path data-glyph="i" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 98.956 -5.612 C 99.3 -2.8928 99.212 -1.4776 99.124 -0.0704"/>
+  <path data-glyph="v" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 103.6104 -5.6968 C 104.8024 -4.0176 105.4424 -1.832 106.2184 -0.0832 C 106.9784 -1.8648 107.6584 -3.764 108.5544 -5.6128"/>
+  <path data-glyph="uni0030" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 119.9128 -12.2152 C 118.364 -12 116.0192 -9.0408 116.8232 -4.628 C 117.124 -2.9656 118.2192 0.1168 120.9728 0.168 C 122.5168 0.1968 125.2904 -2.1344 124.6536 -7.1328 C 123.8744 -13.2448 119.9904 -12.3448 119.9904 -12.3448"/>
+  <path data-glyph="uni0031" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 127.1464 -8.5432 C 128.2232 -9.6704 129.5696 -11.088 130.0208 -12.6336"/>
+  <path data-glyph="uni0031" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 129.9504 -12.4216 C 129.4744 -8.3424 129.1744 -4.1688 129.6392 -0.6128"/>
+  <path data-glyph="uni0032" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 132.7848 -9.5728 C 132.5008 -10.94 134.1576 -11.8864 135.5816 -11.9344 C 137.7304 -12.008 138.1704 -9.8344 138.036 -8.8472 C 137.684 -6.2656 134.2168 -7.4688 132.0288 0.0184 C 134.48 -1.1936 136.6432 1.0888 138.8696 -1.104"/>
+  <path data-glyph="uni0033" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 140.796 -10.4256 C 141.2192 -11.6624 144.6712 -13.4696 145.7792 -10.9632 C 146.5352 -9.2528 145.132 -7.652 143.6112 -7.4688 C 145.5696 -7.7752 146.6352 -6.048 146.74 -4.7 C 147.2248 1.5216 141.012 0.06 140.204 -1.916"/>
+  <path data-glyph="uni0034" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 155.14 -10.8232 C 155.232 -6.464 154.732 -3.4376 155.2736 -0.2104"/>
+  <path data-glyph="uni0034" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 151.9352 -11.94 C 151.3632 -9.2048 150.3136 -7.0648 149.3328 -4.8384 C 150.9744 -5.0704 153.2472 -5.6224 154.888 -5.4768"/>
+  <path data-glyph="uni0035" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 158.716 -11.368 C 160.2824 -11.8728 162.6584 -11.2792 164.2944 -11.6456"/>
+  <path data-glyph="uni0035" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 158.8744 -11.8432 C 159.1736 -9.9288 159.1336 -7.8472 158.9096 -6.1424 C 162.716 -8.7648 165.9144 -6.5344 165.2184 -3.5744 C 163.7272 2.7592 158.6152 -0.9768 158.8744 -1.7112"/>
+  <path data-glyph="uni0036" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 170.2496 -11.6512 C 169.2904 -11.9944 166.4184 -5.852 167.4864 -3.1024 C 168.148 -1.3984 169.7968 0.1808 171.5832 -0.1904 C 173.3088 -0.5488 174.4872 -3.6896 173.4784 -5.1376 C 170.9936 -8.212 168.6904 -4.9912 168.6152 -3.5616 C 168.4752 -2.5736 168.7096 -1.9064 168.8984 -1.1552"/>
+  <path data-glyph="uni0037" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 176.1792 -5.9096 C 177.8944 -5.4904 179.5 -5.62 181.1136 -5.712"/>
+  <path data-glyph="uni0037" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 175.508 -10.8528 C 177.6712 -10.44 179.5352 -10.9296 181.5088 -11.0904 C 179.3016 -7.2552 178.1528 -2.2824 177.7976 0.5016"/>
+  <path data-glyph="uni0038" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 186.3536 -11.9448 C 185.4904 -11.772 184.3712 -10.7352 184.5592 -9.2312 C 184.896 -6.5424 190.1856 -6.7424 190.4392 -4.0512 C 190.6024 -2.3248 189.972 -0.8072 187.0464 0.0256 C 185.5784 0.4432 183.6296 -1.6112 183.5744 -3.1408 C 183.2752 -6.588 190.248 -7.3976 190.0864 -10.4584 C 190.0072 -11.964 187.9832 -12.6832 186.292 -12.0504"/>
+  <path data-glyph="uni0039" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 194.104 1.3968 C 194.808 0.36 195.656 0.1752 197.176 -1.7752 C 198.696 -3.7256 200.208 -8.82 197.952 -11.4264 C 196.128 -13.528 191.312 -10.5432 192.096 -7.4464 C 192.7056 -5.5152 195.5016 -3.1904 199.04 -7.196"/>
+  <path data-glyph="A" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 2.984 10.7208 C 4.04 10.8784 6.2128 11.0392 6.9808 10.76"/>
+  <path data-glyph="A" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 4.264 4.4112 C 5.856 9.4376 7.2544 14.352 9.0752 19.2296"/>
+  <path data-glyph="A" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 4.44 5.7336 C 3.6 9.3608 2.496 12.6016 1.36 15.7864"/>
+  <path data-glyph="O" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 20.9016 3.3952 C 19.2216 3.2496 16.3896 6.8304 17.1896 11.2432 C 17.7256 14.1944 18.7096 16.2736 21.6536 16.3512 C 23.1976 16.392 26.5896 13.7368 25.9576 8.7384 C 25.1736 2.6264 21.2136 3.1584 21.2136 3.1584"/>
+  <path data-glyph="Q" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 38.6752 14.2208 C 40.2992 16.4008 42.5472 20.8728 45.6192 17.2688 L 45.6192 17.2688"/>
+  <path data-glyph="Q" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 37.4112 3.5432 C 35.1152 4.3808 33.4912 6.7768 33.6192 10.608 C 33.7232 13.6536 35.4032 16.5456 37.8832 16.3184 C 40.7552 16.0552 42.2112 14.0088 42.3072 9.5584 C 42.3632 6.6352 40.6104 3.1976 37.444 3.5952"/>
+  <path data-glyph="g" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 54.1664 9.1064 C 54.1664 9.1064 54.5264 14.6744 54.0624 17.324 C 53.7904 20.5328 52.356 24.172 50.9056 21.072"/>
+  <path data-glyph="g" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 54.1024 10.6344 C 52.5104 7.7016 49.9424 10.5968 49.9584 12.3336 C 49.9984 16.5824 52.6064 14.8472 54.2064 13.9264"/>
+  <path data-glyph="j" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 58.172 6.1384 C 58.172 6.1384 57.196 6.468 57.22 6.8664 C 57.26 7.3328 57.82 7.4336 58.228 7.2024 C 59.292 6.5936 58.132 6.036 58.132 6.036"/>
+  <path data-glyph="j" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 57.78 9.8888 C 57.78 9.8888 58.348 14.3376 58.004 16.4376 C 57.58 19.0128 55.772 23.3784 55.772 23.3784"/>
+  <path data-glyph="p" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 63.4096 11.6648 C 63.4096 11.6648 65.9456 9.5912 67.2176 10.3208 C 68.7136 11.1776 68.7776 13.968 67.7056 15.312 C 66.6576 16.62 63.2096 15.3576 63.2896 14.6344"/>
+  <path data-glyph="p" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 63.3056 10.7024 C 63.4336 15.1872 63.3616 19.5592 62.7536 23.624"/>
+  <path data-glyph="q" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 73.2368 21.268 C 74.8128 21.7872 74.9808 22.588 75.5808 23.3016"/>
+  <path data-glyph="q" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 75.5808 9.468 C 75.4208 13.6088 75.0688 18.0792 75.3008 22.7984"/>
+  <path data-glyph="q" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 75.1488 11.0472 C 75.1488 11.0472 72.2928 9.4304 71.3328 10.4272 C 70.1088 11.7112 70.2848 14.8768 71.8368 15.7448 C 73.0528 16.424 75.2608 14.2936 75.2608 14.2936"/>
+  <path data-glyph=".notdef" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 84.6312 16 L 84.6312 4.8 L 91.0312 4.8 L 91.0312 16 Z"/>
+  <path data-glyph="uni00C5" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 102.3192 1.0136 C 101.4368 1.0152 100.072 1.2 100.2416 2.2568 C 100.4024 3.26 102.58 2.8256 102.58 2.8256 L 102.58 2.8256 C 102.58 2.8256 104.04 2.3496 103.9272 1.6352 C 103.8264 0.9984 102.2288 1.0424 102.2288 1.0424"/>
+  <path data-glyph="uni00C5" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 100.512 11.0496 C 101.5 11.1952 102.4904 11.3448 103.2064 11.0864"/>
+  <path data-glyph="uni00C5" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 101.7088 5.2136 C 103.1976 9.8632 104.2104 15.152 105.984 18.92"/>
+  <path data-glyph="uni00C5" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 101.9528 6.1008 C 101.1648 9.4552 100.0616 12.7896 98.9992 15.7352"/>
+  <path data-glyph="uni0040" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 120.3576 11.492 C 120.3576 11.492 119.6656 9.512 117.9496 9.9112 C 116.1224 10.3352 115.4688 15.3768 117.3416 15.4816 C 119.312 15.5912 120.8896 9.8688 120.9168 10.0328 C 120.9168 10.0328 118.7296 14.8976 120.4552 15.5784 C 122.06 16.212 123.7752 13.2384 123.6656 11.516 C 123.5296 9.388 121.2176 7.2224 119.0928 7.0408 C 116.2704 6.7992 113.6896 9.9096 113.62 12.7808 C 113.5464 15.788 115.988 18.2168 118.9712 18.2056 C 121.472 18.196 123.8008 15.9016 123.6896 15.8464"/>
+  <path data-glyph="uni0026" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 139.1424 12.064 C 138.2656 14.2808 138.0248 16.9664 133.9912 16.1872 C 131.3008 15.6672 130.5136 13.66 130.848 11.668 C 131.6328 6.9824 137.5144 8.2144 137.7544 5.6736 C 137.8496 4.6656 137.0248 3.248 135.5584 3.0984 C 133.912 2.9208 133.2704 3.7448 133.2808 5.244 C 133.512 9.2112 135.2504 13.3056 140.3248 14.5464"/>
+  <path data-glyph="f" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 148.0304 12.14 C 149.7344 11.9048 150.8944 11.296 152.1584 11.0208"/>
+  <path data-glyph="f" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 150.3024 6.4304 C 149.9264 6.4304 149.4064 8.5912 149.4624 10.0128 C 149.5824 13.2608 150.4704 16.9648 149.7984 20.144 C 149.4544 21.7768 147.7664 23.3736 147.7664 23.3736"/>
+  <path data-glyph="i" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 154.876 6.4696 C 154.876 6.4696 153.836 6.7352 153.908 7.1808 C 154.02 7.8968 154.964 7.6296 155.5 7.1416 C 155.924 6.748 154.9 6.272 154.9 6.272"/>
+  <path data-glyph="i" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 153.908 15.9848 C 154.764 15.8624 155.516 15.6888 156.644 15.7056"/>
+  <path data-glyph="i" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 154.524 10.388 C 154.868 13.1072 154.78 14.5224 154.692 15.9296"/>
+</svg>

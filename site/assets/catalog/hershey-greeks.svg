@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="261.823809524mm" height="16.4904761905mm" viewBox="-2.15 -11.6738095238 261.823809524 16.4904761905">
+<metadata>Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
+
+Hershey fonts data (./hershey-fonts/*)
+
+Source: http://emergent.unpythonic.net/software/hershey
+
+------------------------------------------------------------------------------
+
+USE RESTRICTION:
+	This distribution of the Hershey Fonts may be used by anyone for
+	any purpose, commercial or otherwise, providing that:
+		1. The following acknowledgements must be distributed with
+			the font data:
+			- The Hershey Fonts were originally created by Dr.
+				A. V. Hershey while working at the U. S.
+				National Bureau of Standards.
+			- The format of the Font data in this distribution
+				was originally created by
+					James Hurt
+					Cognition, Inc.
+					900 Technology Park Drive
+					Billerica, MA 01821
+					(mit-eddie!ci-dandelion!hurt)
+		2. The font data in this distribution may be converted into
+			any other format *EXCEPT* the format distributed by
+			the U.S. NTIS (which organization holds the rights
+			to the distribution and use of the font data in that
+			particular format). Not that anybody would really
+			*want* to use their format... each point is described
+			in eight bytes as &quot;xxx yyy:&quot;, where xxx and yyy are
+			the coordinate values as ASCII numbers.
+
+------------------------------------------------------------------------------
+
+The format of the files is described as follows:
+
+The structure is bascially as follows: each character consists of a number
+1-&gt;4000 (not all used) in column 0:4, the number of vertices in columns 5:7,
+the left hand position in column 8, the right hand position in column 9, and
+finally the vertices in single character pairs. All coordinates are given
+relative to the ascii value of &#x27;R&#x27;. If the coordinate value is &quot; R&quot; that
+indicates a pen up operation.
+
+As an example consider the 8th symbol
+
+8 9MWOMOV RUMUV ROQUQ
+
+It has 9 coordinate pairs (this includes the left and right position).
+The left position is &#x27;M&#x27; - &#x27;R&#x27; = -5
+The right position is &#x27;W&#x27; - &#x27;R&#x27; = 5
+The first coordinate is &quot;OM&quot; = (-3,-5)
+The second coordinate is &quot;OV&quot; = (-3,4)
+Raise the pen &quot; R&quot;
+Move to &quot;UM&quot; = (3,-5)
+Draw to &quot;UV&quot; = (3,4)
+Raise the pen &quot; R&quot;
+Move to &quot;OQ&quot; = (-3,-1)
+Draw to &quot;UQ&quot; = (3,-1)
+Drawing this out on a piece of paper will reveal it represents an &#x27;H&#x27;.
+
+</metadata>
+  <title></title>
+  <path data-glyph="hershey.001.714" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 8 -8 L 8 -2.66666666667"/>
+  <path data-glyph="hershey.001.714" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 8 -0.761904761905 L 7.61904761905 -0.380952380952 L 8 0 L 8.38095238095 -0.380952380952 L 8 -0.761904761905"/>
+  <path data-glyph="hershey.002.717" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 11.4285714286 -8 L 11.4285714286 -5.33333333333"/>
+  <path data-glyph="hershey.002.717" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 14.4761904762 -8 L 14.4761904762 -5.33333333333"/>
+  <path data-glyph="hershey.003.733" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 20.1904761905 -9.52380952381 L 17.5238095238 2.66666666667"/>
+  <path data-glyph="hershey.003.733" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 22.4761904762 -9.52380952381 L 19.8095238095 2.66666666667"/>
+  <path data-glyph="hershey.003.733" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 17.5238095238 -4.57142857143 L 22.8571428571 -4.57142857143"/>
+  <path data-glyph="hershey.003.733" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 17.1428571429 -2.28571428571 L 22.4761904762 -2.28571428571"/>
+  <path data-glyph="hershey.004.719" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 27.0476190476 -9.52380952381 L 27.0476190476 1.52380952381"/>
+  <path data-glyph="hershey.004.719" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 28.5714285714 -9.52380952381 L 28.5714285714 1.52380952381"/>
+  <path data-glyph="hershey.004.719" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 30.4761904762 -6.85714285714 L 29.7142857143 -7.61904761905 L 28.5714285714 -8 L 27.0476190476 -8 L 25.9047619048 -7.61904761905 L 25.1428571429 -6.85714285714 L 25.1428571429 -6.09523809524 L 25.5238095238 -5.33333333333 L 25.9047619048 -4.95238095238 L 26.6666666667 -4.57142857143 L 28.9523809524 -3.80952380952 L 29.7142857143 -3.42857142857 L 30.0952380952 -3.04761904762 L 30.4761904762 -2.28571428571 L 30.4761904762 -1.14285714286 L 29.7142857143 -0.380952380952 L 28.5714285714 0 L 27.0476190476 0 L 25.9047619048 -0.380952380952 L 25.1428571429 -1.14285714286"/>
+  <path data-glyph="hershey.005.2271" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 39.619047619 -8 L 32.7619047619 0"/>
+  <path data-glyph="hershey.005.2271" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 34.6666666667 -8 L 35.4285714286 -7.2380952381 L 35.4285714286 -6.47619047619 L 35.0476190476 -5.71428571429 L 34.2857142857 -5.33333333333 L 33.5238095238 -5.33333333333 L 32.7619047619 -6.09523809524 L 32.7619047619 -6.85714285714 L 33.1428571429 -7.61904761905 L 33.9047619048 -8 L 34.6666666667 -8 L 35.4285714286 -7.61904761905 L 36.5714285714 -7.2380952381 L 37.7142857143 -7.2380952381 L 38.8571428571 -7.61904761905 L 39.619047619 -8"/>
+  <path data-glyph="hershey.005.2271" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 38.0952380952 -2.66666666667 L 37.3333333333 -2.28571428571 L 36.9523809524 -1.52380952381 L 36.9523809524 -0.761904761905 L 37.7142857143 0 L 38.4761904762 0 L 39.2380952381 -0.380952380952 L 39.619047619 -1.14285714286 L 39.619047619 -1.90476190476 L 38.8571428571 -2.66666666667 L 38.0952380952 -2.66666666667"/>
+  <path data-glyph="hershey.006.734" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 49.5238095238 -4.57142857143 L 49.5238095238 -4.95238095238 L 49.1428571429 -5.33333333333 L 48.7619047619 -5.33333333333 L 48.380952381 -4.95238095238 L 48 -4.19047619048 L 47.2380952381 -2.28571428571 L 46.4761904762 -1.14285714286 L 45.7142857143 -0.380952380952 L 44.9523809524 0 L 43.4285714286 0 L 42.6666666667 -0.380952380952 L 42.2857142857 -0.761904761905 L 41.9047619048 -1.52380952381 L 41.9047619048 -2.28571428571 L 42.2857142857 -3.04761904762 L 42.6666666667 -3.42857142857 L 45.3333333333 -4.95238095238 L 45.7142857143 -5.33333333333 L 46.0952380952 -6.09523809524 L 46.0952380952 -6.85714285714 L 45.7142857143 -7.61904761905 L 44.9523809524 -8 L 44.1904761905 -7.61904761905 L 43.8095238095 -6.85714285714 L 43.8095238095 -6.09523809524 L 44.1904761905 -4.95238095238 L 44.9523809524 -3.80952380952 L 46.8571428571 -1.14285714286 L 47.619047619 -0.380952380952 L 48.380952381 0 L 49.1428571429 0 L 49.5238095238 -0.380952380952 L 49.5238095238 -0.761904761905"/>
+  <path data-glyph="hershey.007.731" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 52.5714285714 -7.2380952381 L 52.1904761905 -7.61904761905 L 52.5714285714 -8 L 52.9523809524 -7.61904761905 L 52.9523809524 -6.85714285714 L 52.5714285714 -6.09523809524 L 52.1904761905 -5.71428571429"/>
+  <path data-glyph="hershey.008.721" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 58.6666666667 -9.52380952381 L 57.9047619048 -8.7619047619 L 57.1428571429 -7.61904761905 L 56.380952381 -6.09523809524 L 56 -4.19047619048 L 56 -2.66666666667 L 56.380952381 -0.761904761905 L 57.1428571429 0.761904761905 L 57.9047619048 1.90476190476 L 58.6666666667 2.66666666667"/>
+  <path data-glyph="hershey.009.722" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 60.9523809524 -9.52380952381 L 61.7142857143 -8.7619047619 L 62.4761904762 -7.61904761905 L 63.2380952381 -6.09523809524 L 63.619047619 -4.19047619048 L 63.619047619 -2.66666666667 L 63.2380952381 -0.761904761905 L 62.4761904762 0.761904761905 L 61.7142857143 1.90476190476 L 60.9523809524 2.66666666667"/>
+  <path data-glyph="hershey.010.2219" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 68.1904761905 -8 L 68.1904761905 -3.42857142857"/>
+  <path data-glyph="hershey.010.2219" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 66.2857142857 -6.85714285714 L 70.0952380952 -4.57142857143"/>
+  <path data-glyph="hershey.010.2219" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 70.0952380952 -6.85714285714 L 66.2857142857 -4.57142857143"/>
+  <path data-glyph="hershey.011.725" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 76.1904761905 -6.85714285714 L 76.1904761905 0"/>
+  <path data-glyph="hershey.011.725" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 72.7619047619 -3.42857142857 L 79.619047619 -3.42857142857"/>
+  <path data-glyph="hershey.012.711" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 83.4285714286 -0.380952380952 L 83.0476190476 0 L 82.6666666667 -0.380952380952 L 83.0476190476 -0.761904761905 L 83.4285714286 -0.380952380952 L 83.4285714286 0.380952380952 L 83.0476190476 1.14285714286 L 82.6666666667 1.52380952381"/>
+  <path data-glyph="hershey.013.724" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 86.4761904762 -3.42857142857 L 93.3333333333 -3.42857142857"/>
+  <path data-glyph="hershey.014.710" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 96.7619047619 -0.761904761905 L 96.380952381 -0.380952380952 L 96.7619047619 0 L 97.1428571429 -0.380952380952 L 96.7619047619 -0.761904761905"/>
+  <path data-glyph="hershey.015.720" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 106.285714286 -9.52380952381 L 99.4285714286 2.66666666667"/>
+  <path data-glyph="hershey.016.700" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 110.476190476 -8 L 109.333333333 -7.61904761905 L 108.571428571 -6.47619047619 L 108.19047619 -4.57142857143 L 108.19047619 -3.42857142857 L 108.571428571 -1.52380952381 L 109.333333333 -0.380952380952 L 110.476190476 0 L 111.238095238 0 L 112.380952381 -0.380952380952 L 113.142857143 -1.52380952381 L 113.523809524 -3.42857142857 L 113.523809524 -4.57142857143 L 113.142857143 -6.47619047619 L 112.380952381 -7.61904761905 L 111.238095238 -8 L 110.476190476 -8"/>
+  <path data-glyph="hershey.017.701" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 116.952380952 -6.47619047619 L 117.714285714 -6.85714285714 L 118.857142857 -8 L 118.857142857 0"/>
+  <path data-glyph="hershey.018.702" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 123.80952381 -6.09523809524 L 123.80952381 -6.47619047619 L 124.19047619 -7.2380952381 L 124.571428571 -7.61904761905 L 125.333333333 -8 L 126.857142857 -8 L 127.619047619 -7.61904761905 L 128 -7.2380952381 L 128.380952381 -6.47619047619 L 128.380952381 -5.71428571429 L 128 -4.95238095238 L 127.238095238 -3.80952380952 L 123.428571429 0 L 128.761904762 0"/>
+  <path data-glyph="hershey.019.703" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 131.80952381 -8 L 136 -8 L 133.714285714 -4.95238095238 L 134.857142857 -4.95238095238 L 135.619047619 -4.57142857143 L 136 -4.19047619048 L 136.380952381 -3.04761904762 L 136.380952381 -2.28571428571 L 136 -1.14285714286 L 135.238095238 -0.380952380952 L 134.095238095 0 L 132.952380952 0 L 131.80952381 -0.380952380952 L 131.428571429 -0.761904761905 L 131.047619048 -1.52380952381"/>
+  <path data-glyph="hershey.020.704" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 142.476190476 -8 L 138.666666667 -2.66666666667 L 144.380952381 -2.66666666667"/>
+  <path data-glyph="hershey.020.704" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 142.476190476 -8 L 142.476190476 0"/>
+  <path data-glyph="hershey.021.705" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 150.857142857 -8 L 147.047619048 -8 L 146.666666667 -4.57142857143 L 147.047619048 -4.95238095238 L 148.19047619 -5.33333333333 L 149.333333333 -5.33333333333 L 150.476190476 -4.95238095238 L 151.238095238 -4.19047619048 L 151.619047619 -3.04761904762 L 151.619047619 -2.28571428571 L 151.238095238 -1.14285714286 L 150.476190476 -0.380952380952 L 149.333333333 0 L 148.19047619 0 L 147.047619048 -0.380952380952 L 146.666666667 -0.761904761905 L 146.285714286 -1.52380952381"/>
+  <path data-glyph="hershey.022.706" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 158.857142857 -6.85714285714 L 158.476190476 -7.61904761905 L 157.333333333 -8 L 156.571428571 -8 L 155.428571429 -7.61904761905 L 154.666666667 -6.47619047619 L 154.285714286 -4.57142857143 L 154.285714286 -2.66666666667 L 154.666666667 -1.14285714286 L 155.428571429 -0.380952380952 L 156.571428571 0 L 156.952380952 0 L 158.095238095 -0.380952380952 L 158.857142857 -1.14285714286 L 159.238095238 -2.28571428571 L 159.238095238 -2.66666666667 L 158.857142857 -3.80952380952 L 158.095238095 -4.57142857143 L 156.952380952 -4.95238095238 L 156.571428571 -4.95238095238 L 155.428571429 -4.57142857143 L 154.666666667 -3.80952380952 L 154.285714286 -2.66666666667"/>
+  <path data-glyph="hershey.023.707" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 166.857142857 -8 L 163.047619048 0"/>
+  <path data-glyph="hershey.023.707" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 161.523809524 -8 L 166.857142857 -8"/>
+  <path data-glyph="hershey.024.708" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 171.047619048 -8 L 169.904761905 -7.61904761905 L 169.523809524 -6.85714285714 L 169.523809524 -6.09523809524 L 169.904761905 -5.33333333333 L 170.666666667 -4.95238095238 L 172.19047619 -4.57142857143 L 173.333333333 -4.19047619048 L 174.095238095 -3.42857142857 L 174.476190476 -2.66666666667 L 174.476190476 -1.52380952381 L 174.095238095 -0.761904761905 L 173.714285714 -0.380952380952 L 172.571428571 0 L 171.047619048 0 L 169.904761905 -0.380952380952 L 169.523809524 -0.761904761905 L 169.142857143 -1.52380952381 L 169.142857143 -2.66666666667 L 169.523809524 -3.42857142857 L 170.285714286 -4.19047619048 L 171.428571429 -4.57142857143 L 172.952380952 -4.95238095238 L 173.714285714 -5.33333333333 L 174.095238095 -6.09523809524 L 174.095238095 -6.85714285714 L 173.714285714 -7.61904761905 L 172.571428571 -8 L 171.047619048 -8"/>
+  <path data-glyph="hershey.025.709" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 181.714285714 -5.33333333333 L 181.333333333 -4.19047619048 L 180.571428571 -3.42857142857 L 179.428571429 -3.04761904762 L 179.047619048 -3.04761904762 L 177.904761905 -3.42857142857 L 177.142857143 -4.19047619048 L 176.761904762 -5.33333333333 L 176.761904762 -5.71428571429 L 177.142857143 -6.85714285714 L 177.904761905 -7.61904761905 L 179.047619048 -8 L 179.428571429 -8 L 180.571428571 -7.61904761905 L 181.333333333 -6.85714285714 L 181.714285714 -5.33333333333 L 181.714285714 -3.42857142857 L 181.333333333 -1.52380952381 L 180.571428571 -0.380952380952 L 179.428571429 0 L 178.666666667 0 L 177.523809524 -0.380952380952 L 177.142857143 -1.14285714286"/>
+  <path data-glyph="hershey.026.712" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 185.142857143 -5.33333333333 L 184.761904762 -4.95238095238 L 185.142857143 -4.57142857143 L 185.523809524 -4.95238095238 L 185.142857143 -5.33333333333"/>
+  <path data-glyph="hershey.026.712" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 185.142857143 -0.761904761905 L 184.761904762 -0.380952380952 L 185.142857143 0 L 185.523809524 -0.380952380952 L 185.142857143 -0.761904761905"/>
+  <path data-glyph="hershey.027.713" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 188.952380952 -5.33333333333 L 188.571428571 -4.95238095238 L 188.952380952 -4.57142857143 L 189.333333333 -4.95238095238 L 188.952380952 -5.33333333333"/>
+  <path data-glyph="hershey.027.713" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 189.333333333 -0.380952380952 L 188.952380952 0 L 188.571428571 -0.380952380952 L 188.952380952 -0.761904761905 L 189.333333333 -0.380952380952 L 189.333333333 0.380952380952 L 188.952380952 1.14285714286 L 188.571428571 1.52380952381"/>
+  <path data-glyph="hershey.028.2241" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 198.476190476 -6.85714285714 L 192.380952381 -3.42857142857 L 198.476190476 0"/>
+  <path data-glyph="hershey.029.726" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 201.523809524 -4.57142857143 L 208.380952381 -4.57142857143"/>
+  <path data-glyph="hershey.029.726" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 201.523809524 -2.28571428571 L 208.380952381 -2.28571428571"/>
+  <path data-glyph="hershey.030.2242" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 211.428571429 -6.85714285714 L 217.523809524 -3.42857142857 L 211.428571429 0"/>
+  <path data-glyph="hershey.031.715" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 220.19047619 -6.09523809524 L 220.19047619 -6.47619047619 L 220.571428571 -7.2380952381 L 220.952380952 -7.61904761905 L 221.714285714 -8 L 223.238095238 -8 L 224 -7.61904761905 L 224.380952381 -7.2380952381 L 224.761904762 -6.47619047619 L 224.761904762 -5.71428571429 L 224.380952381 -4.95238095238 L 224 -4.57142857143 L 222.476190476 -3.80952380952 L 222.476190476 -2.66666666667"/>
+  <path data-glyph="hershey.031.715" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 222.476190476 -0.761904761905 L 222.095238095 -0.380952380952 L 222.476190476 0 L 222.857142857 -0.380952380952 L 222.476190476 -0.761904761905"/>
+  <path data-glyph="hershey.032.2273" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 232.761904762 -4.95238095238 L 232.380952381 -5.71428571429 L 231.619047619 -6.09523809524 L 230.476190476 -6.09523809524 L 229.714285714 -5.71428571429 L 229.333333333 -5.33333333333 L 228.952380952 -4.19047619048 L 228.952380952 -3.04761904762 L 229.333333333 -2.28571428571 L 230.095238095 -1.90476190476 L 231.238095238 -1.90476190476 L 232 -2.28571428571 L 232.380952381 -3.04761904762"/>
+  <path data-glyph="hershey.032.2273" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 230.476190476 -6.09523809524 L 229.714285714 -5.33333333333 L 229.333333333 -4.19047619048 L 229.333333333 -3.04761904762 L 229.714285714 -2.28571428571 L 230.095238095 -1.90476190476"/>
+  <path data-glyph="hershey.032.2273" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 232.761904762 -6.09523809524 L 232.380952381 -3.04761904762 L 232.380952381 -2.28571428571 L 233.142857143 -1.90476190476 L 233.904761905 -1.90476190476 L 234.666666667 -2.66666666667 L 235.047619048 -3.80952380952 L 235.047619048 -4.57142857143 L 234.666666667 -5.71428571429 L 234.285714286 -6.47619047619 L 233.523809524 -7.2380952381 L 232.761904762 -7.61904761905 L 231.619047619 -8 L 230.476190476 -8 L 229.333333333 -7.61904761905 L 228.571428571 -7.2380952381 L 227.80952381 -6.47619047619 L 227.428571429 -5.71428571429 L 227.047619048 -4.57142857143 L 227.047619048 -3.42857142857 L 227.428571429 -2.28571428571 L 227.80952381 -1.52380952381 L 228.571428571 -0.761904761905 L 229.333333333 -0.380952380952 L 230.476190476 0 L 231.619047619 0 L 232.761904762 -0.380952380952 L 233.523809524 -0.761904761905 L 233.904761905 -1.14285714286"/>
+  <path data-glyph="hershey.032.2273" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 233.142857143 -6.09523809524 L 232.761904762 -3.04761904762 L 232.761904762 -2.28571428571 L 233.142857143 -1.90476190476"/>
+  <path data-glyph="hershey.033.527" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 239.619047619 -8 L 236.571428571 0"/>
+  <path data-glyph="hershey.033.527" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 239.619047619 -8 L 242.666666667 0"/>
+  <path data-glyph="hershey.033.527" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 237.714285714 -2.66666666667 L 241.523809524 -2.66666666667"/>
+  <path data-glyph="hershey.034.528" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 244.571428571 -8 L 244.571428571 0"/>
+  <path data-glyph="hershey.034.528" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 244.571428571 -8 L 248 -8 L 249.142857143 -7.61904761905 L 249.523809524 -7.2380952381 L 249.904761905 -6.47619047619 L 249.904761905 -5.71428571429 L 249.523809524 -4.95238095238 L 249.142857143 -4.57142857143 L 248 -4.19047619048"/>
+  <path data-glyph="hershey.034.528" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 244.571428571 -4.19047619048 L 248 -4.19047619048 L 249.142857143 -3.80952380952 L 249.523809524 -3.42857142857 L 249.904761905 -2.66666666667 L 249.904761905 -1.52380952381 L 249.523809524 -0.761904761905 L 249.142857143 -0.380952380952 L 248 0 L 244.571428571 0"/>
+  <path data-glyph="hershey.035.529" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 252.571428571 -8 L 252.571428571 0"/>
+  <path data-glyph="hershey.035.529" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 252.571428571 -8 L 257.142857143 -8"/>
+</svg>

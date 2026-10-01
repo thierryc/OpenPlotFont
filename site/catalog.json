@@ -1,0 +1,2159 @@
+{
+  "prepared": "2026-10-01",
+  "qualification": {
+    "hostVersion": "4.1.1",
+    "hostBuild": "4108.0",
+    "fontCount": 87,
+    "comparisonToleranceFontUnitsAfterNativeSave": 0.000501
+  },
+  "fonts": [
+    {
+      "id": "pf-ems-brush",
+      "family": "PF EMS Brush",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSBrush.svg",
+      "authorLinks": [
+        "http://www.typesetit.com",
+        "https://fonts.google.com/specimen/Alex+Brush",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Brush\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Alex Brush\nDesigner:                Rob Leuschke, TypeSETit\nLink:                    http://www.typesetit.com\nGoogle font page:        https://fonts.google.com/specimen/Alex+Brush",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "bf4e6cedf19b43264f7278af1ec0f5ae5076e7362260a901fc54d0674fa86fa5",
+          "bytes": 31803
+        },
+        "bundle": {
+          "sha256": "26597b932de5c4fb4788351ee48ee78117c5f90ac19ecbf6bbf44d138c2234cb",
+          "bytes": 277143
+        }
+      }
+    },
+    {
+      "id": "pf-relief-singleline-svg",
+      "family": "PF Relief SingleLine SVG",
+      "glyphs": 568,
+      "license": "SIL OFL 1.1",
+      "source": "https://github.com/isdat-type/Relief-SingleLine",
+      "sourceUrl": "https://raw.githubusercontent.com/isdat-type/Relief-SingleLine/01dfc5779ec1e9e4b288d96c6c96c23bfccbaf9d/fonts/open_svg/ReliefSingleLineSVG-Regular.svg",
+      "authorLinks": [
+        "https://github.com/isdat-type/Relief-SingleLine"
+      ],
+      "attribution": "Created by FontForge 20201107 at Fri Feb 14 11:47:47 2025\n By Tanguy Vanlaeys\nCopyright 2021 The Relief SingleLine Project Authors (https://github.com/isdat-type/Relief-SingleLine)",
+      "collection": "Relief",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "70351765b1ae481482fa24b4b67afb29cabac1745a7d923337e9b0b431f2c1a4",
+          "bytes": 27725
+        },
+        "bundle": {
+          "sha256": "1808af244b932579a83bf1fa4a1fca83e3a0d2a30c30e43cfe0e34525737df35",
+          "bytes": 676407
+        }
+      }
+    },
+    {
+      "id": "hershey-script-simplex",
+      "family": "Hershey Script Simplex",
+      "glyphs": 97,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/scripts.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "231406f34ca98d66330f0d047e1a25a7a76c053377d0eec79a9cd7e14afb014b",
+          "bytes": 41770
+        },
+        "bundle": {
+          "sha256": "d3a6f6945a480a83ca4939315571d6a7dbf48976fd30b50d21120eff6dce3d31",
+          "bytes": 96715
+        }
+      }
+    },
+    {
+      "id": "pf-norm-stroke",
+      "family": "PF Norm Stroke",
+      "glyphs": 326,
+      "license": "CC0 1.0",
+      "source": "https://github.com/octycs/norm-stroke",
+      "sourceUrl": "https://raw.githubusercontent.com/octycs/norm-stroke/e4f7be3ee482d3026f19b7afae88c1e0c193316a/font/NormStroke.svg",
+      "authorLinks": [
+        "https://github.com/octycs/norm-stroke"
+      ],
+      "attribution": "Font name:               Norm Stroke\nLicense:                 This work is marked with CC0 1.0. To view a copy of this license, visit https://creativecommons.org/publicdomain/zero/1.0/\nA derivative of:         https://commons.wikimedia.org/wiki/File:ISO3098.svg\nVersion:                 1.0\nNormStroke by octycs; based on Wikimedia ISO3098 Type B lettering. CC0 declaration retained.",
+      "collection": "Independent",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "05b5ec79b00d93bb7f055c5d601a56cbf4cb854592e1af34d0de2b43f6c0ee07",
+          "bytes": 145491
+        },
+        "bundle": {
+          "sha256": "ab2186ac91257faf0bf5f539f1196065b79076d3864405c16c60367e1bf0961e",
+          "bytes": 1107804
+        }
+      }
+    },
+    {
+      "id": "hershey-astrology",
+      "family": "Hershey Astrology",
+      "glyphs": 98,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/astrology.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": true,
+      "assets": {
+        "specimen": {
+          "sha256": "b777d675a73f81acf16e999e550030e6a4ecd3fa83806750a182d27adc241c12",
+          "bytes": 61079
+        },
+        "bundle": {
+          "sha256": "cd6b370692e7091479d6f42e5e7525e301e07ffab2a50ae948374a10a3cf9283",
+          "bytes": 117352
+        }
+      }
+    },
+    {
+      "id": "hershey-cursive",
+      "family": "Hershey Cursive",
+      "glyphs": 97,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/cursive.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "f629d88bbf092506f7a5009311d8f211d2e790a9338db2104b8533aeabda4219",
+          "bytes": 31733
+        },
+        "bundle": {
+          "sha256": "231f1c365d07ba038d3b69958622538aedf0eb84c513d9025b3e670e26e3e628",
+          "bytes": 88121
+        }
+      }
+    },
+    {
+      "id": "hershey-cyrilc-1",
+      "family": "Hershey Cyrilc 1",
+      "glyphs": 98,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/cyrilc_1.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": true,
+      "assets": {
+        "specimen": {
+          "sha256": "d11d3e3bab4ec422676fed63eec87d421b674e58d9bd77d30f2d0cca7671bba4",
+          "bytes": 38176
+        },
+        "bundle": {
+          "sha256": "ba0d21e4c4c88c3345e9d28fd2f046f95332a41a45a153e756f9e975f72ba080",
+          "bytes": 97833
+        }
+      }
+    },
+    {
+      "id": "hershey-cyrillic",
+      "family": "Hershey Cyrillic",
+      "glyphs": 98,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/cyrillic.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": true,
+      "assets": {
+        "specimen": {
+          "sha256": "3dcfc9a4ab421196cdeeec26f6c8781c2b00bdc806bb0a88ea045f058e777acd",
+          "bytes": 39089
+        },
+        "bundle": {
+          "sha256": "805597d981e6b560ef4c39489d2f928ad9de07556a270257f05b79474eeba705",
+          "bytes": 97586
+        }
+      }
+    },
+    {
+      "id": "hershey-futural",
+      "family": "Hershey Futural",
+      "glyphs": 97,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/futural.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "3f653b1ea9dea4126eb1ad3da006afe296722d43fb7b63b3f3850fcb9e541aa9",
+          "bytes": 26263
+        },
+        "bundle": {
+          "sha256": "22869270435324e9544aa8da0c28a592c843741e5caf3ee53def20bfe6038660",
+          "bytes": 76165
+        }
+      }
+    },
+    {
+      "id": "hershey-futuram",
+      "family": "Hershey Futuram",
+      "glyphs": 97,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/futuram.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "23eed9f377fd276bcfb40fd9a5c82fbca556c480dea90b67cd9b095c8063b48e",
+          "bytes": 55202
+        },
+        "bundle": {
+          "sha256": "df3b6715498abd61cb5a4b6ba973c698edeca737f696e60c96410e730f401c48",
+          "bytes": 91359
+        }
+      }
+    },
+    {
+      "id": "hershey-gothgbt",
+      "family": "Hershey Gothgbt",
+      "glyphs": 97,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/gothgbt.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "7025db390d2cbab19f98e3262c2e9b4369df7de1f45ed53fd299d9ea9b687a36",
+          "bytes": 86977
+        },
+        "bundle": {
+          "sha256": "3684818a6bd4efa026b9fb19e713b664eb6c5f42ab7c15554dcd1ad775eca4cf",
+          "bytes": 120503
+        }
+      }
+    },
+    {
+      "id": "hershey-gothgrt",
+      "family": "Hershey Gothgrt",
+      "glyphs": 97,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/gothgrt.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "225acb9fd48b84765c66b88529e47c031d0626c6a53c2f80582f06b605ef799b",
+          "bytes": 63260
+        },
+        "bundle": {
+          "sha256": "ec335d68b9acd7df7682706d1be8c2431c68867d086871aca3a7a3813927a271",
+          "bytes": 121929
+        }
+      }
+    },
+    {
+      "id": "hershey-gothiceng",
+      "family": "Hershey Gothiceng",
+      "glyphs": 97,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/gothiceng.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "7025db390d2cbab19f98e3262c2e9b4369df7de1f45ed53fd299d9ea9b687a36",
+          "bytes": 86977
+        },
+        "bundle": {
+          "sha256": "4bbe27e0f09a5f885fd594b4a60513d9bf75ca88be9d2ac44d07b22cfadbd030",
+          "bytes": 119791
+        }
+      }
+    },
+    {
+      "id": "hershey-gothicger",
+      "family": "Hershey Gothicger",
+      "glyphs": 97,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/gothicger.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "225acb9fd48b84765c66b88529e47c031d0626c6a53c2f80582f06b605ef799b",
+          "bytes": 63260
+        },
+        "bundle": {
+          "sha256": "a3e43b7b284dd6ec4cf95c382829f6f200f9c3503b97949dfdb3b0a6e93740f4",
+          "bytes": 121241
+        }
+      }
+    },
+    {
+      "id": "hershey-gothicita",
+      "family": "Hershey Gothicita",
+      "glyphs": 97,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/gothicita.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "e036a94d438da7a82ad85b50d2778b482212441e693b1925c7885d329b913986",
+          "bytes": 75222
+        },
+        "bundle": {
+          "sha256": "d2ab534eb8c99857be859438882e262effa3ba65139323c0f3882a813c798d7b",
+          "bytes": 109910
+        }
+      }
+    },
+    {
+      "id": "hershey-gothitt",
+      "family": "Hershey Gothitt",
+      "glyphs": 97,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/gothitt.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "e036a94d438da7a82ad85b50d2778b482212441e693b1925c7885d329b913986",
+          "bytes": 75222
+        },
+        "bundle": {
+          "sha256": "b3734d61e9b6cfd6ea5adfb1364bdc779e1cf662759f9f723e9e45c0aba4fbb9",
+          "bytes": 110382
+        }
+      }
+    },
+    {
+      "id": "hershey-greek",
+      "family": "Hershey Greek",
+      "glyphs": 98,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/greek.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": true,
+      "assets": {
+        "specimen": {
+          "sha256": "d4f1ee7f0b6f7a97ab958edec5503cddace3b46a968caddd438ca618d6757427",
+          "bytes": 23684
+        },
+        "bundle": {
+          "sha256": "337f2b7a33a300757636c84b88b345236a5908a91d5dd342b757ae919fbbee61",
+          "bytes": 80725
+        }
+      }
+    },
+    {
+      "id": "hershey-greekc",
+      "family": "Hershey Greekc",
+      "glyphs": 98,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/greekc.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": true,
+      "assets": {
+        "specimen": {
+          "sha256": "4dea3a31bc98b311a7d0929394d949433156fd232b5f03ca3fbd279be1bc47d9",
+          "bytes": 37593
+        },
+        "bundle": {
+          "sha256": "9afff8e2c8686891c0964ba857b917d50450e781153e6be4ce8819add5271f9f",
+          "bytes": 95646
+        }
+      }
+    },
+    {
+      "id": "hershey-greeks",
+      "family": "Hershey Greeks",
+      "glyphs": 98,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/greeks.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": true,
+      "assets": {
+        "specimen": {
+          "sha256": "89a8218648acef118977af9cdf718149ffd6964f37a9c4e00bd07d061ea75546",
+          "bytes": 23629
+        },
+        "bundle": {
+          "sha256": "b39a769e5ddeefdea457fb99059ab40b782703cf5818f07fcbfb8e3048516925",
+          "bytes": 82126
+        }
+      }
+    },
+    {
+      "id": "hershey-japanese",
+      "family": "Hershey Japanese",
+      "glyphs": 195,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/japanese.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": true,
+      "assets": {
+        "specimen": {
+          "sha256": "7dfb9e70343cbbc2d5f45b8a172b7bf32225a7cbf5cffa29d8bda28c6b3378ab",
+          "bytes": 63134
+        },
+        "bundle": {
+          "sha256": "d89a7edb9db780f90b87af06c1956639c5c9d1b31df1bc5ad6865c6725cefd9d",
+          "bytes": 196722
+        }
+      }
+    },
+    {
+      "id": "hershey-markers",
+      "family": "Hershey Markers",
+      "glyphs": 99,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/markers.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": true,
+      "assets": {
+        "specimen": {
+          "sha256": "60d74e9967499d0d90ebbd8d041dbecdf32824c471634d27c820548807500db6",
+          "bytes": 4038
+        },
+        "bundle": {
+          "sha256": "71e10530e305e7d400c10dfdc37b960bd3239924b34ea3ed8b69c9f5abd2a5c6",
+          "bytes": 61803
+        }
+      }
+    },
+    {
+      "id": "hershey-mathlow",
+      "family": "Hershey Mathlow",
+      "glyphs": 98,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/mathlow.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": true,
+      "assets": {
+        "specimen": {
+          "sha256": "3929b977f7b8f84b173031ae093c7c31bd3609e20c1a680de64f3ed1deb227c1",
+          "bytes": 23188
+        },
+        "bundle": {
+          "sha256": "05fd7760048f7486f2997a0a7baf9c172150fb6e7c8f26c6de145c4b2e344a1f",
+          "bytes": 81094
+        }
+      }
+    },
+    {
+      "id": "hershey-mathupp",
+      "family": "Hershey Mathupp",
+      "glyphs": 98,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/mathupp.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": true,
+      "assets": {
+        "specimen": {
+          "sha256": "ac40f9dcd6e93ef850b1dbd952047cc09ab9734f5ad4b0ec322825300ea054ed",
+          "bytes": 23303
+        },
+        "bundle": {
+          "sha256": "d00c179db81e241a060d4eac632d81bd5f162f88dd7ab06a7021896c48718401",
+          "bytes": 80376
+        }
+      }
+    },
+    {
+      "id": "hershey-meteorology",
+      "family": "Hershey Meteorology",
+      "glyphs": 98,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/meteorology.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": true,
+      "assets": {
+        "specimen": {
+          "sha256": "a0e3ec2533126ae39be2c0fa4219631ce2d26a47de7f53f111ac759ef41735ed",
+          "bytes": 26143
+        },
+        "bundle": {
+          "sha256": "03fd011f3a0e35b178bed01e4afa5f905d759479902c4e23a044eb418af501d1",
+          "bytes": 81816
+        }
+      }
+    },
+    {
+      "id": "hershey-music",
+      "family": "Hershey Music",
+      "glyphs": 98,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/music.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": true,
+      "assets": {
+        "specimen": {
+          "sha256": "e9b8978c694e3fb936ab984a0066c4c94b2377967f5ae0684dddd7928339a5cf",
+          "bytes": 65877
+        },
+        "bundle": {
+          "sha256": "0481cd7dd1d4ac191066d0fec7085a1a4324980b20370b123a09752ddf485ed7",
+          "bytes": 103336
+        }
+      }
+    },
+    {
+      "id": "hershey-roman-bold",
+      "family": "Hershey Roman Bold",
+      "glyphs": 97,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/timesrb.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "2c15f353839933bf07826964b28884913e9e50c5270a336b92095232227d7806",
+          "bytes": 91293
+        },
+        "bundle": {
+          "sha256": "4d3367435a4c9330b601bc50eb34250ff0ca20d2ed057480bb253ec670d93997",
+          "bytes": 113178
+        }
+      }
+    },
+    {
+      "id": "hershey-roman-bold-italic",
+      "family": "Hershey Roman Bold Italic",
+      "glyphs": 97,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/timesib.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "9f6bc86c90651f74fd13b228687bd1f00e2ec55147dbde8064c331901de69b58",
+          "bytes": 78116
+        },
+        "bundle": {
+          "sha256": "30754a66c0bee53bcc39e1174f238e55341e3dbf777742bf9db5ca31c04649ae",
+          "bytes": 116050
+        }
+      }
+    },
+    {
+      "id": "hershey-roman-complex",
+      "family": "Hershey Roman Complex",
+      "glyphs": 97,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/timesr.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "87b47eccbe1f41d9e7fe57cf44af48b6fe8e87d21ca8f861de3b0822333f89a9",
+          "bytes": 54748
+        },
+        "bundle": {
+          "sha256": "7c443d0c8af2b2d4625e72c186b320416d1e41ffc8d61b63aac17484dc9c25db",
+          "bytes": 93979
+        }
+      }
+    },
+    {
+      "id": "hershey-roman-duplex",
+      "family": "Hershey Roman Duplex",
+      "glyphs": 97,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/rowmand.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "9cb2807921e38ad2418b0e3bdf2c8057a89b7064195f4ca70f9a4a764c8ec5f3",
+          "bytes": 56039
+        },
+        "bundle": {
+          "sha256": "2a0c293419ed7e33c14070cd52a35f43bdc744cf3ce877151c8cb7875997865b",
+          "bytes": 96510
+        }
+      }
+    },
+    {
+      "id": "hershey-roman-italic",
+      "family": "Hershey Roman Italic",
+      "glyphs": 97,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/timesi.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "3e8846b7b3da50d56e70594464eee0237023ba57237785822364f87ed79254c5",
+          "bytes": 53970
+        },
+        "bundle": {
+          "sha256": "52e125bf121894eb99c49731a1577e2a84054387f0e33f61acc29653baba1c8b",
+          "bytes": 96378
+        }
+      }
+    },
+    {
+      "id": "hershey-roman-simplex",
+      "family": "Hershey Roman Simplex",
+      "glyphs": 97,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/rowmans.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "3f653b1ea9dea4126eb1ad3da006afe296722d43fb7b63b3f3850fcb9e541aa9",
+          "bytes": 26263
+        },
+        "bundle": {
+          "sha256": "543625a16dd3d316a4e2f2491af35afd56223aa6bd3d94522804777a8f97e27b",
+          "bytes": 79523
+        }
+      }
+    },
+    {
+      "id": "hershey-roman-triplex",
+      "family": "Hershey Roman Triplex",
+      "glyphs": 97,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/rowmant.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "2c15f353839933bf07826964b28884913e9e50c5270a336b92095232227d7806",
+          "bytes": 91293
+        },
+        "bundle": {
+          "sha256": "b5f22269c015bb5f3f66f077645671c8ac881e17c874106c4a397b99cdb5ca3d",
+          "bytes": 116261
+        }
+      }
+    },
+    {
+      "id": "hershey-script-complex",
+      "family": "Hershey Script Complex",
+      "glyphs": 97,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/scriptc.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "3e0da9c262003608bf9d0e5fcc1f9678ad06eee263108849e9674e643653f9a3",
+          "bytes": 50098
+        },
+        "bundle": {
+          "sha256": "9a1cc3facf6cd656aae081aee6f902ddb6b4f37a98a09d6b5d0558e69f13a1b2",
+          "bytes": 103534
+        }
+      }
+    },
+    {
+      "id": "hershey-symbolic",
+      "family": "Hershey Symbolic",
+      "glyphs": 98,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/symbolic.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": true,
+      "assets": {
+        "specimen": {
+          "sha256": "8055519846a31d9ca3230c0ac005fed08548cd1128ef5c87e32c1fb7a7ffa34f",
+          "bytes": 16270
+        },
+        "bundle": {
+          "sha256": "e1352d0f2b7623dfc137327505f01b12a91e548b00ee212a9bd0070b27524d0d",
+          "bytes": 87978
+        }
+      }
+    },
+    {
+      "id": "hershey-timesg",
+      "family": "Hershey Timesg",
+      "glyphs": 98,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://github.com/kamalmostafa/hershey-fonts",
+      "sourceUrl": "https://raw.githubusercontent.com/kamalmostafa/hershey-fonts/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts/timesg.jhf",
+      "authorLinks": [
+        "https://github.com/kamalmostafa/hershey-fonts"
+      ],
+      "attribution": "Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.",
+      "collection": "Hershey",
+      "privateUseMappings": true,
+      "assets": {
+        "specimen": {
+          "sha256": "c975bbdecb267dcc2cfc9da07b5ddad35fe8330dc3eef64f42bc6e41389e7ef7",
+          "bytes": 38800
+        },
+        "bundle": {
+          "sha256": "ec82803606288ce9c76762b083baa01caaa794f84d3e02006381b8226de52bd4",
+          "bytes": 94250
+        }
+      }
+    },
+    {
+      "id": "pf-cad-iso3098",
+      "family": "PF CAD iso3098",
+      "glyphs": 321,
+      "license": "GPL v2 or later",
+      "source": "https://github.com/LibreCAD/LibreCAD",
+      "sourceUrl": "https://raw.githubusercontent.com/LibreCAD/LibreCAD/9f3f2d8fc04ca820da83305ba8d4e7baea484899/librecad/support/fonts/iso3098.lff",
+      "authorLinks": [
+        "https://github.com/LibreCAD/LibreCAD"
+      ],
+      "attribution": "# Author:            AZO <typesylph@gmail.com> (convert)\n# Author:            User:K7 (ISO3098.svg, Wikimedia Commons)\n# License:           GPL v2 or later",
+      "collection": "CAD",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "13a1d223153c2a4e04f4fab7be756e8dfe826c9f48dd7215961610f40a34a153",
+          "bytes": 97805
+        },
+        "bundle": {
+          "sha256": "76ba4c8a1be2d7a1a66cc408e413dcf43ea2f0ea00879f1605b868b039862a4a",
+          "bytes": 294997
+        }
+      }
+    },
+    {
+      "id": "pf-cad-iso3098-i",
+      "family": "PF CAD iso3098_i",
+      "glyphs": 321,
+      "license": "GPL v2 or later",
+      "source": "https://github.com/LibreCAD/LibreCAD",
+      "sourceUrl": "https://raw.githubusercontent.com/LibreCAD/LibreCAD/9f3f2d8fc04ca820da83305ba8d4e7baea484899/librecad/support/fonts/iso3098_i.lff",
+      "authorLinks": [
+        "https://github.com/LibreCAD/LibreCAD"
+      ],
+      "attribution": "# Author:            AZO <typesylph@gmail.com> (convert)\n# Author:            User:K7 (ISO3098.svg, Wikimedia Commons)\n# License:           GPL v2 or later",
+      "collection": "CAD",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "9b5a35b545f5b60757f00cba293885ecd72b61dc4ff96b5d762b6f1b07431f69",
+          "bytes": 96236
+        },
+        "bundle": {
+          "sha256": "1106c82e3f6e23e34e864e26afd23334c3d333867fa076d9d1a93a193e603586",
+          "bytes": 300124
+        }
+      }
+    },
+    {
+      "id": "pf-cad-lc-opengost-ar",
+      "family": "PF CAD lc_opengost-ar",
+      "glyphs": 678,
+      "license": "SIL OFL 1.1",
+      "source": "https://github.com/LibreCAD/LibreCAD",
+      "sourceUrl": "https://raw.githubusercontent.com/LibreCAD/LibreCAD/9f3f2d8fc04ca820da83305ba8d4e7baea484899/librecad/support/fonts/lc_opengost-ar.lff",
+      "authorLinks": [
+        "https://github.com/LibreCAD/LibreCAD"
+      ],
+      "attribution": "# Author:            stranger573 <stranger573@mail.ru>\n# License:           SIL OPEN FONT LICENSE Version 1.1",
+      "collection": "CAD",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "3d01888eda49a36ca6726fda0366cf56a85e3bccca836df0a35b16df85e7e43d",
+          "bytes": 118332
+        },
+        "bundle": {
+          "sha256": "cd95a1bb457ac734c722e2bddc92c51c6f3e0ca0b7bc05fdd5b50c080230a21f",
+          "bytes": 2844777
+        }
+      }
+    },
+    {
+      "id": "pf-cad-lc-opengost-br",
+      "family": "PF CAD lc_opengost-br",
+      "glyphs": 678,
+      "license": "SIL OFL 1.1",
+      "source": "https://github.com/LibreCAD/LibreCAD",
+      "sourceUrl": "https://raw.githubusercontent.com/LibreCAD/LibreCAD/9f3f2d8fc04ca820da83305ba8d4e7baea484899/librecad/support/fonts/lc_opengost-br.lff",
+      "authorLinks": [
+        "https://github.com/LibreCAD/LibreCAD"
+      ],
+      "attribution": "# Author:            stranger573 <stranger573@mail.ru>\n# License:           SIL OPEN FONT LICENSE Version 1.1",
+      "collection": "CAD",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "b9ff2572b5664fa0a605c2c1c5b3e7bcc7a4171d338c3cce6d0c1e1e9c4c9567",
+          "bytes": 117196
+        },
+        "bundle": {
+          "sha256": "93008342790fb7738a9994bb4fe98fded11bf949cdf595b119431a3f2417aa5b",
+          "bytes": 2697683
+        }
+      }
+    },
+    {
+      "id": "pf-custom-script",
+      "family": "PF Custom-Script",
+      "glyphs": 100,
+      "license": "SIL OFL 1.1",
+      "source": "https://github.com/Shriinivas/inkscapestrokefont",
+      "sourceUrl": "https://raw.githubusercontent.com/Shriinivas/inkscapestrokefont/4f2e9c92e7532a6ab6d95acd8e84e29a99ed7f1c/strokefontdata/Custom-Script.svg",
+      "authorLinks": [
+        "https://github.com/Shriinivas/inkscapestrokefont"
+      ],
+      "attribution": "Open Font License\nCustom stroke fonts by Shriinivas; derived from Square Grotesk and Pinyon Script as credited upstream. Font notice template has unfilled copyright fields; original declarations retained.",
+      "collection": "Independent",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "ab31a49b110c7e3f34fab2489878c2d3adb524e8b2cfd1ffbeea346ef4b6df87",
+          "bytes": 39933
+        },
+        "bundle": {
+          "sha256": "42bcd71f48615ab7fe982f0a62a083398b195b75388233cd8923ffc5c7a11868",
+          "bytes": 178298
+        }
+      }
+    },
+    {
+      "id": "pf-custom-square-italic",
+      "family": "PF Custom-Square Italic",
+      "glyphs": 100,
+      "license": "SIL OFL 1.1",
+      "source": "https://github.com/Shriinivas/inkscapestrokefont",
+      "sourceUrl": "https://raw.githubusercontent.com/Shriinivas/inkscapestrokefont/4f2e9c92e7532a6ab6d95acd8e84e29a99ed7f1c/strokefontdata/Custom-Square%20Italic.svg",
+      "authorLinks": [
+        "https://github.com/Shriinivas/inkscapestrokefont"
+      ],
+      "attribution": "Open Font License\nCustom stroke fonts by Shriinivas; derived from Square Grotesk and Pinyon Script as credited upstream. Font notice template has unfilled copyright fields; original declarations retained.",
+      "collection": "Independent",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "55318d4a5101d4b6c1dc20b9fdf9cba1c599b746e8ddb77eaed0295974e85056",
+          "bytes": 39269
+        },
+        "bundle": {
+          "sha256": "a64dd7e4a56d3df122238544b5e45ecdc37f6d8ee6b0f9068970a5dcff99a535",
+          "bytes": 152420
+        }
+      }
+    },
+    {
+      "id": "pf-custom-square-normal",
+      "family": "PF Custom-Square Normal",
+      "glyphs": 100,
+      "license": "SIL OFL 1.1",
+      "source": "https://github.com/Shriinivas/inkscapestrokefont",
+      "sourceUrl": "https://raw.githubusercontent.com/Shriinivas/inkscapestrokefont/4f2e9c92e7532a6ab6d95acd8e84e29a99ed7f1c/strokefontdata/Custom-Square%20Normal.svg",
+      "authorLinks": [
+        "https://github.com/Shriinivas/inkscapestrokefont"
+      ],
+      "attribution": "Open Font License\nCustom stroke fonts by Shriinivas; derived from Square Grotesk and Pinyon Script as credited upstream. Font notice template has unfilled copyright fields; original declarations retained.",
+      "collection": "Independent",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "19a75cbbda691f0fe766af88a79f0989c48473320723555def2038d5cd0ffa7f",
+          "bytes": 39261
+        },
+        "bundle": {
+          "sha256": "1c7276d1367be974b34b23d0d37d686266434b96d6f2ba96e4c5f6e4028e58be",
+          "bytes": 150603
+        }
+      }
+    },
+    {
+      "id": "pf-cutlingsdualis",
+      "family": "PF CutlingsDualis",
+      "glyphs": 98,
+      "license": "SIL OFL 1.1",
+      "source": "https://cutlings.datafil.no/stroke-fonts-singularis-dualis-pluralis/",
+      "sourceUrl": "https://www.dropbox.com/s/xx5muh6bcid93v5/CutlingsSingularisDualisPluralis.zip?dl=1",
+      "authorLinks": [
+        "http://cutlings.wasbo.net/",
+        "https://cutlings.datafil.no/",
+        "https://cutlings.datafil.no/stroke-fonts-singularis-dualis-pluralis/"
+      ],
+      "attribution": "Font name:               Cutlings Dualis\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nDesigned by:             Ellen Wasbo\nLink:                    http://cutlings.wasbo.net/\nCutlings Singularis, Dualis and Pluralis by Ellen Wasbø; author credits and font license in readme.txt.",
+      "collection": "Independent",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "ccef942e3625107b3b046f5d1e3b61884d0635ffa9452666569423bcf1d92de3",
+          "bytes": 47163
+        },
+        "bundle": {
+          "sha256": "ec17bbfd7972a7e67de3f7ededc6621ffe924c12607a44ebbc06432be8c1b55f",
+          "bytes": 166882
+        }
+      }
+    },
+    {
+      "id": "pf-cutlingspluralis",
+      "family": "PF CutlingsPluralis",
+      "glyphs": 98,
+      "license": "SIL OFL 1.1",
+      "source": "https://cutlings.datafil.no/stroke-fonts-singularis-dualis-pluralis/",
+      "sourceUrl": "https://www.dropbox.com/s/xx5muh6bcid93v5/CutlingsSingularisDualisPluralis.zip?dl=1",
+      "authorLinks": [
+        "http://cutlings.wasbo.net/",
+        "https://cutlings.datafil.no/",
+        "https://cutlings.datafil.no/stroke-fonts-singularis-dualis-pluralis/"
+      ],
+      "attribution": "Font name:               Cutlings Pluralis\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nDesigned by:             Ellen Wasbo\nLink:                    http://cutlings.wasbo.net/\nCutlings Singularis, Dualis and Pluralis by Ellen Wasbø; author credits and font license in readme.txt.",
+      "collection": "Independent",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "37a1cb38c2a179db513b307948d251c7a5cefe56ac48f3d890582dcbacb80c33",
+          "bytes": 216302
+        },
+        "bundle": {
+          "sha256": "b065faa0696764cdba896c16eebee512ada13141c3a2144c562033d4a16416ed",
+          "bytes": 352600
+        }
+      }
+    },
+    {
+      "id": "pf-cutlingssingularis",
+      "family": "PF CutlingsSingularis",
+      "glyphs": 98,
+      "license": "SIL OFL 1.1",
+      "source": "https://cutlings.datafil.no/stroke-fonts-singularis-dualis-pluralis/",
+      "sourceUrl": "https://www.dropbox.com/s/xx5muh6bcid93v5/CutlingsSingularisDualisPluralis.zip?dl=1",
+      "authorLinks": [
+        "http://cutlings.wasbo.net/",
+        "https://cutlings.datafil.no/",
+        "https://cutlings.datafil.no/stroke-fonts-singularis-dualis-pluralis/"
+      ],
+      "attribution": "Font name:               Cutlings Singularis\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nDesigned by:             Ellen Wasbo\nLink:                    http://cutlings.wasbo.net/\nCutlings Singularis, Dualis and Pluralis by Ellen Wasbø; author credits and font license in readme.txt.",
+      "collection": "Independent",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "94aefd84f33a7780acd220fdf84433d76366418ee868fc91cb5bec0cc588f4ca",
+          "bytes": 24309
+        },
+        "bundle": {
+          "sha256": "b0f89eeb273896a6b37d11c181807e2949f63eabb49fde3562c6610500756e9f",
+          "bytes": 126138
+        }
+      }
+    },
+    {
+      "id": "pf-dearplotter",
+      "family": "PF DearPlotter",
+      "glyphs": 97,
+      "license": "SIL OFL 1.1 (font); CC BY-SA 4.0 generator/adaptation credits retained",
+      "source": "https://www.eyesofpanda.com/project/dearplotter_font/",
+      "sourceUrl": "https://raw.githubusercontent.com/golanlevin/p5-single-line-font-resources/bd08c4fe4f38a7aabc7b0b48c1f7a81c06a985fa/licia_he_font/licia_he_dearplotter.svg",
+      "authorLinks": [
+        "https://www.eyesofpanda.com/",
+        "https://www.eyesofpanda.com/project/dearplotter_font/"
+      ],
+      "attribution": "Font name: DearPlotter\nFormat: SVG 1.1 single-line font\nConverted to SVG 1.1 Font format from the p5.js DearPlotter font archive.\n\nSource: licia_he_font/sketch.js and licia_he_font/fontData.js\nOriginal font: DearPlotter Font Generator, created by Licia He in 2026.\nDearPlotter was commissioned by The Processing Foundation and the Tezos Foundation.\nThe p5.js and SVG adaptation is by Golan Levin, 2026.\n\nLicensing notes from the repository README:\nThe DearPlotter Font Generator is licensed under Creative Commons Attribution-ShareAlike 4.0 International.\nFonts created with it are licensed under the SIL Open Font License.\n\nReference:\nhttps://www.eyesofpanda.com/project/dearplotter_font/\n\nThis conversion preserves DearPlotter's cubic Bezier stroke geometry using SVG C commands.\nIt includes printable ASCII glyphs present in the source data, plus a space glyph.",
+      "collection": "Independent",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "97add19f6804816ae46344860e612a66a7c0874cca1ae3c61d903f7922c74c0a",
+          "bytes": 23496
+        },
+        "bundle": {
+          "sha256": "bd4fa5bbd8d070f23568b74ab835b5a6abf4562f50793c72a080b1d4e61daca4",
+          "bytes": 79827
+        }
+      }
+    },
+    {
+      "id": "pf-ems-allure",
+      "family": "PF EMS Allure",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSAllure.svg",
+      "authorLinks": [
+        "http://www.typesetit.com",
+        "https://fonts.google.com/specimen/Allura",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Allure\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Allura\nDesigner:                Rob Leuschke, TypeSETit\nLink:                    http://www.typesetit.com\nGoogle font page:        https://fonts.google.com/specimen/Allura",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "575e447c171879b7cc77474a512579d69211de7b6a8723b00f5e33f102cfa246",
+          "bytes": 31833
+        },
+        "bundle": {
+          "sha256": "0aba4c12b4538f7fc3088214b865de9e76456a47ba3423cd5961c23a56cdcbe1",
+          "bytes": 256631
+        }
+      }
+    },
+    {
+      "id": "pf-ems-bird",
+      "family": "PF EMS Bird",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSBird.svg",
+      "authorLinks": [
+        "http://www.typesetit.com",
+        "https://fonts.google.com/specimen/Bilbo",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Bird\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Bilbo\nDesigner:                Rob Leuschke, TypeSETit\nLink:                    http://www.typesetit.com\nGoogle font page:        https://fonts.google.com/specimen/Bilbo",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "9d9fef3a05761cc0d308fd56c1454c7ac31b1bdd5efd2ffa1ca21eb6f58b2d28",
+          "bytes": 30552
+        },
+        "bundle": {
+          "sha256": "5c9f0cbf508e9af0030e8de8741380ee51fe1cc4714b9094a5c741db4e9cf061",
+          "bytes": 243281
+        }
+      }
+    },
+    {
+      "id": "pf-ems-bird-swash-caps",
+      "family": "PF EMS Bird Swash Caps",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSBirdSwashCaps.svg",
+      "authorLinks": [
+        "http://www.typesetit.com",
+        "https://fonts.google.com/specimen/Bilbo+Swash+Caps",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Bird Swash Caps\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Bilbo Swash Caps\nDesigner:                Rob Leuschke, TypeSETit\nLink:                    http://www.typesetit.com\nGoogle font page:        https://fonts.google.com/specimen/Bilbo+Swash+Caps",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "21403a83a439f01cf57db469be4c8b204dcc2cbca1f9b1ca9a073c5f08b6e7d0",
+          "bytes": 33882
+        },
+        "bundle": {
+          "sha256": "9c95c50609fff4f351d25008bfd1b344c3cb9fd742af765f5746718d5646e64b",
+          "bytes": 281525
+        }
+      }
+    },
+    {
+      "id": "pf-ems-capitol",
+      "family": "PF EMS Capitol",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSCapitol.svg",
+      "authorLinks": [
+        "http://www.astigmatic.com",
+        "https://fonts.google.com/specimen/Sacramento",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Capitol\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Sacramento\nDesigner:                Brian J. Bonislawsky, Astigmatic One Eye Typographic Institute\nLink:                    http://www.astigmatic.com\nGoogle font page:        https://fonts.google.com/specimen/Sacramento",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "893c51b7878c2bdbefbccdc2399b58a73e97fd5923d2b03b1c92f3974be74eb3",
+          "bytes": 31559
+        },
+        "bundle": {
+          "sha256": "e95181a1c91d99c8b4563df84f5bb69ef2de42399d118e7baed34ec48fba7c67",
+          "bytes": 267444
+        }
+      }
+    },
+    {
+      "id": "pf-ems-casual-hand",
+      "family": "PF EMS Casual Hand",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSCasualHand.svg",
+      "authorLinks": [
+        "http://www.kimberlygeswein.com/",
+        "https://fonts.google.com/specimen/Covered+By+Your+Grace",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Casual Hand\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Covered By Your Grace\nDesigner:                Kimberly Geswein, Kimberly Geswein Fonts\nLink:                    http://www.kimberlygeswein.com/\nGoogle font page:        https://fonts.google.com/specimen/Covered+By+Your+Grace",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "459c95968c3805198b3f0931573cc9bc9b6978ac17ac1f5d77c19238a1d9717f",
+          "bytes": 23235
+        },
+        "bundle": {
+          "sha256": "aa57fd21858dd8355aa0f97e08a2d3d95a06420edf12838380a4ad8e269c1f86",
+          "bytes": 206849
+        }
+      }
+    },
+    {
+      "id": "pf-ems-decorous-script",
+      "family": "PF EMS Decorous Script",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSDecorousScript.svg",
+      "authorLinks": [
+        "https://fonts.google.com/specimen/Petit+Formal+Script",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Decorous Script\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Petit Formal Script\nDesigner:                Impallari Type\nGoogle font page:        https://fonts.google.com/specimen/Petit+Formal+Script",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "11473595158a2f820977588de0cff0aad8d179bf5d84a8a3a7094fe1cd625d51",
+          "bytes": 29534
+        },
+        "bundle": {
+          "sha256": "a1ec17714f38e3d89afd2194d2765a6b9c7965876d77d5fc8f1dc3df5f64af45",
+          "bytes": 269115
+        }
+      }
+    },
+    {
+      "id": "pf-ems-delight",
+      "family": "PF EMS Delight",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSDelight.svg",
+      "authorLinks": [
+        "https://fonts.google.com/specimen/Delius",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Delight\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Delius\nDesigner:                Natalia Raices\nGoogle font page:        https://fonts.google.com/specimen/Delius",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "78883e48de9b5d7f49d2954b44551ec68951f95a3491d2d042f745ed1ae5370f",
+          "bytes": 25081
+        },
+        "bundle": {
+          "sha256": "e5233bf7d48be9cbc60a6d8a0cd1d4a32f7e41ab11b77563ab504cd2c255d87f",
+          "bytes": 206938
+        }
+      }
+    },
+    {
+      "id": "pf-ems-delight-swash-caps",
+      "family": "PF EMS Delight Swash Caps",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSDelightSwashCaps.svg",
+      "authorLinks": [
+        "https://fonts.google.com/specimen/Delius+Swash+Caps",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Delight Swash Caps\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Delius Swash Caps\nDesigner:                Natalia Raices\nGoogle font page:        https://fonts.google.com/specimen/Delius+Swash+Caps",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "d26f496e41ed29042c03abf97a0ddbcb297c7f0363262afabf0017823dec30a0",
+          "bytes": 25541
+        },
+        "bundle": {
+          "sha256": "d41a292f7318dbdc988b1a7166b606c6d72a2e9b03306d1c6bbaaf028863d441",
+          "bytes": 234999
+        }
+      }
+    },
+    {
+      "id": "pf-ems-elfin",
+      "family": "PF EMS Elfin",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1; Apache 2.0 ancestor notice retained",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSElfin.svg",
+      "authorLinks": [
+        "http://www.tartworkshop.com",
+        "https://fonts.google.com/specimen/Mountains+of+Christmas",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Elfin\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Mountains of Christmas\nDesigner:                Crystal Kluge, Tart Workshop\nLink:                    http://www.tartworkshop.com\nGoogle font page:        https://fonts.google.com/specimen/Mountains+of+Christmas\nNote:                    SIL OFL per metadata; Google cites Apache License, version 2.0",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "e8691fef6f852d0e3f0a484a5887b048f57e8a36be04ce6196cb48c922c2e16a",
+          "bytes": 35213
+        },
+        "bundle": {
+          "sha256": "69997382ab44906754537bedcc9e572b68073d872f69e2a24f46cbc8b8474dd6",
+          "bytes": 255221
+        }
+      }
+    },
+    {
+      "id": "pf-ems-felix",
+      "family": "PF EMS Felix",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSFelix.svg",
+      "authorLinks": [
+        "https://twitter.com/fontstage",
+        "https://fonts.google.com/specimen/Felipa",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Felix\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Felipa\nDesigner:                Fontstage\nLink:                    https://twitter.com/fontstage\nGoogle font page:        https://fonts.google.com/specimen/Felipa",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "a991b9e9ffda7646478e23d251ae61a8e7fcfb9950c603ebf581b3402fe189d6",
+          "bytes": 26639
+        },
+        "bundle": {
+          "sha256": "217873918ed28ee9287e5da5fa0d007e43d95b622cab1d470a34b383a6f96b8e",
+          "bytes": 231416
+        }
+      }
+    },
+    {
+      "id": "pf-ems-herculean",
+      "family": "PF EMS Herculean",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSHerculean.svg",
+      "authorLinks": [
+        "https://www.myfonts.com/foundry/Denis_Masharov/",
+        "https://fonts.google.com/specimen/Poiret+One",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Herculean\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Poiret One\nDesigner:                Denis Masharov\nLink:                    https://www.myfonts.com/foundry/Denis_Masharov/\nGoogle font page:        https://fonts.google.com/specimen/Poiret+One",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "1a80d746aa288b558ead3b91e7c782a472a99e30ebe419e0dd27f02552f8bbed",
+          "bytes": 26182
+        },
+        "bundle": {
+          "sha256": "27822cf8732dd99eba79473a93ddeb28f008066dba335fbcf51bb305e1127b0d",
+          "bytes": 207597
+        }
+      }
+    },
+    {
+      "id": "pf-ems-invite",
+      "family": "PF EMS Invite",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSInvite.svg",
+      "authorLinks": [
+        "http://tosche.net/about",
+        "https://fonts.google.com/specimen/Tangerine",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Invite\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Tangerine\nDesigner:                Toshi Omagari\nLink:                    http://tosche.net/about\nGoogle font page:        https://fonts.google.com/specimen/Tangerine",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "521c942de6870b1124c8acbebcd91484a65eecfc8b98377b62d68a4a48bf1e03",
+          "bytes": 29646
+        },
+        "bundle": {
+          "sha256": "267cda11ead82a176c2629570622af39f417f37c20e734a02c693fec04a19846",
+          "bytes": 243301
+        }
+      }
+    },
+    {
+      "id": "pf-ems-league",
+      "family": "PF EMS League",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSLeague.svg",
+      "authorLinks": [
+        "https://www.theleagueofmoveabletype.com",
+        "https://fonts.google.com/specimen/League+Script",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS League\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         League Script\nDesigner:                Haley Fiege, the League of Moveable Type\nLink:                    https://www.theleagueofmoveabletype.com\nGoogle font page:        https://fonts.google.com/specimen/League+Script",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "ff29ecbb4e9b89fb3bc098d708790353f487ceb9755ad400ca452f23861f2536",
+          "bytes": 33662
+        },
+        "bundle": {
+          "sha256": "6a7432ce39784d84c86383605a4cc5a81c8af41e45cb6cc9f877e1282f4ac570",
+          "bytes": 292551
+        }
+      }
+    },
+    {
+      "id": "pf-ems-little-princess",
+      "family": "PF EMS Little Princess",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSLittlePrincess.svg",
+      "authorLinks": [
+        "http://www.tartworkshop.com",
+        "https://fonts.google.com/specimen/Princess+Sofia",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Little Princess\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Princess Sofia\nDesigner:                Crystal Kluge, Tart Workshop\nLink:                    http://www.tartworkshop.com\nGoogle font page:        https://fonts.google.com/specimen/Princess+Sofia",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "8bc50fefdfc7e28cd6947a47940fac2d30cb832339decfb057ac90797027e009",
+          "bytes": 29377
+        },
+        "bundle": {
+          "sha256": "4bdb06d5285d4e0ed304285b82e0260c3e0a657c343ff4fd9343ddd2c47da6b3",
+          "bytes": 267574
+        }
+      }
+    },
+    {
+      "id": "pf-ems-misty-night",
+      "family": "PF EMS Misty Night",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSMistyNight.svg",
+      "authorLinks": [
+        "http://www.glukfonts.pl",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Misty Night\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Foglihten No03\nDesigner:                Grzegorz L, GLUK fonts\nLink:                    http://www.glukfonts.pl\nFontSquirrel page:       https://www.fontsquirrel.com/fonts/foglihten",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "8de0af950477a9512a84aefe7641876052b908b410b9312f9881b1916619cb2a",
+          "bytes": 74352
+        },
+        "bundle": {
+          "sha256": "37f590008b35002d10f237ffd049f622927b4abf2f73ccbcadca97671e0133c4",
+          "bytes": 351893
+        }
+      }
+    },
+    {
+      "id": "pf-ems-neato",
+      "family": "PF EMS Neato",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSNeato.svg",
+      "authorLinks": [
+        "https://www.myfonts.com/foundry/Gaslight/",
+        "https://fonts.google.com/specimen/Bad+Script",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Neato\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Bad Script\nDesigner:                Roman Shchyukin, Gaslight\nLink:                    https://www.myfonts.com/foundry/Gaslight/\nGoogle font page:        https://fonts.google.com/specimen/Bad+Script",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "56732561059c587da149769e64702cab44c4e40d6633040d22692f3222adc24e",
+          "bytes": 27079
+        },
+        "bundle": {
+          "sha256": "de9bd7e8a2a8e17dbde209143eb6beb956a04c6561f55e80fd60dc04ed8bf452",
+          "bytes": 226276
+        }
+      }
+    },
+    {
+      "id": "pf-ems-nixish",
+      "family": "PF EMS Nixish",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSNixish.svg",
+      "authorLinks": [
+        "http://jovanny.ru",
+        "https://fonts.google.com/specimen/Nixie+One",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Nixish\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Nixie One\nDesigner:                Jovanny Lemonad\nLink:                    http://jovanny.ru\nGoogle font page:        https://fonts.google.com/specimen/Nixie+One",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "2b359e6492829d9aec035b1b5c9692563cee04949b979d04a8ea99e834b471e9",
+          "bytes": 28872
+        },
+        "bundle": {
+          "sha256": "a3bacc1d15ce3bea62f4de223c70f1f545fd3600c683fec61134f50f3a5611e1",
+          "bytes": 230970
+        }
+      }
+    },
+    {
+      "id": "pf-ems-nixish-italic",
+      "family": "PF EMS Nixish Italic",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSNixishItalic.svg",
+      "authorLinks": [
+        "http://jovanny.ru",
+        "https://fonts.google.com/specimen/Nixie+One",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Nixish Italic\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Nixie One\nDesigner:                Jovanny Lemonad\nLink:                    http://jovanny.ru\nGoogle font page:        https://fonts.google.com/specimen/Nixie+One",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "5b8872fef937e7a9f5fe95959f128d9b5a440a090cc21eee67c44cb5e762c78f",
+          "bytes": 28845
+        },
+        "bundle": {
+          "sha256": "7e3f5e50c1830c83d57c274b2f62c29a34a2a4cd422d3226da06a3b2afcbc6b6",
+          "bytes": 240781
+        }
+      }
+    },
+    {
+      "id": "pf-ems-osmotron",
+      "family": "PF EMS Osmotron",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSOsmotron.svg",
+      "authorLinks": [
+        "https://www.theleagueofmoveabletype.com",
+        "https://fonts.google.com/specimen/Orbitron",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Osmotron\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Orbitron (Regular)\nDesigner:                Matt McInerney, the League of Moveable Type\nLink:                    https://www.theleagueofmoveabletype.com\nGoogle font page:        https://fonts.google.com/specimen/Orbitron",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "8d6753f7e59c61e2f57b5b64640d213b490870f36d0e8abf37aa08f736076ca9",
+          "bytes": 21088
+        },
+        "bundle": {
+          "sha256": "a1fa983acb804efee753d1c8cce06edf3f98b9b860e856037e4121912cbfd269",
+          "bytes": 173807
+        }
+      }
+    },
+    {
+      "id": "pf-ems-pancakes",
+      "family": "PF EMS Pancakes",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSPancakes.svg",
+      "authorLinks": [
+        "http://www.typeco.com",
+        "https://fonts.google.com/specimen/Short+Stack",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Pancakes\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Short Stack\nDesigner:                James Grieshaber, Typeco\nLink:                    http://www.typeco.com\nGoogle font page:        https://fonts.google.com/specimen/Short+Stack",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "0ccb25b5c255f64f36ceac2a2007defbfd325e3655b771dfc036086d7f68405e",
+          "bytes": 24004
+        },
+        "bundle": {
+          "sha256": "cf860f070c697aa8948ecaa1c3c21b1bd022b3a692955392d2d7283dd08e96ac",
+          "bytes": 210367
+        }
+      }
+    },
+    {
+      "id": "pf-ems-pepita",
+      "family": "PF EMS Pepita",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSPepita.svg",
+      "authorLinks": [
+        "http://pecita.eu/police-en.php",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Pepita\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Pecita\nDesigner:                Philippe Cochy\nLink:                    http://pecita.eu/police-en.php\nFontSquirrel page:       https://www.fontsquirrel.com/fonts/Pecita",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "e331040385d445f36d18d6227ba91f4cdca90937929b42d72e68d561e57f1f15",
+          "bytes": 21372
+        },
+        "bundle": {
+          "sha256": "9dc922b26b314e156677a4ef3b046527e95b195b5a24819382e1644334eb5ed5",
+          "bytes": 217869
+        }
+      }
+    },
+    {
+      "id": "pf-ems-qwandry",
+      "family": "PF EMS Qwandry",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSQwandry.svg",
+      "authorLinks": [
+        "http://www.typesetit.com",
+        "https://fonts.google.com/specimen/Qwigley",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Qwandry\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Qwigley\nDesigner:                Rob Leuschke, TypeSETit\nLink:                    http://www.typesetit.com\nGoogle font page:        https://fonts.google.com/specimen/Qwigley",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "6a3e8c781f438536c0df153f49417616dbac948740b58bb4364a6efb2d494014",
+          "bytes": 29975
+        },
+        "bundle": {
+          "sha256": "3cf618b965651180ee66843f6934b28dfb4f6e37207c88826b609310a7629210",
+          "bytes": 248343
+        }
+      }
+    },
+    {
+      "id": "pf-ems-readability",
+      "family": "PF EMS Readability",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSReadability.svg",
+      "authorLinks": [
+        "http://www.adobe.com",
+        "https://fonts.google.com/specimen/Source+Sans+Pro",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Readability\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Source Sans Pro-Light\nDesigner:                Paul D. Hunt, Adobe\nLink:                    http://www.adobe.com\nGoogle font page:        https://fonts.google.com/specimen/Source+Sans+Pro",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "9aedea89a47210581747c5e47999908c23c8cb61c5d450ef14d4127cd21c03e0",
+          "bytes": 26647
+        },
+        "bundle": {
+          "sha256": "d7a1dddd11160dd3c43f618e8611a4347de81222d0562e22b5bb019fa845de9a",
+          "bytes": 215577
+        }
+      }
+    },
+    {
+      "id": "pf-ems-readability-italic",
+      "family": "PF EMS Readability Italic",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSReadabilityItalic.svg",
+      "authorLinks": [
+        "http://www.adobe.com",
+        "https://fonts.google.com/specimen/Source+Sans+Pro",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Readability Italic\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Source Sans Pro-Light\nDesigner:                Paul D. Hunt, Adobe\nLink:                    http://www.adobe.com\nGoogle font page:        https://fonts.google.com/specimen/Source+Sans+Pro",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "974f73f635a97320dc731dbeaca152ebbb7d9899125c78cb85dce143d5d82fc4",
+          "bytes": 26619
+        },
+        "bundle": {
+          "sha256": "e8d29c0569526e4c0bb4fc8696565be1a4cdd8e8f6505197945abb339e8d9eea",
+          "bytes": 223237
+        }
+      }
+    },
+    {
+      "id": "pf-ems-society",
+      "family": "PF EMS Society",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSSociety.svg",
+      "authorLinks": [
+        "http://www.sudtipos.com",
+        "https://fonts.google.com/specimen/Mrs+Saint+Delafield",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Society\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Mrs Saint Delafield\nDesigner:                Alejandro Paul, Sudtipos\nLink:                    http://www.sudtipos.com\nGoogle font page:        https://fonts.google.com/specimen/Mrs+Saint+Delafield",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "53a76528ac58f97639df21e6e158cb7882cbc94922c4f674c56c3f298cb3590f",
+          "bytes": 35335
+        },
+        "bundle": {
+          "sha256": "1dbb94a8fca7c0d24d798298dc7a4c3216ee9084a8ee580520663f73cabec911",
+          "bytes": 298464
+        }
+      }
+    },
+    {
+      "id": "pf-ems-spacerocks",
+      "family": "PF EMS SpaceRocks",
+      "glyphs": 97,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSSpaceRocks.svg",
+      "authorLinks": [
+        "https://gitlab.com/oskay/svg-fonts",
+        "https://www.evilmadscientist.com/"
+      ],
+      "attribution": "Font name:               EMS SpaceRocks\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Trammell Hudson\nSVG font conversion by:  Trammell Hudson\nA derivative of:         Atari Asteroids font\nDesigner:                Ed Logg\nLink:                    https://trmm.net/Asteroids_font",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "e89236b1a5a7c6a52241f70cc76ad59558053608399a07c6b003881201e159ba",
+          "bytes": 17428
+        },
+        "bundle": {
+          "sha256": "f4c085f8f8875dc6ddb346a1c76e71a5274d4d60080b581df649c5d39005bb87",
+          "bytes": 74052
+        }
+      }
+    },
+    {
+      "id": "pf-ems-swiss",
+      "family": "PF EMS Swiss",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSSwiss.svg",
+      "authorLinks": [
+        "http://www.typesetit.com",
+        "https://fonts.google.com/specimen/Italianno",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Swiss\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Italianno\nDesigner:                Rob Leuschke, TypeSETit\nLink:                    http://www.typesetit.com\nGoogle font page:        https://fonts.google.com/specimen/Italianno",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "f89c40392486748b838f63d9e2d92c673e8e870c654ded4e41488696b9ec5ef7",
+          "bytes": 33611
+        },
+        "bundle": {
+          "sha256": "c883a116aad1bdf5190b4ccd2712c424367ce10334fa08645e130f84dc56ecca",
+          "bytes": 268139
+        }
+      }
+    },
+    {
+      "id": "pf-ems-tech",
+      "family": "PF EMS Tech",
+      "glyphs": 218,
+      "license": "SIL OFL 1.1",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/EMS/EMSTech.svg",
+      "authorLinks": [
+        "http://www.kimberlygeswein.com/",
+        "https://fonts.google.com/specimen/Architects+Daughter",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:               EMS Tech\nLicense:                 SIL Open Font License http://scripts.sil.org/OFL\nCreated by:              Sheldon B. Michaels\nSVG font conversion by:  Windell H. Oskay\nA derivative of:         Architects Daughter\nDesigner:                Kimberly Geswein, Kimberly Geswein Fonts\nLink:                    http://www.kimberlygeswein.com/\nGoogle font page:        https://fonts.google.com/specimen/Architects+Daughter",
+      "collection": "EMS",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "8c60c0c8fd843a19dea4bb63bc2317979f23c210c8f13e5b115742ee651341d0",
+          "bytes": 25509
+        },
+        "bundle": {
+          "sha256": "67ae1f9b6d62ad9db8d243528af9cc541dc040e1ca4edcdd7f324b2292e46d2a",
+          "bytes": 212357
+        }
+      }
+    },
+    {
+      "id": "pf-hershey-gothic-english",
+      "family": "PF Hershey Gothic English",
+      "glyphs": 218,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/Hershey/HersheyGothEnglish.svg",
+      "authorLinks": [
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name: Hershey Gothic English\n\nOriginally prepared in 2011 and converted to SVG fonts\nin 2019 by Windell H. Oskay, www.evilmadscientist.com\n\nContents adapted from emergent.unpythonic.net/software/hershey\n by way of \"Hershey Fonts in SVG\" by Marty McGuire\n http://www.thingiverse.com/thing:6168\n \n-------------------------------------------------------------------\nThe Hershey Fonts are a set of vector fonts with a liberal license.\n\nUSE RESTRICTION:\n    This distribution of the Hershey Fonts may be used by anyone for\n    any purpose, commercial or otherwise, providing that:\n        1. The following acknowledgements must be distributed with\n            the font data:\n            - The Hershey Fonts were originally created by Dr.\n                A. V. Hershey while working at the U. S.\n                National Bureau of Standards.\n            - The format of the Font data in this distribution\n                was originally created by\n                    James Hurt\n                    Cognition, Inc.\n                    900 Technology Park Drive\n                    Billerica, MA 01821\n                    (mit-eddie!ci-dandelion!hurt)\n        2. The font data in this distribution may be converted into\n            any other format *EXCEPT* the format distributed by\n            the U.S. NTIS where each point is described\n            in eight bytes as \"xxx yyy:\", where xxx and yyy are\n            the coordinate values as ASCII numbers.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "b8567c0a0243c95aadd3e42cd3b798e431812dcd83724514b31c83f2d3692ec3",
+          "bytes": 69956
+        },
+        "bundle": {
+          "sha256": "e5e2ecc5509365c5d6834c539f0b0b5d52a386c11e86142a90bf389fd496ec62",
+          "bytes": 306931
+        }
+      }
+    },
+    {
+      "id": "pf-hershey-gothic-german",
+      "family": "PF Hershey Gothic German",
+      "glyphs": 218,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/Hershey/HersheyGothGerman.svg",
+      "authorLinks": [
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name: Hershey Gothic German\n\nOriginally prepared in 2011 and converted to SVG fonts\nin 2019 by Windell H. Oskay, www.evilmadscientist.com\n\nContents adapted from emergent.unpythonic.net/software/hershey\n by way of \"Hershey Fonts in SVG\" by Marty McGuire\n http://www.thingiverse.com/thing:6168\n \n-------------------------------------------------------------------\nThe Hershey Fonts are a set of vector fonts with a liberal license.\n\nUSE RESTRICTION:\n    This distribution of the Hershey Fonts may be used by anyone for\n    any purpose, commercial or otherwise, providing that:\n        1. The following acknowledgements must be distributed with\n            the font data:\n            - The Hershey Fonts were originally created by Dr.\n                A. V. Hershey while working at the U. S.\n                National Bureau of Standards.\n            - The format of the Font data in this distribution\n                was originally created by\n                    James Hurt\n                    Cognition, Inc.\n                    900 Technology Park Drive\n                    Billerica, MA 01821\n                    (mit-eddie!ci-dandelion!hurt)\n        2. The font data in this distribution may be converted into\n            any other format *EXCEPT* the format distributed by\n            the U.S. NTIS where each point is described\n            in eight bytes as \"xxx yyy:\", where xxx and yyy are\n            the coordinate values as ASCII numbers.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "b1463a5f83e7c8e73d869d2219e8a39ff671cff00fdfed1acc368bc5722ac3dc",
+          "bytes": 69802
+        },
+        "bundle": {
+          "sha256": "bc71e769c99923435d0397f33534d78623038a1e124c4d432068eb4d0b0a367e",
+          "bytes": 310320
+        }
+      }
+    },
+    {
+      "id": "pf-hershey-gothic-italian",
+      "family": "PF Hershey Gothic Italian",
+      "glyphs": 218,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/Hershey/HersheyGothItalian.svg",
+      "authorLinks": [
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name: Hershey Gothic Italian\n\nOriginally prepared in 2011 and converted to SVG fonts\nin 2019 by Windell H. Oskay, www.evilmadscientist.com\n\nContents adapted from emergent.unpythonic.net/software/hershey\n by way of \"Hershey Fonts in SVG\" by Marty McGuire\n http://www.thingiverse.com/thing:6168\n \n-------------------------------------------------------------------\nThe Hershey Fonts are a set of vector fonts with a liberal license.\n\nUSE RESTRICTION:\n    This distribution of the Hershey Fonts may be used by anyone for\n    any purpose, commercial or otherwise, providing that:\n        1. The following acknowledgements must be distributed with\n            the font data:\n            - The Hershey Fonts were originally created by Dr.\n                A. V. Hershey while working at the U. S.\n                National Bureau of Standards.\n            - The format of the Font data in this distribution\n                was originally created by\n                    James Hurt\n                    Cognition, Inc.\n                    900 Technology Park Drive\n                    Billerica, MA 01821\n                    (mit-eddie!ci-dandelion!hurt)\n        2. The font data in this distribution may be converted into\n            any other format *EXCEPT* the format distributed by\n            the U.S. NTIS where each point is described\n            in eight bytes as \"xxx yyy:\", where xxx and yyy are\n            the coordinate values as ASCII numbers.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "6d7c72a3d0154549c1950a9fd58b5e9aff164cdae4c2e26dddeca9597e0af979",
+          "bytes": 61468
+        },
+        "bundle": {
+          "sha256": "04fb13ae26809467434eb2732efcf3b7307a40d9106a74147240170b28b437e8",
+          "bytes": 278387
+        }
+      }
+    },
+    {
+      "id": "pf-hershey-sans-1-stroke",
+      "family": "PF Hershey Sans 1-stroke",
+      "glyphs": 218,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/Hershey/HersheySans1.svg",
+      "authorLinks": [
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name: Hershey Sans 1-stroke\n\nOriginally prepared in 2011 and converted to SVG fonts\nin 2019 by Windell H. Oskay, www.evilmadscientist.com\n\nContents adapted from emergent.unpythonic.net/software/hershey\n by way of \"Hershey Fonts in SVG\" by Marty McGuire\n http://www.thingiverse.com/thing:6168\n \n-------------------------------------------------------------------\nThe Hershey Fonts are a set of vector fonts with a liberal license.\n\nUSE RESTRICTION:\n    This distribution of the Hershey Fonts may be used by anyone for\n    any purpose, commercial or otherwise, providing that:\n        1. The following acknowledgements must be distributed with\n            the font data:\n            - The Hershey Fonts were originally created by Dr.\n                A. V. Hershey while working at the U. S.\n                National Bureau of Standards.\n            - The format of the Font data in this distribution\n                was originally created by\n                    James Hurt\n                    Cognition, Inc.\n                    900 Technology Park Drive\n                    Billerica, MA 01821\n                    (mit-eddie!ci-dandelion!hurt)\n        2. The font data in this distribution may be converted into\n            any other format *EXCEPT* the format distributed by\n            the U.S. NTIS where each point is described\n            in eight bytes as \"xxx yyy:\", where xxx and yyy are\n            the coordinate values as ASCII numbers.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "b5bc9cfd80691c275495b0e1c9b825916b21746076181f525006af945eaa2ec9",
+          "bytes": 21699
+        },
+        "bundle": {
+          "sha256": "40a39d502ca32eb12492aeabbda598d2f31befaf7ae7ba58b4111f62933f19f2",
+          "bytes": 188355
+        }
+      }
+    },
+    {
+      "id": "pf-hershey-sans-medium",
+      "family": "PF Hershey Sans medium",
+      "glyphs": 218,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/Hershey/HersheySansMed.svg",
+      "authorLinks": [
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name: Hershey Sans medium\n\nOriginally prepared in 2011 and converted to SVG fonts\nin 2019 by Windell H. Oskay, www.evilmadscientist.com\n\nContents adapted from emergent.unpythonic.net/software/hershey\n by way of \"Hershey Fonts in SVG\" by Marty McGuire\n http://www.thingiverse.com/thing:6168\n \n-------------------------------------------------------------------\nThe Hershey Fonts are a set of vector fonts with a liberal license.\n\nUSE RESTRICTION:\n    This distribution of the Hershey Fonts may be used by anyone for\n    any purpose, commercial or otherwise, providing that:\n        1. The following acknowledgements must be distributed with\n            the font data:\n            - The Hershey Fonts were originally created by Dr.\n                A. V. Hershey while working at the U. S.\n                National Bureau of Standards.\n            - The format of the Font data in this distribution\n                was originally created by\n                    James Hurt\n                    Cognition, Inc.\n                    900 Technology Park Drive\n                    Billerica, MA 01821\n                    (mit-eddie!ci-dandelion!hurt)\n        2. The font data in this distribution may be converted into\n            any other format *EXCEPT* the format distributed by\n            the U.S. NTIS where each point is described\n            in eight bytes as \"xxx yyy:\", where xxx and yyy are\n            the coordinate values as ASCII numbers.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "6bc484d0f70aa8e7c275d8dd5ff85a7d55c4ed1cbaf1efd15ca3ecc8bfbc0e3a",
+          "bytes": 44281
+        },
+        "bundle": {
+          "sha256": "39c5a013be9166ccc72ec8504c30cba01737ab47e4d4c4980c5dd94fe477ab3d",
+          "bytes": 234605
+        }
+      }
+    },
+    {
+      "id": "pf-hershey-script-1-stroke",
+      "family": "PF Hershey Script 1-stroke",
+      "glyphs": 218,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/Hershey/HersheyScript1.svg",
+      "authorLinks": [
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name: Hershey Script 1-stroke\n\nOriginally prepared in 2011 and converted to SVG fonts\nin 2019 by Windell H. Oskay, www.evilmadscientist.com\n\nContents adapted from emergent.unpythonic.net/software/hershey\n by way of \"Hershey Fonts in SVG\" by Marty McGuire\n http://www.thingiverse.com/thing:6168\n \n-------------------------------------------------------------------\nThe Hershey Fonts are a set of vector fonts with a liberal license.\n\nUSE RESTRICTION:\n    This distribution of the Hershey Fonts may be used by anyone for\n    any purpose, commercial or otherwise, providing that:\n        1. The following acknowledgements must be distributed with\n            the font data:\n            - The Hershey Fonts were originally created by Dr.\n                A. V. Hershey while working at the U. S.\n                National Bureau of Standards.\n            - The format of the Font data in this distribution\n                was originally created by\n                    James Hurt\n                    Cognition, Inc.\n                    900 Technology Park Drive\n                    Billerica, MA 01821\n                    (mit-eddie!ci-dandelion!hurt)\n        2. The font data in this distribution may be converted into\n            any other format *EXCEPT* the format distributed by\n            the U.S. NTIS where each point is described\n            in eight bytes as \"xxx yyy:\", where xxx and yyy are\n            the coordinate values as ASCII numbers.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "48250960c378ead067032ce94e5846e95241b3acb40fb51eae641d5101c79270",
+          "bytes": 31262
+        },
+        "bundle": {
+          "sha256": "48d5db808e0a1256f0d2bfa8da09abc9fc9fae80759ac4aa5ae09ff4a237e2f5",
+          "bytes": 230679
+        }
+      }
+    },
+    {
+      "id": "pf-hershey-script-medium",
+      "family": "PF Hershey Script medium",
+      "glyphs": 218,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/Hershey/HersheyScriptMed.svg",
+      "authorLinks": [
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name: Hershey Script medium\n\nOriginally prepared in 2011 and converted to SVG fonts\nin 2019 by Windell H. Oskay, www.evilmadscientist.com\n\nContents adapted from emergent.unpythonic.net/software/hershey\n by way of \"Hershey Fonts in SVG\" by Marty McGuire\n http://www.thingiverse.com/thing:6168\n \n-------------------------------------------------------------------\nThe Hershey Fonts are a set of vector fonts with a liberal license.\n\nUSE RESTRICTION:\n    This distribution of the Hershey Fonts may be used by anyone for\n    any purpose, commercial or otherwise, providing that:\n        1. The following acknowledgements must be distributed with\n            the font data:\n            - The Hershey Fonts were originally created by Dr.\n                A. V. Hershey while working at the U. S.\n                National Bureau of Standards.\n            - The format of the Font data in this distribution\n                was originally created by\n                    James Hurt\n                    Cognition, Inc.\n                    900 Technology Park Drive\n                    Billerica, MA 01821\n                    (mit-eddie!ci-dandelion!hurt)\n        2. The font data in this distribution may be converted into\n            any other format *EXCEPT* the format distributed by\n            the U.S. NTIS where each point is described\n            in eight bytes as \"xxx yyy:\", where xxx and yyy are\n            the coordinate values as ASCII numbers.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "b5f684f525365e8399ea2de497ef9b46b9f48f1555416db466d3ff9487983fa6",
+          "bytes": 39463
+        },
+        "bundle": {
+          "sha256": "7aa1658247eeb595841a28306500a3dbbd93a60a6b173835de6495745e5f561d",
+          "bytes": 252569
+        }
+      }
+    },
+    {
+      "id": "pf-hershey-serif-bold",
+      "family": "PF Hershey Serif bold",
+      "glyphs": 218,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/Hershey/HersheySerifBold.svg",
+      "authorLinks": [
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name: Hershey Serif bold\n\nOriginally prepared in 2011 and converted to SVG fonts\nin 2019 by Windell H. Oskay, www.evilmadscientist.com\n\nContents adapted from emergent.unpythonic.net/software/hershey\n by way of \"Hershey Fonts in SVG\" by Marty McGuire\n http://www.thingiverse.com/thing:6168\n \n-------------------------------------------------------------------\nThe Hershey Fonts are a set of vector fonts with a liberal license.\n\nUSE RESTRICTION:\n    This distribution of the Hershey Fonts may be used by anyone for\n    any purpose, commercial or otherwise, providing that:\n        1. The following acknowledgements must be distributed with\n            the font data:\n            - The Hershey Fonts were originally created by Dr.\n                A. V. Hershey while working at the U. S.\n                National Bureau of Standards.\n            - The format of the Font data in this distribution\n                was originally created by\n                    James Hurt\n                    Cognition, Inc.\n                    900 Technology Park Drive\n                    Billerica, MA 01821\n                    (mit-eddie!ci-dandelion!hurt)\n        2. The font data in this distribution may be converted into\n            any other format *EXCEPT* the format distributed by\n            the U.S. NTIS where each point is described\n            in eight bytes as \"xxx yyy:\", where xxx and yyy are\n            the coordinate values as ASCII numbers.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "5af26ce4feb14e1493ef2a126bac540a1e78581c82b98673c70b8041b6c10679",
+          "bytes": 75738
+        },
+        "bundle": {
+          "sha256": "dcdc72785f7e78e347cebe541bc6a0612db25af151c8babab3a167189b65f0bb",
+          "bytes": 282402
+        }
+      }
+    },
+    {
+      "id": "pf-hershey-serif-bold-italic",
+      "family": "PF Hershey Serif bold italic",
+      "glyphs": 218,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/Hershey/HersheySerifBoldItalic.svg",
+      "authorLinks": [
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name: Hershey Serif bold italic\n\nOriginally prepared in 2011 and converted to SVG fonts\nin 2019 by Windell H. Oskay, www.evilmadscientist.com\n\nContents adapted from emergent.unpythonic.net/software/hershey\n by way of \"Hershey Fonts in SVG\" by Marty McGuire\n http://www.thingiverse.com/thing:6168\n \n-------------------------------------------------------------------\nThe Hershey Fonts are a set of vector fonts with a liberal license.\n\nUSE RESTRICTION:\n    This distribution of the Hershey Fonts may be used by anyone for\n    any purpose, commercial or otherwise, providing that:\n        1. The following acknowledgements must be distributed with\n            the font data:\n            - The Hershey Fonts were originally created by Dr.\n                A. V. Hershey while working at the U. S.\n                National Bureau of Standards.\n            - The format of the Font data in this distribution\n                was originally created by\n                    James Hurt\n                    Cognition, Inc.\n                    900 Technology Park Drive\n                    Billerica, MA 01821\n                    (mit-eddie!ci-dandelion!hurt)\n        2. The font data in this distribution may be converted into\n            any other format *EXCEPT* the format distributed by\n            the U.S. NTIS where each point is described\n            in eight bytes as \"xxx yyy:\", where xxx and yyy are\n            the coordinate values as ASCII numbers.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "d8a256fc0c919b6c53585482298be9a945c795e9a08ac57af9891b7f7816f076",
+          "bytes": 63109
+        },
+        "bundle": {
+          "sha256": "38f7e7ecc545de2316a49454be3a5d8620d23a4ccdfc231f1e40331397e05202",
+          "bytes": 289282
+        }
+      }
+    },
+    {
+      "id": "pf-hershey-serif-medium",
+      "family": "PF Hershey Serif medium",
+      "glyphs": 218,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/Hershey/HersheySerifMed.svg",
+      "authorLinks": [
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name: Hershey Serif medium\n\nOriginally prepared in 2011 and converted to SVG fonts\nin 2019 by Windell H. Oskay, www.evilmadscientist.com\n\nContents adapted from emergent.unpythonic.net/software/hershey\n by way of \"Hershey Fonts in SVG\" by Marty McGuire\n http://www.thingiverse.com/thing:6168\n \n-------------------------------------------------------------------\nThe Hershey Fonts are a set of vector fonts with a liberal license.\n\nUSE RESTRICTION:\n    This distribution of the Hershey Fonts may be used by anyone for\n    any purpose, commercial or otherwise, providing that:\n        1. The following acknowledgements must be distributed with\n            the font data:\n            - The Hershey Fonts were originally created by Dr.\n                A. V. Hershey while working at the U. S.\n                National Bureau of Standards.\n            - The format of the Font data in this distribution\n                was originally created by\n                    James Hurt\n                    Cognition, Inc.\n                    900 Technology Park Drive\n                    Billerica, MA 01821\n                    (mit-eddie!ci-dandelion!hurt)\n        2. The font data in this distribution may be converted into\n            any other format *EXCEPT* the format distributed by\n            the U.S. NTIS where each point is described\n            in eight bytes as \"xxx yyy:\", where xxx and yyy are\n            the coordinate values as ASCII numbers.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "c9fcca68a3e0da494a9eb0d095b4e6d3470cc800847ce273a08677616f3c2043",
+          "bytes": 44742
+        },
+        "bundle": {
+          "sha256": "656553716a5ff4a6417416f6894349fc89f128f36134916aefc20791955e8f39",
+          "bytes": 230934
+        }
+      }
+    },
+    {
+      "id": "pf-hershey-serif-medium-italic",
+      "family": "PF Hershey Serif medium italic",
+      "glyphs": 218,
+      "license": "Hershey permissive terms; not MIT",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/Hershey/HersheySerifMedItalic.svg",
+      "authorLinks": [
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name: Hershey Serif medium italic\n\nOriginally prepared in 2011 and converted to SVG fonts\nin 2019 by Windell H. Oskay, www.evilmadscientist.com\n\nContents adapted from emergent.unpythonic.net/software/hershey\n by way of \"Hershey Fonts in SVG\" by Marty McGuire\n http://www.thingiverse.com/thing:6168\n \n-------------------------------------------------------------------\nThe Hershey Fonts are a set of vector fonts with a liberal license.\n\nUSE RESTRICTION:\n    This distribution of the Hershey Fonts may be used by anyone for\n    any purpose, commercial or otherwise, providing that:\n        1. The following acknowledgements must be distributed with\n            the font data:\n            - The Hershey Fonts were originally created by Dr.\n                A. V. Hershey while working at the U. S.\n                National Bureau of Standards.\n            - The format of the Font data in this distribution\n                was originally created by\n                    James Hurt\n                    Cognition, Inc.\n                    900 Technology Park Drive\n                    Billerica, MA 01821\n                    (mit-eddie!ci-dandelion!hurt)\n        2. The font data in this distribution may be converted into\n            any other format *EXCEPT* the format distributed by\n            the U.S. NTIS where each point is described\n            in eight bytes as \"xxx yyy:\", where xxx and yyy are\n            the coordinate values as ASCII numbers.",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "e4113816512acf477342f3b2f77b1b20f6bddb805f2fe81dbe656f354a2d2178",
+          "bytes": 42323
+        },
+        "bundle": {
+          "sha256": "1e07b1eecfa2e051a1b77931e4ccddc0aeaf3ba9208c7f62cec66318d468c935",
+          "bytes": 244758
+        }
+      }
+    },
+    {
+      "id": "pf-relief-singleline-ornament",
+      "family": "PF Relief SingleLine Ornament",
+      "glyphs": 171,
+      "license": "SIL OFL 1.1",
+      "source": "https://github.com/isdat-type/Relief-SingleLine",
+      "sourceUrl": "https://raw.githubusercontent.com/isdat-type/Relief-SingleLine/01dfc5779ec1e9e4b288d96c6c96c23bfccbaf9d/fonts/open_svg/ReliefSingleLineOrnament-Regular.svg",
+      "authorLinks": [
+        "https://github.com/isdat-type/Relief-SingleLine"
+      ],
+      "attribution": "Created by FontForge 20201107 at Thu May 26 19:50:12 2022\n By Tanguy Vanlaeys\nCopyright 2021 The Relief SingleLine Project Authors (https://github.com/isdat-type/Relief-SingleLine)",
+      "collection": "Relief",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "4469591b747a06f434180e0840a0cef094beee1ebbe74b5a988fdb71adc1899b",
+          "bytes": 28251
+        },
+        "bundle": {
+          "sha256": "3a1ff65d4b6c91f71ac81c8e20fac9a94ac235db31e055177a72c8c26cff14bb",
+          "bytes": 138799
+        }
+      }
+    },
+    {
+      "id": "pf-twin-sans",
+      "family": "PF Twin Sans",
+      "glyphs": 264,
+      "license": "SIL OFL 1.1; Hershey ancestor notice retained",
+      "source": "https://gitlab.com/oskay/svg-fonts",
+      "sourceUrl": "https://gitlab.com/oskay/svg-fonts/-/raw/8c71f2d9e1a5292047bb88e5595a766241b82cc6/fonts/Hershey/TwinSans.svg",
+      "authorLinks": [
+        "https://keithp.com/",
+        "https://gitlab.com/oskay/svg-fonts"
+      ],
+      "attribution": "Font name:       Twin Sans\nLicense:         SIL Open Font License http://scripts.sil.org/OFL\nCreated by:      Keith Packard\nA derivative of: Hershey Sans\n\nPrepared in 2023 and converted to SVG fonts\nin 2023 by Keith Packard, www.keithp.com",
+      "collection": "Hershey",
+      "privateUseMappings": false,
+      "assets": {
+        "specimen": {
+          "sha256": "d7b18838459ff80470a3fe237fbd914a62cf4403b92ce6b3980c42b622ce53ce",
+          "bytes": 24215
+        },
+        "bundle": {
+          "sha256": "15df45ad332eaa59fd179f8435c75413948ad5ca761fa8c91acb7b4fc8d8840e",
+          "bytes": 188613
+        }
+      }
+    }
+  ]
+}

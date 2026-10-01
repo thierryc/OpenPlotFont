@@ -1,0 +1,53 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - 'scripts/build_website.py'
+      - 'scripts/verify_website.py'
+      - 'scripts/build_glyphs_plugin.py'
+      - 'plugins/**'
+      - 'plotfont/glyphs_plugin.py'
+      - 'plotfont/glyphs_export.py'
+      - 'plotfont/validation.py'
+      - 'plotfont/storage.py'
+      - 'LICENSE'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/configure-pages@v6
+      - name: Build static site and Glyphs plugin
+        run: python3 scripts/build_website.py
+      - name: Verify links, catalog, licenses, and plugin payload
+        run: python3 scripts/verify_website.py
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: output/website
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

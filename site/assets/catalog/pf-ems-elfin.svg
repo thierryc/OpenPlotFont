@@ -1,0 +1,370 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="181.388mm" height="39.404mm" viewBox="-2.15 -15.302 181.388 39.404">
+<metadata>Font name:               EMS Elfin
+License:                 SIL Open Font License http://scripts.sil.org/OFL
+Created by:              Sheldon B. Michaels
+SVG font conversion by:  Windell H. Oskay
+A derivative of:         Mountains of Christmas
+Designer:                Crystal Kluge, Tart Workshop
+Link:                    http://www.tartworkshop.com
+Google font page:        https://fonts.google.com/specimen/Mountains+of+Christmas
+Note:                    SIL OFL per metadata; Google cites Apache License, version 2.0
+
+Copyright (c) &lt;dates&gt;, &lt;Copyright Holder&gt; (&lt;URL|email&gt;),
+with Reserved Font Name &lt;Reserved Font Name&gt;.
+Copyright (c) &lt;dates&gt;, &lt;additional Copyright Holder&gt; (&lt;URL|email&gt;),
+with Reserved Font Name &lt;additional Reserved Font Name&gt;.
+Copyright (c) &lt;dates&gt;, &lt;additional Copyright Holder&gt; (&lt;URL|email&gt;).
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded, 
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+&quot;Font Software&quot; refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+&quot;Reserved Font Name&quot; refers to any names specified as such after the
+copyright statement(s).
+
+&quot;Original Version&quot; refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+&quot;Modified Version&quot; refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+&quot;Author&quot; refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION &amp; CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
+
+
+
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      &quot;License&quot; shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      &quot;Licensor&quot; shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      &quot;Legal Entity&quot; shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      &quot;control&quot; means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+
+      &quot;You&quot; (or &quot;Your&quot;) shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      &quot;Source&quot; form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+
+      &quot;Object&quot; form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      &quot;Work&quot; shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      &quot;Derivative Works&quot; shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+
+      &quot;Contribution&quot; shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, &quot;submitted&quot;
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as &quot;Not a Contribution.&quot;
+
+      &quot;Contributor&quot; shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a &quot;NOTICE&quot; text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an &quot;AS IS&quot; BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
+
+   END OF TERMS AND CONDITIONS
+
+   APPENDIX: How to apply the Apache License to your work.
+
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets &quot;[]&quot;
+      replaced with your own identifying information. (Don&#x27;t include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same &quot;printed page&quot; as the copyright notice for easier
+      identification within third-party archives.
+
+   Copyright [yyyy] [name of copyright owner]
+
+   Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+
+Copyright (c) 2010 2011, Font Diner, Inc DBA Tart Workshop (diner@fontdiner.com) with Reserved Font Name &quot;Mountains of Christmas&quot;
+Source: https://raw.githubusercontent.com/google/fonts/9710da1eacb3be272583c3224dcb70f9da6eadbb/apache/mountainsofchristmas/MountainsofChristmas-Regular.ttf
+Apache 2.0 source; EMS Elfin is an OFL-declared stroke derivative.
+</metadata>
+  <title>Hamburgefontsiv 0123456789
+A O Q gjpq é Å @ &amp; fi</title>
+  <path data-glyph="H" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 2.064 0.3536 L 3.424 -0.1512 L 2.816 0.1008 L 2.624 -4.128 L 1.968 -11.088 L 1.2096 -10.944 L 1.968 -11.04 L 2.576 -11.232"/>
+  <path data-glyph="H" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 8.576 0.7552 L 8.16 0.856 L 6.8 1.008 L 7.552 0.9072 L 8.272 -7.056 L 8.512 -9.52 L 8.976 -11.648 L 9.68 -11.648 L 8.208 -11.744"/>
+  <path data-glyph="H" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 7.92 -3.232 L 2.72 -3.328"/>
+  <path data-glyph="a" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 11.696 -5.6 L 11.44 -6.608 L 11.904 -7.36 L 12.912 -8.016 L 14.224 -7.712 L 14.928 -6.608 L 15.12 -5.248 L 15.168 -3.168 L 14.928 -2.368 L 13.92 -1.664 L 12.848 -1.1088 L 11.904 -0.9584 L 11.1424 -1.4112 L 11.0912 -2.528 L 11.488 -3.232 L 12.608 -3.52 L 14.016 -3.52 L 14.416 -3.424 L 15.024 -2.768 L 15.216 -2.112 L 15.28 -1.1088 L 15.28 0 L 15.328 0.4032 L 15.872 0.504 L 16.176 0.504 L 16.528 0.504 L 16.944 0.3024"/>
+  <path data-glyph="m" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 17.84 0.656 L 18.8 0.3024 L 20.048 0.1008 L 18.752 0.3024 L 18.688 -4.288 L 18.336 -7.152 L 19.04 -7.36 L 17.1328 -6.96 L 18.4 -7.152 L 18.848 -3.68 L 19.76 -5.488 L 21.312 -6.656 L 22.064 -6.752 L 22.48 -6.192 L 22.672 -4.128 L 22.672 -2.464 L 23.184 -4.688 L 24.24 -6.448 L 25.344 -7.36 L 26.208 -7.456 L 26.608 -6.4 L 26.752 -4.24 L 26.656 -0.5536 L 25.552 -0.1512 L 28.016 -0.7056"/>
+  <path data-glyph="b" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 28.4176 -12.96 L 30.832 -13.152 L 29.68 -13.008 L 30.24 0.1512 L 31.696 0.6048 L 33.2 0.3024 L 34.464 -0.9072 L 34.912 -2.112 L 34.768 -3.424 L 34.272 -4.384 L 33.36 -4.992 L 31.888 -4.688 L 31.04 -3.984 L 30.48 -3.12 L 30.128 -2.224 L 30.336 0.6048 L 29.584 0.8064 L 29.224 1.008"/>
+  <path data-glyph="u" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 36.5744 -8.208 L 38.24 -8.208 L 37.68 -8.064 L 37.488 -4.736 L 37.488 -2.768 L 37.936 -1.872 L 38.384 -1.3104 L 38.736 -1.2608 L 39.392 -2.112 L 40 -2.816 L 40.16 -3.68 L 41.312 -5.44 L 41.92 -6.656 L 42.112 -7.856 L 42.176 -3.424 L 42.368 -0.6544 L 41.664 -0.4032 L 42.416 -0.6544 L 43.584 -0.8064"/>
+  <path data-glyph="r" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 45.344 0.4032 L 46.496 0.0504 L 47.408 -0.2016 L 46.192 0.1512 L 45.904 -2.816 L 45.904 -5.44 L 45.696 -7.856 L 44.6368 -7.664 L 45.696 -7.808 L 46.096 -5.136 L 46.96 -6.752 L 48.32 -7.856 L 49.28 -8.112 L 49.776 -7.664 L 50.08 -7.104 L 49.936 -6.4 L 49.632 -6.096 L 49.168 -6.096"/>
+  <path data-glyph="g" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 54.368 -3.472 L 55.232 -4.24 L 55.728 -5.536 L 55.936 -5.744 L 57.136 -6.192 L 55.776 -5.744 L 55.024 -6.752 L 54.064 -7.456 L 53.456 -7.504 L 52.144 -6.656 L 51.648 -5.136 L 52 -3.984 L 52.704 -3.424 L 53.408 -3.328 L 53.968 -3.424 L 54.576 -3.584 L 54.768 -1.808 L 54.768 -0.2528 L 55.824 0.7056 L 56.48 1.5616 L 56.784 3.024 L 56.736 3.984 L 55.52 5.184 L 53.712 5.952 L 51.904 5.792 L 50.5888 4.896 L 49.9336 3.52 L 50.1856 1.664 L 50.84 0.504 L 51.5456 -0.2528 L 52.96 -0.7056 L 53.808 -0.6544 L 54.768 -0.2528"/>
+  <path data-glyph="e" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 62.032 -0.7056 L 61.424 0.1512 L 60.32 0.504 L 59.152 -0.2528 L 58.656 -2.224 L 58.8 -4.48 L 59.552 -6.448 L 60.112 -6.8 L 60.864 -6.704 L 61.424 -6.144 L 62.128 -4.384 L 60.512 -4.288 L 58.848 -4.24"/>
+  <path data-glyph="f" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 64.032 3.376 L 67.056 2.816 L 65.6 3.024 L 65.152 -2.768 L 65.04 -6.4 L 66.656 -6.448 L 67.104 -6.656 L 66.256 -6.448 L 64.032 -6.4 L 63.8336 -6.448 L 65.152 -6.4 L 65.248 -9.68 L 65.504 -11.44 L 66.048 -12.4 L 67.104 -12.896 L 68.224 -12.96 L 69.184 -12.304 L 69.584 -11.744 L 69.632 -11.344"/>
+  <path data-glyph="o" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 71.744 -7.552 L 70.8 -7.76 L 69.488 -7.312 L 68.928 -6.256 L 68.976 -4.784 L 69.536 -3.824 L 70.848 -3.168 L 72.56 -3.728 L 73.264 -4.992 L 73.312 -6.496 L 72.704 -7.312 L 71.904 -7.312"/>
+  <path data-glyph="n" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 75.3344 0.8064 L 77.456 0.504 L 76.544 0.6048 L 76.496 -2.576 L 76.752 -5.088 L 76.848 -7.92 L 76.4 -8.208 L 75.1328 -8.112"/>
+  <path data-glyph="n" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 76.752 -4.784 L 78.304 -6.56 L 79.568 -7.2 L 80.432 -6.608 L 81.024 -5.648 L 81.184 -4.48 L 81.232 -1.76 L 80.576 -1.616 L 82.144 -1.92"/>
+  <path data-glyph="t" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 86.768 -1.3104 L 87.328 -1.808 L 87.936 -1.512 L 88.032 -0.8064 L 87.728 0.0504 L 86.672 0.5536 L 85.76 0.4032 L 84.96 -0.6048 L 84.848 -2.624 L 84.656 -7.408 L 83.4432 -7.2 L 86.16 -7.552 L 84.656 -7.408 L 84.56 -10.48"/>
+  <path data-glyph="s" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 89.696 0.4032 L 89.296 -0.1512 L 88.7408 -0.1512 L 88.288 0.504 L 88.5392 1.664 L 89.1936 2.368 L 90.4 2.528 L 91.52 1.92 L 92.176 1.008 L 92.272 -0.6048 L 91.456 -2.816 L 90.304 -5.296 L 90 -7.2 L 90.704 -8.576 L 91.76 -8.864 L 92.528 -8.624 L 92.928 -8.112 L 93.424 -8.672 L 92.368 -7.008"/>
+  <path data-glyph="i" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 94.3328 -0.8064 L 94.3824 -0.8064 L 96.96 -1.1088 L 95.744 -1.008 L 95.952 -6.96 L 94.832 -6.96"/>
+  <path data-glyph="i" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 95.184 -11.136 L 95.184 -10.528 L 95.84 -10.432 L 95.84 -11.136 L 95.184 -11.136"/>
+  <path data-glyph="v" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 98.208 -8.016 L 99.472 -8.416 L 99.072 -8.208 L 101.536 -0.8064 L 103.104 -3.824 L 103.696 -5.744 L 104.656 -8.16 L 103.76 -8.112 L 105.776 -8.112"/>
+  <path data-glyph="zero" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 114.784 -3.584 L 115.552 -3.584 L 116.496 -4.176 L 117.104 -5.488 L 117.104 -6.352 L 116.256 -7.552 L 115.184 -8.16 L 114.08 -8.16 L 113.376 -7.504 L 113.072 -6.656 L 113.024 -5.536 L 113.376 -4.544 L 113.776 -3.936 L 114.832 -3.52"/>
+  <path data-glyph="one" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 121.792 -0.5536 L 121.952 -9.376 L 122.096 -8.672 L 121.136 -8.016 L 120.288 -7.456 L 119.424 -7.152 L 118.472 -7.104"/>
+  <path data-glyph="two" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 126.128 -7.968 L 126.384 -7.408 L 126.08 -6.704 L 125.424 -6.448 L 124.864 -6.704 L 124.6176 -7.616 L 124.672 -8.864 L 125.584 -10.224 L 126.736 -10.64 L 127.792 -10.288 L 128.448 -9.216 L 128.544 -8.064 L 128.352 -6.496 L 127.696 -4.384 L 126.832 -2.624 L 126.08 -1.3616 L 125.584 -0.4544 L 129.856 -0.9072"/>
+  <path data-glyph="three" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 133.392 -2.528 L 133.136 -3.168 L 132.128 -3.12 L 131.52 -2.768 L 131.2704 -1.808 L 131.472 -0.9584 L 132.224 -0.2528 L 133.28 -0.1512 L 134.544 -0.9584 L 135.152 -2.224 L 135.248 -3.584 L 134.896 -5.088 L 134.352 -5.904 L 133.584 -6.352 L 132.88 -6.304 L 132.576 -6.144 L 132.224 -5.744 L 133.232 -6.704 L 134.896 -8.672 L 136 -9.872 L 134.144 -9.824 L 132.576 -9.936"/>
+  <path data-glyph="four" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 142.8 -2.112 L 137.664 -1.1088 L 139.888 -6.656 L 140.896 -10.032"/>
+  <path data-glyph="four" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 141.296 -7.408 L 141.296 -2.576 L 141.344 -0.1008 L 141.296 1.5616"/>
+  <path data-glyph="five" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 146.08 -1.512 L 145.936 -1.92 L 145.44 -1.92 L 144.88 -1.512 L 144.88 -0.5536 L 145.44 0.2528 L 146.64 0.3024 L 147.952 -0.5536 L 148.448 -1.712 L 148.608 -2.816 L 148.096 -3.824 L 147.296 -4.896 L 146.688 -5.04 L 145.936 -4.736 L 145.44 -4.336 L 145.072 -3.824 L 144.928 -3.28 L 145.072 -6.496 L 145.136 -7.264 L 144.976 -9.216 L 146.432 -9.024 L 148.16 -9.216"/>
+  <path data-glyph="six" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 152.432 -0.3024 L 152.576 -1.664 L 153.28 -2.72 L 154.144 -2.976 L 155.104 -2.16 L 155.36 -1.1088 L 154.944 -0.2528 L 154.288 0.2016 L 153.136 0.2016 L 152.128 -0.7056 L 151.264 -2.368 L 151.12 -4.48 L 151.68 -6.496 L 152.832 -7.92 L 153.888 -8.768 L 154.8 -8.864 L 155.664 -8.624 L 156.512 -8.064"/>
+  <path data-glyph="seven" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 158.784 0.5536 L 161.456 -6.704 L 162.208 -8.272 L 162.72 -8.864 L 163.12 -9.168 L 160.96 -8.976 L 158.944 -8.816 L 157.776 -9.072"/>
+  <path data-glyph="seven" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 159.232 -5.744 L 162.672 -5.136"/>
+  <path data-glyph="eight" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 167.008 -0.2528 L 168.56 -0.7552 L 169.072 -1.2608 L 169.216 -1.712 L 169.68 -2.016 L 169.68 -2.672 L 169.984 -3.424 L 169.52 -5.04 L 168.768 -6.144 L 168.208 -6.752 L 167.568 -6.8 L 166.704 -6.8 L 166.256 -7.456 L 166.256 -8.512 L 167.008 -9.376 L 167.856 -9.376 L 168.72 -8.976 L 169.168 -8.272 L 169.216 -7.36 L 168.816 -6.912 L 168.16 -6.656 L 166.656 -6.656 L 165.84 -6.048 L 165.136 -4.896 L 164.992 -3.776 L 165.04 -2.528 L 165.344 -1.5632 L 165.904 -0.7056 L 167.008 -0.2528"/>
+  <path data-glyph="nine" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 171.888 -1.616 L 172 -1.616 L 172.304 -0.8064 L 173.248 -0.4032 L 174.624 -0.9072 L 175.776 -2.064 L 176.336 -3.936 L 176.176 -6.352 L 175.12 -8.272 L 174.624 -8.864 L 173.968 -9.12 L 173.008 -8.816 L 172.448 -8.064 L 172.144 -7.2 L 172.352 -6.144 L 172.896 -5.536 L 173.712 -5.392 L 174.56 -5.744 L 175.12 -6.304 L 175.568 -7.504"/>
+  <path data-glyph="A" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 0.656 17.4112 L 1.92 17.36 L 2.928 17.616 L 1.872 17.36 L 4.24 7.728 L 5.136 5.472 L 5.248 5.056 L 6.848 9.808 L 8.368 14.032 L 8.624 15.0928 L 2.416 15.0928 L 8.576 15.0416 L 9.376 17.664 L 8.16 17.92 L 10.384 17.5616"/>
+  <path data-glyph="O" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 22.624 5.216 L 21.824 4.864 L 19.6 5.568 L 18.192 7.184 L 17.536 9.504 L 17.68 11.76 L 18.688 13.472 L 20.56 14.384 L 22.48 14.288 L 24.384 12.88 L 25.088 11.76 L 25.6 10.4 L 25.552 8.8 L 24.992 6.976 L 24.336 5.872 L 23.536 5.264 L 22.672 5.216"/>
+  <path data-glyph="Q" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 40.16 15.1424 L 41.52 13.472 L 41.632 12.928 L 41.984 12.32 L 42.128 11.056 L 41.68 8.992 L 41.28 7.888 L 40.16 6.928 L 39.552 6.88 L 38.608 6.48 L 36.08 7.184 L 34.672 8.896 L 34.16 10.512 L 34.016 12.576 L 34.576 14.288 L 35.424 15.1936 L 36.688 15.9496 L 38.256 16.0504 L 39.2 15.7472 L 40.064 15.0416 L 38.8 13.536 L 42.688 17.664 L 43.792 17.872 L 44.352 17.36 L 44.448 16.856 L 44.304 16.3024 L 43.888 15.8992 L 43.392 15.8488 L 43.344 16.1512"/>
+  <path data-glyph="g" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 53.072 12.528 L 53.936 11.76 L 54.432 10.464 L 54.64 10.256 L 55.84 9.808 L 54.48 10.256 L 53.728 9.248 L 52.768 8.544 L 52.16 8.496 L 50.848 9.344 L 50.352 10.864 L 50.704 12.016 L 51.408 12.576 L 52.112 12.672 L 52.672 12.576 L 53.28 12.416 L 53.472 14.192 L 53.472 15.7472 L 54.528 16.7056 L 55.184 17.5616 L 55.488 19.024 L 55.44 19.984 L 54.224 21.184 L 52.416 21.952 L 50.608 21.792 L 49.2928 20.896 L 48.6376 19.52 L 48.8896 17.664 L 49.544 16.504 L 50.2496 15.7472 L 51.664 15.2944 L 52.512 15.3456 L 53.472 15.7472"/>
+  <path data-glyph="j" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 56.296 19.52 L 55.6416 19.472 L 55.1872 20.128 L 55.3896 21.088 L 56.3472 21.696 L 57.664 21.392 L 58.912 19.984 L 59.12 18.464 L 58.768 12.624 L 58.864 9.04 L 57.808 9.392 L 56.6 9.648"/>
+  <path data-glyph="j" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 58.112 4.864 L 57.664 5.168 L 58.32 5.568 L 59.072 5.168 L 58.112 4.864"/>
+  <path data-glyph="p" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 61.792 21.6 L 63.504 21.344 L 64.112 21.136 L 63.2 21.344 L 62.96 17.808 L 62.208 12.768 L 62.144 10.096 L 63.104 8.384 L 64.976 7.424 L 66.528 7.984 L 67.136 9.6 L 66.88 11.312 L 66.128 12.528 L 64.672 13.024 L 63.568 12.72 L 62.56 11.824 L 62.144 10.304 L 61.952 7.936 L 61.952 6.32 L 62.608 6.064 L 60.8896 6.624"/>
+  <path data-glyph="q" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 74.848 6.784 L 74.304 10.208 L 73.6 11.312 L 72.64 12.064 L 71.328 12.272 L 70.176 11.616 L 69.616 10.512 L 69.712 8.896 L 70.976 7.888 L 72.24 7.728 L 73.488 8.544 L 74.096 9.296 L 74.144 11.168 L 74.096 13.936 L 73.488 20.288 L 73.84 19.072 L 75.104 17.872 L 75.664 16.8064"/>
+  <path data-glyph="eacute" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 86.704 15.2944 L 86.096 16.1512 L 84.992 16.504 L 83.824 15.7472 L 83.328 13.776 L 83.472 11.52 L 84.224 9.552 L 84.784 9.2 L 85.536 9.296 L 86.096 9.856 L 86.8 11.616 L 85.184 11.712 L 83.52 11.76"/>
+  <path data-glyph="eacute" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 86.672 3.36 L 86.576 3.952 L 86.272 4.72 L 85.92 5.264 L 85.568 5.728"/>
+  <path data-glyph="Aring" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 93.648 17.4112 L 94.912 17.36 L 95.92 17.616 L 94.864 17.36 L 97.232 7.728 L 98.128 5.472 L 98.24 5.056 L 99.84 9.808 L 101.36 14.032 L 101.616 15.0928 L 95.408 15.0928 L 101.568 15.0416 L 102.368 17.664 L 101.152 17.92 L 103.376 17.5616"/>
+  <path data-glyph="Aring" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 98.72 -0.8432 L 98.48 -0.9488 L 97.808 -0.7376 L 97.392 -0.2544 L 97.2 0.448 L 97.248 1.12 L 97.536 1.632 L 98.096 1.904 L 98.672 1.872 L 99.248 1.456 L 99.456 1.12 L 99.616 0.72 L 99.6 0.224 L 99.44 -0.3152 L 99.232 -0.6464 L 98.992 -0.8288 L 98.736 -0.8432"/>
+  <path data-glyph="at" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 117.328 15.3952 L 114.912 15.7984 L 112.896 15.3456 L 111.136 13.28 L 110.784 10.352 L 112.032 7.728 L 113.696 6.272 L 115.472 5.872 L 117.136 6.32 L 118.384 7.376 L 119.344 8.736 L 119.504 9.952 L 118.736 11.456 L 117.936 12.368 L 116.928 12.832 L 116.48 12.48 L 116.064 11.712 L 116.064 10.56 L 116.176 9.648 L 115.824 9.04 L 115.264 8.848 L 114.608 9.296 L 114.16 10.304 L 113.904 11.008 L 113.904 11.872 L 114 12.48 L 114.304 12.768 L 114.704 12.576 L 115.12 11.92 L 116.112 10.4"/>
+  <path data-glyph="ampersand" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 131.84 6.528 L 131.648 7.328 L 131.488 7.888 L 131.696 8.144 L 131.184 7.424 L 130.544 7.232 L 129.984 7.376 L 129.472 7.68 L 129.376 8.336 L 129.472 8.8 L 129.888 9.248 L 130.688 9.392 L 130.24 9.2 L 128.976 9.696 L 127.92 10.56 L 127.616 11.408 L 127.456 13.072 L 128.064 14.488 L 129.168 15.2944 L 130.336 15.5968 L 131.648 15.5456 L 132.8 15.0416 L 133.616 14.032 L 133.76 13.232 L 133.456 12.416 L 132.656 11.36"/>
+  <path data-glyph="ampersand" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 130.032 12.624 L 130.24 12.016 L 130.832 11.616 L 131.792 11.36 L 133.152 11.168 L 134.272 10.912 L 135.728 10.512 L 136.736 9.856 L 137.232 9.04 L 137.04 8.288 L 136.688 7.936 L 136.128 7.728 L 135.424 7.936"/>
+  <path data-glyph="f" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 145.104 19.376 L 148.128 18.816 L 146.672 19.024 L 146.224 13.232 L 146.112 9.6 L 147.728 9.552 L 148.176 9.344 L 147.328 9.552 L 145.104 9.6 L 144.9056 9.552 L 146.224 9.6 L 146.32 6.32 L 146.576 4.56 L 147.12 3.6 L 148.176 3.104 L 149.296 3.04 L 150.256 3.696 L 150.656 4.256 L 150.704 4.656"/>
+  <path data-glyph="i" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 149.2448 15.1936 L 149.2944 15.1936 L 151.872 14.8912 L 150.656 14.992 L 150.864 9.04 L 149.744 9.04"/>
+  <path data-glyph="i" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" d="M 150.096 4.864 L 150.096 5.472 L 150.752 5.568 L 150.752 4.864 L 150.096 4.864"/>
+</svg>
