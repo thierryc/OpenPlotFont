@@ -20,6 +20,7 @@ This project defines the PlotFont format and the workflow for editing fonts in G
 - [OpenType layout](docs/PLOTFONT_LAYOUT.md): self-contained feature rules, glyph-ID mappings, HarfBuzz positioning and explicit layout modes.
 - [Layout demo](examples/layout-demo.plotfont.json): original fixture for substitutions, marks, language rules and cursive positioning.
 - [Glyphs and export workflow](docs/GLYPHS_AND_EXPORT.md): how to design open paths, prepare an exporter, and produce drawing formats.
+- [Glyphs 4 export plugin](docs/GLYPHS_EXPORT_PLUGIN.md): build a self-contained selected-master exporter with a master chooser and save dialog; native class/action tested and installation verified, startup/menu qualification pending.
 - [Using PlotFont in other software](docs/USING_PLOTFONT.md): consumer responsibilities, geometry interchange, and reproducible text layout.
 - [Minimal font example](examples/minimal.plotfont.json): an illustrative `A`, space, and fallback glyph.
 - [Script font example](examples/script.plotfont.json): ordered curves, entry/exit points, anchors, and glyph user data for optional letter connections.
@@ -35,6 +36,15 @@ Implemented here: JSON Schema, semantic validation, a source-pinned Hershey data
 Review the [SVG specimens](examples/specimens/README.md). See the [milestone plan and completion evidence](docs/ROADMAP.md), [Hershey provenance](fonts/hershey-roman-simplex/README.md), [JSON Schema](schemas/plotfont-0.2.schema.json), and [export script instructions](docs/GLYPHS_EXPORT_SCRIPT.md).
 
 Draft 0.3 adds self-contained OpenType feature data, HarfBuzz shaping, positioned-run JSON and shaped SVG rendering. The [original layout demo](fonts/layout-demo/README.md) includes an editable Glyphs source, portable compiled fixture and [native export](examples/layout-demo-native.plotfont.json). The native compiler omits this demo's Latin `curs` rule; its export preserves the source and reports that limitation. Cursive positioning is covered by the portable fixture.
+
+The current local font export is `output/PlotFontLayoutDemo.plotfont.json`
+(draft 0.3), matching the retained native example. Superseded generated font
+exports have been removed. Plugin builds live in `output/build/` and current
+qualification reports in `output/qualification/`. These generated files are
+ignored by Git; curated examples and compatibility fixtures remain tracked.
+The Glyphs plugin currently exports geometry-only 0.2; the scripted compiled-layout
+workflow produces 0.3. The 0.2 schemas, examples and Hershey preparations remain
+supported compatibility material.
 
 ## Run locally
 

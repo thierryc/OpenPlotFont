@@ -1,6 +1,6 @@
 # Selected-master export script
 
-Target: Glyphs 4+. [Export PlotFont.py](../scripts/Export%20PlotFont.py) is an implemented workspace script, with its adapter in [glyphs_export.py](../plotfont/glyphs_export.py). It has been executed on a font copy in Glyphs 4.1 build 4107 through MCP. Native source/export and saved-source reopen comparisons passed; SDK-shaped doubles add portable regression coverage. A Glyphs importer and export plug-in are not included.
+Target: Glyphs 4+. [Export PlotFont.py](../scripts/Export%20PlotFont.py) is an implemented workspace script, with its adapter in [glyphs_export.py](../plotfont/glyphs_export.py). It has been executed on a font copy in Glyphs 4.1 build 4107 through MCP. Native source/export and saved-source reopen comparisons passed; SDK-shaped doubles add portable regression coverage. A [geometry export plugin](GLYPHS_EXPORT_PLUGIN.md) is also implemented; app-loader/menu qualification remains pending. A general PlotFont importer is not included.
 
 ## Qualification and setup
 

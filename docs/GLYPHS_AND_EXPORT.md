@@ -1,6 +1,6 @@
 # Editing in Glyphs and exporting PlotFont
 
-Target: Glyphs **4 and later**. A selected-master Python export script is included, with offline adapter tests. Native execution, source reopening, and Hershey source-to-export comparison passed in Glyphs 4.1. The format stores one resolved static font per file; resolved instance export is a later task. See [script setup and annotations](GLYPHS_EXPORT_SCRIPT.md).
+Target: Glyphs **4 and later**. A selected-master Python export script and [geometry export plugin](GLYPHS_EXPORT_PLUGIN.md) are included, with offline adapter tests. Native execution, source reopening, and Hershey source-to-export comparison passed in Glyphs 4.1. The plugin's class/action passed direct MCP qualification in 4.1.1 and installation was verified; startup and visible export-tab qualification remain pending. The format stores one resolved static font per file; resolved instance export is a later task. See [script setup and annotations](GLYPHS_EXPORT_SCRIPT.md).
 
 ## Design the source in Glyphs
 
