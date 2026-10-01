@@ -41,7 +41,7 @@ class PlotFontExporter(FileFormatPlugin):
         self.w.group.heading = TextBox('auto', 'Export one master as PlotFont (.plotfont.json)')
         self.w.group.masterLabel = TextBox('auto', 'Master')
         self.w.group.master = PopUpButton('auto', [])
-        self.w.group.scope = TextBox('auto', 'Geometry only (draft 0.2). OpenType features are not compiled.')
+        self.w.group.scope = TextBox('auto', 'PlotFont v0.3 geometry. OpenType features are not compiled.')
         self.w.group.safety = TextBox('auto', 'Exports a copy. Choose a new filename; existing files are preserved.')
         self.w.group.addAutoPosSizeRules([
             'H:|-[heading]-|', 'H:|-[masterLabel]-[master(>=200)]-|',

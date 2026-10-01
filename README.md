@@ -42,8 +42,8 @@ The current local font export is `output/PlotFontLayoutDemo.plotfont.json`
 exports have been removed. Plugin builds live in `output/build/` and current
 qualification reports in `output/qualification/`. These generated files are
 ignored by Git; curated examples and compatibility fixtures remain tracked.
-The Glyphs plugin currently exports geometry-only 0.2; the scripted compiled-layout
-workflow produces 0.3. The 0.2 schemas, examples and Hershey preparations remain
+The Glyphs plugin exports geometry-only 0.3; the scripted compiled-layout
+workflow adds optional OpenType layout. The 0.2 schemas, examples and Hershey preparations remain
 supported compatibility material.
 
 ## Run locally

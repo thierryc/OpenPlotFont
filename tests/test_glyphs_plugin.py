@@ -80,6 +80,8 @@ class GlyphsPluginTests(unittest.TestCase):
         success, message = self.plugin.export(self.font, str(self.path))
         self.assertTrue(success, message)
         data = load(self.path)
+        self.assertEqual(data['version'], '0.3')
+        self.assertNotIn('layout', data)
         self.assertEqual(data['id'], 'adapter-fixture')
         self.assertEqual(data['glyphs'][1]['strokes'][0]['commands'][0], ['M', 50.125, 0.0])
         self.assertEqual(len(data['glyphs'][1]['strokes']), 2)
@@ -155,12 +157,14 @@ class GlyphsPluginTests(unittest.TestCase):
         success, message = self.plugin.export(self.font, self.output.name)
         self.assertTrue(success, message)
         self.assertIn('OpenType features not executed: liga', message)
-        self.assertEqual(load(self.plugin.exportPath)['version'], '0.2')
+        self.assertEqual(load(self.plugin.exportPath)['version'], '0.3')
+        self.assertNotIn('layout', load(self.plugin.exportPath))
 
     def test_bundle_is_self_contained_and_export_only(self):
         info = plistlib.loads((self.bundle/'Contents/Info.plist').read_bytes())
         self.assertNotIn('CFBundleDocumentTypes', info)
         self.assertEqual(info['NSPrincipalClass'], 'PlotFontExporter')
+        self.assertEqual(info['CFBundleShortVersionString'], '0.1.1')
         package = self.bundle/'Contents/Resources/_plotfont_glyphs4'
         for name in ('glyphs_plugin', 'glyphs_export', 'validation', 'storage'):
             self.assertEqual((package/(name+'.py')).read_bytes(), (ROOT/'plotfont'/(name+'.py')).read_bytes())

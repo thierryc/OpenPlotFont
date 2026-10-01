@@ -1,10 +1,15 @@
 # PlotFont export plugin for Glyphs 4
 
-Version 0.1.0 implements a selected-master, geometry-only draft 0.2 exporter.
+Version 0.1.1 implements a selected-master, geometry-only draft 0.3 exporter.
 The plugin uses the same adapter and atomic no-overwrite writer as the
 [export script](GLYPHS_EXPORT_SCRIPT.md). It provides a master chooser in the
 export settings and a native save dialog. It does not require a destination or
 font identifier to be entered in user data first.
+
+Every export declares `version: "0.3"`; there is no 0.2 output option. Draft
+0.3 permits geometry-only fonts with no `layout` object. This changes the
+plugin's output version from 0.1.0 without changing drawings or inventing
+compiled features. Consumers that accept only 0.2 must update to accept 0.3.
 
 ## Build and install
 
@@ -68,7 +73,7 @@ tests cover built-runtime correspondence, master choice/rebinding, source
 preservation, automatic identifiers, cancellation, invalid metadata, existing
 files/symlinks, directory export and feature warnings.
 
-The final plugin class and settings view were instantiated through Glyphs MCP
+The 0.1.0 plugin class and settings view were instantiated through Glyphs MCP
 in Glyphs **4.1.1 build 4108**. Its actual export action produced all 97 Script
 Simplex glyphs; the result matched the reference's geometry, metrics, mappings,
 metadata and kerning. Native existing-file protection and export without font
@@ -84,8 +89,14 @@ Current build and qualification evidence live under `output/build/` and
 `output/qualification/`; superseded generated revisions are removed during cleanup.
 MCP script execution marks its bound document dirty; no source Save was performed.
 
-This plugin exports draft **0.2 only** and reports active OpenType features as
-warnings. It does not compile or attach 0.3 layout, interpolate instances,
+The 0.1.1 build passes the SDK scaffold validator and plugin regression tests,
+including 0.3 output with and without active feature warnings. The native
+installer replaced 0.1.0 with 0.1.1; all 13 installed files match the new build.
+Its changed
+revision still requires native startup/menu qualification after restart.
+
+This plugin exports draft **0.3 only** and reports active OpenType features as
+warnings. It does not compile or attach optional layout, interpolate instances,
 generate a companion OTF, import PlotFont, flatten/expand strokes, or produce
 device/fill toolpaths. Use the script's explicit matching compiled-font path
 for [optional 0.3 layout](GLYPHS_EXPORT_SCRIPT.md#optional-03-layout-export).

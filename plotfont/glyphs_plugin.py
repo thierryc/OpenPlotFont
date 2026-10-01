@@ -1,4 +1,4 @@
-"""Shared export action for the Glyphs 4 plugin; no UI or source mutation."""
+"""PlotFont 0.3 export action for the Glyphs 4 plugin; no source mutation."""
 from pathlib import Path
 from uuid import NAMESPACE_URL, uuid5
 
@@ -24,5 +24,8 @@ def export_to_path(font, master_id, destination, node_types):
         settings['id'] = 'org.plotfont.' + str(uuid5(NAMESPACE_URL, identity))
     copied.userData['org.plotfont.font'] = settings
     data = export_font(copied, master_id, node_types)
+    # Draft 0.3 retains the 0.2 geometry model and permits absent layout.
+    # The plugin has no legacy output option and never invents compiled rules.
+    data['version'] = '0.3'
     write_font(destination, data)
     return data
