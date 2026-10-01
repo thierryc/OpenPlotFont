@@ -1,6 +1,14 @@
 # PlotFont website
 
-Plain HTML, CSS and JavaScript, following the [beztrace](https://thierryc.github.io/beztrace/) stack and visual language, with the large specimens and spare navigation of [ap.cx](https://ap.cx/). No framework, package manager, analytics, external fonts, or browser dependencies.
+Plain HTML, CSS and JavaScript, following the [beztrace](https://thierryc.github.io/beztrace/) stack and visual language, with the large specimens and spare navigation of [ap.cx](https://ap.cx/). No framework, bundler, analytics, or runtime CDN requests.
+
+## Official ap.cx footer
+
+The animated footer uses the vanilla `mountMarquee` API of the official [@ap.cx/gl-marquee](https://www.npmjs.com/package/@ap.cx/gl-marquee) **0.1.0** package. Its unmodified browser modules are self-hosted under `vendor/gl-marquee/`; `SOURCE.json` records the npm tarball integrity and per-file SHA-256 digests. The package's MIT license is retained. The package has no runtime dependencies, so website builds still use Python alone.
+
+`footer.js` mounts the package in `footer-banner` mode with the ap.cx message and Square Bot Sans Regular. The font is self-hosted under `assets/fonts/`, with its copyright, SIL OFL 1.1 and provenance; it retains its own license. The marquee respects reduced motion, provides a Play/Pause button, and releases its renderer when the footer leaves view. The package handles resizing, hidden-document pauses, WebGL context restoration, and a Canvas 2D fallback when WebGL2 is unavailable. Brand and copyright text remain ordinary accessible HTML.
+
+To update the package, run `npm pack @ap.cx/gl-marquee@VERSION --ignore-scripts --pack-destination output`, verify the official npm integrity, and replace only the published `dist/index.js`, `dist/mount.js`, `dist/renderer.js`, `package.json` and `LICENSE`. Update `SOURCE.json` and this version note, then build and verify the site. No npm lifecycle scripts or application framework are required.
 
 Build with Python 3.10 or later from the repository root:
 

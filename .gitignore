@@ -5,6 +5,9 @@ __pycache__/
 .venv/
 node_modules/
 dist/
+# Reviewed browser runtime from the official npm marquee package.
+!site/vendor/gl-marquee/dist/
+!site/vendor/gl-marquee/dist/*.js
 build/
 output/
 .env

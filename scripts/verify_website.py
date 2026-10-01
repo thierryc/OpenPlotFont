@@ -49,6 +49,23 @@ def verify(destination):
         elif url.fragment:
             assert unquote(url.fragment) in page.ids, f'Missing anchor: {link}'
     catalog = json.loads((destination / 'catalog.json').read_text())
+    # Verify the official published runtime, including its transitive browser
+    # imports, instead of accepting a similarly named local reimplementation.
+    vendor = destination / 'vendor/gl-marquee'
+    source = json.loads((vendor / 'SOURCE.json').read_text())
+    package = json.loads((vendor / 'package.json').read_text())
+    assert package['name'] == source['package'] == '@ap.cx/gl-marquee'
+    assert package['version'] == source['version'] == '0.1.0'
+    for filename, digest in source['files'].items():
+        asset = vendor / filename
+        assert hashlib.sha256(asset.read_bytes()).hexdigest() == digest, f'Changed official marquee file: {filename}'
+        if asset.suffix == '.js':
+            for imported in re.findall(r'from\s+[\'"]([^\'"]+)[\'"]', asset.read_text()):
+                assert imported.startswith('./') and (asset.parent / imported).is_file(), f'Missing browser module: {imported}'
+    font_source = json.loads((destination / 'assets/fonts/SOURCE.json').read_text())
+    font = destination / 'assets/fonts/SquareBotSans-Regular.woff2'
+    assert hashlib.sha256(font.read_bytes()).hexdigest() == font_source['sha256'], 'Changed footer font'
+    assert 'SIL OPEN FONT LICENSE Version 1.1' in (font.parent / 'OFL.txt').read_text()
     assert set(page.cards) == {font['id'] for font in catalog['fonts']}, 'Catalog/HTML mismatch'
     assert len(page.cards) == catalog['qualification']['fontCount'], 'Qualification count mismatch'
     for font in catalog['fonts']:
