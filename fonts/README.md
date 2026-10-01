@@ -1,5 +1,7 @@
 # Hershey font catalog
 
+For additional Hershey faces and other open-source stroke-font formats, see the [candidate research catalog](../docs/STROKE_FONT_CANDIDATES.md). Those candidates have not been added to the supported imports.
+
 The four faces below preserve pinned upstream JHF trajectories and spacing. Each contains 96 upstream records plus an original `.notdef`: 97 glyphs and 95 printable ASCII mappings. Row 95 remains unencoded. Drawing order, pen-up boundaries, direction, and open endpoints are preserved.
 
 | Face | Editable source and provenance | Native JSON export | Specimen |
@@ -18,3 +20,7 @@ Use `python3 -m plotfont import-hershey SOURCE --face FACE -o output/NAME.plotfo
 No font gets invented kerning or script-connection annotations. Script Simplex retains its original multiple strokes and pen lifts. Roman Duplex and Triplex use additional trajectories to suggest heavier forms; these strokes do not become fills. Tool width and physical sizing remain consumer settings.
 
 Retain [the Hershey upstream notice](../vendor/hershey/NOTICE.txt) with data and derivatives. Hershey glyph geometry is not MIT; original project code and fallback artwork use project MIT.
+
+## Additional local stroke-font library
+
+The [converted library catalog](../docs/FONT_LIBRARY.md) lists 87 additional preparations under `output/font-library/`, including alternate Hershey representations of some faces above. It links Glyphs packages, PlotFont exports, previews, complete notices and original authors. These generated preparations are separate from the curated sources here.

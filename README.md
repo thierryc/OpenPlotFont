@@ -21,6 +21,9 @@ This project defines the PlotFont format and the workflow for editing fonts in G
 - [OpenType layout](docs/PLOTFONT_LAYOUT.md): self-contained feature rules, glyph-ID mappings, HarfBuzz positioning and explicit layout modes.
 - [Layout demo](examples/layout-demo.plotfont.json): original fixture for substitutions, marks, language rules and cursive positioning.
 - [Glyphs and export workflow](docs/GLYPHS_AND_EXPORT.md): how to design open paths, prepare an exporter, and produce drawing formats.
+- [Stroke-font candidates](docs/STROKE_FONT_CANDIDATES.md): researched Hershey, SVG, UFO, CAD, and procedural font sources, with licenses and proposed conversion priorities.
+- [Outline-to-stroke research study](docs/OUTLINE_TO_STROKE_STUDY.md): mathematical methods, font-specific and 2026 research, Glyphs review, and possible future width profiles; no converter or format extension implemented.
+- [Converted stroke-font library](docs/FONT_LIBRARY.md): 87 local PlotFont/Glyphs preparations, per-font licenses, authors, previews and downloadable bundles.
 - [Glyphs 4 export plugin](docs/GLYPHS_EXPORT_PLUGIN.md): build a self-contained selected-master exporter with a master chooser and save dialog; native class/action tested and installation verified, startup/menu qualification pending.
 - [Using PlotFont in other software](docs/USING_PLOTFONT.md): consumer responsibilities, geometry interchange, and reproducible text layout.
 - [Minimal font example](examples/minimal.plotfont.json): an illustrative `A`, space, and fallback glyph.
@@ -38,7 +41,7 @@ Review the [SVG specimens](examples/specimens/README.md). See the [milestone pla
 
 Draft 0.3 adds self-contained OpenType feature data, HarfBuzz shaping, positioned-run JSON and shaped SVG rendering. The [original layout demo](fonts/layout-demo/README.md) includes an editable Glyphs source, portable compiled fixture and [native export](examples/layout-demo-native.plotfont.json). The native compiler omits this demo's Latin `curs` rule; its export preserves the source and reports that limitation. Cursive positioning is covered by the portable fixture.
 
-The current local font exports in `output/` all use draft 0.3: Roman Simplex,
+The original local font exports in `output/` use draft 0.3: Roman Simplex,
 Roman Duplex, Roman Triplex, Script Simplex, and the PlotFont layout demo.
 The Hershey files preserve the retained native examples with their format
 version migrated to 0.3; the layout demo retains its compiled layout payload.
@@ -49,6 +52,8 @@ ignored by Git; curated examples and compatibility fixtures remain tracked.
 The Glyphs plugin exports geometry-only 0.3; the scripted compiled-layout
 workflow adds optional OpenType layout. The 0.2 schemas, examples and Hershey preparations remain
 supported compatibility material.
+
+The additional [stroke-font library](docs/FONT_LIBRARY.md) is generated under `output/font-library/`. Its SVG-font and LFF adapters preserve reviewed stroke geometry and license notices. Non-Latin JHF sources have explicitly temporary private-use mappings; see the catalog for coverage and deferred sources. The optional `library` dependencies support this preparation workflow.
 
 ## Run locally
 

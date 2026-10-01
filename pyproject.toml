@@ -10,6 +10,7 @@ requires-python = ">=3.10"
 license = {text = "MIT"}
 
 [project.optional-dependencies]
+library = ["fonttools>=4.54,<5", "openstep-plist>=0.5,<1"]
 shaping = ["fonttools>=4.54,<5", "uharfbuzz>=0.39,<1"]
 
 [project.scripts]
