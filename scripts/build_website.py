@@ -19,7 +19,12 @@ def font_card(font):
         ('family', 'collection', 'license', 'attribution')).lower(), quote=True)
     links = ''.join(f'<a href="{escape(url, quote=True)}">Author/source {i + 1} ↗</a>'
                     for i, url in enumerate(font['authorLinks']))
-    mapping = '<p class="mapping-note">Temporary private-use mappings · see the included glyph atlas.</p>' if font['privateUseMappings'] else ''
+    mapping = '''<p class="mapping-note">Unicode mapping pending · choose glyphs from the included atlas.</p>
+    <details class="mapping-explanation"><summary>Why are these mappings temporary?</summary>
+      <p>The original JHF file stores numbered drawings, without Unicode character labels. This conversion has not yet verified the character represented by each source row. It assigns placeholder codes in source order: U+E000 for the first drawing, U+E001 for the next, and so on.</p>
+      <p>These codes are in the <a href="https://www.unicode.org/faq/private_use.html">Unicode Private Use Area</a>, where character meanings are defined by individual fonts. The same code can select a different drawing in another font. The stroke geometry is preserved, but ordinary typed text will not select these drawings through their standard Unicode characters.</p>
+      <p>Open glyph-atlas.svg from the ZIP to choose a drawing, then select its named glyph in Glyphs or use its private-use code from the included PlotFont JSON. &ldquo;Temporary&rdquo; describes this conversion: each drawing needs a reviewed character assignment before standard text mapping can replace these placeholders.</p>
+    </details>''' if font['privateUseMappings'] else ''
     return f'''<article class="font-card" id="{key}" data-collection="{escape(font['collection'])}" data-search="{searchable}">
   <div class="font-specimen"><img src="assets/catalog/{key}.svg" alt="Stroke specimen for {escape(font['family'], quote=True)}" loading="lazy" width="600" height="150"></div>
   <div class="font-info">

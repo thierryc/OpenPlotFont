@@ -26,6 +26,8 @@ Open `http://localhost:8080`. Build output and plugin staging remain under `outp
 
 The 87 local font-library packages passed source-to-native save/reopen comparison in Glyphs 4.1.1 (4108), with tolerance 0.000501 font units for native rounding. This is font preparation qualification, not hardware testing. Some Hershey source adaptations overlap in design. Fourteen non-Latin/symbol JHF sources retain temporary private-use mappings. See each ZIP's README and source credits for the full conversion and coverage notes.
 
+Cards with private-use mappings explain this conversion limitation: the numbered JHF drawings have not yet been assigned reviewed standard Unicode characters. Each source row uses U+E000 plus its zero-based row index as a placeholder. Users can select drawings by glyph name using the included atlas, or look up their private-use codes in the PlotFont JSON. These assignments are specific to each font and are not interchangeable character meanings.
+
 To refresh, first fetch, prepare, qualify and package the library using its authoring workflow. Then run `python3 scripts/prepare_website_catalog.py`. Review `output/website-catalog/`, including credits and licenses, before copying its `catalog.json` and `assets/catalog/` into `site/`. GitHub Actions deploys the reviewed snapshot; it does not rerun native Glyphs qualification on Linux.
 
 The Glyphs plugin ZIP is built from the current tracked exporter sources during each site build. Its version comes from the plugin plist; the ZIP retains the SDK and project licenses and the loader's executable permission. The page discloses pending startup/menu qualification. No source font is opened or modified by a website build.
