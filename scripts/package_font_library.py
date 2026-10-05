@@ -11,7 +11,7 @@ BASE = ROOT / 'output/font-library'
 
 def publication_document(document):
     """Link repository readers to published bundles instead of ignored output."""
-    website = 'https://thierryc.github.io/PlotFont/'
+    website = 'https://plotfont.litsquare.com/'
     document = re.sub(r'\[Qualification report\]\((\.\./output/[^)]+)\)',
                       lambda match: 'Local qualification report: `' + match[1][3:] + '`', document)
     document = document.replace(
