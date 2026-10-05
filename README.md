@@ -16,7 +16,7 @@ This project defines the PlotFont format and the workflow for editing fonts in G
 
 ## Start here
 
-- [Project website](https://thierryc.github.io/PlotFont/): introduction, attributed font catalog, and Glyphs exporter installation. See [website maintenance](site/README.md) for the static GitHub Pages workflow.
+- [Project website](https://plotfont.litsquare.com/): introduction, attributed font catalog, and Glyphs exporter installation. See [website maintenance](site/README.md) for the static GitHub Pages workflow.
 - [Format specification](docs/PLOTFONT_FORMAT.md): purpose, draft JSON structure, units, strokes, curves, spacing, and validation rules.
 - [OpenType layout](docs/PLOTFONT_LAYOUT.md): self-contained feature rules, glyph-ID mappings, HarfBuzz positioning and explicit layout modes.
 - [Layout demo](examples/layout-demo.plotfont.json): original fixture for substitutions, marks, language rules and cursive positioning.

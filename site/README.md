@@ -36,4 +36,6 @@ The Glyphs plugin ZIP is built from the current tracked exporter sources during 
 
 ## GitHub Pages
 
-[pages.yml](../.github/workflows/pages.yml) builds, verifies and deploys `output/website` on relevant changes to `main`, or through workflow dispatch. In the repository's **Settings → Pages**, set **Source → GitHub Actions**. The project URL is `https://thierryc.github.io/PlotFont/`; all local asset links are relative so the project subpath works.
+[pages.yml](../.github/workflows/pages.yml) builds, verifies and deploys `output/website` on relevant changes to `main`, or through workflow dispatch. In the repository's **Settings → Pages**, set **Source → GitHub Actions** and **Custom domain → plotfont.litsquare.com**. At the DNS provider for `litsquare.com`, configure a `CNAME` record named `plotfont` pointing to `thierryc.github.io` (without a repository path). Enable **Enforce HTTPS** when GitHub has issued the domain certificate.
+
+The canonical website URL is `https://plotfont.litsquare.com/`. Asset links are relative, so they work at the custom domain root and in local previews. Domain configuration lives in the GitHub Pages settings; Actions deployments do not require a repository `CNAME` file. See [GitHub's custom-domain instructions](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
