@@ -22,7 +22,6 @@ async function mount() {
   const current = generation;
   controller = mountMarquee(host, {
     message: "Another Planet . Creative eXperience",
-    fontFamily: '"Square Bot Sans Footer", sans-serif',
     fontWeight: 400,
     mode: "footer-banner",
     appearance: { background: "#f7f7f8", text: "#111111" },
