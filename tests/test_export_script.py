@@ -6,9 +6,9 @@ import unittest
 from pathlib import Path
 from types import ModuleType, SimpleNamespace
 from unittest.mock import patch
-from test_plotfont import ROOT
+from test_openplotfont import ROOT
 from test_glyphs_adapter import font_fixture
-from plotfont import load
+from openplotfont import load
 
 
 class ExportScriptTests(unittest.TestCase):
@@ -18,9 +18,9 @@ class ExportScriptTests(unittest.TestCase):
         for name in ('LINE','CURVE','QCURVE','OFFCURVE'):
             setattr(api,name,name.lower())
         with patch.dict(sys.modules,{'GlyphsApp':api}):
-            namespace = runpy.run_path(str(ROOT/'scripts/Export PlotFont.py'))
+            namespace = runpy.run_path(str(ROOT/'scripts/Export OpenPlotFont.py'))
         with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory)/'actual-script.plotfont.json'
+            path = Path(directory)/'actual-script.opf.json'
             namespace['main'](font_fixture(),str(path),'master')
             self.assertEqual(load(path)['familyName'],'Adapter Fixture')
             original=path.read_bytes()
@@ -33,9 +33,21 @@ class ExportScriptTests(unittest.TestCase):
         api.Glyphs = SimpleNamespace(font=None,versionNumber=4.1)
         for name in ('LINE','CURVE','QCURVE','OFFCURVE'): setattr(api,name,name.lower())
         with patch.dict(sys.modules,{'GlyphsApp':api}):
-            namespace=runpy.run_path(str(ROOT/'scripts/Export PlotFont.py'))
+            namespace=runpy.run_path(str(ROOT/'scripts/Export OpenPlotFont.py'))
         with tempfile.TemporaryDirectory() as directory:
-            path=Path(directory)/'absent.plotfont.json'
+            path=Path(directory)/'absent.opf.json'
             with self.assertRaisesRegex(RuntimeError,'Select a master'):
                 namespace['main'](font_fixture(),str(path),'missing')
             self.assertFalse(path.exists())
+
+    def test_short_extension(self):
+        api = ModuleType('GlyphsApp')
+        api.Glyphs = SimpleNamespace(font=None, versionNumber=4.1)
+        for name in ('LINE', 'CURVE', 'QCURVE', 'OFFCURVE'):
+            setattr(api, name, name.lower())
+        with patch.dict(sys.modules, {'GlyphsApp': api}):
+            namespace = runpy.run_path(str(ROOT/'scripts/Export OpenPlotFont.py'))
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory)/'actual-script.opf'
+            namespace['main'](font_fixture(), str(path), 'master')
+            self.assertEqual(load(path)['format'], 'OpenPlotFont')

@@ -11,8 +11,8 @@ from types import ModuleType, SimpleNamespace
 from unittest.mock import patch
 
 from test_glyphs_adapter import font_fixture
-from test_plotfont import ROOT
-from plotfont import load
+from test_openplotfont import ROOT
+from openplotfont import load
 
 
 class Widget:
@@ -37,7 +37,7 @@ class GlyphsPluginTests(unittest.TestCase):
         spec = importlib.util.spec_from_file_location('build_glyphs_plugin', ROOT/'scripts/build_glyphs_plugin.py')
         builder = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(builder)
-        cls.bundle = builder.build(Path(cls.temp.name)/'PlotFont.glyphsFileFormat')
+        cls.bundle = builder.build(Path(cls.temp.name)/'OpenPlotFont.glyphsFileFormat')
         api = ModuleType('GlyphsApp')
         cls.host = SimpleNamespace(versionNumber=4.1)
         api.Glyphs = cls.host
@@ -60,12 +60,12 @@ class GlyphsPluginTests(unittest.TestCase):
     def tearDownClass(cls):
         cls.temp.cleanup()
         for key in list(sys.modules):
-            if key == '_plotfont_glyphs4' or key.startswith('_plotfont_glyphs4.'):
+            if key == '_openplotfont_glyphs4' or key.startswith('_openplotfont_glyphs4.'):
                 sys.modules.pop(key)
 
     def setUp(self):
         self.host.versionNumber = 4.1
-        self.plugin = self.namespace['PlotFontExporter']()
+        self.plugin = self.namespace['OpenPlotFontExporter']()
         self.plugin.settings()
         self.font = font_fixture()
         self.font.selectedFontMaster = self.font.masters[0]
@@ -73,7 +73,7 @@ class GlyphsPluginTests(unittest.TestCase):
         self.plugin.setFont_(self.font)
         self.output = tempfile.TemporaryDirectory()
         self.addCleanup(self.output.cleanup)
-        self.path = Path(self.output.name)/'export.plotfont.json'
+        self.path = Path(self.output.name)/'export.opf.json'
 
     def test_export_matches_adapter_and_preserves_source(self):
         before = copy.deepcopy(self.font.userData)
@@ -92,10 +92,24 @@ class GlyphsPluginTests(unittest.TestCase):
         self.font.userData = {}
         self.assertTrue(self.plugin.export(self.font, str(self.path))[0])
         first = load(self.path)['id']
-        other = self.path.with_name('second.plotfont.json')
+        other = self.path.with_name('second.opf.json')
         self.assertTrue(self.plugin.export(self.font, str(other))[0])
         self.assertEqual(load(other)['id'], first)
         self.assertEqual(self.font.userData, {})
+
+    def test_short_extension_and_default_save_dialog(self):
+        path = self.path.with_suffix('').with_suffix('.opf')
+        self.assertTrue(self.plugin.export(self.font, str(path))[0])
+        self.assertEqual(load(path)['format'], 'OpenPlotFont')
+        with patch.dict(self.namespace['OpenPlotFontExporter'].export.__globals__,
+                        {'GetSaveFile': lambda title, name, extensions:
+                         self.assert_dialog(name, extensions)}):
+            self.assertFalse(self.plugin.export(self.font)[0])
+
+    def assert_dialog(self, name, extensions):
+        self.assertTrue(name.endswith('.opf.json'))
+        self.assertEqual(extensions, ['json', 'opf'])
+        return None
 
     def test_existing_file_and_symlink_preserved(self):
         self.path.write_text('keep')
@@ -103,7 +117,7 @@ class GlyphsPluginTests(unittest.TestCase):
         self.assertFalse(success)
         self.assertIn('already exists', message)
         self.assertEqual(self.path.read_text(), 'keep')
-        link = self.path.with_name('link.plotfont.json')
+        link = self.path.with_name('link.opf.json')
         link.symlink_to(self.path)
         self.assertFalse(self.plugin.export(self.font, str(link))[0])
         self.assertTrue(link.is_symlink())
@@ -163,8 +177,8 @@ class GlyphsPluginTests(unittest.TestCase):
     def test_bundle_is_self_contained_and_export_only(self):
         info = plistlib.loads((self.bundle/'Contents/Info.plist').read_bytes())
         self.assertNotIn('CFBundleDocumentTypes', info)
-        self.assertEqual(info['NSPrincipalClass'], 'PlotFontExporter')
+        self.assertEqual(info['NSPrincipalClass'], 'OpenPlotFontExporter')
         self.assertEqual(info['CFBundleShortVersionString'], '0.1.1')
-        package = self.bundle/'Contents/Resources/_plotfont_glyphs4'
+        package = self.bundle/'Contents/Resources/_openplotfont_glyphs4'
         for name in ('glyphs_plugin', 'glyphs_export', 'validation', 'storage'):
-            self.assertEqual((package/(name+'.py')).read_bytes(), (ROOT/'plotfont'/(name+'.py')).read_bytes())
+            self.assertEqual((package/(name+'.py')).read_bytes(), (ROOT/'openplotfont'/(name+'.py')).read_bytes())

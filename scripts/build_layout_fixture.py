@@ -1,12 +1,12 @@
-"""Reproducible original OpenType/PlotFont shaping fixture (not a native Glyphs export)."""
+"""Reproducible original OpenType/OpenPlotFont shaping fixture (not a native Glyphs export)."""
 import io
 from pathlib import Path
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
-from plotfont.layout import attach_layout
-from plotfont.storage import write_font, write_output
+from openplotfont.layout import attach_layout
+from openplotfont.storage import write_font, write_output
 
 
 PREFIX = '''languagesystem DFLT dflt;
@@ -36,8 +36,8 @@ def geometry():
                 'strokes':[] if not points else [{'closed':False,'commands':[
                     ['M' if i==0 else 'L',x,y] for i,(x,y) in enumerate(points)]}],
                 **({'anchors':anchors} if anchors else {})}
-    return {'format':'PlotFont','version':'0.3','id':'org.plotfont.layout-demo.regular',
-            'familyName':'PlotFont Layout Demo','styleName':'Regular','unitsPerEm':1000,
+    return {'format':'OpenPlotFont','version':'0.3','id':'org.openplotfont.layout-demo.regular',
+            'familyName':'OpenPlotFont Layout Demo','styleName':'Regular','unitsPerEm':1000,
             'metrics':{'ascender':800,'descender':-200,'capHeight':700,'xHeight':500,'lineGap':200},
             'missingGlyph':'.notdef','kerning':[{'left':'A','right':'A','value':-80}],
             'metadata':{'license':'MIT','author':'Thierry Charbonnel',
@@ -78,7 +78,7 @@ def compile_fixture(data, source):
     builder.setupHorizontalHeader(ascent=800,descent=-200)
     builder.setupNameTable({'familyName':data['familyName'],'styleName':'Regular',
                            'uniqueFontIdentifier':data['id'],'fullName':data['familyName'],
-                           'psName':'PlotFontLayoutDemo-Regular','version':'Version 0.003',
+                           'psName':'OpenPlotFontLayoutDemo-Regular','version':'Version 0.003',
                            'copyright':'Copyright Thierry Charbonnel. MIT.'})
     builder.setupOS2(sTypoAscender=800,sTypoDescender=-200,usWinAscent=800,usWinDescent=200)
     builder.setupPost()
@@ -99,7 +99,7 @@ def build():
                 'salt':{'recommendedValue':0}, 'tnum':{'recommendedValue':0},
                 'curs':{'recommendedValue':0}}
     font = attach_layout(data,raw,source=source,feature_settings=settings)
-    write_font(ROOT/'examples/layout-demo.plotfont.json',font,force=True)
+    write_font(ROOT/'examples/layout-demo.opf.json',font,force=True)
     write_output(ROOT/'tests/fixtures/layout-demo.fea',source,force=True)
     return font
 

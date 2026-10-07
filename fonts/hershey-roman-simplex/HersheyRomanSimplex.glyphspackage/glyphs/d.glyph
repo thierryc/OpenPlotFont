@@ -36,7 +36,7 @@ width = 950;
 );
 unicode = 100;
 userData = {
-org.plotfont.hershey = {
+org.openplotfont.hershey = {
 row = 68;
 sourceId = 604;
 };

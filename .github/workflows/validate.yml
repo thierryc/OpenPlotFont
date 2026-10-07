@@ -1,4 +1,4 @@
-name: Validate PlotFont
+name: Validate OpenPlotFont
 on: [push, pull_request]
 jobs:
   validate:
@@ -16,5 +16,5 @@ jobs:
           node-version: '22'
       - run: python -m pip install -r requirements-dev.txt
       - run: python -m unittest discover -s tests -v
-      - run: python -m plotfont validate examples/*.plotfont.json fonts/hershey-*/*.plotfont.json
+      - run: python -m openplotfont validate examples/*.opf.json fonts/hershey-*/*.opf.json
       - run: python scripts/check_docs.py

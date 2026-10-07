@@ -4,31 +4,31 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from plotfont import ValidationError, render_svg
-from plotfont.hershey import import_roman_simplex
-from test_plotfont import ROOT, example
+from openplotfont import ValidationError, render_svg
+from openplotfont.hershey import import_roman_simplex
+from test_openplotfont import ROOT, example
 
 
 class CLITests(unittest.TestCase):
     def run_cli(self, *args):
-        return subprocess.run([sys.executable, '-m', 'plotfont', *map(str, args)], cwd=ROOT, capture_output=True, text=True)
+        return subprocess.run([sys.executable, '-m', 'openplotfont', *map(str, args)], cwd=ROOT, capture_output=True, text=True)
 
     def test_preserve_existing_output(self):
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / 'specimen.svg'
             output.write_text('existing drawing')
-            result = self.run_cli('render', ROOT/'examples/minimal.plotfont.json', 'A', '-o', output)
+            result = self.run_cli('render', ROOT/'examples/minimal.opf.json', 'A', '-o', output)
             self.assertEqual(result.returncode, 1)
             self.assertEqual(output.read_text(), 'existing drawing')
-            result = self.run_cli('render', ROOT/'examples/minimal.plotfont.json', 'A', '-o', output, '--force')
+            result = self.run_cli('render', ROOT/'examples/minimal.opf.json', 'A', '-o', output, '--force')
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertIn('<svg', output.read_text())
 
     def test_invalid_font_reports_error_and_writes_nothing(self):
         with tempfile.TemporaryDirectory() as directory:
-            source = Path(directory)/'bad.plotfont.json'
+            source = Path(directory)/'bad.opf.json'
             output = Path(directory)/'bad.svg'
-            source.write_text('{"format":"PlotFont","version":"99"}')
+            source.write_text('{"format":"OpenPlotFont","version":"99"}')
             result = self.run_cli('render', source, 'A', '-o', output)
             self.assertEqual(result.returncode, 1)
             self.assertIn('version', result.stderr)

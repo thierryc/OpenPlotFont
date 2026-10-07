@@ -4,11 +4,11 @@ import tempfile
 import unittest
 from pathlib import Path
 from types import SimpleNamespace as Obj
-from plotfont import ValidationError
-from plotfont.glyphs_hershey import populate_hershey
-from plotfont.glyphs_export import export_font
-from plotfont.comparison import compare_fonts
-from test_plotfont import ROOT, example
+from openplotfont import ValidationError
+from openplotfont.glyphs_hershey import populate_hershey
+from openplotfont.glyphs_export import export_font
+from openplotfont.comparison import compare_fonts
+from test_openplotfont import ROOT, example
 from test_glyphs_adapter import GlyphList
 
 

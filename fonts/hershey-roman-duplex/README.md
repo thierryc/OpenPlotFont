@@ -1,6 +1,6 @@
 # Hershey Roman Duplex
 
-[HersheyRomanDuplex.plotfont.json](HersheyRomanDuplex.plotfont.json) is a reproducible preparation from pinned upstream JHF data, separately from the [native Glyphs export](../../examples/hershey-roman-duplex.plotfont.json). The [editable source](HersheyRomanDuplex.glyphspackage/fontinfo.plist) was created, populated, and saved through Glyphs MCP in Glyphs 4.1.1 build 4108. Each of its 97 glyphs and 2,236 points passed source/export comparison. See the [specimen](../../examples/specimens/hershey-roman-duplex.svg).
+[HersheyRomanDuplex.opf.json](HersheyRomanDuplex.opf.json) is a reproducible preparation from pinned upstream JHF data, separately from the [native Glyphs export](../../examples/hershey-roman-duplex.opf.json). The [editable source](HersheyRomanDuplex.glyphspackage/fontinfo.plist) was created, populated, and saved through Glyphs MCP in Glyphs 4.1.1 build 4108. Each of its 97 glyphs and 2,236 points passed source/export comparison. See the [specimen](../../examples/specimens/hershey-roman-duplex.svg).
 
 ## Source and licensing
 
@@ -23,10 +23,10 @@ Cap height 1050, UPM 1470, ascender 1260, line gap 210. X-height is 700 and desc
 ## Reproduce and edit
 
 ```sh
-python3 -m plotfont import-hershey vendor/hershey/rowmand.jhf --face roman-duplex -o output/HersheyRomanDuplex.plotfont.json
-python3 -m plotfont compare fonts/hershey-roman-duplex/HersheyRomanDuplex.plotfont.json examples/hershey-roman-duplex.plotfont.json
+python3 -m openplotfont import-hershey vendor/hershey/rowmand.jhf --face roman-duplex -o output/HersheyRomanDuplex.opf.json
+python3 -m openplotfont compare fonts/hershey-roman-duplex/HersheyRomanDuplex.opf.json examples/hershey-roman-duplex.opf.json
 ```
 
-Open the native package to edit. [Import Hershey Font.py](../../scripts/Import%20Hershey%20Font.py) populates only an empty single-master source at the exact documented project path and rejects existing artwork or glyph metadata. [Export PlotFont.py](../../scripts/Export%20PlotFont.py) exports one selected master; choose a new absolute JSON destination and export from a copy. Source creation and saving are separate MCP operations.
+Open the native package to edit. [Import Hershey Font.py](../../scripts/Import%20Hershey%20Font.py) populates only an empty single-master source at the exact documented project path and rejects existing artwork or glyph metadata. [Export OpenPlotFont.py](../../scripts/Export%20OpenPlotFont.py) exports one selected master; choose a new absolute JSON destination and export from a copy. Source creation and saving are separate MCP operations.
 
 Regression tests inspect every saved node, mapping, advance, metric, and source identifier, compare preparation with native export, and check SVG interpretation using an independent JavaScript consumer. These retained preparation/native-example files use legacy draft `0.2`. The current format is draft `0.3`; [plugin 0.1.1](../../docs/GLYPHS_EXPORT_PLUGIN.md) exports geometry-only 0.3 from the editable source. No hardware compatibility is claimed.

@@ -1,10 +1,10 @@
-# PlotFont milestones
+# OpenPlotFont milestones
 
-The current format is draft **0.3**, supporting geometry-only fonts and optional compiled OpenType layout. Plugin 0.1.1 exports 0.3 only; existing 0.2 font preparations, examples and script defaults remain supported compatibility material. File names end in `.plotfont.json`. Glyphs 4 and later is the authoring target. Plot-It is an independent concept-testing application with its own roadmap.
+The current format is draft **0.3**, supporting geometry-only fonts and optional compiled OpenType layout. Plugin 0.1.1 exports 0.3 only; existing 0.2 font preparations, examples and script defaults remain supported compatibility material. File names end in `.opf.json`. Glyphs 4 and later is the authoring target. Plot-It is an independent concept-testing application with its own roadmap.
 
 | Milestone | Deliverables and acceptance | Current evidence / remaining work |
 | --- | --- | --- |
-| M1 — Foundation | Required metadata, compatibility rules, MIT for original works, separate imported-font terms, clean public foundation | Complete: documentation and examples validated and published at [thierryc/PlotFont](https://github.com/thierryc/PlotFont), with a clean initial public history. |
+| M1 — Foundation | Required metadata, compatibility rules, MIT for original works, separate imported-font terms, clean public foundation | Complete: documentation and examples validated and published at [thierryc/OpenPlotFont](https://github.com/thierryc/OpenPlotFont), with a clean initial public history. |
 | M2 — Format validation | Schema and semantic checks for ordered strokes, curves, fills/holes, mappings, spacing, anchors, JSON user data, and endpoints | Implemented. Fixtures cover malformed geometry, versions, and invalid references. Physical tool settings remain outside font data. |
 | M3 — Native Hershey port | Roman Simplex in a new local Glyphs source; exact upstream revision, attribution, mappings, stroke order, direction, and spacing | Complete: native Glyphs 4.1 source populated and saved through MCP; 97 glyphs / 95 mappings, 1,117 points. Native comparison and exact saved-package tests pass. Integral normalization avoids native coordinate serialization loss. |
 | M4 — Glyphs export | Script exporting one selected master or resolved static instance, validated before saving; compare source/export | Complete for one selected master: actual script executed on a copy in Glyphs 4.1; native source reopening, comparison, curve/fill/metadata fixtures and kerning exceptions passed. Native JSON export retained as a conformance example. A [selected-master plugin](GLYPHS_EXPORT_PLUGIN.md) is packaged, its class/action tested through MCP in 4.1.1, and installation verified; startup/menu qualification remains pending. Instance interpolation remains deferred. |
@@ -26,7 +26,7 @@ Roman Duplex, Roman Triplex, and Script Simplex extend the [font catalog](../fon
 
 ## M6 — Self-contained OpenType layout
 
-Implemented in draft 0.3: optional compiled static OpenType payload with exact glyph-ID mapping, feature/script/language manifest and preserved authoring source; FontTools validation; HarfBuzz shaping and positioned-run JSON; SVG rendering with shaped advances/offsets; optional Glyphs adapter attachment. Existing 0.2 exports remain usable. Original fixtures and tests cover substitutions, contextual rules, localized forms, marks, ligature attachment, cursive positioning, RTL runs, digest/mapping errors and kerning exactly once. See [the layout specification](PLOTFONT_LAYOUT.md).
+Implemented in draft 0.3: optional compiled static OpenType payload with exact glyph-ID mapping, feature/script/language manifest and preserved authoring source; FontTools validation; HarfBuzz shaping and positioned-run JSON; SVG rendering with shaped advances/offsets; optional Glyphs adapter attachment. Existing 0.2 exports remain usable. Original fixtures and tests cover substitutions, contextual rules, localized forms, marks, ligature attachment, cursive positioning, RTL runs, digest/mapping errors and kerning exactly once. See [the layout specification](OPENPLOTFONT_LAYOUT.md).
 
 Automatic instance resolution, automatic compilation from the menu, multi-run bidi segmentation, automatic fallback and shaped pen-path joining are deferred. Companion preview-font generation remains separate.
 

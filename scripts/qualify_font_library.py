@@ -16,9 +16,9 @@ from GlyphsApp import Glyphs, LINE, CURVE, QCURVE, OFFCURVE
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from plotfont.glyphs_export import export_font
-from plotfont.comparison import compare_fonts
-from plotfont.validation import validate
+from openplotfont.glyphs_export import export_font
+from openplotfont.comparison import compare_fonts
+from openplotfont.validation import validate
 
 
 def main():
@@ -41,10 +41,10 @@ def main():
             continue
         try:
             native_path = destination / (row['id'] + '.glyphspackage')
-            json_path = destination / (row['id'] + '.plotfont.json')
+            json_path = destination / (row['id'] + '.opf.json')
             if args.phase == 'save' and (native_path.exists() or json_path.exists()):
                 raise FileExistsError('Qualification destination exists; use a new directory')
-            expected = json.loads((ROOT / row['plotfont']).read_text())
+            expected = json.loads((ROOT / row['openplotfont']).read_text())
             if font.familyName != row['family']:
                 raise ValueError('CLI input order/family mismatch')
             actual = export_font(font, font.masters[0].id, node_types)
@@ -57,7 +57,7 @@ def main():
             json_path.write_text(json.dumps(actual, ensure_ascii=False, indent=2, allow_nan=False)+'\n')
             reports.append({'id': row['id'], 'status': 'pass', 'glyphs': len(actual['glyphs']),
                             'kerningPairs': len(actual['kerning']), 'package': str(native_path.relative_to(ROOT)),
-                            'plotfont': str(json_path.relative_to(ROOT)),
+                            'openplotfont': str(json_path.relative_to(ROOT)),
                             'maximumComparisonToleranceFontUnits': tolerance})
         except Exception as error:
             reports.append({'id': row['id'], 'status': 'failed', 'error': str(error)})

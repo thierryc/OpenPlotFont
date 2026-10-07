@@ -1,4 +1,4 @@
-// Independent SVG interchange check: Node standard library; no PlotFont package.
+// Independent SVG interchange check: Node standard library; no OpenPlotFont package.
 import {readFileSync} from 'node:fs';
 
 const [fontPath, svgPath, text, height = '12'] = process.argv.slice(2);
@@ -7,7 +7,7 @@ try {
   demand(fontPath && svgPath && text !== undefined, 'Usage: node verify_svg.mjs FONT SVG TEXT [CAP_HEIGHT_MM]');
   const font = JSON.parse(readFileSync(fontPath, 'utf8'));
   const svg = readFileSync(svgPath, 'utf8');
-  demand(font.format === 'PlotFont' && font.version === '0.2', 'Unsupported font format/version');
+  demand(font.format === 'OpenPlotFont' && font.version === '0.2', 'Unsupported font format/version');
   const scale = Number(height) / font.metrics.capHeight;
   demand(Number.isFinite(scale) && scale > 0, 'Invalid physical scale');
   const glyphs = new Map(font.glyphs.map(g => [g.name, g]));

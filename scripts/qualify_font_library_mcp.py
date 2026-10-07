@@ -3,9 +3,9 @@ import json, sys, hashlib
 from GlyphsApp import GSFont, Glyphs, LINE, CURVE, QCURVE, OFFCURVE
 root = Path(params["root"])
 sys.path.insert(0, str(root))
-from plotfont.glyphs_export import export_font
-from plotfont.comparison import compare_fonts
-from plotfont.validation import validate
+from openplotfont.glyphs_export import export_font
+from openplotfont.comparison import compare_fonts
+from openplotfont.validation import validate
 catalog_path = root / "output/font-library/fonts/catalog.json"
 catalog = json.loads(catalog_path.read_text())
 dest = root / "output/font-library/mcp"
@@ -61,7 +61,7 @@ def checkpoint():
 
 for row in catalog["fonts"]:
     try:
-        expected = json.loads((root / row["plotfont"]).read_text())
+        expected = json.loads((root / row["openplotfont"]).read_text())
         native = GSFont(str(root / row["package"]))
         actual = export_font(NativeReadProxy(native), native.masters[0].id, types)
         actual["version"] = "0.3"
@@ -75,12 +75,12 @@ for row in catalog["fonts"]:
         exported["version"] = "0.3"
         compare_fonts(expected, exported, tolerance=0.000501)
         validate(exported)
-        json_path = dest / (row["id"] + ".plotfont.json")
+        json_path = dest / (row["id"] + ".opf.json")
         json_path.write_text(json.dumps(exported, ensure_ascii=False, indent=2) + "\n")
         report["fonts"].append({"id": row["id"], "status": "pass", "glyphs": len(exported["glyphs"]),
             "kerningPairs": len(exported["kerning"]), "package": str(package.relative_to(root)),
-            "plotfont": str(json_path.relative_to(root)),
-            "plotfontSha256": hashlib.sha256(json_path.read_bytes()).hexdigest()})
+            "openplotfont": str(json_path.relative_to(root)),
+            "openplotfontSha256": hashlib.sha256(json_path.read_bytes()).hexdigest()})
     except Exception as error:
         report["fonts"].append({"id": row["id"], "status": "failed", "error": str(error)})
     checkpoint()
@@ -99,7 +99,7 @@ for row, verified in zip(catalog["fonts"], report["fonts"]):
     row["previousCliPackage"] = row.get("nativePackage")
     row["previousCliExport"] = row.get("nativeExport")
     row["nativePackage"] = verified["package"]
-    row["nativeExport"] = verified["plotfont"]
+    row["nativeExport"] = verified["openplotfont"]
     row["qualificationTransport"] = report["transport"]
     row["status"] = "MCP native save/reopen geometry comparison passed"
 catalog_path.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n")
@@ -113,32 +113,32 @@ new = "All packages were loaded, saved and reopened through the live Glyphs MCP 
 document = document.replace(old, new)
 document = document.replace("../output/font-library/native/qualification-reopen.json", "../output/font-library/mcp/qualification.json")
 for row in catalog["fonts"]:
-    for suffix in [".glyphspackage", ".plotfont.json"]:
+    for suffix in [".glyphspackage", ".opf.json"]:
         document = document.replace("../output/font-library/native/" + row["id"] + suffix,
                                     "../output/font-library/mcp/" + row["id"] + suffix)
 from scripts.package_font_library import publication_document
 document_path.write_text(publication_document(document))
-(root / "output/font-library/FONT_LIBRARY.md").write_text(document.replace("../output/font-library/", "").replace("(USING_PLOTFONT.md)", "(../../docs/USING_PLOTFONT.md)"))
+(root / "output/font-library/FONT_LIBRARY.md").write_text(document.replace("../output/font-library/", "").replace("(USING_OPENPLOTFONT.md)", "(../../docs/USING_OPENPLOTFONT.md)"))
 
-full_zip = root / "output/font-library/PlotFont-stroke-library.zip"
+full_zip = root / "output/font-library/OpenPlotFont-stroke-library.zip"
 with zipfile.ZipFile(full_zip, "w", zipfile.ZIP_DEFLATED) as aggregate:
     for row in catalog["fonts"]:
         key = row["id"]
-        folder = (root / row["plotfont"]).parent
+        folder = (root / row["openplotfont"]).parent
         package = root / row["nativePackage"]
         entries = [(p, key + "/" + str(p.relative_to(folder))) for p in sorted(folder.rglob("*"))
                    if p.is_file() and ".glyphspackage" not in str(p.relative_to(folder))]
         entries += [(p, key + "/" + key + ".glyphspackage/" + str(p.relative_to(package)))
                     for p in sorted(package.rglob("*")) if p.is_file()]
-        entries.append((root / row["nativeExport"], key + "/native-export.plotfont.json"))
+        entries.append((root / row["nativeExport"], key + "/native-export.opf.json"))
         with zipfile.ZipFile(root / row["bundle"], "w", zipfile.ZIP_DEFLATED) as individual:
             for source, target in entries:
                 individual.write(source, target)
                 aggregate.write(source, target)
-    archive_doc = document.replace("[Download the complete library](../output/font-library/PlotFont-stroke-library.zip).", "This archive contains the complete library.").replace("[consumer responsibilities](USING_PLOTFONT.md)", "the consumer responsibilities described above").replace("../output/font-library/mcp/qualification.json", "qualification-mcp.json")
+    archive_doc = document.replace("[Download the complete library](../output/font-library/OpenPlotFont-stroke-library.zip).", "This archive contains the complete library.").replace("[consumer responsibilities](USING_OPENPLOTFONT.md)", "the consumer responsibilities described above").replace("../output/font-library/mcp/qualification.json", "qualification-mcp.json")
     for row in catalog["fonts"]:
         key = row["id"]
-        archive_doc = archive_doc.replace("../" + row["nativePackage"], key + "/" + key + ".glyphspackage").replace("../" + row["nativeExport"], key + "/native-export.plotfont.json").replace("../" + row["bundle"], key + "/README.md").replace("../output/font-library/fonts/" + key + "/", key + "/")
+        archive_doc = archive_doc.replace("../" + row["nativePackage"], key + "/" + key + ".glyphspackage").replace("../" + row["nativeExport"], key + "/native-export.opf.json").replace("../" + row["bundle"], key + "/README.md").replace("../output/font-library/fonts/" + key + "/", key + "/")
     aggregate.writestr("FONT_LIBRARY.md", archive_doc)
     aggregate.write(report_path, "qualification-mcp.json")
 print("MCP packages, catalog and bundles updated; all 87 fonts verified.")

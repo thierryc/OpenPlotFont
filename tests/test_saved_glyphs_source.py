@@ -1,8 +1,8 @@
 """Regression checks on the Glyphs-4-native saved source, not a constructed file."""
 import unittest
 from pathlib import Path
-from plotfont.hershey import FACES, import_hershey
-from test_plotfont import ROOT
+from openplotfont.hershey import FACES, import_hershey
+from test_openplotfont import ROOT
 
 
 class SavedGlyphsTests(unittest.TestCase):
@@ -49,8 +49,8 @@ class SavedGlyphsTests(unittest.TestCase):
                     self.assertEqual(node[2], 'l')
                     self.assertEqual([float(node[0]),float(node[1])], command[1:])
             if glyph['glyphname'] != '.notdef':
-                stored = glyph['userData']['org.plotfont.hershey']
-                source = record['userData']['org.plotfont.hershey']
+                stored = glyph['userData']['org.openplotfont.hershey']
+                source = record['userData']['org.openplotfont.hershey']
                 self.assertEqual(int(stored['row']), source['row'])
                 self.assertEqual(int(stored['sourceId']), source['sourceId'])
         self.assertEqual(observed, set(expected))

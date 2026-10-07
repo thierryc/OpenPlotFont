@@ -5,10 +5,10 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from plotfont.comparison import compare_fonts
-from plotfont.glyphs_package import write_package, read_package
-from plotfont.stroke_import import import_svg, import_lff, svg_paths, arc_cubics
-from plotfont.validation import ValidationError
+from openplotfont.comparison import compare_fonts
+from openplotfont.glyphs_package import write_package, read_package
+from openplotfont.stroke_import import import_svg, import_lff, svg_paths, arc_cubics
+from openplotfont.validation import ValidationError
 
 
 SVG = '''<svg xmlns="http://www.w3.org/2000/svg"><defs><font horiz-adv-x="600">
@@ -89,7 +89,7 @@ class StrokeImportTests(unittest.TestCase):
             font = import_svg(path, identity='names', family='Names', metadata={}, stroke_source=True)
             a = next(g for g in font['glyphs'] if g['unicodes'] == ['0041'])
             self.assertEqual(a['name'], 'uni0041')
-            self.assertEqual(a['userData']['org.plotfont.source']['glyphName'], '_')
+            self.assertEqual(a['userData']['org.openplotfont.source']['glyphName'], '_')
             self.assertEqual(font['kerning'][0]['left'], 'uni0041')
 
     def test_unsupported_geometry_is_rejected(self):

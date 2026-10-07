@@ -7,14 +7,14 @@ import unittest
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-from plotfont import ValidationError, load
-from plotfont.comparison import compare_fonts
-from plotfont.glyphs_export import export_font
-from plotfont.glyphs_hershey import populate_hershey
-from plotfont.hershey import FACES, import_hershey, parse_jhf
+from openplotfont import ValidationError, load
+from openplotfont.comparison import compare_fonts
+from openplotfont.glyphs_export import export_font
+from openplotfont.glyphs_hershey import populate_hershey
+from openplotfont.hershey import FACES, import_hershey, parse_jhf
 from test_hershey_native_adapter import Glyph, Layer, fixture
 from test_glyphs_adapter import Obj
-from test_plotfont import ROOT
+from test_openplotfont import ROOT
 
 
 class HersheyFaceTests(unittest.TestCase):
@@ -26,7 +26,7 @@ class HersheyFaceTests(unittest.TestCase):
                 self.assertEqual(hashlib.sha256(raw).hexdigest(), settings['sha256'])
                 records = parse_jhf(raw.decode('ascii'))
                 font = import_hershey(source, face)
-                stored = ROOT / 'fonts' / ('hershey-' + face) / (settings['family'].replace(' ', '') + '.plotfont.json')
+                stored = ROOT / 'fonts' / ('hershey-' + face) / (settings['family'].replace(' ', '') + '.opf.json')
                 self.assertEqual(font, load(stored))
                 self.assertEqual(len(font['glyphs']), 97)
                 self.assertEqual(sum(len(g['unicodes']) for g in font['glyphs']), 95)
@@ -34,7 +34,7 @@ class HersheyFaceTests(unittest.TestCase):
                 self.assertEqual(font['metadata']['sourceSha256'], settings['sha256'])
                 for row, (record, glyph) in enumerate(zip(records, font['glyphs'][1:])):
                     self.assertEqual(glyph['advanceWidth'], (record['right'] - record['left']) * 50)
-                    self.assertEqual(glyph['userData']['org.plotfont.hershey'], {'row': row, 'sourceId': record['sourceId']})
+                    self.assertEqual(glyph['userData']['org.openplotfont.hershey'], {'row': row, 'sourceId': record['sourceId']})
                     self.assertEqual(len(glyph['strokes']), len(record['strokes']))
                     self.assertNotIn('connections', glyph)
                     for points, stroke in zip(record['strokes'], glyph['strokes']):
@@ -74,14 +74,14 @@ class HersheyFaceTests(unittest.TestCase):
     def test_cli_selects_face_and_rejects_mislabeled_input_without_output(self):
         with tempfile.TemporaryDirectory() as directory:
             for face, settings in FACES.items():
-                destination = Path(directory)/(face+'.plotfont.json')
-                result = subprocess.run([sys.executable, '-m', 'plotfont', 'import-hershey',
+                destination = Path(directory)/(face+'.opf.json')
+                result = subprocess.run([sys.executable, '-m', 'openplotfont', 'import-hershey',
                                          str(ROOT/'vendor/hershey'/settings['file']), '--face', face,
                                          '-o', str(destination)], cwd=ROOT, capture_output=True, text=True)
                 self.assertEqual(result.returncode, 0, result.stderr)
                 self.assertEqual(load(destination)['familyName'], settings['family'])
-            failed = Path(directory)/'wrong.plotfont.json'
-            result = subprocess.run([sys.executable, '-m', 'plotfont', 'import-hershey',
+            failed = Path(directory)/'wrong.opf.json'
+            result = subprocess.run([sys.executable, '-m', 'openplotfont', 'import-hershey',
                                      str(ROOT/'vendor/hershey/scripts.jhf'), '-o', str(failed)],
                                     cwd=ROOT, capture_output=True, text=True)
             self.assertNotEqual(result.returncode, 0)

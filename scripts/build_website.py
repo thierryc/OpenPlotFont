@@ -23,7 +23,7 @@ def font_card(font):
     <details class="mapping-explanation"><summary>Why are these mappings temporary?</summary>
       <p>The original JHF file stores numbered drawings, without Unicode character labels. This conversion has not yet verified the character represented by each source row. It assigns placeholder codes in source order: U+E000 for the first drawing, U+E001 for the next, and so on.</p>
       <p>These codes are in the <a href="https://www.unicode.org/faq/private_use.html">Unicode Private Use Area</a>, where character meanings are defined by individual fonts. The same code can select a different drawing in another font. The stroke geometry is preserved, but ordinary typed text will not select these drawings through their standard Unicode characters.</p>
-      <p>Open glyph-atlas.svg from the ZIP to choose a drawing, then select its named glyph in Glyphs or use its private-use code from the included PlotFont JSON. &ldquo;Temporary&rdquo; describes this conversion: each drawing needs a reviewed character assignment before standard text mapping can replace these placeholders.</p>
+      <p>Open glyph-atlas.svg from the ZIP to choose a drawing, then select its named glyph in Glyphs or use its private-use code from the included OpenPlotFont JSON. &ldquo;Temporary&rdquo; describes this conversion: each drawing needs a reviewed character assignment before standard text mapping can replace these placeholders.</p>
     </details>''' if font['privateUseMappings'] else ''
     return f'''<article class="font-card" id="{key}" data-collection="{escape(font['collection'])}" data-search="{searchable}">
   <div class="font-specimen"><img src="assets/catalog/{key}.svg" alt="Stroke specimen for {escape(font['family'], quote=True)}" loading="lazy" width="600" height="150"></div>
@@ -42,7 +42,7 @@ def build(destination):
     # A build never deletes or replaces another output.
     shutil.copytree(ROOT / 'site', destination)
     catalog = json.loads((destination / 'catalog.json').read_text())
-    info = plistlib.loads((ROOT / 'plugins/PlotFont.glyphsFileFormat/Contents/Info.plist').read_bytes())
+    info = plistlib.loads((ROOT / 'plugins/OpenPlotFont.glyphsFileFormat/Contents/Info.plist').read_bytes())
     version = info['CFBundleShortVersionString']
     template = (destination / 'index.html').read_text()
     for token, value in {
@@ -57,8 +57,8 @@ def build(destination):
     downloads = destination / 'downloads'
     downloads.mkdir()
     # Build beside the site, so the unpacked executable isn't part of Pages.
-    bundle = build_plugin(destination.parent / (destination.name + '-plugin') / 'PlotFont.glyphsFileFormat')
-    with zipfile.ZipFile(downloads / f'PlotFont-Glyphs-{version}.zip', 'w', zipfile.ZIP_DEFLATED) as archive:
+    bundle = build_plugin(destination.parent / (destination.name + '-plugin') / 'OpenPlotFont.glyphsFileFormat')
+    with zipfile.ZipFile(downloads / f'OpenPlotFont-Glyphs-{version}.zip', 'w', zipfile.ZIP_DEFLATED) as archive:
         for path in sorted(bundle.rglob('*')):
             if path.is_file():
                 info = zipfile.ZipInfo.from_file(path, str(path.relative_to(bundle.parent)))

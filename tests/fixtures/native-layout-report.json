@@ -1,10 +1,10 @@
 {
-  "font": "PlotFont Layout Demo",
+  "font": "OpenPlotFont Layout Demo",
   "glyphsVersion": "4.1.1",
   "glyphsBuild": 4108,
   "mcpBuild": "2.0.0-beta.10 build 52",
   "sourceHashAtCompilation": "sha256:99a7f14183fda3fba16f8cb7c823bdca01282ea471dd8f6392b2876c6dd709c3",
-  "compiledSha256": "681de75c4eee1170f2d2804464bf919d04d1f384f8d97e3890857230ea7c1559",
+  "compiledSha256": "0ce93eacc8b5174282715a21c535a47bf62f6a4c4175d066011c3fc715c7e749",
   "generation": {
     "autoHint": false,
     "decomposeSmartComponents": true,
@@ -14,7 +14,7 @@
   },
   "verification": [
     {
-      "path": "PlotFontLayoutDemo-Regular.otf",
+      "path": "OpenPlotFontLayoutDemo-Regular.otf",
       "shapingCases": [
         {
           "controlPassed": true,
@@ -184,10 +184,15 @@
       }
     }
   ],
-  "exportScript": "scripts/Export PlotFont.py",
+  "exportScript": "scripts/Export OpenPlotFont.py",
   "exportFromCopy": true,
   "omittedActiveFeatures": [
     "curs"
   ],
-  "scope": "Native 14-glyph fixture; portable fixture separately verifies cursive positioning."
+  "scope": "Native 14-glyph fixture; portable fixture separately verifies cursive positioning.",
+  "namingMigration": {
+    "date": "2026-10-07",
+    "changes": "Project names in source metadata and embedded font names updated; shaping tables and geometry preserved. Compiled digest refers to the renamed payload, not a new native compilation.",
+    "originalCompiledSha256": "681de75c4eee1170f2d2804464bf919d04d1f384f8d97e3890857230ea7c1559"
+  }
 }

@@ -8,10 +8,10 @@ from GlyphsApp import Glyphs, GSGlyph, GSLayer, GSPath, GSNode, LINE, CURVE, QCU
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from plotfont.hershey import FACES
-from plotfont.glyphs_hershey import populate_hershey
-from plotfont.glyphs_export import export_font
-from plotfont.comparison import compare_fonts
+from openplotfont.hershey import FACES
+from openplotfont.glyphs_hershey import populate_hershey
+from openplotfont.glyphs_export import export_font
+from openplotfont.comparison import compare_fonts
 
 
 def main(font=None):
