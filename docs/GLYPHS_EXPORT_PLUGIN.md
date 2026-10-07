@@ -1,4 +1,4 @@
-# PlotFont export plugin for Glyphs 4
+# OpenPlotFont export plugin for Glyphs 4
 
 Version 0.1.1 implements a selected-master, geometry-only draft 0.3 exporter.
 The plugin uses the same adapter and atomic no-overwrite writer as the
@@ -19,12 +19,12 @@ From this repository, using Python 3.10 or later:
 python3 scripts/build_glyphs_plugin.py
 ```
 
-The self-contained bundle is written to `output/build/PlotFont.glyphsFileFormat`,
+The self-contained bundle is written to `output/build/OpenPlotFont.glyphsFileFormat`,
 separate from the current font exports.
 Existing builds are preserved; choose a new destination for another revision:
 
 ```sh
-python3 scripts/build_glyphs_plugin.py --destination output/build/revision-2/PlotFont.glyphsFileFormat
+python3 scripts/build_glyphs_plugin.py --destination output/build/revision-2/OpenPlotFont.glyphsFileFormat
 ```
 
 The bundle includes the current exporter, validator and writer in a private
@@ -40,9 +40,9 @@ installation and loading at launch.
 ## Export
 
 1. Open your `.glyphs` or `.glyphspackage` authoring source in Glyphs 4.
-2. Choose **File → Export**, then **PlotFont**.
+2. Choose **File → Export**, then **OpenPlotFont**.
 3. Choose one exact master from the popup and proceed to the save dialog.
-4. Choose a new absolute filename ending in `.plotfont.json`.
+4. Choose a new absolute filename ending in `.opf` or `.opf.json` (the default).
 
 All enabled glyphs and the fallback are exported. Existing files and symlinks
 are preserved, even if the native save dialog offers replacement. An Export All
@@ -57,7 +57,7 @@ Stroke/fill annotations, anchors, connections, kerning and user data follow the
 [adapter's documented rules](GLYPHS_EXPORT_SCRIPT.md#supported-export-and-limits).
 Keep a valid exported `.notdef`, or configure another `missingGlyph`.
 
-Existing `org.plotfont.font` settings are honored, including `id`, `styleName`,
+Existing `org.openplotfont.font` settings are honored, including `id`, `styleName`,
 `missingGlyph`, `lineGap` and provenance metadata. Its `destination` is ignored
 in favor of the save dialog. When `id` is absent, a deterministic UUID-based
 identifier is derived from family and master names on the copy only. Renaming
@@ -66,6 +66,11 @@ catalog identity across renames. Family/master names are not a global uniqueness
 guarantee. Default line gap is zero; no license or provenance is invented.
 
 ## Verification and limits
+
+The naming migration changes the bundle identifier and principal class. Previous installation evidence describes the pre-rename bundle; installation and GUI startup/menu qualification of the renamed bundle remain pending. Historical qualification artifacts in ignored output were discarded; retained fixtures record prior results, not a new qualification of every renamed download.
+
+The renamed built principal class, settings view and export action passed an independent public Glyphs CLI check in **Glyphs 4.1.1 build 4108** on invisible Script Simplex copies. Both `.opf` and `.opf.json` produced 97 glyphs matching the reference, refused overwrites and preserved source user data. This check uses no installed plugins and does not establish GUI loading or installation. Its report is generated at `output/qualification/native-rename.json`.
+
 
 The SDK scaffold validator checks the bundle suffix, Python syntax, plist,
 principal class, loader fingerprint and attribution. Eight plugin regression
@@ -97,7 +102,7 @@ revision still requires native startup/menu qualification after restart.
 
 This plugin exports draft **0.3 only** and reports active OpenType features as
 warnings. It does not compile or attach optional layout, interpolate instances,
-generate a companion OTF, import PlotFont, flatten/expand strokes, or produce
+generate a companion OTF, import OpenPlotFont, flatten/expand strokes, or produce
 device/fill toolpaths. Use the script's explicit matching compiled-font path
 for [optional 0.3 layout](GLYPHS_EXPORT_SCRIPT.md#optional-03-layout-export).
 Later Glyphs versions require native qualification.
@@ -106,4 +111,4 @@ Implementation follows the official SDK File Format template and
 `FileFormatPlugin.setFont_`, `export(font)` and `export(font, destination)`
 callbacks at SDK revision `0f5422db727b78cb42abfb386f33ae0b382b0c4d`.
 The loader and sample resources retain their Apache attribution; original
-PlotFont code uses the repository's existing MIT license.
+OpenPlotFont code uses the repository's existing MIT license.

@@ -2,15 +2,15 @@ import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
-from plotfont import ValidationError, load
-from plotfont.storage import write_font, write_output
-from test_plotfont import example
+from openplotfont import ValidationError, load
+from openplotfont.storage import write_font, write_output
+from test_openplotfont import example
 
 
 class StorageTests(unittest.TestCase):
     def test_valid_font_roundtrip_and_preserve_existing_destination(self):
         with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory)/'font.plotfont.json'
+            path = Path(directory)/'font.opf.json'
             write_font(path, example())
             self.assertEqual(load(path), example())
             original = path.read_bytes()
@@ -21,7 +21,7 @@ class StorageTests(unittest.TestCase):
 
     def test_failed_validation_and_encoding_leave_no_files(self):
         with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory)/'bad.plotfont.json'
+            path = Path(directory)/'bad.opf.json'
             with self.assertRaises(ValidationError):
                 write_font(path, {'version':'99'})
             with self.assertRaises(UnicodeError):
@@ -30,8 +30,8 @@ class StorageTests(unittest.TestCase):
 
     def test_publication_failure_cleans_staging_file(self):
         with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory)/'font.plotfont.json'
-            with patch('plotfont.storage.os.link', side_effect=OSError('simulated filesystem failure')):
+            path = Path(directory)/'font.opf.json'
+            with patch('openplotfont.storage.os.link', side_effect=OSError('simulated filesystem failure')):
                 with self.assertRaises(OSError):
                     write_font(path, example())
             self.assertEqual(list(Path(directory).iterdir()), [])

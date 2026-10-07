@@ -4,8 +4,8 @@ import copy
 import unittest
 from types import SimpleNamespace as Obj
 
-from plotfont.glyphs_export import export_font, plain
-from plotfont import ValidationError
+from openplotfont.glyphs_export import export_font, plain
+from openplotfont import ValidationError
 
 
 class GlyphList(list):
@@ -42,7 +42,7 @@ def font_fixture():
     for name, unicodes in [('.notdef',[]),('A',['0041']),('V',['0056'])]:
         glyphs.append(Obj(name=name,unicodes=unicodes,export=True,layers={'master':Layer(paths)},
                           userData={'note':'keep'},rightKerningGroup='A',leftKerningGroup='V'))
-    font = Obj(familyName='Adapter Fixture',upm=1000,userData={'org.plotfont.font':{'id':'adapter-fixture'}},glyphs=glyphs,
+    font = Obj(familyName='Adapter Fixture',upm=1000,userData={'org.openplotfont.font':{'id':'adapter-fixture'}},glyphs=glyphs,
                masters=[Obj(id='master',name='Regular',ascender=800,descender=-200,capHeight=700,xHeight=500)],features=[])
     font.kerningForPair = lambda master,left,right: {('A','V'):0,('@MMK_L_A','@MMK_R_V'):-25}.get((left,right))
     return font
@@ -62,14 +62,14 @@ class AdapterTests(unittest.TestCase):
         self.assertIn({'left':'V','right':'A','value':-25},result['kerning'])
         self.assertEqual(font.glyphs[1].layers['master'].width,source['width'])
         self.assertEqual(font.glyphs[1].layers['master'].paths[0].nodes[0].position.x,50.125)
-        self.assertNotIn('glyphsMasterId',font.userData['org.plotfont.font'])
+        self.assertNotIn('glyphsMasterId',font.userData['org.openplotfont.font'])
 
     def test_filled_group_and_connections(self):
         font = font_fixture()
         glyph = font.glyphs[1]
         for path in glyph.layers['master'].paths:
             path.closed = True
-        glyph.userData['org.plotfont.glyph'] = {'operations':[{'kind':'fill','pathIndices':[0,1],'fillRule':'evenodd'}]}
+        glyph.userData['org.openplotfont.glyph'] = {'operations':[{'kind':'fill','pathIndices':[0,1],'fillRule':'evenodd'}]}
         result = export_font(font,'master',{'line':'line'})
         self.assertEqual(len(result['glyphs'][1]['strokes']),1)
         self.assertEqual(len(result['glyphs'][1]['strokes'][0]['contours']),2)
@@ -84,7 +84,7 @@ class AdapterTests(unittest.TestCase):
 
     def test_invalid_font_metadata_and_feature_warnings(self):
         font = font_fixture()
-        font.userData['org.plotfont.font']['metadata'] = []
+        font.userData['org.openplotfont.font']['metadata'] = []
         with self.assertRaisesRegex(ValidationError, 'metadata must be an object'):
             export_font(font, 'master', {'line':'line'})
         font = font_fixture()

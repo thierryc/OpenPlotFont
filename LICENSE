@@ -20,6 +20,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-This license applies to original PlotFont code, documentation, and examples.
+This license applies to original OpenPlotFont code, documentation, and examples.
 Vendored Hershey data and its converted glyph geometry retain their upstream
 terms in vendor/hershey/NOTICE.txt. They are not relicensed under MIT.

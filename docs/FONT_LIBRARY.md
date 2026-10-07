@@ -2,21 +2,21 @@
 
 Built and reviewed 2026-10-01. **87 fonts**: 32 JHF Hershey files, 12 Hershey-related SVGs, 29 EMS SVGs, Relief Regular and Ornament, NormStroke, three Custom fonts, three Cutlings fonts, one DearPlotter design, and four LibreCAD LFF fonts. These are 87 converted source files; some Hershey aliases and SVG adaptations overlap in design.
 
-Every row has a PlotFont 0.3 export and an editable format-4 Glyphs package. All packages were loaded, saved and reopened through the live Glyphs MCP server in Glyphs 4.1.1 (4108), then compared against their source conversions. Earlier CLI qualification is retained separately; the links below now point to the MCP-created copies. Coordinates in native saved packages are rounded to 0.001 font units; comparisons allow 0.000501 font units per numeric value. The primary PlotFont JSON retains the higher precision source conversion. Local qualification report: `output/font-library/mcp/qualification.json`.
+Every row has an OpenPlotFont 0.3 export and an editable format-4 Glyphs package. All packages were loaded, saved and reopened through the live Glyphs MCP server in Glyphs 4.1.1 (4108), then compared against their source conversions. Earlier CLI qualification is retained separately; the links below now point to the MCP-created copies. Coordinates in native saved packages are rounded to 0.001 font units; comparisons allow 0.000501 font units per numeric value. The primary OpenPlotFont JSON retains the higher precision source conversion. Local qualification report: `output/font-library/mcp/qualification.json`.
 
-[Download individual fonts from the website](https://plotfont.litsquare.com/#fonts). The complete local archive is `output/font-library/PlotFont-stroke-library.zip`. Each individual ZIP includes original source, full notices, attribution, Glyphs package, PlotFont JSON, native JSON export, specimen and glyph atlas. Generated files are local, ignored by Git and reproducible using the scripts below.
+[Download individual fonts from the website](https://thierryc.github.io/OpenPlotFont/#fonts). The complete local archive is `output/font-library/OpenPlotFont-stroke-library.zip`. Each individual ZIP includes original source, full notices, attribution, Glyphs package, OpenPlotFont JSON, native JSON export, specimen and glyph atlas. Generated files are local, ignored by Git and reproducible using the scripts below.
 
 ## Drawing and machine interoperability
 
 These are reviewed stroke sources, with independent pen-down trajectories, explicit closure, source path order/start points/direction, spaces, advances and supported kerning retained. Cubic and quadratic curves remain curves. SVG/LFF arcs become tangent-matched cubic segments of at most 5°; conservative error allowance is 1e-7 × maximum radius in source units. No outline skeletonization or stroke-width expansion is performed.
 
-PlotFont geometry is in font units with Y up. The specimens demonstrate physical sizing at an 8 mm cap height and convert to SVG page coordinates. CNC/plotter consumers must preserve each trajectory and lift the pen/tool between strokes, size geometry physically, and apply device motion settings outside the font. A closed stroke remains a trajectory, not a filled area. This repository supplies portable geometry and SVG review output; it does not generate G-code/HPGL or operate hardware. Machine compatibility has not been tested on hardware. See [consumer responsibilities](USING_PLOTFONT.md).
+OpenPlotFont geometry is in font units with Y up. The specimens demonstrate physical sizing at an 8 mm cap height and convert to SVG page coordinates. CNC/plotter consumers must preserve each trajectory and lift the pen/tool between strokes, size geometry physically, and apply device motion settings outside the font. A closed stroke remains a trajectory, not a filled area. This repository supplies portable geometry and SVG review output; it does not generate G-code/HPGL or operate hardware. Machine compatibility has not been tested on hardware. See [consumer responsibilities](USING_OPENPLOTFONT.md).
 
 **Coverage limits:** 14 non-Latin/symbol JHF sources use temporary U+E000 + source-row mappings, explicitly recorded in each font. Their geometry is usable through the glyph atlas/private-use mapping; standard Greek, Cyrillic, Japanese and symbol text mapping is not qualified. Original JHF records beyond printable ASCII are retained. SVG ligatures and unencoded alternates retain drawings and source metadata but have no automatic substitutions. Scripts preserve pen lifts and have no automatic joining. JHF x-height is estimated at half cap height, and non-Latin JHF baseline/cap metrics are estimates. LFF line metrics are explicit conversion estimates; origins and LibreCAD xMax + LetterSpacing advances are retained. Font bounds can exceed nominal cap/ascender metrics.
 
 ## Licensing and attribution
 
-Conversions keep the upstream font licenses. Full available copyright/license notices are embedded in PlotFont metadata and Glyphs font user data, copied beside the fonts, and embedded in specimen/atlas SVG metadata. Original sources retain their notices. Distribute the whole ZIP/folder; the project MIT license does not replace these font terms. PF prefixes distinguish converted SVG/CAD family names from their source font names.
+Conversions keep the upstream font licenses. Full available copyright/license notices are embedded in OpenPlotFont metadata and Glyphs font user data, copied beside the fonts, and embedded in specimen/atlas SVG metadata. Original sources retain their notices. Distribute the whole ZIP/folder; the project MIT license does not replace these font terms. PF prefixes distinguish converted SVG/CAD family names from their source font names.
 
 - **Hershey:** Dr. A. V. Hershey; JHF representation by James Hurt, Cognition, Inc.; SVG adaptations retain their source credits. Complete acknowledgment/use restriction is included, including the prohibition on recreating the original NTIS representation.
 - **OFL:** retain author/copyright notices and the full OFL; modified fonts remain OFL and honor reserved font names. Font software cannot be sold by itself. Each ZIP includes available ancestor notices. EMS Elfin retains both the stroke derivative’s OFL declaration and its Mountains of Christmas ancestor’s Apache 2.0 notice; this is not a claim that the ancestor was OFL.
@@ -30,93 +30,93 @@ The supplied EMS and Custom OFL templates have unfilled copyright fields. Source
 
 | Font / glyph count | License | Original repository / author links | Files |
 | --- | --- | --- | --- |
-| Hershey Astrology (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-astrology.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-astrology.svg) |
-| Hershey Cursive (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-cursive.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-cursive.svg) |
-| Hershey Cyrilc 1 (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-cyrilc-1.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-cyrilc-1.svg) |
-| Hershey Cyrillic (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-cyrillic.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-cyrillic.svg) |
-| Hershey Futural (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-futural.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-futural.svg) |
-| Hershey Futuram (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-futuram.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-futuram.svg) |
-| Hershey Gothgbt (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-gothgbt.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-gothgbt.svg) |
-| Hershey Gothgrt (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-gothgrt.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-gothgrt.svg) |
-| Hershey Gothiceng (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-gothiceng.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-gothiceng.svg) |
-| Hershey Gothicger (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-gothicger.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-gothicger.svg) |
-| Hershey Gothicita (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-gothicita.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-gothicita.svg) |
-| Hershey Gothitt (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-gothitt.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-gothitt.svg) |
-| Hershey Greek (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-greek.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-greek.svg) |
-| Hershey Greekc (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-greekc.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-greekc.svg) |
-| Hershey Greeks (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-greeks.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-greeks.svg) |
-| Hershey Japanese (195) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-japanese.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-japanese.svg) |
-| Hershey Markers (99) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-markers.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-markers.svg) |
-| Hershey Mathlow (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-mathlow.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-mathlow.svg) |
-| Hershey Mathupp (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-mathupp.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-mathupp.svg) |
-| Hershey Meteorology (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-meteorology.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-meteorology.svg) |
-| Hershey Music (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-music.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-music.svg) |
-| Hershey Roman Duplex (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-roman-duplex.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-roman-duplex.svg) |
-| Hershey Roman Simplex (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-roman-simplex.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-roman-simplex.svg) |
-| Hershey Roman Triplex (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-roman-triplex.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-roman-triplex.svg) |
-| Hershey Script Complex (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-script-complex.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-script-complex.svg) |
-| Hershey Script Simplex (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-script-simplex.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-script-simplex.svg) |
-| Hershey Symbolic (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-symbolic.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-symbolic.svg) |
-| Hershey Timesg (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-timesg.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-timesg.svg) |
-| Hershey Roman Italic (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-roman-italic.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-roman-italic.svg) |
-| Hershey Roman Bold Italic (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-roman-bold-italic.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-roman-bold-italic.svg) |
-| Hershey Roman Complex (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-roman-complex.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-roman-complex.svg) |
-| Hershey Roman Bold (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/hershey-roman-bold.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/hershey-roman-bold.svg) |
-| PF EMS Allure (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.typesetit.com) · [author/source 2](https://fonts.google.com/specimen/Allura) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-allure.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-allure.svg) |
-| PF EMS Bird (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.typesetit.com) · [author/source 2](https://fonts.google.com/specimen/Bilbo) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-bird.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-bird.svg) |
-| PF EMS Bird Swash Caps (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.typesetit.com) · [author/source 2](https://fonts.google.com/specimen/Bilbo+Swash+Caps) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-bird-swash-caps.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-bird-swash-caps.svg) |
-| PF EMS Brush (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.typesetit.com) · [author/source 2](https://fonts.google.com/specimen/Alex+Brush) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-brush.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-brush.svg) |
-| PF EMS Capitol (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.astigmatic.com) · [author/source 2](https://fonts.google.com/specimen/Sacramento) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-capitol.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-capitol.svg) |
-| PF EMS Casual Hand (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.kimberlygeswein.com/) · [author/source 2](https://fonts.google.com/specimen/Covered+By+Your+Grace) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-casual-hand.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-casual-hand.svg) |
-| PF EMS Decorous Script (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://fonts.google.com/specimen/Petit+Formal+Script) · [author/source 2](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-decorous-script.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-decorous-script.svg) |
-| PF EMS Delight (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://fonts.google.com/specimen/Delius) · [author/source 2](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-delight.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-delight.svg) |
-| PF EMS Delight Swash Caps (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://fonts.google.com/specimen/Delius+Swash+Caps) · [author/source 2](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-delight-swash-caps.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-delight-swash-caps.svg) |
-| PF EMS Elfin (218) | SIL OFL 1.1; Apache 2.0 ancestor notice retained | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.tartworkshop.com) · [author/source 2](https://fonts.google.com/specimen/Mountains+of+Christmas) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-elfin.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-elfin.svg) |
-| PF EMS Felix (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://twitter.com/fontstage) · [author/source 2](https://fonts.google.com/specimen/Felipa) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-felix.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-felix.svg) |
-| PF EMS Herculean (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://www.myfonts.com/foundry/Denis_Masharov/) · [author/source 2](https://fonts.google.com/specimen/Poiret+One) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-herculean.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-herculean.svg) |
-| PF EMS Invite (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://tosche.net/about) · [author/source 2](https://fonts.google.com/specimen/Tangerine) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-invite.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-invite.svg) |
-| PF EMS League (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://www.theleagueofmoveabletype.com) · [author/source 2](https://fonts.google.com/specimen/League+Script) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-league.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-league.svg) |
-| PF EMS Little Princess (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.tartworkshop.com) · [author/source 2](https://fonts.google.com/specimen/Princess+Sofia) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-little-princess.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-little-princess.svg) |
-| PF EMS Misty Night (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.glukfonts.pl) · [author/source 2](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-misty-night.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-misty-night.svg) |
-| PF EMS Neato (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://www.myfonts.com/foundry/Gaslight/) · [author/source 2](https://fonts.google.com/specimen/Bad+Script) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-neato.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-neato.svg) |
-| PF EMS Nixish (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://jovanny.ru) · [author/source 2](https://fonts.google.com/specimen/Nixie+One) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-nixish.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-nixish.svg) |
-| PF EMS Nixish Italic (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://jovanny.ru) · [author/source 2](https://fonts.google.com/specimen/Nixie+One) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-nixish-italic.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-nixish-italic.svg) |
-| PF EMS Osmotron (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://www.theleagueofmoveabletype.com) · [author/source 2](https://fonts.google.com/specimen/Orbitron) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-osmotron.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-osmotron.svg) |
-| PF EMS Pancakes (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.typeco.com) · [author/source 2](https://fonts.google.com/specimen/Short+Stack) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-pancakes.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-pancakes.svg) |
-| PF EMS Pepita (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://pecita.eu/police-en.php) · [author/source 2](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-pepita.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-pepita.svg) |
-| PF EMS Qwandry (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.typesetit.com) · [author/source 2](https://fonts.google.com/specimen/Qwigley) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-qwandry.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-qwandry.svg) |
-| PF EMS Readability (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.adobe.com) · [author/source 2](https://fonts.google.com/specimen/Source+Sans+Pro) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-readability.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-readability.svg) |
-| PF EMS Readability Italic (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.adobe.com) · [author/source 2](https://fonts.google.com/specimen/Source+Sans+Pro) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-readability-italic.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-readability-italic.svg) |
-| PF EMS Society (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.sudtipos.com) · [author/source 2](https://fonts.google.com/specimen/Mrs+Saint+Delafield) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-society.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-society.svg) |
-| PF EMS Swiss (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.typesetit.com) · [author/source 2](https://fonts.google.com/specimen/Italianno) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-swiss.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-swiss.svg) |
-| PF EMS Tech (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.kimberlygeswein.com/) · [author/source 2](https://fonts.google.com/specimen/Architects+Daughter) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-tech.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-tech.svg) |
-| PF Hershey Gothic English (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-hershey-gothic-english.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-hershey-gothic-english.svg) |
-| PF Hershey Gothic German (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-hershey-gothic-german.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-hershey-gothic-german.svg) |
-| PF Hershey Gothic Italian (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-hershey-gothic-italian.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-hershey-gothic-italian.svg) |
-| PF Hershey Sans 1-stroke (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-hershey-sans-1-stroke.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-hershey-sans-1-stroke.svg) |
-| PF Hershey Sans medium (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-hershey-sans-medium.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-hershey-sans-medium.svg) |
-| PF Hershey Script 1-stroke (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-hershey-script-1-stroke.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-hershey-script-1-stroke.svg) |
-| PF Hershey Script medium (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-hershey-script-medium.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-hershey-script-medium.svg) |
-| PF Hershey Serif bold (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-hershey-serif-bold.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-hershey-serif-bold.svg) |
-| PF Hershey Serif bold italic (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-hershey-serif-bold-italic.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-hershey-serif-bold-italic.svg) |
-| PF Hershey Serif medium (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-hershey-serif-medium.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-hershey-serif-medium.svg) |
-| PF Hershey Serif medium italic (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-hershey-serif-medium-italic.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-hershey-serif-medium-italic.svg) |
-| PF Twin Sans (264) | SIL OFL 1.1; Hershey ancestor notice retained | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://keithp.com/) · [author/source 2](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-twin-sans.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-twin-sans.svg) |
-| PF Relief SingleLine Ornament (171) | SIL OFL 1.1 | [repository](https://github.com/isdat-type/Relief-SingleLine) · [author/source 1](https://github.com/isdat-type/Relief-SingleLine) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-relief-singleline-ornament.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-relief-singleline-ornament.svg) |
-| PF Relief SingleLine SVG (568) | SIL OFL 1.1 | [repository](https://github.com/isdat-type/Relief-SingleLine) · [author/source 1](https://github.com/isdat-type/Relief-SingleLine) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-relief-singleline-svg.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-relief-singleline-svg.svg) |
-| PF Norm Stroke (326) | CC0 1.0 | [repository](https://github.com/octycs/norm-stroke) · [author/source 1](https://github.com/octycs/norm-stroke) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-norm-stroke.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-norm-stroke.svg) |
-| PF Custom-Script (100) | SIL OFL 1.1 | [repository](https://github.com/Shriinivas/inkscapestrokefont) · [author/source 1](https://github.com/Shriinivas/inkscapestrokefont) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-custom-script.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-custom-script.svg) |
-| PF Custom-Square Italic (100) | SIL OFL 1.1 | [repository](https://github.com/Shriinivas/inkscapestrokefont) · [author/source 1](https://github.com/Shriinivas/inkscapestrokefont) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-custom-square-italic.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-custom-square-italic.svg) |
-| PF Custom-Square Normal (100) | SIL OFL 1.1 | [repository](https://github.com/Shriinivas/inkscapestrokefont) · [author/source 1](https://github.com/Shriinivas/inkscapestrokefont) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-custom-square-normal.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-custom-square-normal.svg) |
-| PF CutlingsDualis (98) | SIL OFL 1.1 | [repository](https://cutlings.datafil.no/stroke-fonts-singularis-dualis-pluralis/) · [author/source 1](http://cutlings.wasbo.net/) · [author/source 2](https://cutlings.datafil.no/) · [author/source 3](https://cutlings.datafil.no/stroke-fonts-singularis-dualis-pluralis/) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-cutlingsdualis.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-cutlingsdualis.svg) |
-| PF CutlingsPluralis (98) | SIL OFL 1.1 | [repository](https://cutlings.datafil.no/stroke-fonts-singularis-dualis-pluralis/) · [author/source 1](http://cutlings.wasbo.net/) · [author/source 2](https://cutlings.datafil.no/) · [author/source 3](https://cutlings.datafil.no/stroke-fonts-singularis-dualis-pluralis/) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-cutlingspluralis.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-cutlingspluralis.svg) |
-| PF CutlingsSingularis (98) | SIL OFL 1.1 | [repository](https://cutlings.datafil.no/stroke-fonts-singularis-dualis-pluralis/) · [author/source 1](http://cutlings.wasbo.net/) · [author/source 2](https://cutlings.datafil.no/) · [author/source 3](https://cutlings.datafil.no/stroke-fonts-singularis-dualis-pluralis/) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-cutlingssingularis.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-cutlingssingularis.svg) |
-| PF DearPlotter (97) | SIL OFL 1.1 (font); CC BY-SA 4.0 generator/adaptation credits retained | [repository](https://www.eyesofpanda.com/project/dearplotter_font/) · [author/source 1](https://www.eyesofpanda.com/) · [author/source 2](https://www.eyesofpanda.com/project/dearplotter_font/) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-dearplotter.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-dearplotter.svg) |
-| PF CAD iso3098 (321) | GPL v2 or later | [repository](https://github.com/LibreCAD/LibreCAD) · [author/source 1](https://github.com/LibreCAD/LibreCAD) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-cad-iso3098.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-cad-iso3098.svg) |
-| PF CAD iso3098_i (321) | GPL v2 or later | [repository](https://github.com/LibreCAD/LibreCAD) · [author/source 1](https://github.com/LibreCAD/LibreCAD) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-cad-iso3098-i.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-cad-iso3098-i.svg) |
-| PF CAD lc_opengost-ar (678) | SIL OFL 1.1 | [repository](https://github.com/LibreCAD/LibreCAD) · [author/source 1](https://github.com/LibreCAD/LibreCAD) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-cad-lc-opengost-ar.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-cad-lc-opengost-ar.svg) |
-| PF CAD lc_opengost-br (678) | SIL OFL 1.1 | [repository](https://github.com/LibreCAD/LibreCAD) · [author/source 1](https://github.com/LibreCAD/LibreCAD) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-cad-lc-opengost-br.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-cad-lc-opengost-br.svg) |
-| PF EMS SpaceRocks (97) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [SVG conversion author](https://www.evilmadscientist.com/) | [ZIP (Glyphs and PlotFont)](https://plotfont.litsquare.com/assets/catalog/pf-ems-spacerocks.zip) · [preview](https://plotfont.litsquare.com/assets/catalog/pf-ems-spacerocks.svg) |
+| Hershey Astrology (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-astrology.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-astrology.svg) |
+| Hershey Cursive (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-cursive.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-cursive.svg) |
+| Hershey Cyrilc 1 (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-cyrilc-1.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-cyrilc-1.svg) |
+| Hershey Cyrillic (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-cyrillic.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-cyrillic.svg) |
+| Hershey Futural (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-futural.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-futural.svg) |
+| Hershey Futuram (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-futuram.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-futuram.svg) |
+| Hershey Gothgbt (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-gothgbt.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-gothgbt.svg) |
+| Hershey Gothgrt (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-gothgrt.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-gothgrt.svg) |
+| Hershey Gothiceng (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-gothiceng.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-gothiceng.svg) |
+| Hershey Gothicger (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-gothicger.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-gothicger.svg) |
+| Hershey Gothicita (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-gothicita.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-gothicita.svg) |
+| Hershey Gothitt (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-gothitt.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-gothitt.svg) |
+| Hershey Greek (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-greek.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-greek.svg) |
+| Hershey Greekc (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-greekc.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-greekc.svg) |
+| Hershey Greeks (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-greeks.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-greeks.svg) |
+| Hershey Japanese (195) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-japanese.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-japanese.svg) |
+| Hershey Markers (99) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-markers.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-markers.svg) |
+| Hershey Mathlow (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-mathlow.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-mathlow.svg) |
+| Hershey Mathupp (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-mathupp.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-mathupp.svg) |
+| Hershey Meteorology (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-meteorology.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-meteorology.svg) |
+| Hershey Music (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-music.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-music.svg) |
+| Hershey Roman Duplex (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-roman-duplex.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-roman-duplex.svg) |
+| Hershey Roman Simplex (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-roman-simplex.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-roman-simplex.svg) |
+| Hershey Roman Triplex (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-roman-triplex.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-roman-triplex.svg) |
+| Hershey Script Complex (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-script-complex.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-script-complex.svg) |
+| Hershey Script Simplex (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-script-simplex.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-script-simplex.svg) |
+| Hershey Symbolic (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-symbolic.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-symbolic.svg) |
+| Hershey Timesg (98) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-timesg.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-timesg.svg) |
+| Hershey Roman Italic (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-roman-italic.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-roman-italic.svg) |
+| Hershey Roman Bold Italic (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-roman-bold-italic.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-roman-bold-italic.svg) |
+| Hershey Roman Complex (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-roman-complex.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-roman-complex.svg) |
+| Hershey Roman Bold (97) | Hershey permissive terms; not MIT | [repository](https://github.com/kamalmostafa/hershey-fonts) · [author/source 1](https://github.com/kamalmostafa/hershey-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-roman-bold.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-roman-bold.svg) |
+| PF EMS Allure (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.typesetit.com) · [author/source 2](https://fonts.google.com/specimen/Allura) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-allure.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-allure.svg) |
+| PF EMS Bird (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.typesetit.com) · [author/source 2](https://fonts.google.com/specimen/Bilbo) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-bird.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-bird.svg) |
+| PF EMS Bird Swash Caps (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.typesetit.com) · [author/source 2](https://fonts.google.com/specimen/Bilbo+Swash+Caps) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-bird-swash-caps.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-bird-swash-caps.svg) |
+| PF EMS Brush (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.typesetit.com) · [author/source 2](https://fonts.google.com/specimen/Alex+Brush) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-brush.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-brush.svg) |
+| PF EMS Capitol (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.astigmatic.com) · [author/source 2](https://fonts.google.com/specimen/Sacramento) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-capitol.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-capitol.svg) |
+| PF EMS Casual Hand (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.kimberlygeswein.com/) · [author/source 2](https://fonts.google.com/specimen/Covered+By+Your+Grace) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-casual-hand.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-casual-hand.svg) |
+| PF EMS Decorous Script (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://fonts.google.com/specimen/Petit+Formal+Script) · [author/source 2](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-decorous-script.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-decorous-script.svg) |
+| PF EMS Delight (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://fonts.google.com/specimen/Delius) · [author/source 2](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-delight.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-delight.svg) |
+| PF EMS Delight Swash Caps (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://fonts.google.com/specimen/Delius+Swash+Caps) · [author/source 2](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-delight-swash-caps.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-delight-swash-caps.svg) |
+| PF EMS Elfin (218) | SIL OFL 1.1; Apache 2.0 ancestor notice retained | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.tartworkshop.com) · [author/source 2](https://fonts.google.com/specimen/Mountains+of+Christmas) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-elfin.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-elfin.svg) |
+| PF EMS Felix (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://twitter.com/fontstage) · [author/source 2](https://fonts.google.com/specimen/Felipa) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-felix.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-felix.svg) |
+| PF EMS Herculean (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://www.myfonts.com/foundry/Denis_Masharov/) · [author/source 2](https://fonts.google.com/specimen/Poiret+One) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-herculean.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-herculean.svg) |
+| PF EMS Invite (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://tosche.net/about) · [author/source 2](https://fonts.google.com/specimen/Tangerine) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-invite.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-invite.svg) |
+| PF EMS League (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://www.theleagueofmoveabletype.com) · [author/source 2](https://fonts.google.com/specimen/League+Script) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-league.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-league.svg) |
+| PF EMS Little Princess (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.tartworkshop.com) · [author/source 2](https://fonts.google.com/specimen/Princess+Sofia) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-little-princess.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-little-princess.svg) |
+| PF EMS Misty Night (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.glukfonts.pl) · [author/source 2](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-misty-night.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-misty-night.svg) |
+| PF EMS Neato (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://www.myfonts.com/foundry/Gaslight/) · [author/source 2](https://fonts.google.com/specimen/Bad+Script) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-neato.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-neato.svg) |
+| PF EMS Nixish (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://jovanny.ru) · [author/source 2](https://fonts.google.com/specimen/Nixie+One) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-nixish.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-nixish.svg) |
+| PF EMS Nixish Italic (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://jovanny.ru) · [author/source 2](https://fonts.google.com/specimen/Nixie+One) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-nixish-italic.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-nixish-italic.svg) |
+| PF EMS Osmotron (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://www.theleagueofmoveabletype.com) · [author/source 2](https://fonts.google.com/specimen/Orbitron) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-osmotron.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-osmotron.svg) |
+| PF EMS Pancakes (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.typeco.com) · [author/source 2](https://fonts.google.com/specimen/Short+Stack) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-pancakes.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-pancakes.svg) |
+| PF EMS Pepita (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://pecita.eu/police-en.php) · [author/source 2](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-pepita.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-pepita.svg) |
+| PF EMS Qwandry (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.typesetit.com) · [author/source 2](https://fonts.google.com/specimen/Qwigley) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-qwandry.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-qwandry.svg) |
+| PF EMS Readability (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.adobe.com) · [author/source 2](https://fonts.google.com/specimen/Source+Sans+Pro) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-readability.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-readability.svg) |
+| PF EMS Readability Italic (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.adobe.com) · [author/source 2](https://fonts.google.com/specimen/Source+Sans+Pro) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-readability-italic.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-readability-italic.svg) |
+| PF EMS Society (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.sudtipos.com) · [author/source 2](https://fonts.google.com/specimen/Mrs+Saint+Delafield) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-society.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-society.svg) |
+| PF EMS Swiss (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.typesetit.com) · [author/source 2](https://fonts.google.com/specimen/Italianno) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-swiss.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-swiss.svg) |
+| PF EMS Tech (218) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](http://www.kimberlygeswein.com/) · [author/source 2](https://fonts.google.com/specimen/Architects+Daughter) · [author/source 3](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-tech.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-tech.svg) |
+| PF Hershey Gothic English (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-gothic-english.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-gothic-english.svg) |
+| PF Hershey Gothic German (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-gothic-german.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-gothic-german.svg) |
+| PF Hershey Gothic Italian (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-gothic-italian.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-gothic-italian.svg) |
+| PF Hershey Sans 1-stroke (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-sans-1-stroke.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-sans-1-stroke.svg) |
+| PF Hershey Sans medium (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-sans-medium.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-sans-medium.svg) |
+| PF Hershey Script 1-stroke (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-script-1-stroke.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-script-1-stroke.svg) |
+| PF Hershey Script medium (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-script-medium.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-script-medium.svg) |
+| PF Hershey Serif bold (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-serif-bold.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-serif-bold.svg) |
+| PF Hershey Serif bold italic (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-serif-bold-italic.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-serif-bold-italic.svg) |
+| PF Hershey Serif medium (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-serif-medium.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-serif-medium.svg) |
+| PF Hershey Serif medium italic (218) | Hershey permissive terms; not MIT | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-serif-medium-italic.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-serif-medium-italic.svg) |
+| PF Twin Sans (264) | SIL OFL 1.1; Hershey ancestor notice retained | [repository](https://gitlab.com/oskay/svg-fonts) · [author/source 1](https://keithp.com/) · [author/source 2](https://gitlab.com/oskay/svg-fonts) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-twin-sans.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-twin-sans.svg) |
+| PF Relief SingleLine Ornament (171) | SIL OFL 1.1 | [repository](https://github.com/isdat-type/Relief-SingleLine) · [author/source 1](https://github.com/isdat-type/Relief-SingleLine) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-relief-singleline-ornament.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-relief-singleline-ornament.svg) |
+| PF Relief SingleLine SVG (568) | SIL OFL 1.1 | [repository](https://github.com/isdat-type/Relief-SingleLine) · [author/source 1](https://github.com/isdat-type/Relief-SingleLine) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-relief-singleline-svg.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-relief-singleline-svg.svg) |
+| PF Norm Stroke (326) | CC0 1.0 | [repository](https://github.com/octycs/norm-stroke) · [author/source 1](https://github.com/octycs/norm-stroke) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-norm-stroke.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-norm-stroke.svg) |
+| PF Custom-Script (100) | SIL OFL 1.1 | [repository](https://github.com/Shriinivas/inkscapestrokefont) · [author/source 1](https://github.com/Shriinivas/inkscapestrokefont) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-custom-script.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-custom-script.svg) |
+| PF Custom-Square Italic (100) | SIL OFL 1.1 | [repository](https://github.com/Shriinivas/inkscapestrokefont) · [author/source 1](https://github.com/Shriinivas/inkscapestrokefont) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-custom-square-italic.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-custom-square-italic.svg) |
+| PF Custom-Square Normal (100) | SIL OFL 1.1 | [repository](https://github.com/Shriinivas/inkscapestrokefont) · [author/source 1](https://github.com/Shriinivas/inkscapestrokefont) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-custom-square-normal.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-custom-square-normal.svg) |
+| PF CutlingsDualis (98) | SIL OFL 1.1 | [repository](https://cutlings.datafil.no/stroke-fonts-singularis-dualis-pluralis/) · [author/source 1](http://cutlings.wasbo.net/) · [author/source 2](https://cutlings.datafil.no/) · [author/source 3](https://cutlings.datafil.no/stroke-fonts-singularis-dualis-pluralis/) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-cutlingsdualis.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-cutlingsdualis.svg) |
+| PF CutlingsPluralis (98) | SIL OFL 1.1 | [repository](https://cutlings.datafil.no/stroke-fonts-singularis-dualis-pluralis/) · [author/source 1](http://cutlings.wasbo.net/) · [author/source 2](https://cutlings.datafil.no/) · [author/source 3](https://cutlings.datafil.no/stroke-fonts-singularis-dualis-pluralis/) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-cutlingspluralis.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-cutlingspluralis.svg) |
+| PF CutlingsSingularis (98) | SIL OFL 1.1 | [repository](https://cutlings.datafil.no/stroke-fonts-singularis-dualis-pluralis/) · [author/source 1](http://cutlings.wasbo.net/) · [author/source 2](https://cutlings.datafil.no/) · [author/source 3](https://cutlings.datafil.no/stroke-fonts-singularis-dualis-pluralis/) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-cutlingssingularis.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-cutlingssingularis.svg) |
+| PF DearPlotter (97) | SIL OFL 1.1 (font); CC BY-SA 4.0 generator/adaptation credits retained | [repository](https://www.eyesofpanda.com/project/dearplotter_font/) · [author/source 1](https://www.eyesofpanda.com/) · [author/source 2](https://www.eyesofpanda.com/project/dearplotter_font/) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-dearplotter.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-dearplotter.svg) |
+| PF CAD iso3098 (321) | GPL v2 or later | [repository](https://github.com/LibreCAD/LibreCAD) · [author/source 1](https://github.com/LibreCAD/LibreCAD) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-cad-iso3098.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-cad-iso3098.svg) |
+| PF CAD iso3098_i (321) | GPL v2 or later | [repository](https://github.com/LibreCAD/LibreCAD) · [author/source 1](https://github.com/LibreCAD/LibreCAD) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-cad-iso3098-i.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-cad-iso3098-i.svg) |
+| PF CAD lc_opengost-ar (678) | SIL OFL 1.1 | [repository](https://github.com/LibreCAD/LibreCAD) · [author/source 1](https://github.com/LibreCAD/LibreCAD) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-cad-lc-opengost-ar.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-cad-lc-opengost-ar.svg) |
+| PF CAD lc_opengost-br (678) | SIL OFL 1.1 | [repository](https://github.com/LibreCAD/LibreCAD) · [author/source 1](https://github.com/LibreCAD/LibreCAD) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-cad-lc-opengost-br.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-cad-lc-opengost-br.svg) |
+| PF EMS SpaceRocks (97) | SIL OFL 1.1 | [repository](https://gitlab.com/oskay/svg-fonts) · [SVG conversion author](https://www.evilmadscientist.com/) | [ZIP (Glyphs and OpenPlotFont)](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-spacerocks.zip) · [preview](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-spacerocks.svg) |
 
 ## Deferred or excluded
 
@@ -147,7 +147,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-astrology.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-astrology.zip)
 
 ### Hershey Cursive
 
@@ -157,7 +157,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-cursive.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-cursive.zip)
 
 ### Hershey Cyrilc 1
 
@@ -167,7 +167,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-cyrilc-1.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-cyrilc-1.zip)
 
 ### Hershey Cyrillic
 
@@ -177,7 +177,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-cyrillic.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-cyrillic.zip)
 
 ### Hershey Futural
 
@@ -187,7 +187,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-futural.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-futural.zip)
 
 ### Hershey Futuram
 
@@ -197,7 +197,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-futuram.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-futuram.zip)
 
 ### Hershey Gothgbt
 
@@ -207,7 +207,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-gothgbt.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-gothgbt.zip)
 
 ### Hershey Gothgrt
 
@@ -217,7 +217,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-gothgrt.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-gothgrt.zip)
 
 ### Hershey Gothiceng
 
@@ -227,7 +227,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-gothiceng.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-gothiceng.zip)
 
 ### Hershey Gothicger
 
@@ -237,7 +237,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-gothicger.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-gothicger.zip)
 
 ### Hershey Gothicita
 
@@ -247,7 +247,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-gothicita.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-gothicita.zip)
 
 ### Hershey Gothitt
 
@@ -257,7 +257,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-gothitt.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-gothitt.zip)
 
 ### Hershey Greek
 
@@ -267,7 +267,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-greek.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-greek.zip)
 
 ### Hershey Greekc
 
@@ -277,7 +277,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-greekc.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-greekc.zip)
 
 ### Hershey Greeks
 
@@ -287,7 +287,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-greeks.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-greeks.zip)
 
 ### Hershey Japanese
 
@@ -297,7 +297,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-japanese.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-japanese.zip)
 
 ### Hershey Markers
 
@@ -307,7 +307,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-markers.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-markers.zip)
 
 ### Hershey Mathlow
 
@@ -317,7 +317,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-mathlow.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-mathlow.zip)
 
 ### Hershey Mathupp
 
@@ -327,7 +327,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-mathupp.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-mathupp.zip)
 
 ### Hershey Meteorology
 
@@ -337,7 +337,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-meteorology.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-meteorology.zip)
 
 ### Hershey Music
 
@@ -347,7 +347,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-music.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-music.zip)
 
 ### Hershey Roman Duplex
 
@@ -357,7 +357,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-roman-duplex.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-roman-duplex.zip)
 
 ### Hershey Roman Simplex
 
@@ -367,7 +367,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-roman-simplex.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-roman-simplex.zip)
 
 ### Hershey Roman Triplex
 
@@ -377,7 +377,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-roman-triplex.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-roman-triplex.zip)
 
 ### Hershey Script Complex
 
@@ -387,7 +387,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-script-complex.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-script-complex.zip)
 
 ### Hershey Script Simplex
 
@@ -397,7 +397,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-script-simplex.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-script-simplex.zip)
 
 ### Hershey Symbolic
 
@@ -407,7 +407,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-symbolic.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-symbolic.zip)
 
 ### Hershey Timesg
 
@@ -417,7 +417,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-timesg.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-timesg.zip)
 
 ### Hershey Roman Italic
 
@@ -427,7 +427,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-roman-italic.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-roman-italic.zip)
 
 ### Hershey Roman Bold Italic
 
@@ -437,7 +437,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-roman-bold-italic.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-roman-bold-italic.zip)
 
 ### Hershey Roman Complex
 
@@ -447,7 +447,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-roman-complex.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-roman-complex.zip)
 
 ### Hershey Roman Bold
 
@@ -457,7 +457,7 @@ Source credits retained verbatim:
 Glyph data: Dr. A. V. Hershey; JHF representation: James Hurt, Cognition, Inc. See HERSHEY-NOTICE.txt for the complete required acknowledgments and use restriction.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/hershey-roman-bold.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/hershey-roman-bold.zip)
 
 ### PF EMS Allure
 
@@ -474,7 +474,7 @@ Link:                    http://www.typesetit.com
 Google font page:        https://fonts.google.com/specimen/Allura
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-allure.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-allure.zip)
 
 ### PF EMS Bird
 
@@ -491,7 +491,7 @@ Link:                    http://www.typesetit.com
 Google font page:        https://fonts.google.com/specimen/Bilbo
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-bird.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-bird.zip)
 
 ### PF EMS Bird Swash Caps
 
@@ -508,7 +508,7 @@ Link:                    http://www.typesetit.com
 Google font page:        https://fonts.google.com/specimen/Bilbo+Swash+Caps
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-bird-swash-caps.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-bird-swash-caps.zip)
 
 ### PF EMS Brush
 
@@ -525,7 +525,7 @@ Link:                    http://www.typesetit.com
 Google font page:        https://fonts.google.com/specimen/Alex+Brush
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-brush.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-brush.zip)
 
 ### PF EMS Capitol
 
@@ -542,7 +542,7 @@ Link:                    http://www.astigmatic.com
 Google font page:        https://fonts.google.com/specimen/Sacramento
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-capitol.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-capitol.zip)
 
 ### PF EMS Casual Hand
 
@@ -559,7 +559,7 @@ Link:                    http://www.kimberlygeswein.com/
 Google font page:        https://fonts.google.com/specimen/Covered+By+Your+Grace
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-casual-hand.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-casual-hand.zip)
 
 ### PF EMS Decorous Script
 
@@ -575,7 +575,7 @@ Designer:                Impallari Type
 Google font page:        https://fonts.google.com/specimen/Petit+Formal+Script
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-decorous-script.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-decorous-script.zip)
 
 ### PF EMS Delight
 
@@ -591,7 +591,7 @@ Designer:                Natalia Raices
 Google font page:        https://fonts.google.com/specimen/Delius
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-delight.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-delight.zip)
 
 ### PF EMS Delight Swash Caps
 
@@ -607,7 +607,7 @@ Designer:                Natalia Raices
 Google font page:        https://fonts.google.com/specimen/Delius+Swash+Caps
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-delight-swash-caps.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-delight-swash-caps.zip)
 
 ### PF EMS Elfin
 
@@ -625,7 +625,7 @@ Google font page:        https://fonts.google.com/specimen/Mountains+of+Christma
 Note:                    SIL OFL per metadata; Google cites Apache License, version 2.0
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-elfin.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-elfin.zip)
 
 ### PF EMS Felix
 
@@ -642,7 +642,7 @@ Link:                    https://twitter.com/fontstage
 Google font page:        https://fonts.google.com/specimen/Felipa
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-felix.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-felix.zip)
 
 ### PF EMS Herculean
 
@@ -659,7 +659,7 @@ Link:                    https://www.myfonts.com/foundry/Denis_Masharov/
 Google font page:        https://fonts.google.com/specimen/Poiret+One
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-herculean.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-herculean.zip)
 
 ### PF EMS Invite
 
@@ -676,7 +676,7 @@ Link:                    http://tosche.net/about
 Google font page:        https://fonts.google.com/specimen/Tangerine
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-invite.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-invite.zip)
 
 ### PF EMS League
 
@@ -693,7 +693,7 @@ Link:                    https://www.theleagueofmoveabletype.com
 Google font page:        https://fonts.google.com/specimen/League+Script
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-league.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-league.zip)
 
 ### PF EMS Little Princess
 
@@ -710,7 +710,7 @@ Link:                    http://www.tartworkshop.com
 Google font page:        https://fonts.google.com/specimen/Princess+Sofia
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-little-princess.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-little-princess.zip)
 
 ### PF EMS Misty Night
 
@@ -727,7 +727,7 @@ Link:                    http://www.glukfonts.pl
 FontSquirrel page:       https://www.fontsquirrel.com/fonts/foglihten
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-misty-night.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-misty-night.zip)
 
 ### PF EMS Neato
 
@@ -744,7 +744,7 @@ Link:                    https://www.myfonts.com/foundry/Gaslight/
 Google font page:        https://fonts.google.com/specimen/Bad+Script
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-neato.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-neato.zip)
 
 ### PF EMS Nixish
 
@@ -761,7 +761,7 @@ Link:                    http://jovanny.ru
 Google font page:        https://fonts.google.com/specimen/Nixie+One
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-nixish.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-nixish.zip)
 
 ### PF EMS Nixish Italic
 
@@ -778,7 +778,7 @@ Link:                    http://jovanny.ru
 Google font page:        https://fonts.google.com/specimen/Nixie+One
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-nixish-italic.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-nixish-italic.zip)
 
 ### PF EMS Osmotron
 
@@ -795,7 +795,7 @@ Link:                    https://www.theleagueofmoveabletype.com
 Google font page:        https://fonts.google.com/specimen/Orbitron
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-osmotron.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-osmotron.zip)
 
 ### PF EMS Pancakes
 
@@ -812,7 +812,7 @@ Link:                    http://www.typeco.com
 Google font page:        https://fonts.google.com/specimen/Short+Stack
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-pancakes.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-pancakes.zip)
 
 ### PF EMS Pepita
 
@@ -829,7 +829,7 @@ Link:                    http://pecita.eu/police-en.php
 FontSquirrel page:       https://www.fontsquirrel.com/fonts/Pecita
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-pepita.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-pepita.zip)
 
 ### PF EMS Qwandry
 
@@ -846,7 +846,7 @@ Link:                    http://www.typesetit.com
 Google font page:        https://fonts.google.com/specimen/Qwigley
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-qwandry.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-qwandry.zip)
 
 ### PF EMS Readability
 
@@ -863,7 +863,7 @@ Link:                    http://www.adobe.com
 Google font page:        https://fonts.google.com/specimen/Source+Sans+Pro
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-readability.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-readability.zip)
 
 ### PF EMS Readability Italic
 
@@ -880,7 +880,7 @@ Link:                    http://www.adobe.com
 Google font page:        https://fonts.google.com/specimen/Source+Sans+Pro
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-readability-italic.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-readability-italic.zip)
 
 ### PF EMS Society
 
@@ -897,7 +897,7 @@ Link:                    http://www.sudtipos.com
 Google font page:        https://fonts.google.com/specimen/Mrs+Saint+Delafield
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-society.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-society.zip)
 
 ### PF EMS Swiss
 
@@ -914,7 +914,7 @@ Link:                    http://www.typesetit.com
 Google font page:        https://fonts.google.com/specimen/Italianno
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-swiss.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-swiss.zip)
 
 ### PF EMS Tech
 
@@ -931,7 +931,7 @@ Link:                    http://www.kimberlygeswein.com/
 Google font page:        https://fonts.google.com/specimen/Architects+Daughter
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-ems-tech.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-tech.zip)
 
 ### PF Hershey Gothic English
 
@@ -972,7 +972,7 @@ USE RESTRICTION:
             the coordinate values as ASCII numbers.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-hershey-gothic-english.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-gothic-english.zip)
 
 ### PF Hershey Gothic German
 
@@ -1013,7 +1013,7 @@ USE RESTRICTION:
             the coordinate values as ASCII numbers.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-hershey-gothic-german.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-gothic-german.zip)
 
 ### PF Hershey Gothic Italian
 
@@ -1054,7 +1054,7 @@ USE RESTRICTION:
             the coordinate values as ASCII numbers.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-hershey-gothic-italian.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-gothic-italian.zip)
 
 ### PF Hershey Sans 1-stroke
 
@@ -1095,7 +1095,7 @@ USE RESTRICTION:
             the coordinate values as ASCII numbers.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-hershey-sans-1-stroke.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-sans-1-stroke.zip)
 
 ### PF Hershey Sans medium
 
@@ -1136,7 +1136,7 @@ USE RESTRICTION:
             the coordinate values as ASCII numbers.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-hershey-sans-medium.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-sans-medium.zip)
 
 ### PF Hershey Script 1-stroke
 
@@ -1177,7 +1177,7 @@ USE RESTRICTION:
             the coordinate values as ASCII numbers.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-hershey-script-1-stroke.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-script-1-stroke.zip)
 
 ### PF Hershey Script medium
 
@@ -1218,7 +1218,7 @@ USE RESTRICTION:
             the coordinate values as ASCII numbers.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-hershey-script-medium.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-script-medium.zip)
 
 ### PF Hershey Serif bold
 
@@ -1259,7 +1259,7 @@ USE RESTRICTION:
             the coordinate values as ASCII numbers.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-hershey-serif-bold.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-serif-bold.zip)
 
 ### PF Hershey Serif bold italic
 
@@ -1300,7 +1300,7 @@ USE RESTRICTION:
             the coordinate values as ASCII numbers.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-hershey-serif-bold-italic.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-serif-bold-italic.zip)
 
 ### PF Hershey Serif medium
 
@@ -1341,7 +1341,7 @@ USE RESTRICTION:
             the coordinate values as ASCII numbers.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-hershey-serif-medium.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-serif-medium.zip)
 
 ### PF Hershey Serif medium italic
 
@@ -1382,7 +1382,7 @@ USE RESTRICTION:
             the coordinate values as ASCII numbers.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-hershey-serif-medium-italic.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-hershey-serif-medium-italic.zip)
 
 ### PF Twin Sans
 
@@ -1398,7 +1398,7 @@ Prepared in 2023 and converted to SVG fonts
 in 2023 by Keith Packard, www.keithp.com
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-twin-sans.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-twin-sans.zip)
 
 ### PF Relief SingleLine Ornament
 
@@ -1410,7 +1410,7 @@ Created by FontForge 20201107 at Thu May 26 19:50:12 2022
 Copyright 2021 The Relief SingleLine Project Authors (https://github.com/isdat-type/Relief-SingleLine)
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-relief-singleline-ornament.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-relief-singleline-ornament.zip)
 
 ### PF Relief SingleLine SVG
 
@@ -1422,7 +1422,7 @@ Created by FontForge 20201107 at Fri Feb 14 11:47:47 2025
 Copyright 2021 The Relief SingleLine Project Authors (https://github.com/isdat-type/Relief-SingleLine)
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-relief-singleline-svg.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-relief-singleline-svg.zip)
 
 ### PF Norm Stroke
 
@@ -1436,7 +1436,7 @@ Version:                 1.0
 NormStroke by octycs; based on Wikimedia ISO3098 Type B lettering. CC0 declaration retained.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-norm-stroke.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-norm-stroke.zip)
 
 ### PF Custom-Script
 
@@ -1447,7 +1447,7 @@ Open Font License
 Custom stroke fonts by Shriinivas; derived from Square Grotesk and Pinyon Script as credited upstream. Font notice template has unfilled copyright fields; original declarations retained.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-custom-script.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-custom-script.zip)
 
 ### PF Custom-Square Italic
 
@@ -1458,7 +1458,7 @@ Open Font License
 Custom stroke fonts by Shriinivas; derived from Square Grotesk and Pinyon Script as credited upstream. Font notice template has unfilled copyright fields; original declarations retained.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-custom-square-italic.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-custom-square-italic.zip)
 
 ### PF Custom-Square Normal
 
@@ -1469,7 +1469,7 @@ Open Font License
 Custom stroke fonts by Shriinivas; derived from Square Grotesk and Pinyon Script as credited upstream. Font notice template has unfilled copyright fields; original declarations retained.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-custom-square-normal.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-custom-square-normal.zip)
 
 ### PF CutlingsDualis
 
@@ -1483,7 +1483,7 @@ Link:                    http://cutlings.wasbo.net/
 Cutlings Singularis, Dualis and Pluralis by Ellen Wasbø; author credits and font license in readme.txt.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-cutlingsdualis.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-cutlingsdualis.zip)
 
 ### PF CutlingsPluralis
 
@@ -1497,7 +1497,7 @@ Link:                    http://cutlings.wasbo.net/
 Cutlings Singularis, Dualis and Pluralis by Ellen Wasbø; author credits and font license in readme.txt.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-cutlingspluralis.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-cutlingspluralis.zip)
 
 ### PF CutlingsSingularis
 
@@ -1511,7 +1511,7 @@ Link:                    http://cutlings.wasbo.net/
 Cutlings Singularis, Dualis and Pluralis by Ellen Wasbø; author credits and font license in readme.txt.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-cutlingssingularis.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-cutlingssingularis.zip)
 
 ### PF DearPlotter
 
@@ -1538,7 +1538,7 @@ This conversion preserves DearPlotter's cubic Bezier stroke geometry using SVG C
 It includes printable ASCII glyphs present in the source data, plus a space glyph.
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-dearplotter.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-dearplotter.zip)
 
 ### PF CAD iso3098
 
@@ -1550,7 +1550,7 @@ Source credits retained verbatim:
 # License:           GPL v2 or later
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-cad-iso3098.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-cad-iso3098.zip)
 
 ### PF CAD iso3098_i
 
@@ -1562,7 +1562,7 @@ Source credits retained verbatim:
 # License:           GPL v2 or later
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-cad-iso3098-i.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-cad-iso3098-i.zip)
 
 ### PF CAD lc_opengost-ar
 
@@ -1573,7 +1573,7 @@ Source credits retained verbatim:
 # License:           SIL OPEN FONT LICENSE Version 1.1
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-cad-lc-opengost-ar.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-cad-lc-opengost-ar.zip)
 
 ### PF CAD lc_opengost-br
 
@@ -1584,7 +1584,7 @@ Source credits retained verbatim:
 # License:           SIL OPEN FONT LICENSE Version 1.1
 ```
 
-[Complete notices and source](https://plotfont.litsquare.com/assets/catalog/pf-cad-lc-opengost-br.zip)
+[Complete notices and source](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-cad-lc-opengost-br.zip)
 
 
 ### PF EMS SpaceRocks
@@ -1601,4 +1601,4 @@ Designer:                Ed Logg
 Link:                    https://trmm.net/Asteroids_font
 ```
 
-[Complete source and notices](https://plotfont.litsquare.com/assets/catalog/pf-ems-spacerocks.zip)
+[Complete source and notices](https://thierryc.github.io/OpenPlotFont/assets/catalog/pf-ems-spacerocks.zip)

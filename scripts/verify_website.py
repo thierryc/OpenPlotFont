@@ -82,17 +82,17 @@ def verify(destination):
             assert any(name.endswith('/README.md') for name in names), f'Missing font credits: {key}'
             assert any(name.startswith(f'{key}/SOURCE.') for name in names), f'Missing original source: {key}'
             assert any('.glyphspackage/fontinfo.plist' in name for name in names), f'Missing Glyphs source: {key}'
-            original = json.loads(archive.read(f'{key}/{key}.plotfont.json'))
+            original = json.loads(archive.read(f'{key}/{key}.opf.json'))
             assert original['metadata'].get('licenseNotices'), f'Missing font license notices: {key}'
             assert len(original['glyphs']) == font['glyphs'], f'Glyph count mismatch: {key}'
-    info = plistlib.loads((ROOT / 'plugins/PlotFont.glyphsFileFormat/Contents/Info.plist').read_bytes())
+    info = plistlib.loads((ROOT / 'plugins/OpenPlotFont.glyphsFileFormat/Contents/Info.plist').read_bytes())
     version = info['CFBundleShortVersionString']
-    with zipfile.ZipFile(destination / f'downloads/PlotFont-Glyphs-{version}.zip') as archive:
-        prefix = 'PlotFont.glyphsFileFormat/Contents/'
+    with zipfile.ZipFile(destination / f'downloads/OpenPlotFont-Glyphs-{version}.zip') as archive:
+        prefix = 'OpenPlotFont.glyphsFileFormat/Contents/'
         assert archive.testzip() is None, 'Corrupt plugin ZIP'
         for module in ('glyphs_plugin', 'glyphs_export', 'validation', 'storage'):
-            assert archive.read(prefix + f'Resources/_plotfont_glyphs4/{module}.py') == (ROOT / f'plotfont/{module}.py').read_bytes(), f'Stale plugin {module}'
-        assert archive.read(prefix + 'Resources/PlotFont-LICENSE.txt') == (ROOT / 'LICENSE').read_bytes()
+            assert archive.read(prefix + f'Resources/_openplotfont_glyphs4/{module}.py') == (ROOT / f'openplotfont/{module}.py').read_bytes(), f'Stale plugin {module}'
+        assert archive.read(prefix + 'Resources/OpenPlotFont-LICENSE.txt') == (ROOT / 'LICENSE').read_bytes()
         assert archive.read(prefix + 'Resources/GlyphsSDK-LICENSE.txt')
         loader = archive.getinfo(prefix + 'MacOS/plugin')
         assert stat.S_IMODE(loader.external_attr >> 16) & stat.S_IXUSR, 'Plugin loader is not executable'

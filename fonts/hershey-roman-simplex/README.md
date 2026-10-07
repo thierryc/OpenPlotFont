@@ -1,6 +1,6 @@
 # Hershey Roman Simplex preparation
 
-[HersheyRomanSimplex.plotfont.json](HersheyRomanSimplex.plotfont.json) is a reproducible JSON preparation from pinned upstream stroke data. It is **not a Glyphs-generated export**. This retained preparation uses legacy draft 0.2; the current format is draft 0.3, and [plugin 0.1.1](../../docs/GLYPHS_EXPORT_PLUGIN.md) exports the editable source as geometry-only 0.3. The editable [Glyphs package](HersheyRomanSimplex.glyphspackage/fontinfo.plist) was populated and saved through Glyphs MCP in Glyphs 4.1 build 4107. All 97 glyphs passed native source/export comparison and saved-file geometry tests.
+[HersheyRomanSimplex.opf.json](HersheyRomanSimplex.opf.json) is a reproducible JSON preparation from pinned upstream stroke data. It is **not a Glyphs-generated export**. This retained preparation uses legacy draft 0.2; the current format is draft 0.3, and [plugin 0.1.1](../../docs/GLYPHS_EXPORT_PLUGIN.md) exports the editable source as geometry-only 0.3. The editable [Glyphs package](HersheyRomanSimplex.glyphspackage/fontinfo.plist) was populated and saved through Glyphs MCP in Glyphs 4.1 build 4107. All 97 glyphs passed native source/export comparison and saved-file geometry tests.
 
 ## Source, mapping, and rights
 
@@ -27,8 +27,8 @@ Upward Y, baseline zero, cap height 1050, units per em 1470. All Hershey positio
 ## Reproduce and verify
 
 ```sh
-python3 -m plotfont import-hershey vendor/hershey/rowmans.jhf -o output/HersheyRomanSimplex.plotfont.json
-python3 -m plotfont validate output/HersheyRomanSimplex.plotfont.json
+python3 -m openplotfont import-hershey vendor/hershey/rowmans.jhf -o output/HersheyRomanSimplex.opf.json
+python3 -m openplotfont validate output/HersheyRomanSimplex.opf.json
 ```
 
 Tests compare every prepared path, point, advance, source identifier, and mapping with the pinned data. Reference specimens cover uppercase/lowercase, punctuation, and numerals. macOS Quick Look interpreted the SVG successfully. Native population and source-to-export comparison passed. Saved-package tests check every node, path, mapping, advance, metric, and source record.
@@ -37,7 +37,7 @@ Tests compare every prepared path, point, advance, source identifier, and mappin
 
 [Import Hershey Roman Simplex.py](../../scripts/Import%20Hershey%20Roman%20Simplex.py) populates only an empty, single-master font already saved at this directory's `HersheyRomanSimplex.glyphs` or `HersheyRomanSimplex.glyphspackage` path. Verified blank template glyphs may be replaced; existing artwork and glyph metadata are rejected. It rejects any other document and refuses to overwrite glyphs. It restores the native layer rounding flags after retaining fractional geometry, then compares the exported result against every pinned source record. It neither creates nor saves a document. The same adapter was qualified through native MCP scripts. Regression tests additionally use SDK-shaped doubles.
 
-Glyph names use the conventional ASCII names used by Glyphs (`A`, `a`, `zero`, `exclam`, etc.). These names are project mapping choices; upstream JHF supplies numeric identifiers rather than glyph names. Native font collection order may differ from source row order; `org.plotfont.hershey.row` retains the exact source row. Drawing order remains each glyph's path order. Both `.glyphs` and `.glyphspackage` authoring sources are supported.
+Glyph names use the conventional ASCII names used by Glyphs (`A`, `a`, `zero`, `exclam`, etc.). These names are project mapping choices; upstream JHF supplies numeric identifiers rather than glyph names. Native font collection order may differ from source row order; `org.openplotfont.hershey.row` retains the exact source row. Drawing order remains each glyph's path order. Both `.glyphs` and `.glyphspackage` authoring sources are supported.
 
 ## Native storage precision
 

@@ -3,9 +3,9 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "plotfont"
+name = "openplotfont"
 version = "0.3.0"
-description = "Validation, reference SVG rendering, and Glyphs export for PlotFont"
+description = "Validation, reference SVG rendering, and Glyphs export for OpenPlotFont"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 
@@ -14,7 +14,7 @@ library = ["fonttools>=4.54,<5", "openstep-plist>=0.5,<1"]
 shaping = ["fonttools>=4.54,<5", "uharfbuzz>=0.39,<1"]
 
 [project.scripts]
-plotfont = "plotfont.__main__:main"
+openplotfont = "openplotfont.__main__:main"
 
 [tool.setuptools.packages.find]
-include = ["plotfont*"]
+include = ["openplotfont*"]

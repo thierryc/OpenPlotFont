@@ -68,7 +68,7 @@ value = "Hershey Roman Triplex";
 );
 unitsPerEm = 1470;
 userData = {
-org.plotfont.font = {
+org.openplotfont.font = {
 id = "hershey-roman-triplex-regular";
 lineGap = 210;
 metadata = {
@@ -79,7 +79,7 @@ sourceBaselineY = 9;
 sourceCapTopY = -12;
 };
 license = "Hershey permissive terms; see vendor/hershey/NOTICE.txt; not MIT";
-mapping = "Rows 0–94 map to U+0020–U+007E; row 95 retained unencoded; .notdef is original PlotFont artwork.";
+mapping = "Rows 0–94 map to U+0020–U+007E; row 95 retained unencoded; .notdef is original OpenPlotFont artwork.";
 source = "https://github.com/kamalmostafa/hershey-fonts";
 sourceFile = "hershey-fonts/rowmant.jhf";
 sourceRevision = 1356bf2f83d380fcef68c887e88675eb9d445d86;

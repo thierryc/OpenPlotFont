@@ -25,7 +25,7 @@ def prepare(destination):
     rows = []
     for source in library['fonts']:
         key = source['id']
-        font = json.loads((ROOT / source['plotfont']).read_text())
+        font = json.loads((ROOT / source['openplotfont']).read_text())
         mapped = [int(code, 16) for glyph in font['glyphs'] for code in glyph['unicodes']]
         group = ('EMS' if key.startswith('pf-ems-') else
                  'Hershey' if 'hershey' in key or key == 'pf-twin-sans' else

@@ -27,7 +27,7 @@ width = 700;
 },
 );
 userData = {
-org.plotfont.hershey = {
+org.openplotfont.hershey = {
 row = 95;
 sourceId = 718;
 };

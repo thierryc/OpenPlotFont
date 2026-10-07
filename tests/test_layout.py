@@ -12,15 +12,15 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from unittest.mock import patch
 
-from plotfont import load, validate, shape_text, render_svg, ValidationError
-from plotfont.layout import attach_layout, decode_payload, digest
-from plotfont.comparison import compare_fonts
-from plotfont.glyphs_export import feature_source
-from test_plotfont import ROOT, example, NS
+from openplotfont import load, validate, shape_text, render_svg, ValidationError
+from openplotfont.layout import attach_layout, decode_payload, digest
+from openplotfont.comparison import compare_fonts
+from openplotfont.glyphs_export import feature_source
+from test_openplotfont import ROOT, example, NS
 
 
 def fixture():
-    return load(ROOT/'examples/layout-demo.plotfont.json')
+    return load(ROOT/'examples/layout-demo.opf.json')
 
 
 class LayoutValidationTests(unittest.TestCase):
@@ -237,12 +237,12 @@ class ShapingTests(unittest.TestCase):
 
 class LayoutCLITests(unittest.TestCase):
     def cli(self,*args):
-        return subprocess.run([sys.executable,'-m','plotfont',*map(str,args)],cwd=ROOT,capture_output=True,text=True)
+        return subprocess.run([sys.executable,'-m','openplotfont',*map(str,args)],cwd=ROOT,capture_output=True,text=True)
 
     def test_shape_render_and_no_overwrite(self):
         with tempfile.TemporaryDirectory() as directory:
             out = Path(directory)/'run.json'
-            source = ROOT/'examples/layout-demo.plotfont.json'
+            source = ROOT/'examples/layout-demo.opf.json'
             r = self.cli('shape',source,'A','--feature','ss01=1','-o',out)
             self.assertEqual(r.returncode,0,r.stderr)
             self.assertEqual(json.loads(out.read_text())['glyphs'][0]['name'],'A.alt')
@@ -279,7 +279,7 @@ class LayoutCLITests(unittest.TestCase):
 
 class NativeLayoutTests(unittest.TestCase):
     def test_native_feature_source_and_compiled_receipt(self):
-        font = load(ROOT/'examples/layout-demo-native.plotfont.json')
+        font = load(ROOT/'examples/layout-demo-native.opf.json')
         report = json.loads((ROOT/'tests/fixtures/native-layout-report.json').read_text())
         self.assertEqual(font['layout']['font']['sha256'],report['compiledSha256'])
         build = runpy.run_path(str(ROOT/'scripts/build_layout_fixture.py'))
@@ -292,7 +292,7 @@ class NativeLayoutTests(unittest.TestCase):
             shape_text(font,'un',features={'curs':1})
 
     def test_native_and_portable_shaping_agree_where_compiled(self):
-        font = load(ROOT/'examples/layout-demo-native.plotfont.json')
+        font = load(ROOT/'examples/layout-demo-native.opf.json')
         for text,settings in [('fi',{}),('AA',{'features':{'calt':0}}),('AA',{}),
                               ('A',{'features':{'ss01':1}}),('00',{'features':{'tnum':1}}),
                               ('A\u0301\u0307',{}),('fi\u0301',{}),('i',{'language':'tr'})]:
@@ -306,9 +306,9 @@ class NativeLayoutTests(unittest.TestCase):
 
     def test_saved_native_source_preserves_drawings_mappings_and_rules(self):
         from openstep_plist import loads
-        package = ROOT/'fonts/layout-demo/PlotFontLayoutDemo.glyphspackage'
+        package = ROOT/'fonts/layout-demo/OpenPlotFontLayoutDemo.glyphspackage'
         info = loads((package/'fontinfo.plist').read_text())
-        exported = load(ROOT/'examples/layout-demo-native.plotfont.json')
+        exported = load(ROOT/'examples/layout-demo-native.opf.json')
         expected = {g['name']:g for g in fixture()['glyphs']}
         files = list((package/'glyphs').glob('*.glyph'))
         self.assertEqual(len(files),len(expected))

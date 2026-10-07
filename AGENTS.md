@@ -1,4 +1,4 @@
-# Instructions for agents working on PlotFont
+# Instructions for agents working on OpenPlotFont
 
 ## Purpose
 
@@ -6,7 +6,7 @@ Define a portable JSON font format supporting centerline strokes and filled regi
 
 ## Source of truth
 
-- Read `README.md`, `docs/PLOTFONT_FORMAT.md`, and the relevant workflow document before changing the format or integrations.
+- Read `README.md`, `docs/OPENPLOTFONT_FORMAT.md`, and the relevant workflow document before changing the format or integrations.
 - Preserve the distinction between confirmed user requirements, draft design decisions, and implemented behavior. Never present a proposed importer or exporter as available.
 - Keep project documentation focused on the specification, authoring workflow, examples, and open design questions. Do not add conversation-recovery documents, chat identifiers, or local implementation audits of other projects.
 - Keep format versions, examples, schemas, and implementations consistent. Record incompatible changes explicitly.

@@ -1,4 +1,4 @@
-# Stroke-font candidates for PlotFont
+# Stroke-font candidates for OpenPlotFont
 
 Research date: 2026-10-01. **Follow-up:** see the [converted library](FONT_LIBRARY.md) for the implemented SVG/LFF preparation, native qualification, current inclusion decisions and remaining coverage limits. The historical candidate inventory below records the state before that work. This is a candidate catalog, not a list of newly implemented imports. Priorities are recommendations. Font counts below distinguish source records from verified Unicode coverage.
 
@@ -6,17 +6,17 @@ The best next steps are to extend the pinned Hershey importer for a few distinct
 
 ## Existing support and selection criteria
 
-The [current catalog](../fonts/README.md) contains Roman Simplex, Roman Duplex, Roman Triplex, and Script Simplex. Each has 96 upstream records, 95 printable ASCII mappings, an unencoded final record, and an original `.notdef`. The [Hershey importer](../plotfont/hershey.py) explicitly supports only those four pinned faces; a JHF file being parseable does not make it a supported CLI import.
+The [current catalog](../fonts/README.md) contains Roman Simplex, Roman Duplex, Roman Triplex, and Script Simplex. Each has 96 upstream records, 95 printable ASCII mappings, an unencoded final record, and an original `.notdef`. The [Hershey importer](../openplotfont/hershey.py) explicitly supports only those four pinned faces; a JHF file being parseable does not make it a supported CLI import.
 
 Prefer sources with explicit pen-up boundaries, reusable per-glyph geometry, spacing information, and a font-specific redistribution license. A centerline font can contain multiple strokes and closed centerline loops. Duplex, triplex, and decorative stroke fonts are eligible even when they use several trajectories to suggest weight.
 
-Neither an ordinary thin outline font nor a font advertised as “monoline” necessarily contains centerlines. Do not recover skeletons from filled outlines or silently remove closing edges. Conversion must follow the [format geometry rules](PLOTFONT_FORMAT.md) and [authoring/export workflow](GLYPHS_AND_EXPORT.md).
+Neither an ordinary thin outline font nor a font advertised as “monoline” necessarily contains centerlines. Do not recover skeletons from filled outlines or silently remove closing edges. Conversion must follow the [format geometry rules](OPENPLOTFONT_FORMAT.md) and [authoring/export workflow](GLYPHS_AND_EXPORT.md).
 
 ## 1. More classic Hershey fonts: the smallest conversion gap
 
-Source: [kamalmostafa/hershey-fonts, pinned revision](https://github.com/kamalmostafa/hershey-fonts/tree/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts). This is the same revision already used by PlotFont. All 32 JHF files were read and passed the existing low-level `parse_jhf` parser during research. Four are already included, leaving **28 additional candidate files**, not necessarily 28 distinct designs.
+Source: [kamalmostafa/hershey-fonts, pinned revision](https://github.com/kamalmostafa/hershey-fonts/tree/1356bf2f83d380fcef68c887e88675eb9d445d86/hershey-fonts). This is the same revision already used by OpenPlotFont. All 32 JHF files were read and passed the existing low-level `parse_jhf` parser during research. Four are already included, leaving **28 additional candidate files**, not necessarily 28 distinct designs.
 
-The glyph data has the [Hershey permissive terms](../vendor/hershey/NOTICE.txt), separate from the upstream C library's GPL license. Retain the required acknowledgments and the restriction against conversion to the original NTIS distribution representation. PlotFont JSON is a different representation. Keep the complete notice with derivatives; do not relabel the geometry as project MIT.
+The glyph data has the [Hershey permissive terms](../vendor/hershey/NOTICE.txt), separate from the upstream C library's GPL license. Retain the required acknowledgments and the restriction against conversion to the original NTIS distribution representation. OpenPlotFont JSON is a different representation. Keep the complete notice with derivatives; do not relabel the geometry as project MIT.
 
 | Candidate/design group | Exact source file(s) | Records per file | Recommendation and conversion work |
 | --- | --- | ---: | --- |
@@ -114,7 +114,7 @@ Script styling does not authorize continuous pen-down text. Add connection decla
 
 These are proposed adapters, except for the existing four-face JHF preparation and Glyphs export routes.
 
-| Source format | Route to PlotFont | Main review points |
+| Source format | Route to OpenPlotFont | Main review points |
 | --- | --- | --- |
 | JHF / Hershey text | Parse bearings and pen-up-separated polylines; normalize with a reviewed baseline and scale | JHF IDs are not Unicode. Do not reuse ASCII row mapping or metrics globally; preserve source trajectory order and repeated endpoints. |
 | SVG 1.1 font | Read `<font-face>`, `<glyph>`, `<missing-glyph>`, advances, paths, and optional kerning | Font coordinates are Y-up, unlike ordinary SVG page coordinates. Split every `M` subpath into its own trajectory; preserve `Z` closure and explicit stroke/fill intent. |
@@ -122,14 +122,14 @@ These are proposed adapters, except for the existing four-face JHF preparation a
 | Skeletal Glyphs | Qualify a copy through the existing selected-master export workflow | Check source format/app compatibility, contours, intent, metrics, and features. No native qualification of these candidate sources has been performed. |
 | CAD LFF / CXF | Parse ordered lines/arcs and character references; reconstruct documented advances | Arcs need a reviewed representation policy; character references must be resolved without inventing connections. Do not replace spacing with bounds alone. |
 | Procedural JS / stroke JSON | Extract one static design into glyph metrics and ordered `M/L/Q/C` paths | Pin design parameters and coordinate transforms. Preserve original curves and pen lifts; retain generator and font notices separately. |
-| OpenType-SVG | Extract actual SVG glyph documents and align with OpenType glyph IDs/cmap/metrics | More complex than standalone SVG; ordinary outline tables may be only companions. Features require the separately validated PlotFont layout workflow. |
+| OpenType-SVG | Extract actual SVG glyph documents and align with OpenType glyph IDs/cmap/metrics | More complex than standalone SVG; ordinary outline tables may be only companions. Features require the separately validated OpenPlotFont layout workflow. |
 | TTF/OTF “single-line” | Use only a documented and verified source convention | Never remove all closing edges generically: real loops and pseudoclosed paths need different treatment. Prefer an open source version when available. |
 
-See the authoritative [SVG font specification](https://www.w3.org/TR/SVG11/fonts.html) and [UFO GLIF specification](https://unifiedfontobject.org/versions/ufo3/glyphs/glif/) for coordinate and contour semantics. SVG relative/shorthand commands need normalization. PlotFont supports `M`, `L`, `Q`, and `C`, not native circular/elliptical arcs. Circular arcs cannot be represented exactly by a finite set of ordinary polynomial Béziers: reject them until an explicit, documented approximation policy is agreed, or convert with an approved bound tied to the intended physical scale. Do not silently flatten source curves.
+See the authoritative [SVG font specification](https://www.w3.org/TR/SVG11/fonts.html) and [UFO GLIF specification](https://unifiedfontobject.org/versions/ufo3/glyphs/glif/) for coordinate and contour semantics. SVG relative/shorthand commands need normalization. OpenPlotFont supports `M`, `L`, `Q`, and `C`, not native circular/elliptical arcs. Circular arcs cannot be represented exactly by a finite set of ordinary polynomial Béziers: reject them until an explicit, documented approximation policy is agreed, or convert with an approved bound tied to the intended physical scale. Do not silently flatten source curves.
 
-SVG glyphs may map to multi-character strings. PlotFont's scalar `unicodes` array cannot encode a ligature sequence: retain the glyph unencoded and supply supported layout rules where needed. Likewise, SVG kerning expressed through groups/ranges needs explicit resolution rather than omission. Keep geometry import distinct from optional compiled shaping; do not claim that importing an SVG brings across all OpenType behavior.
+SVG glyphs may map to multi-character strings. OpenPlotFont's scalar `unicodes` array cannot encode a ligature sequence: retain the glyph unencoded and supply supported layout rules where needed. Likewise, SVG kerning expressed through groups/ranges needs explicit resolution rather than omission. Keep geometry import distinct from optional compiled shaping; do not claim that importing an SVG brings across all OpenType behavior.
 
-For each accepted face, retain source URL/revision, source-file digest, copyright/attribution, the complete font notice, character mapping, coordinate transform, and any acknowledged losses. New additions should use current draft 0.3. The retained four-face JHF preparation emits legacy 0.2; a validated version migration is documented in the [format specification](PLOTFONT_FORMAT.md#draft-compatibility).
+For each accepted face, retain source URL/revision, source-file digest, copyright/attribution, the complete font notice, character mapping, coordinate transform, and any acknowledged losses. New additions should use current draft 0.3. The retained four-face JHF preparation emits legacy 0.2; a validated version migration is documented in the [format specification](OPENPLOTFONT_FORMAT.md#draft-compatibility).
 
 ## Recommended implementation batches
 

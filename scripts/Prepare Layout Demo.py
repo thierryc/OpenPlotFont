@@ -1,4 +1,4 @@
-# MenuTitle: Prepare PlotFont Layout Demo
+# MenuTitle: Prepare OpenPlotFont Layout Demo
 # encoding: utf-8
 """Populate only the saved empty layout-demo project font. Never save or compile."""
 import runpy
@@ -8,13 +8,13 @@ from GlyphsApp import Glyphs, GSGlyph, GSLayer, GSNode, GSPath, GSAnchor, GSFeat
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
-from plotfont.glyphs_export import export_font
-from plotfont.comparison import compare_fonts
+from openplotfont.glyphs_export import export_font
+from openplotfont.comparison import compare_fonts
 
 
 def main(font=None):
     font = Glyphs.font if font is None else font
-    destination = ROOT/'fonts/layout-demo/PlotFontLayoutDemo.glyphspackage'
+    destination = ROOT/'fonts/layout-demo/OpenPlotFontLayoutDemo.glyphspackage'
     if font is None or str(font.filepath) != str(destination) or len(font.glyphs) or len(font.masters)!=1:
         raise RuntimeError('Requires the saved empty single-master layout-demo project font')
     if len(font.features) or len(font.classes) or len(font.featurePrefixes):
@@ -27,8 +27,8 @@ def main(font=None):
     master.name = 'Regular'
     for key in ('ascender','descender','capHeight','xHeight'):
         setattr(master,key,data['metrics'][key])
-    font.userData['org.plotfont.font'] = {key:data[key] for key in ('id','styleName','missingGlyph','metadata')}
-    font.userData['org.plotfont.font']['lineGap'] = data['metrics']['lineGap']
+    font.userData['org.openplotfont.font'] = {key:data[key] for key in ('id','styleName','missingGlyph','metadata')}
+    font.userData['org.openplotfont.font']['lineGap'] = data['metrics']['lineGap']
     for record in data['glyphs']:
         glyph = GSGlyph(record['name'])
         glyph.unicodes = record['unicodes']
@@ -52,7 +52,7 @@ def main(font=None):
             anchor.position = (point['x'],point['y'])
             layer.anchors.append(anchor)
         glyph.layers[master.id] = layer
-    prefix = GSFeaturePrefix('PlotFontLanguagesAndMarks',fixture['PREFIX'])
+    prefix = GSFeaturePrefix('OpenPlotFontLanguagesAndMarks',fixture['PREFIX'])
     prefix.automatic = False
     font.featurePrefixes.append(prefix)
     for tag,code in fixture['FEATURES'].items():

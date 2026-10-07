@@ -1,23 +1,23 @@
-# PlotFont layout demo
+# OpenPlotFont layout demo
 
 This original MIT conformance font is an authoring/test fixture, not a finished
-typeface. [The editable Glyphs 4 source](PlotFontLayoutDemo.glyphspackage/fontinfo.plist)
+typeface. [The editable Glyphs 4 source](OpenPlotFontLayoutDemo.glyphspackage/fontinfo.plist)
 contains 14 glyphs and 10 manual feature blocks. It was created, populated,
 verified and saved through Glyphs MCP in Glyphs 4.1.1 build 4108.
 
-[The portable example](../../examples/layout-demo.plotfont.json) uses a static
+[The portable example](../../examples/layout-demo.opf.json) uses a static
 TTF compiled with FontTools from [explicit FEA](../../tests/fixtures/layout-demo.fea).
 It verifies ligatures, alternates, contextual substitutions, Turkish localized
 forms, numeral widths, mark/base/ligature/mark attachment and cursive placement.
-Its empty binary outlines are intentional; render the PlotFont geometry.
+Its empty binary outlines are intentional; render the OpenPlotFont geometry.
 
 The native workflow exports the exact Regular instance using Glyphs MCP's
 typed static `font_export`, with production names, autohinting and overlap
-removal disabled, then supplies those bytes to the actual PlotFont export
+removal disabled, then supplies those bytes to the actual OpenPlotFont export
 script on a source copy. Native and portable compilers can assign different
 glyph IDs; each payload carries its own explicit mapping.
 
-[The retained native JSON](../../examples/layout-demo-native.plotfont.json) and
+[The retained native JSON](../../examples/layout-demo-native.opf.json) and
 [verification report](../../tests/fixtures/native-layout-report.json) record
 this completed workflow.
 

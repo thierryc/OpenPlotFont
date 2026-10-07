@@ -1,4 +1,4 @@
-"""Build reviewed sources into PlotFont 0.3, format-4 Glyphs packages and SVGs.
+"""Build reviewed sources into OpenPlotFont 0.3, format-4 Glyphs packages and SVGs.
 
 Fetch first with fetch_font_library.py. Existing output is never overwritten.
 Optional build dependencies: FontTools and openstep-plist.
@@ -15,11 +15,11 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from plotfont.comparison import compare_fonts
-from plotfont.glyphs_package import write_package, read_package
-from plotfont.hershey import parse_jhf, ASCII_NAMES, FACES, import_hershey
-from plotfont.render import render_svg
-from plotfont.stroke_import import import_svg, import_lff, fallback, font_record
+from openplotfont.comparison import compare_fonts
+from openplotfont.glyphs_package import write_package, read_package
+from openplotfont.hershey import parse_jhf, ASCII_NAMES, FACES, import_hershey
+from openplotfont.render import render_svg
+from openplotfont.stroke_import import import_svg, import_lff, fallback, font_record
 
 SOURCES = ROOT / 'output/font-library/sources'
 
@@ -35,7 +35,7 @@ def metadata(path, manifests, license_name, notice, repository):
     return {'source': repository, 'sourceFile': str(path.relative_to(SOURCES)),
             'sourceRevision': source['revision'], 'sourceUrl': source['url'],
             'sourceSha256': source['sha256'], 'license': license_name,
-            'attribution': notice, 'conversion': 'PlotFont format conversion; source drawing order and pen lifts retained'}
+            'attribution': notice, 'conversion': 'OpenPlotFont format conversion; source drawing order and pen lifts retained'}
 
 
 def hershey(path, manifests):
@@ -64,7 +64,7 @@ def hershey(path, manifests):
                        'advanceWidth': (record['right'] - record['left']) * 50,
                        'strokes': [{'closed': False, 'commands': [['M' if i == 0 else 'L', (x - record['left']) * 50,
                                    (baseline - y) * 50] for i, (x, y) in enumerate(s)]} for s in record['strokes']],
-                       'userData': {'org.plotfont.hershey': {'row': row, 'sourceId': record['sourceId']}}})
+                       'userData': {'org.openplotfont.hershey': {'row': row, 'sourceId': record['sourceId']}}})
     if not latin:
         glyphs.append({'name': 'space', 'unicodes': ['0020'], 'advanceWidth': 500, 'strokes': []})
     meta.update(mapping=('Rows 0–94 -> printable ASCII; final row retained unencoded' if latin else
@@ -126,9 +126,9 @@ def main():
             shutil.copyfile(n, folder / name)
             if name == 'hershey-fonts.notes': shutil.copyfile(n, folder / 'HERSHEY-NOTICE.txt')
         shutil.copyfile(path, folder / ('SOURCE' + path.suffix))
-        jsonpath = folder / (key + '.plotfont.json')
+        jsonpath = folder / (key + '.opf.json')
         jsonpath.write_text(json.dumps(font, ensure_ascii=False, indent=2, allow_nan=False) + '\n')
-        (folder / 'ATTRIBUTION.txt').write_text('PlotFont conversion of ' + family + '\n\n' +
+        (folder / 'ATTRIBUTION.txt').write_text('OpenPlotFont conversion of ' + family + '\n\n' +
             font['metadata']['attribution'] + '\n\nOriginal source: ' + font['metadata']['sourceUrl'] +
             '\nSource revision: ' + font['metadata']['sourceRevision'] + '\nSource SHA-256: ' +
             font['metadata']['sourceSha256'] + '\n\nLicense: ' + font['metadata']['license'] +
@@ -147,7 +147,7 @@ def main():
                'kerningPairs': len(font['kerning']), 'license': font['metadata']['license'],
                'source': font['metadata']['source'], 'sourceUrl': font['metadata']['sourceUrl'],
                'authorLinks': font['metadata']['authorLinks'], 'attribution': font['metadata']['attribution'],
-               'plotfont': str(jsonpath.relative_to(ROOT)), 'package': str(package.relative_to(ROOT)),
+               'openplotfont': str(jsonpath.relative_to(ROOT)), 'package': str(package.relative_to(ROOT)),
                'specimen': str(svg.relative_to(ROOT)), 'fontDigest': hashlib.sha256(jsonpath.read_bytes()).hexdigest(),
                'status': 'saved-package round trip passed; native qualification pending',
                'warnings': font['metadata'].get('importWarnings', [])}
@@ -156,7 +156,7 @@ def main():
             '\n'.join(f'- [Author/source link]({url})' for url in row['authorLinks']) +
             f'\n\n{row["glyphs"]} glyphs; {row["unicodeMappings"]} scalar mappings; {row["kerningPairs"]} resolved kerning pairs.\n\n' +
             font['metadata'].get('mapping', '') + '\n\n' +
-            'Independent strokes retain their order and pen lifts. No automatic script joining, stroke-width expansion, or device commands. This is geometry-only PlotFont 0.3; retained unencoded alternates/ligatures have no automatic substitutions.\n')
+            'Independent strokes retain their order and pen lifts. No automatic script joining, stroke-width expansion, or device commands. This is geometry-only OpenPlotFont 0.3; retained unencoded alternates/ligatures have no automatic substitutions.\n')
     for path in sorted((SOURCES / 'hershey').glob('*.jhf')):
         if args.only_source and path.stem not in args.only_source: continue
         try: build(path, hershey(path, manifests), [SOURCES / 'hershey/hershey-fonts.notes'])
