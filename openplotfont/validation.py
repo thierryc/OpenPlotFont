@@ -68,8 +68,8 @@ def validate(font):
     object_at(font, "$")
     json_value(font)
     require(font.get("format") == "OpenPlotFont", "$.format", "expected OpenPlotFont")
-    require(font.get("version") in ("0.2", "0.3"), "$.version", "unsupported version; expected 0.2 or 0.3")
-    require("layout" not in font or font["version"] == "0.3", "$.layout", "layout requires version 0.3")
+    require(font.get("version") in ("0.2", "0.3", "0.4"), "$.version", "unsupported version; expected 0.2, 0.3 or 0.4")
+    require("layout" not in font or font["version"] in ("0.3", "0.4"), "$.layout", "layout requires version 0.3 or 0.4")
     for key in ("id", "familyName", "styleName", "missingGlyph"):
         text(font.get(key), "$." + key)
     upm = font.get("unitsPerEm")
@@ -86,6 +86,7 @@ def validate(font):
     require(1 <= len(glyphs) <= 100000, "$.glyphs", "expected 1–100000 glyphs")
     names, scalars = set(), set()
     total_commands = 0
+    total_profile_points = 0
     for i, glyph in enumerate(glyphs):
         at = f"$.glyphs[{i}]"
         object_at(glyph, at)
@@ -108,6 +109,17 @@ def validate(font):
             object_at(operation, op_at)
             kind = operation.get("kind", "stroke")
             require(kind in ("stroke", "fill"), op_at, "unsupported operation kind")
+            if "penProfile" in operation:
+                from .profiles import validate_profile
+                # Validate command structure before resolving profile locations.
+                if kind == "stroke":
+                    path_record(operation, op_at)
+                validate_profile(operation, font["version"], op_at + ".penProfile")
+                profile = operation["penProfile"]
+                total_profile_points += len(profile["points"])
+                require(total_profile_points <= 1000000, "$", "font exceeds one million profile points")
+                total_commands += sum(len(c["commands"]) for c in profile.get("appearance", {}).get("contours", []))
+                require(total_commands <= 1000000, "$", "font exceeds one million commands")
             if kind == "stroke":
                 require("contours" not in operation and "fillRule" not in operation, op_at, "mixed stroke/fill fields")
                 records = [operation]
@@ -123,6 +135,7 @@ def validate(font):
                 require(total_commands <= 1000000, "$", "font exceeds one million commands")
                 if kind == "fill":
                     require(record["closed"], record_at, "fill contour must be closed")
+                    require("penProfile" not in record, record_at, "penProfile is unsupported on fill contours")
         for side, ref in object_at(glyph.get("connections", {}), at + ".connections").items():
             require(side in ("entry", "exit"), at, "unknown connection side")
             object_at(ref, at + ".connections." + side)

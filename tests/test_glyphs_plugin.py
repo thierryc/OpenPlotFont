@@ -55,17 +55,20 @@ class GlyphsPluginTests(unittest.TestCase):
         with patch.dict(sys.modules, {'GlyphsApp': api, 'GlyphsApp.plugins': plugins,
                                      'objc': objc, 'vanilla': vanilla}):
             cls.namespace = runpy.run_path(str(cls.bundle/'Contents/Resources/plugin.py'))
+            runtime = {k:v for k,v in sys.modules.items() if k == '_openplotfont_glyphs4_v020' or k.startswith('_openplotfont_glyphs4_v020.')}
+        # The mock context rolls back imports too; a real loaded plugin retains its package.
+        sys.modules.update(runtime)
 
     @classmethod
     def tearDownClass(cls):
         cls.temp.cleanup()
         for key in list(sys.modules):
-            if key == '_openplotfont_glyphs4' or key.startswith('_openplotfont_glyphs4.'):
+            if key == '_openplotfont_glyphs4_v020' or key.startswith('_openplotfont_glyphs4_v020.'):
                 sys.modules.pop(key)
 
     def setUp(self):
         self.host.versionNumber = 4.1
-        self.plugin = self.namespace['OpenPlotFontExporter']()
+        self.plugin = self.namespace['OpenPlotFontExporter020']()
         self.plugin.settings()
         self.font = font_fixture()
         self.font.selectedFontMaster = self.font.masters[0]
@@ -80,7 +83,7 @@ class GlyphsPluginTests(unittest.TestCase):
         success, message = self.plugin.export(self.font, str(self.path))
         self.assertTrue(success, message)
         data = load(self.path)
-        self.assertEqual(data['version'], '0.3')
+        self.assertEqual(data['version'], '0.4')
         self.assertNotIn('layout', data)
         self.assertEqual(data['id'], 'adapter-fixture')
         self.assertEqual(data['glyphs'][1]['strokes'][0]['commands'][0], ['M', 50.125, 0.0])
@@ -101,7 +104,7 @@ class GlyphsPluginTests(unittest.TestCase):
         path = self.path.with_suffix('').with_suffix('.opf')
         self.assertTrue(self.plugin.export(self.font, str(path))[0])
         self.assertEqual(load(path)['format'], 'OpenPlotFont')
-        with patch.dict(self.namespace['OpenPlotFontExporter'].export.__globals__,
+        with patch.dict(self.namespace['OpenPlotFontExporter020'].export.__globals__,
                         {'GetSaveFile': lambda title, name, extensions:
                          self.assert_dialog(name, extensions)}):
             self.assertFalse(self.plugin.export(self.font)[0])
@@ -171,14 +174,14 @@ class GlyphsPluginTests(unittest.TestCase):
         success, message = self.plugin.export(self.font, self.output.name)
         self.assertTrue(success, message)
         self.assertIn('OpenType features not executed: liga', message)
-        self.assertEqual(load(self.plugin.exportPath)['version'], '0.3')
+        self.assertEqual(load(self.plugin.exportPath)['version'], '0.4')
         self.assertNotIn('layout', load(self.plugin.exportPath))
 
     def test_bundle_is_self_contained_and_export_only(self):
         info = plistlib.loads((self.bundle/'Contents/Info.plist').read_bytes())
         self.assertNotIn('CFBundleDocumentTypes', info)
-        self.assertEqual(info['NSPrincipalClass'], 'OpenPlotFontExporter')
-        self.assertEqual(info['CFBundleShortVersionString'], '0.1.1')
-        package = self.bundle/'Contents/Resources/_openplotfont_glyphs4'
-        for name in ('glyphs_plugin', 'glyphs_export', 'validation', 'storage'):
+        self.assertEqual(info['NSPrincipalClass'], 'OpenPlotFontExporter020')
+        self.assertEqual(info['CFBundleShortVersionString'], '0.2.0')
+        package = self.bundle/'Contents/Resources/_openplotfont_glyphs4_v020'
+        for name in ('glyphs_plugin', 'glyphs_export', 'validation', 'storage', 'profiles', 'glyphs_profiles'):
             self.assertEqual((package/(name+'.py')).read_bytes(), (ROOT/'openplotfont'/(name+'.py')).read_bytes())

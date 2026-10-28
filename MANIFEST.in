@@ -1,0 +1,10 @@
+include LICENSE README.md requirements-dev.txt
+recursive-include schemas *.json
+recursive-include docs *.md
+recursive-include examples *.json
+recursive-include tests *.py *.json *.fea
+recursive-include fonts *.md *.json *.plist *.glyph *.fea
+recursive-include vendor/hershey *.jhf *.txt *.json
+recursive-include scripts *.py *.json *.mjs
+recursive-include plugins *
+global-exclude __pycache__ *.pyc .DS_Store

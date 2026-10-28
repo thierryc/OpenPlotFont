@@ -2,6 +2,7 @@
 
 import json
 from .validation import validate, ValidationError
+from .glyphs_profiles import has_profile, native_path, capture_profile
 
 
 def plain(value):
@@ -96,8 +97,13 @@ def feature_source(font):
     return result
 
 
-def export_font(font, master_id, node_types, *, layout_bytes=None, glyph_order=None, feature_settings=None):
+def export_font(font, master_id, node_types, *, layout_bytes=None, glyph_order=None, feature_settings=None, output_version=None, centerlines_only=False):
     """Export one exact master; never save or edit the source font."""
+    if output_version not in (None, '0.2','0.3','0.4'):
+        raise ValidationError('Glyphs export: unsupported output version')
+    if centerlines_only and output_version not in (None,'0.3'):
+        raise ValidationError('centerlines-only export requires version 0.3')
+    removed_profiles = 0
     master = next((m for m in font.masters if m.id == master_id), None)
     if master is None:
         raise ValidationError("Glyphs export: selected master does not exist")
@@ -118,6 +124,8 @@ def export_font(font, master_id, node_types, *, layout_bytes=None, glyph_order=N
             child = font.glyphs[component.componentName]
             if child is None:
                 raise ValidationError(f"{glyph.name}: unresolved component {component.componentName}")
+            if not centerlines_only and any(has_profile(p) for p in child.layers[master_id].paths):
+                raise ValidationError(f'{glyph.name}: component Pen-point transforms are not qualified; decompose and verify a separate authoring copy')
             check_components(child, (*chain, glyph.name))
 
     glyphs = []
@@ -137,13 +145,15 @@ def export_font(font, master_id, node_types, *, layout_bytes=None, glyph_order=N
             raise ValidationError(f"{glyph.name}: hints/corner components require explicit resolution")
         paths = []
         for path_index, path in enumerate(layer.paths):
-            nodes = []
-            for node in path.nodes:
-                kind = next((name for name, constant in node_types.items() if node.type == constant), None)
-                if kind is None:
-                    raise ValidationError(f"{glyph.name} path {path_index}: unsupported native node type")
-                nodes.append((kind, float(node.position.x), float(node.position.y)))
-            paths.append({"closed": bool(path.closed), "commands": node_commands(nodes, bool(path.closed))})
+            operation = native_path(path, node_types)
+            if has_profile(path):
+                if centerlines_only:
+                    removed_profiles += 1
+                else:
+                    if output_version in ('0.2','0.3'):
+                        raise ValidationError('Pen-point preservation requires 0.4; choose explicit centerlines_only to remove variation')
+                    capture_profile(path, operation, node_types)
+            paths.append(operation)
         record = {"name": glyph.name, "unicodes": [f"{int(u, 16):04X}" for u in (glyph.unicodes or [])],
                   "advanceWidth": float(layer.width), "strokes": operations_from_paths(paths, annotations.get("operations"))}
         if data:
@@ -190,6 +200,13 @@ def export_font(font, master_id, node_types, *, layout_bytes=None, glyph_order=N
     result = json.loads(json.dumps(result, allow_nan=False))
     result["metadata"]["glyphsMasterId"] = str(master_id)
     result["metadata"]["exportWarnings"] = (["OpenType features not executed: " + ", ".join(active_features)] if active_features else [])
+    if centerlines_only:
+        result['version'] = '0.3'
+        result['metadata']['exportWarnings'].append(f'Explicit centerlines-only export: removed {removed_profiles} pen profiles; variation is not retained.')
+    elif output_version is not None:
+        result['version'] = output_version
+    elif any('penProfile' in op for g in glyphs for op in g['strokes']):
+        result['version'] = '0.4'
     validate(result)
     if layout_bytes is not None:
         from .layout import attach_layout
@@ -198,4 +215,6 @@ def export_font(font, master_id, node_types, *, layout_bytes=None, glyph_order=N
         compiled = {entry['tag'] for entry in result['layout']['features']}
         omitted = sorted(set(active_features)-compiled)
         result['metadata']['exportWarnings'] = (["Active source features absent from compiled layout: " + ", ".join(omitted)] if omitted else [])
+        if centerlines_only:
+            result['metadata']['exportWarnings'].append(f'Explicit centerlines-only export: removed {removed_profiles} pen profiles; variation is not retained.')
     return result

@@ -1,0 +1,28 @@
+{
+glyphname = .notdef;
+layers = (
+{
+layerId = "4E3B99EE-7979-4E93-9BAB-4251CFA6E861";
+shapes = (
+{
+attr = {
+fill = 0;
+lineCapEnd = 1;
+lineCapStart = 1;
+lineJoin = 1;
+strokeAngle = 0;
+strokeHeight = 40;
+strokePos = 0;
+strokeWidth = 40;
+};
+closed = 0;
+nodes = (
+(50.125,200.25,l),
+(550.125,200.25,l),
+);
+},
+);
+width = 650;
+},
+);
+}

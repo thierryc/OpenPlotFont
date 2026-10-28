@@ -40,3 +40,10 @@ M6 is complete within this scope. The [native layout demo](../fonts/layout-demo/
 - Which CAD versions and machine profiles should future converters target?
 
 These questions do not block format validation, the first font port, or selected-master export. Hardware operation and filled-region coverage generation are outside this repository's initial milestones.
+
+## Draft 0.4 flexible strokes
+
+Versioned profiles, native capture, bound appearance, explicit 0.3 projection
+and writing-mask playback are implemented. See [the profile contract](PEN_POINTS.md)
+and [0.4 release notes](RELEASE-0.4.0.md). Native progression remains a preserved
+source dialect with exact appearance references, not a universal linear evaluator.

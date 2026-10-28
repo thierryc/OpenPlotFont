@@ -7,7 +7,7 @@ from .storage import write_font
 from .validation import ValidationError
 
 
-def export_to_path(font, master_id, destination, node_types):
+def export_to_path(font, master_id, destination, node_types, *, centerlines_only=False):
     destination = Path(destination)
     if not destination.is_absolute() or not str(destination).endswith(('.opf', '.opf.json')):
         raise ValidationError('Choose an absolute destination ending in .opf or .opf.json.')
@@ -23,9 +23,6 @@ def export_to_path(font, master_id, destination, node_types):
         identity = str(font.familyName) + '\n' + str(master.name)
         settings['id'] = 'org.openplotfont.' + str(uuid5(NAMESPACE_URL, identity))
     copied.userData['org.openplotfont.font'] = settings
-    data = export_font(copied, master_id, node_types)
-    # Draft 0.3 retains the 0.2 geometry model and permits absent layout.
-    # The plugin has no legacy output option and never invents compiled rules.
-    data['version'] = '0.3'
+    data = export_font(copied, master_id, node_types, output_version='0.3' if centerlines_only else '0.4', centerlines_only=centerlines_only)
     write_font(destination, data)
     return data

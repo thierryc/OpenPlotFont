@@ -2,10 +2,11 @@
 
 Target: Glyphs 4+. [Export OpenPlotFont.py](../scripts/Export%20OpenPlotFont.py) is an implemented workspace script, with its adapter in [glyphs_export.py](../openplotfont/glyphs_export.py). It has been executed on a font copy in Glyphs 4.1 build 4107 through MCP. Native source/export and saved-source reopen comparisons passed; SDK-shaped doubles add portable regression coverage. A [geometry export plugin](GLYPHS_EXPORT_PLUGIN.md) is also implemented; app-loader/menu qualification remains pending. A general OpenPlotFont importer is not included.
 
-The current format is **0.3**. Use plugin 0.1.1 for geometry-only 0.3 exports.
-This script produces 0.3 when matching compiled layout bytes are supplied;
-its geometry-only default remains legacy 0.2 for the existing qualification and
-reproduction workflow. Do not equate a 0.3 version field with compiled shaping.
+The script defaults to draft 0.4, preserving supported native Pen points and
+bound appearance references. Use `output_version="0.3", centerlines_only=True`
+for explicit lossy centerline projection. The low-level adapter retains legacy
+geometry behavior when no version/profile is requested. Compiled layout remains
+optional and is supported in both 0.3 and 0.4.
 
 ## Qualification and setup
 

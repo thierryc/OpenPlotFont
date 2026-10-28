@@ -17,6 +17,7 @@ Define a portable JSON font format supporting centerline strokes and filled regi
 - Each stroke is an independent pen-down trajectory. Never connect separate strokes with a drawing move.
 - Script connections are an explicit exception only in a user-enabled joining mode, using declared glyph entry/exit endpoints and a reviewed connector policy. Preserve all other pen-up boundaries and drawing order.
 - Store font geometry in font units with an upward Y axis. Convert to millimetres and the destination axis convention at the drawing/export boundary.
+- Preserve authored 0.4 Pen profiles, nullable channels and bound appearance references; reject unsupported native remapping instead of dropping variation. Physical calibration remains outside the format.
 - Preserve curves until an output needs flattening; flatten with a documented physical error tolerance.
 - Do not infer centerlines from filled outline fonts, expand stroke widths, close open paths, or reorder artwork silently.
 - Keep pen widths, feeds, acceleration, Z motion, servo commands, and device calibration outside the font data.

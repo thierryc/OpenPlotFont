@@ -197,7 +197,7 @@ class SchemaTests(unittest.TestCase):
         except ImportError:
             self.skipTest("Install requirements-dev.txt to verify the JSON Schema")
         schemas = {version:json.loads((ROOT/'schemas'/f'openplotfont-{version}.schema.json').read_text())
-                   for version in ('0.2','0.3')}
+                   for version in ('0.2','0.3','0.4')}
         for schema in schemas.values():
             jsonschema.Draft202012Validator.check_schema(schema)
         for path in list((ROOT / "examples").glob("*.json")) + list((ROOT / "fonts").rglob("*.json")):

@@ -2,15 +2,15 @@
 
 Target: Glyphs **4 and later**. A selected-master Python export script and [geometry export plugin](GLYPHS_EXPORT_PLUGIN.md) are included, with offline adapter tests. Native execution, source reopening, and Hershey source-to-export comparison passed in Glyphs 4.1. The plugin's class/action passed direct MCP qualification in 4.1.1 and installation was verified; startup and visible export-tab qualification remain pending. The format stores one resolved static font per file; resolved instance export is a later task. See [script setup and annotations](GLYPHS_EXPORT_SCRIPT.md).
 
-For new geometry exports, use the **v0.3-only plugin** (plugin release 0.1.1).
+For new exports, use **plugin 0.2.0**: preserve flexible strokes in 0.4 or choose an explicit 0.3 centerline projection.
 For optional compiled OpenType layout, use the source-bound scripted workflow.
 The tool versions and output versions are separate:
 
 | Export route | OpenPlotFont output | OpenType layout |
 | --- | --- | --- |
-| Glyphs 4 plugin 0.1.1 | 0.3 only | Geometry only; active feature warnings retained |
-| Export script with matching compiled font | 0.3 | Validated compiled layout and authoring source |
-| Export script without compiled font | Legacy 0.2 | Geometry only |
+| Glyphs 4 plugin 0.2.0 | 0.4, or explicit 0.3 centerlines | Active feature warnings retained; no compiled layout |
+| Export script with matching compiled font | 0.4 (explicit 0.3 supported) | Validated compiled layout and authoring source |
+| Export script without compiled font | 0.4 by default | Geometry/profiles only |
 | Pinned Hershey data preparation | Legacy 0.2 | Geometry only; retained for reproduction and compatibility |
 
 ## Design the source in Glyphs
@@ -23,6 +23,15 @@ For mixed glyphs, author centerlines and filled boundaries as distinct intended 
 
 Do not expand the centerlines into thick outlines before OpenPlotFont export. Conventional outline-font export can give application-dependent results for open contours. Read geometry directly from the editable source rather than using an OTF/TTF round trip to preserve pen paths. The [Glyphs discussion on unclosed outlines](https://forum.glyphsapp.com/t/export-a-singleline-font-with-unclosed-outlines/24814) explains that open/closed behavior depends on the application interpreting compiled outlines.
 
+## Flexible strokes with Pen points
+
+The [0.4 Pen-profile contract](PEN_POINTS.md) is implemented by the script and
+plugin. Native source controls remain editable; exported centerlines carry their
+values and locations plus a bound native appearance reference. Explicit 0.3
+centerline output removes variation and reports that loss. Unsupported component
+and implied-quadratic profile mappings fail with diagnostics. Physical pressure
+and CNC depth remain destination responsibilities.
+
 ## Export contract
 
 The script implements the selected-master portion of this contract; native acceptance checks passed for the Hershey source and dedicated fixtures:
@@ -32,7 +41,7 @@ The script implements the selected-master portion of this contract; native accep
 3. Resolve advances and metrics into numbers. Include exported glyphs, their names, all Unicode mappings, and a fallback glyph. Preserve unencoded glyphs when referenced by the exported font.
 4. Translate each authored centerline path into one stroke and each authored filled region into a fill operation containing its closed contours and explicit fill rule. Preserve start points, direction, open/closed state, holes, and operation order. Map line segments to `L`, quadratic segments to `Q`, and cubic segments to `C` using their actual control points. Handle implied points explicitly.
 5. Preserve source coordinates: upward Y, baseline at zero. Do not rescale or flatten curves at this stage.
-6. Resolve kerning groups and exceptions into effective glyph pairs. For geometry-only export, including the v0.3 plugin, report uncompiled shaping features and unsupported source objects instead of silently omitting them. To include optional v0.3 layout, attach a matching compiled static font and preserve authoring feature source through [the implemented layout export](GLYPHS_EXPORT_SCRIPT.md#optional-03-layout-export).
+6. Resolve kerning groups and exceptions into effective glyph pairs. For geometry-only export, including the current plugin, report uncompiled shaping features and unsupported source objects instead of silently omitting them. To include optional v0.3 layout, attach a matching compiled static font and preserve authoring feature source through [the implemented layout export](GLYPHS_EXPORT_SCRIPT.md#optional-03-layout-export).
 7. Validate the complete file, report diagnostics with glyph and path names, and write `.opf.json` deterministically.
 8. Render a specimen to SVG for comparison with the source before publishing an export.
 

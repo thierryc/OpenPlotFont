@@ -24,6 +24,14 @@ def main():
     render.add_argument("text")
     render.add_argument("-o", "--output", required=True)
     render.add_argument("--cap-height", type=float, default=12)
+    render.add_argument('--profiles',choices=('appearance','centerline'),default='appearance')
+    render.add_argument('--writing-mask',action='store_true')
+    render.add_argument('--speed',type=float,default=20,help='Demonstration centerline speed in mm/s')
+    render.add_argument('--pen-lift',type=float,default=0.15,help='Demonstration pen-up interval in seconds')
+    fallback = sub.add_parser('centerlines',help='Explicitly remove pen profiles and export 0.3 centerlines')
+    fallback.add_argument('font')
+    fallback.add_argument('-o','--output',required=True)
+    fallback.add_argument('--force',action='store_true')
     render.add_argument("--join", action="store_true")
     render.add_argument("--force", action="store_true")
     render.add_argument("--layout", choices=('simple','opentype'), default='simple')
@@ -65,7 +73,13 @@ def main():
             settings = parse_features(args.feature)
             write_output(args.output, render_svg(load(args.font), args.text, args.cap_height, join=args.join,
                          layout_mode=args.layout,direction=args.direction,script=args.script,
-                         language=args.language,features=settings or None), force=args.force, create_parents=True)
+                         language=args.language,features=settings or None,profile_mode=args.profiles,writing_mask=args.writing_mask,speed_mm_s=args.speed,pen_lift_s=args.pen_lift), force=args.force, create_parents=True)
+        elif args.command == 'centerlines':
+            from .profiles import centerlines
+            result = centerlines(load(args.font))
+            write_font(args.output,result,force=args.force,create_parents=True)
+            for warning in result.get('metadata',{}).get('exportWarnings',[]):
+                print(warning)
         elif args.command == 'shape':
             from .shaping import shape_text
             run = shape_text(load(args.font),args.text,direction=args.direction,script=args.script,

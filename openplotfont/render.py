@@ -7,8 +7,16 @@ from .validation import validate, number, ValidationError
 
 
 def render_svg(font, text, cap_height_mm=12, *, join=False, margin_mm=2, stroke_width_mm=0.3,
-               layout_mode='simple', direction='ltr', script='Latn', language='en', features=None):
+               layout_mode='simple', direction='ltr', script='Latn', language='en', features=None, profile_mode='appearance', writing_mask=False, speed_mm_s=20, pen_lift_s=0.15):
     validate(font)
+    if writing_mask and join:
+        raise ValidationError('writing-mask preview requires independent strokes; joining is unsupported')
+    if profile_mode not in ('appearance','centerline'):
+        raise ValidationError('unsupported profile rendering mode')
+    if not number(speed_mm_s) or speed_mm_s <= 0 or not number(pen_lift_s) or pen_lift_s < 0:
+        raise ValidationError('writing preview: invalid speed or pen lift duration')
+    if join and any('penProfile' in op for g in font['glyphs'] for op in g['strokes']):
+        raise ValidationError('profile joining requires a reviewed profile transition; unsupported')
     if layout_mode not in ('simple', 'opentype'):
         raise ValidationError('layout: unsupported layout mode')
     if layout_mode == 'simple' and (features is not None or direction != 'ltr' or script != 'Latn' or language != 'en'):
@@ -65,7 +73,15 @@ def render_svg(font, text, cap_height_mm=12, *, join=False, margin_mm=2, stroke_
             glyph = glyphs[item['name']]
             for index, operation in enumerate(glyph["strokes"]):
                 kind = operation.get("kind", "stroke")
-                records = [operation] if kind == "stroke" else operation["contours"]
+                profile = operation.get('penProfile') if profile_mode == 'appearance' else None
+                trajectory = transform(operation['commands'], x, row * line_height - item['y']) if kind == 'stroke' else None
+                if profile:
+                    from .profiles import linear_appearance
+                    records = (profile['appearance']['contours'] if 'appearance' in profile else linear_appearance(operation))
+                    render_kind = 'profile'
+                else:
+                    records = [operation] if kind == "stroke" else operation["contours"]
+                    render_kind = kind
                 total_commands += sum(len(r["commands"]) for r in records)
                 if total_commands > 1000000:
                     raise ValidationError("layout: drawing exceeds one million commands")
@@ -82,7 +98,9 @@ def render_svg(font, text, cap_height_mm=12, *, join=False, margin_mm=2, stroke_
                         raise ValidationError(f"join {previous['name']} → {glyph['name']}: endpoints differ; connector policy required")
                     drawings[-1]["paths"][-1][0].extend(paths[0][0][1:])
                 else:
-                    drawings.append({"kind": kind, "paths": paths, "fillRule": operation.get("fillRule"), "glyph": glyph["name"]})
+                    drawings.append({"kind": render_kind, "paths": paths, "fillRule": 'nonzero' if profile else operation.get("fillRule"),
+                                     "glyph": glyph["name"], "trajectory":trajectory,
+                                     "closed":operation.get('closed',False), "profile":profile})
             previous = glyph
             previous_mapped = mapped
         bounds_x.append(run['xAdvance'] * scale)
@@ -97,7 +115,9 @@ def render_svg(font, text, cap_height_mm=12, *, join=False, margin_mm=2, stroke_
         return format(n, ".12g")
 
     elements = []
-    for drawing in drawings:
+    mask_defs = []
+    clock = 0.
+    for drawing_index,drawing in enumerate(drawings):
         pieces = []
         for commands, closed in drawing["paths"]:
             pieces.extend(c[0] + " " + " ".join(fmt(v) for v in c[1:]) for c in commands)
@@ -106,7 +126,32 @@ def render_svg(font, text, cap_height_mm=12, *, join=False, margin_mm=2, stroke_
         attributes = (f'fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="{fmt(stroke_width_mm)}"'
                       if drawing["kind"] == "stroke"
                       else f'fill="black" stroke="none" fill-rule="{drawing["fillRule"]}"')
-        elements.append(f'  <path data-glyph="{escape(drawing["glyph"], quote=True)}" {attributes} d="{" ".join(pieces)}"/>')
+        mask_attr = ''
+        if writing_mask:
+            if drawing['kind'] == 'fill':
+                raise ValidationError('writing-mask preview supports independent strokes only; fill scheduling is a consumer policy')
+            from .profiles import samples
+            trajectory = drawing['trajectory']
+            local = {'commands':trajectory,'closed':drawing['closed']}
+            points = [xy for _,_,xy,_ in samples(local,max_step=0.05)]
+            length = sum(math.dist(a,b) for a,b in zip(points,points[1:]))
+            duration = max(length/speed_mm_s,0.001)
+            # A per-operation mask prevents one stroke revealing another.
+            data = ' '.join(c[0]+' '+' '.join(fmt(v) for v in c[1:]) for c in trajectory)+(' Z' if drawing['closed'] else '')
+            profile = drawing['profile']
+            sizes = ([profile['defaults'][k] for k in ('width','height')] +
+                     [q['values'][k] for q in profile['points'] for k in ('width','height') if q['values'].get(k) is not None]) if profile else []
+            reveal_width = max(stroke_width_mm,3*max(sizes,default=0)*scale)
+            name = f'opf-reveal-{drawing_index}'
+            mask_defs.append(f'<mask id="{name}" maskUnits="userSpaceOnUse" x="{fmt(left)}" y="{fmt(top)}" width="{fmt(width)}" height="{fmt(height)}">'
+                f'<path d="{data}" pathLength="1" fill="none" stroke="white" stroke-width="{fmt(reveal_width)}" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 1" stroke-dashoffset="1">'
+                f'<animate attributeName="stroke-dashoffset" from="1" to="0" begin="{fmt(clock)}s" dur="{fmt(duration)}s" fill="freeze"/></path></mask>')
+            mask_attr = f' mask="url(#{name})"'
+            clock += duration+pen_lift_s
+        elements.append(f'  <path{mask_attr} data-glyph="{escape(drawing["glyph"], quote=True)}" {attributes} d="{" ".join(pieces)}"/>')
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{fmt(width)}mm" height="{fmt(height)}mm" '
             f'viewBox="{fmt(left)} {fmt(top)} {fmt(width)} {fmt(height)}">\n'
-            f'  <title>{escape(text)}</title>\n' + "\n".join(elements) + "\n</svg>\n")
+            f'  <title>{escape(text)}</title>\n'
+            + ('  <desc>Ordered writing-mask demonstration; constant centerline speed, explicit pen lifts, no recovered timing or machine calibration. Broad masks can reveal nearby parts of the same stroke early.</desc>\n' if writing_mask else '')
+            + ('  <desc>Explicit constant-width centerline preview; authored variation is omitted.</desc>\n' if profile_mode == 'centerline' else '')
+            + ('<defs>'+''.join(mask_defs)+'</defs>\n' if mask_defs else '') + "\n".join(elements) + "\n</svg>\n")

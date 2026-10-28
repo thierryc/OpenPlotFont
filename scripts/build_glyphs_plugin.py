@@ -12,10 +12,10 @@ def build(destination):
     shutil.copytree(ROOT / 'plugins/OpenPlotFont.glyphsFileFormat', destination,
                     ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
     resources = destination / 'Contents/Resources'
-    package = resources / '_openplotfont_glyphs4'
+    package = resources / '_openplotfont_glyphs4_v020'
     package.mkdir()
     (package / '__init__.py').write_text('"""Private OpenPlotFont exporter runtime."""\n')
-    for name in ('glyphs_plugin', 'glyphs_export', 'validation', 'storage'):
+    for name in ('glyphs_plugin', 'glyphs_export', 'validation', 'storage', 'profiles', 'glyphs_profiles'):
         shutil.copy2(ROOT / 'openplotfont' / (name + '.py'), package)
     shutil.copy2(ROOT / 'LICENSE', resources / 'OpenPlotFont-LICENSE.txt')
     return destination

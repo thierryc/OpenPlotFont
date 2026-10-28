@@ -13,13 +13,13 @@
 	<key>CFBundleName</key>
 	<string>OpenPlotFont</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1.1</string>
+	<string>0.2.0</string>
 	<key>CFBundleVersion</key>
-	<string>2</string>
+	<string>3</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright, OpenPlotFont contributors, 2026</string>
 	<key>NSPrincipalClass</key>
-	<string>OpenPlotFontExporter</string>
+	<string>OpenPlotFontExporter020</string>
 	<key>PyMainFileNames</key>
 	<array>
 		<string>plugin.py</string>

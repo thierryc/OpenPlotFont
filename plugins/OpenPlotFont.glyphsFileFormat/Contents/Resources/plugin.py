@@ -11,7 +11,7 @@ from vanilla import Window, TextBox, PopUpButton, Group
 
 # A private package prevents another plugin's `openplotfont` module from taking over.
 # Build with scripts/build_glyphs_plugin.py before installing this bundle.
-_PACKAGE = '_openplotfont_glyphs4'
+_PACKAGE = '_openplotfont_glyphs4_v020'
 _RUNTIME = Path(__file__).resolve().parent / _PACKAGE
 if _PACKAGE not in sys.modules:
     spec = importlib.util.spec_from_file_location(
@@ -23,12 +23,12 @@ if _PACKAGE not in sys.modules:
     except Exception:
         sys.modules.pop(_PACKAGE, None)
         raise
-from _openplotfont_glyphs4.glyphs_plugin import export_to_path
+from _openplotfont_glyphs4_v020.glyphs_plugin import export_to_path
 
 NODE_TYPES = {'line': LINE, 'curve': CURVE, 'qcurve': QCURVE, 'offcurve': OFFCURVE}
 
 
-class OpenPlotFontExporter(FileFormatPlugin):
+class OpenPlotFontExporter020(FileFormatPlugin):
     @objc.python_method
     def settings(self):
         self.name = 'OpenPlotFont'
@@ -36,23 +36,24 @@ class OpenPlotFontExporter(FileFormatPlugin):
         self.toolbarPosition = 100
         self._master_ids = []
         self.exportPath = None
-        self.w = Window((420, 180))
+        self.w = Window((440, 230))
         self.w.group = Group('auto')
         self.w.group.heading = TextBox('auto', 'Export one master as OpenPlotFont (.opf.json)')
         self.w.group.masterLabel = TextBox('auto', 'Master')
         self.w.group.master = PopUpButton('auto', [])
-        self.w.group.scope = TextBox('auto', 'OpenPlotFont v0.3 geometry. OpenType features are not compiled.')
+        self.w.group.output = PopUpButton('auto', ['Flexible strokes — 0.4', 'Centerlines only — 0.3 (removes variation)'])
+        self.w.group.scope = TextBox('auto', 'Preserves Pen points in 0.4. OpenType features are not compiled.')
         self.w.group.safety = TextBox('auto', 'Exports a copy. Choose a new filename; existing files are preserved.')
         self.w.group.addAutoPosSizeRules([
             'H:|-[heading]-|', 'H:|-[masterLabel]-[master(>=200)]-|',
-            'H:|-[scope]-|', 'H:|-[safety]-|',
-            'V:|-[heading(20@999)]-[master(26@999)]-[scope(40@999)]-[safety(40@999)]-|',
+            'H:|-[output]-|', 'H:|-[scope]-|', 'H:|-[safety]-|',
+            'V:|-[heading(20@999)]-[master(26@999)]-[output(26@999)]-[scope(40@999)]-[safety(40@999)]-|',
             'V:|-[heading]-[masterLabel(26@999)]',
         ], {})
         self.dialog = self.w.group._nsObject
 
     def setFont_(self, font):
-        objc.super(OpenPlotFontExporter, self).setFont_(font)
+        objc.super(OpenPlotFontExporter020, self).setFont_(font)
         self._master_ids = [m.id for m in font.masters] if font is not None else []
         self.w.group.master.setItems([m.name for m in font.masters] if font is not None else [])
         # GSFont.selectedFontMaster delegates to its document. Invisible copies
@@ -96,7 +97,7 @@ class OpenPlotFontExporter(FileFormatPlugin):
             path = Path(destination)
             if path.is_dir():
                 path = path / filename
-            data = export_to_path(font, master_id, path, NODE_TYPES)
+            data = export_to_path(font, master_id, path, NODE_TYPES, centerlines_only=self.w.group.output.get() == 1)
             self.exportPath = str(path)
             warnings = data['metadata']['exportWarnings']
             message = f'Exported {len(data["glyphs"])} glyphs to {path.name}.'
