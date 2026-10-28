@@ -47,3 +47,17 @@ for coordinates in [[(100.125,0.25),(100.125,350.25)],[(100.125,450.25),(100.125
 g=GSGlyph('componentDiagnostic');g.export=False;font.glyphs.append(g)
 g.layers[font.masters[0].id].shapes.append(GSComponent('constant'))
 print('Assigned original demo mappings and added independent strokes plus nonexporting component diagnostic.')
+
+import objc
+from GlyphsApp import GSGlyph,GSPath,GSNode,LINE,CURVE,OFFCURVE
+assert str(font.familyName)=='OpenPlotFont Original Pen Qualification'
+assert font.glyphs['seam'] is None
+g=GSGlyph('seam');g.unicode='004A';font.glyphs.append(g);l=g.layers[font.masters[0].id];l.width=450
+p=GSPath();p.closed=True
+for x,y,t in [(100.125,200.25,LINE),(100.125,400.25,OFFCURVE),(300.125,400.25,OFFCURVE),(300.125,200.25,CURVE),(300.125,.25,OFFCURVE),(100.125,.25,OFFCURVE),(100.125,200.25,CURVE)]:
+ p.nodes.append(GSNode((x,y),type=t))
+l.shapes.append(p)
+for k,v in {'fill':False,'strokeWidth':40.,'strokeHeight':40.,'lineJoin':1,'lineCapStart':1,'lineCapEnd':1}.items():p.attributes[k]=v
+PP=objc.lookUpClass('GSPenPoint')
+for index,t in [(0,1.),(3,0.),(6,1.)]:p.nodes[index].setAssociatedPenPoints_([PP.alloc().initWithT_width_height_position_angle_progIn_progOut_(t,40.,40.,0.,0.,0.,0.)])
+print('Created original explicit-return closed seam fixture J.')

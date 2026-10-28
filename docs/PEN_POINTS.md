@@ -18,6 +18,8 @@ An implicit straight closing edge, when the final command does not end at `M`,
 is the final segment. A curved closing edge remains an explicit command.
 `t` is the local Bézier parameter in [0,1], **not an arc-distance fraction**.
 There is no path rotation, reversal, resampling or knot insertion during capture.
+An authored zero-length straight seam with native controls is retained as an
+explicit `L` segment, keeping those controls addressable without changing ink.
 Points must be unique and sorted by `(segment,t)`. Adjacent segments may retain
 separate endpoint events. Open endpoints do not wrap. Closed seams preserve
 the source events without inventing closure or averaging their values.

@@ -1,0 +1,56 @@
+{
+glyphname = seam;
+layers = (
+{
+layerId = "4E3B99EE-7979-4E93-9BAB-4251CFA6E861";
+shapes = (
+{
+attr = {
+fill = 0;
+lineCapEnd = 1;
+lineCapStart = 1;
+lineJoin = 1;
+strokeHeight = 40;
+strokeWidth = 40;
+};
+closed = 1;
+nodes = (
+(100.125,200.25,l,{
+penPoints = (
+{
+height = 40;
+t = 1;
+width = 40;
+},
+);
+}),
+(100.125,400.25,o),
+(300.125,400.25,o),
+(300.125,200.25,c,{
+penPoints = (
+{
+height = 40;
+t = 0;
+width = 40;
+},
+);
+}),
+(300.125,0.25,o),
+(100.125,0.25,o),
+(100.125,200.25,c,{
+penPoints = (
+{
+height = 40;
+t = 1;
+width = 40;
+},
+);
+}),
+);
+},
+);
+width = 450;
+},
+);
+unicode = 74;
+}

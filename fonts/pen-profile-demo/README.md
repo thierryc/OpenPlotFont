@@ -2,9 +2,9 @@
 
 This MIT-licensed synthetic fixture is original OpenPlotFont test artwork,
 created in Glyphs 4.2 build 4202. It contains no traced font or third-party design.
-The native source includes nine encoded demonstrations A–I, space, `.notdef`,
-and a nonexporting component diagnostic. The export has eleven glyph records
-and eleven independent profiled strokes; I has a separate short mark.
+The native source includes ten encoded demonstrations A–J, space, `.notdef`,
+and a nonexporting component diagnostic. The export has twelve glyph records
+and twelve independent profiled strokes; I has a separate short mark.
 
 [Editable native source](PenProfileDemo.glyphspackage),
 [0.4 export](../../examples/pen-profile-demo.opf.json),
@@ -12,7 +12,8 @@ and eleven independent profiled strokes; I has a separate short mark.
 
 The demonstrations cover constant/variable width, native progression,
 noncircular/oriented footprints, placement, a cubic trajectory, a closed loop,
-inherited values and independent strokes. The native source was saved through
+inherited values, independent strokes and an explicitly addressed zero-length
+closed seam. The native source was saved through
 Glyphs MCP and read independently into a detached native font. Exact raw
 readback and native-expanded contours are retained in the portable
 [verification fixture](../../tests/fixtures/pen-profile-native-records.json).

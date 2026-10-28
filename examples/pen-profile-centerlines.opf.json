@@ -260,6 +260,49 @@
       ]
     },
     {
+      "name": "seam",
+      "unicodes": [
+        "004A"
+      ],
+      "advanceWidth": 450.0,
+      "strokes": [
+        {
+          "kind": "stroke",
+          "closed": true,
+          "commands": [
+            [
+              "M",
+              100.125,
+              200.25
+            ],
+            [
+              "C",
+              100.125,
+              400.25,
+              300.125,
+              400.25,
+              300.125,
+              200.25
+            ],
+            [
+              "C",
+              300.125,
+              0.25,
+              100.125,
+              0.25,
+              100.125,
+              200.25
+            ],
+            [
+              "L",
+              100.125,
+              200.25
+            ]
+          ]
+        }
+      ]
+    },
+    {
       "name": "separate",
       "unicodes": [
         "0049"
@@ -308,7 +351,7 @@
     "description": "Original synthetic fixtures; no font reconstruction or upstream artwork.",
     "glyphsMasterId": "4E3B99EE-7979-4E93-9BAB-4251CFA6E861",
     "exportWarnings": [
-      "Explicit centerlines-only export: removed 11 pen profiles and appearance references; variation is not retained."
+      "Explicit centerlines-only export: removed 12 pen profiles and appearance references; variation is not retained."
     ]
   }
 }

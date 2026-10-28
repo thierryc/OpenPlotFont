@@ -34,7 +34,7 @@ to this release. The existing public font catalog is unchanged.
 
 ## Validation
 
-The full Python suite passes 118 tests. All public schemas/examples, documentation
+The full Python suite passes 119 tests. All public schemas/examples, documentation
 links, the 87-entry website catalog and exporter payload checks pass. Native
 Save/reopen and actual class/action checks ran in Glyphs 4.2 build 4202. Exact
 raw native geometry and Pen-point records are retained as original public test

@@ -37,7 +37,14 @@ def native_path(path, node_types, *, appearance=False):
         if first is None:
             raise ValidationError('profile: appearance has no explicit oncurve')
         nodes = nodes[first:]+nodes[:first]
-    return {'closed':bool(path.closed), 'commands':node_commands(nodes, bool(path.closed))}
+    commands = node_commands(nodes, bool(path.closed))
+    # A native closed path can return explicitly to its first LINE node and
+    # still own Pen points on the final zero-length seam. Keep that segment
+    # addressable in both expressive and explicit centerline projections.
+    if (not appearance and path.closed and nodes[0][0] == 'line'
+            and commands[-1][-2:] == commands[0][-2:] and pen_points(path.nodes[0])):
+        commands.append(['L', *commands[0][1:]])
+    return {'closed':bool(path.closed), 'commands':commands}
 
 
 def capture_profile(path, operation, node_types, *, source_identity='Glyphs 4'):

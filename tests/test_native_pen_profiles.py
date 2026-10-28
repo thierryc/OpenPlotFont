@@ -58,3 +58,9 @@ class NativeProfileTests(unittest.TestCase):
             self.assertEqual(len(paths),10) # Nine glyphs, I has body plus dot.
             self.assertTrue(all(p.get('fill-rule')=='nonzero' for p in paths))
             self.assertEqual(sum(p.get('d').count('M ') for p in paths),11) # Closed loop has inner/outer contours.
+
+    def test_zero_length_native_seam_retains_its_control_address(self):
+        op=next(g for g in self.font['glyphs'] if g['name']=='seam')['strokes'][0]
+        self.assertEqual(op['commands'][-1],['L',*op['commands'][0][1:]])
+        self.assertEqual(op['commands'][-2][-2:],op['commands'][0][1:])
+        self.assertTrue(any(p['segment']==2 and p['t']==1 for p in op['penProfile']['points']))
