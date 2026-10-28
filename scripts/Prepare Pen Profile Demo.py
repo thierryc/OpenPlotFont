@@ -2,7 +2,7 @@
 # Requires an explicitly bound new empty qualification font; does not save.
 import json, math, objc
 from pathlib import Path
-from GlyphsApp import GSGlyph, GSPath, GSNode, LINE, CURVE, OFFCURVE
+from GlyphsApp import GSGlyph, GSPath, GSNode, GSComponent, LINE, CURVE, OFFCURVE
 assert str(font.familyName)=='OpenPlotFont Original Pen Qualification'
 assert len(font.glyphs)==0
 PP=objc.lookUpClass('GSPenPoint')
