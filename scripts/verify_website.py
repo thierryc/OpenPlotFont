@@ -90,8 +90,8 @@ def verify(destination):
     with zipfile.ZipFile(destination / f'downloads/OpenPlotFont-Glyphs-{version}.zip') as archive:
         prefix = 'OpenPlotFont.glyphsFileFormat/Contents/'
         assert archive.testzip() is None, 'Corrupt plugin ZIP'
-        for module in ('glyphs_plugin', 'glyphs_export', 'validation', 'storage'):
-            assert archive.read(prefix + f'Resources/_openplotfont_glyphs4/{module}.py') == (ROOT / f'openplotfont/{module}.py').read_bytes(), f'Stale plugin {module}'
+        for module in ('glyphs_plugin', 'glyphs_export', 'validation', 'storage', 'profiles', 'glyphs_profiles'):
+            assert archive.read(prefix + f'Resources/_openplotfont_glyphs4_v020/{module}.py') == (ROOT / f'openplotfont/{module}.py').read_bytes(), f'Stale plugin {module}'
         assert archive.read(prefix + 'Resources/OpenPlotFont-LICENSE.txt') == (ROOT / 'LICENSE').read_bytes()
         assert archive.read(prefix + 'Resources/GlyphsSDK-LICENSE.txt')
         loader = archive.getinfo(prefix + 'MacOS/plugin')

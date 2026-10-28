@@ -72,3 +72,11 @@ node scripts/verify_svg.mjs fonts/hershey-roman-simplex/HersheyRomanSimplex.opf.
 Use the same text and cap height as the Python render command. The checker checks default independent strokes; opt-in joined output has separate Python tests. Node.js is a development/test dependency only; geometry-only library and CLI use remains standard-library Python. CI installs Node.js explicitly so these checks cannot silently skip there.
 
 Centerline previews use round caps and joins. This makes half the preview width a sufficient padding around the geometry/control-point hull, avoiding unbounded miter extensions at sharp corners. Fills retain area and rule, with no generated tool coverage paths.
+
+## Flexible strokes in 0.4
+
+Read [Pen profiles](PEN_POINTS.md) before accepting version 0.4. Retain profiles,
+nullable authored channels and bound appearance references. Reject unsupported
+models explicitly. A separately exported 0.3 centerline projection removes
+variation for geometry-only consumers. Pressure/depth mapping and calibrated
+tool settings remain consumer responsibilities.

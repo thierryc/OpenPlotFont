@@ -190,7 +190,7 @@ def attach_layout(font, raw, *, glyph_order=None, source=None, source_format='fe
     require(all(isinstance(value,dict) and not set(value)-{'label','recommendedValue'}
                 for value in feature_settings.values()), '$.layout.features', 'settings must contain label/recommendedValue objects')
     result = copy.deepcopy(font)
-    result['version'] = '0.3'
+    result['version'] = '0.4' if font['version'] == '0.4' else '0.3'
     layout = {'profile':'opentype-static-v1', 'font':{'encoding':'base64', 'sha256':digest(raw),
               'data':base64.b64encode(raw).decode('ascii')}, 'glyphOrder':order,
               'features':[{'tag':tag, **feature_settings.get(tag,{})} for tag in tags], 'systems':systems}

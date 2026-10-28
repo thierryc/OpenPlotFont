@@ -1,0 +1,357 @@
+{
+  "format": "OpenPlotFont",
+  "version": "0.3",
+  "id": "org.openplotfont.pen-profile-demo",
+  "familyName": "OpenPlotFont Original Pen Qualification",
+  "styleName": "Regular",
+  "unitsPerEm": 1000,
+  "metrics": {
+    "ascender": 800.0,
+    "descender": 0.0,
+    "capHeight": 720.0,
+    "xHeight": 400.0,
+    "lineGap": 0
+  },
+  "missingGlyph": ".notdef",
+  "glyphs": [
+    {
+      "name": "space",
+      "unicodes": [
+        "0020"
+      ],
+      "advanceWidth": 650.0,
+      "strokes": []
+    },
+    {
+      "name": ".notdef",
+      "unicodes": [],
+      "advanceWidth": 650.0,
+      "strokes": [
+        {
+          "kind": "stroke",
+          "closed": false,
+          "commands": [
+            [
+              "M",
+              50.125,
+              200.25
+            ],
+            [
+              "L",
+              550.125,
+              200.25
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "constant",
+      "unicodes": [
+        "0041"
+      ],
+      "advanceWidth": 650.0,
+      "strokes": [
+        {
+          "kind": "stroke",
+          "closed": false,
+          "commands": [
+            [
+              "M",
+              50.125,
+              200.25
+            ],
+            [
+              "L",
+              550.125,
+              200.25
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cubic",
+      "unicodes": [
+        "0046"
+      ],
+      "advanceWidth": 650.0,
+      "strokes": [
+        {
+          "kind": "stroke",
+          "closed": false,
+          "commands": [
+            [
+              "M",
+              50.125,
+              200.25
+            ],
+            [
+              "C",
+              100.0,
+              500.0,
+              450.0,
+              -100.0,
+              550.125,
+              200.25
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ellipse",
+      "unicodes": [
+        "0044"
+      ],
+      "advanceWidth": 650.0,
+      "strokes": [
+        {
+          "kind": "stroke",
+          "closed": false,
+          "commands": [
+            [
+              "M",
+              50.125,
+              200.25
+            ],
+            [
+              "L",
+              550.125,
+              200.25
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "inherited",
+      "unicodes": [
+        "0048"
+      ],
+      "advanceWidth": 650.0,
+      "strokes": [
+        {
+          "kind": "stroke",
+          "closed": false,
+          "commands": [
+            [
+              "M",
+              50.125,
+              200.25
+            ],
+            [
+              "L",
+              550.125,
+              200.25
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "linear",
+      "unicodes": [
+        "0042"
+      ],
+      "advanceWidth": 650.0,
+      "strokes": [
+        {
+          "kind": "stroke",
+          "closed": false,
+          "commands": [
+            [
+              "M",
+              50.125,
+              200.25
+            ],
+            [
+              "L",
+              550.125,
+              200.25
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "loop",
+      "unicodes": [
+        "0047"
+      ],
+      "advanceWidth": 650.0,
+      "strokes": [
+        {
+          "kind": "stroke",
+          "closed": true,
+          "commands": [
+            [
+              "M",
+              50.125,
+              100.25
+            ],
+            [
+              "L",
+              550.125,
+              100.25
+            ],
+            [
+              "L",
+              550.125,
+              500.25
+            ],
+            [
+              "L",
+              50.125,
+              500.25
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "offset",
+      "unicodes": [
+        "0045"
+      ],
+      "advanceWidth": 650.0,
+      "strokes": [
+        {
+          "kind": "stroke",
+          "closed": false,
+          "commands": [
+            [
+              "M",
+              50.125,
+              200.25
+            ],
+            [
+              "L",
+              550.125,
+              200.25
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "progression",
+      "unicodes": [
+        "0043"
+      ],
+      "advanceWidth": 650.0,
+      "strokes": [
+        {
+          "kind": "stroke",
+          "closed": false,
+          "commands": [
+            [
+              "M",
+              50.125,
+              200.25
+            ],
+            [
+              "L",
+              550.125,
+              200.25
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "seam",
+      "unicodes": [
+        "004A"
+      ],
+      "advanceWidth": 450.0,
+      "strokes": [
+        {
+          "kind": "stroke",
+          "closed": true,
+          "commands": [
+            [
+              "M",
+              100.125,
+              200.25
+            ],
+            [
+              "C",
+              100.125,
+              400.25,
+              300.125,
+              400.25,
+              300.125,
+              200.25
+            ],
+            [
+              "C",
+              300.125,
+              0.25,
+              100.125,
+              0.25,
+              100.125,
+              200.25
+            ],
+            [
+              "L",
+              100.125,
+              200.25
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "separate",
+      "unicodes": [
+        "0049"
+      ],
+      "advanceWidth": 400.0,
+      "strokes": [
+        {
+          "kind": "stroke",
+          "closed": false,
+          "commands": [
+            [
+              "M",
+              100.125,
+              0.25
+            ],
+            [
+              "L",
+              100.125,
+              350.25
+            ]
+          ]
+        },
+        {
+          "kind": "stroke",
+          "closed": false,
+          "commands": [
+            [
+              "M",
+              100.125,
+              450.25
+            ],
+            [
+              "L",
+              100.125,
+              465.25
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "kerning": [],
+  "metadata": {
+    "license": "MIT",
+    "author": "OpenPlotFont contributors",
+    "description": "Original synthetic fixtures; no font reconstruction or upstream artwork.",
+    "glyphsMasterId": "4E3B99EE-7979-4E93-9BAB-4251CFA6E861",
+    "exportWarnings": [
+      "Explicit centerlines-only export: removed 12 pen profiles and appearance references; variation is not retained."
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+.appVersion = "4202";
+.formatVersion = 4;
+date = "2026-10-28 15:47:35 +0000";
+fontMaster = (
+{
+id = "4E3B99EE-7979-4E93-9BAB-4251CFA6E861";
+name = Regular;
+},
+);
+instances = (
+{
+id = "4B9143B9-4820-496A-A528-606E01DFEF41";
+instanceInterpolations = {
+"4E3B99EE-7979-4E93-9BAB-4251CFA6E861" = 1;
+};
+properties = (
+{
+key = styleNames;
+values = (
+{
+language = dflt;
+value = Regular;
+},
+);
+},
+);
+},
+);
+properties = (
+{
+key = familyNames;
+values = (
+{
+language = dflt;
+value = "OpenPlotFont Original Pen Qualification";
+},
+);
+},
+);
+unitsPerEm = 1000;
+userData = {
+org.openplotfont.font = {
+id = "org.openplotfont.pen-profile-demo";
+metadata = {
+author = "OpenPlotFont contributors";
+description = "Original synthetic fixtures; no font reconstruction or upstream artwork.";
+license = MIT;
+};
+};
+};
+versionMajor = 1;
+versionMinor = 0;
+}

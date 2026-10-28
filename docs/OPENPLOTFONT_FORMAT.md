@@ -1,12 +1,12 @@
-# OpenPlotFont format — draft 0.3
+# OpenPlotFont format — draft 0.4
 
 Status: draft specification, implemented for validation and reference rendering; subject to review before stable release.
 
-Version **0.3** is the current draft and the Glyphs plugin's only output version.
-It supports geometry-only fonts and fonts with optional compiled OpenType
-`layout`. Version 0.2 remains accepted by the reader for existing fonts and
-compatibility fixtures. The geometry rules below apply to both versions unless
-an explicit version restriction is stated.
+Version **0.4** is the current draft. It adds optional per-stroke Pen profiles,
+including source-preserving Glyphs 4 controls and a bound native appearance
+reference. See [the complete profile contract](PEN_POINTS.md). Versions 0.2 and
+0.3 remain readable; their geometry and optional 0.3 layout meanings are unchanged.
+The plugin offers 0.4 preservation or an explicit 0.3 centerline projection.
 
 ## What an OpenPlotFont describes
 
@@ -27,7 +27,7 @@ The retained 0.2 [minimal example](../examples/minimal.opf.json) illustrates the
 | Field | Type | Meaning |
 | --- | --- | --- |
 | `format` | string | Must equal `OpenPlotFont` |
-| `version` | string | Current draft: `0.3`; legacy `0.2` is also accepted by the reader |
+| `version` | string | Current draft: `0.4`; legacy `0.2` and `0.3` are also accepted by the reader |
 | `id` | string | Stable font identifier within a consumer's catalog |
 | `familyName` | string | Display family name |
 | `styleName` | string | Display style name |
@@ -37,7 +37,7 @@ The retained 0.2 [minimal example](../examples/minimal.opf.json) illustrates the
 | `glyphs` | array | Collection of unique glyph records; collection order is for editing, not drawing |
 | `kerning` | array, optional | Explicit glyph-name pairs and adjustments |
 | `metadata` | object, optional | Author, provenance, copyright, license, source details |
-| `layout` | object, optional in 0.3 only | Self-contained compiled static OpenType layout; see [layout specification](OPENPLOTFONT_LAYOUT.md) |
+| `layout` | object, optional in 0.3 and 0.4 | Self-contained compiled static OpenType layout; see [layout specification](OPENPLOTFONT_LAYOUT.md) |
 
 All table fields are required except those marked optional. Identification strings must be nonempty; glyph names and Unicode mappings must be unique. Provenance and license details are strongly recommended for redistribution but are not required by the draft schema.
 
@@ -244,3 +244,10 @@ compatibility coverage is reproducible.
 - Decide which shaping requirements belong in the initial release; Hershey Roman Simplex is the first repertoire; see the [OpenType questions in the README](../README.md#opentype-features-and-remaining-questions).
 - Confirm the entry/exit restrictions and whether deferred finishing operations need a later scheduling model.
 - Review the implemented schema and semantic checks with independent font-aware consumers before declaring a stable release.
+
+## Flexible-stroke profiles in 0.4
+
+A stroke operation may include `penProfile`; see [Pen profiles](PEN_POINTS.md)
+for channel units, segment locations, defaults, interpolation models, native
+appearance binding and explicit constant-width fallback. Profiles are operative
+data and cannot be hidden in user data or attached to fill boundaries.

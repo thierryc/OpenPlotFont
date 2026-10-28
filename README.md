@@ -1,6 +1,6 @@
 # OpenPlotFont
 
-OpenPlotFont v0.3 is a draft portable font format for pen plotters and CAD/CAM workflows. A glyph can mix centerline strokes and filled shapes. It records drawing intent and order; the destination software generates fill paths using the actual tool size. OpenType layout is optional: a v0.3 font may contain geometry alone or include compiled text-layout rules.
+OpenPlotFont v0.4 is a draft portable font format for pen plotters and CAD/CAM workflows. A glyph can mix centerline strokes and filled shapes. It records drawing intent and order; the destination software generates fill paths using the actual tool size. OpenType layout is optional: a v0.3 font may contain geometry alone or include compiled text-layout rules.
 
 The intended workflow is:
 
@@ -14,17 +14,32 @@ Glyphs source (.glyphs / .glyphspackage)
 
 This project defines the OpenPlotFont format and the workflow for editing fonts in Glyphs, exporting and saving them as JSON, and using that data in other software. Consumer applications handle text layout, drawing preparation, and machine output. Plot-It is a separate repository with its own development roadmap; it can serve as a test application for the format.
 
+## Flexible strokes in 0.4
+
+[Release 0.4.0](docs/RELEASE-0.4.0.md) adds versioned Pen profiles, preserved
+Glyphs 4 authoring controls, bound native appearance references and ordered
+writing-mask SVG previews. Centerlines stay editable. An explicit 0.3 export
+removes variation for ordinary pen plotters. Read [the profile contract](docs/PEN_POINTS.md)
+for interpolation models, consumer responsibilities and native mapping limits.
+
+```sh
+python3 -m openplotfont render examples/pen-profile-demo.opf.json 'ABCDEFGHI' -o output/profiles.svg
+python3 -m openplotfont render examples/pen-profile-demo.opf.json 'ABCDEFGHI' --writing-mask -o output/writing.svg
+python3 -m openplotfont centerlines examples/pen-profile-demo.opf.json -o output/centerlines.opf.json
+```
+
 ## Start here
 
 - [Project website](https://thierryc.github.io/OpenPlotFont/): introduction, attributed font catalog, and Glyphs exporter installation. See [website maintenance](site/README.md) for the static GitHub Pages workflow.
 - [Format specification](docs/OPENPLOTFONT_FORMAT.md): purpose, draft JSON structure, units, strokes, curves, spacing, and validation rules.
 - [OpenType layout](docs/OPENPLOTFONT_LAYOUT.md): self-contained feature rules, glyph-ID mappings, HarfBuzz positioning and explicit layout modes.
+- [Pen profiles](docs/PEN_POINTS.md): implemented 0.4 preservation, interpolation models and consumer calibration responsibilities.
 - [Layout demo](examples/layout-demo.opf.json): original fixture for substitutions, marks, language rules and cursive positioning.
 - [Glyphs and export workflow](docs/GLYPHS_AND_EXPORT.md): how to design open paths, prepare an exporter, and produce drawing formats.
 - [Stroke-font candidates](docs/STROKE_FONT_CANDIDATES.md): researched Hershey, SVG, UFO, CAD, and procedural font sources, with licenses and proposed conversion priorities.
-- [Outline-to-stroke research study](docs/OUTLINE_TO_STROKE_STUDY.md): mathematical methods, font-specific and 2026 research, Glyphs review, and possible future width profiles; no converter or format extension implemented.
+- [Outline-to-stroke research study](docs/OUTLINE_TO_STROKE_STUDY.md): mathematical methods, font-specific and 2026 research, Glyphs review, and possible future width profiles; tracing remains a separate companion; the 0.4 profile extension is implemented.
 - [Converted stroke-font library](docs/FONT_LIBRARY.md): 87 local OpenPlotFont/Glyphs preparations, per-font licenses, authors, previews and downloadable bundles.
-- [Glyphs 4 export plugin](docs/GLYPHS_EXPORT_PLUGIN.md): build a self-contained selected-master exporter with a master chooser and save dialog; native class/action tested and installation verified, startup/menu qualification pending.
+- [Glyphs 4 export plugin](docs/GLYPHS_EXPORT_PLUGIN.md): build a self-contained selected-master exporter with a master chooser and save dialog; native 0.2.0 class/action tested in Glyphs 4.2; installation and startup/menu qualification pending.
 - [Using OpenPlotFont in other software](docs/USING_OPENPLOTFONT.md): consumer responsibilities, geometry interchange, and reproducible text layout.
 - [Minimal font example](examples/minimal.opf.json): an illustrative `A`, space, and fallback glyph.
 - [Script font example](examples/script.opf.json): ordered curves, entry/exit points, anchors, and glyph user data for optional letter connections.
@@ -33,9 +48,9 @@ This project defines the OpenPlotFont format and the workflow for editing fonts 
 
 ## Project status
 
-Confirmed requirements: `.opf` and `.opf.json` (default), Glyphs **4 and later**, and Hershey Roman Simplex as the first repertoire. The five initial milestones and optional layout milestone are complete within the [documented scope](docs/ROADMAP.md). The current format is unreleased draft **0.3**. The naming migration is a clean identity break: only `OpenPlotFont` identifiers and `org.openplotfont` authoring keys are supported; see the [container rules](docs/OPENPLOTFONT_FORMAT.md#container). Existing 0.2 fonts remain supported for compatibility; new plugin exports use 0.3 only.
+Confirmed requirements: `.opf` and `.opf.json` (default), Glyphs **4 and later**, and Hershey Roman Simplex as the first repertoire. The five initial milestones and optional layout milestone are complete within the [documented scope](docs/ROADMAP.md). The current format is draft **0.4**. The naming migration is a clean identity break: only `OpenPlotFont` identifiers and `org.openplotfont` authoring keys are supported; see the [container rules](docs/OPENPLOTFONT_FORMAT.md#container). Existing 0.2 fonts remain supported for compatibility; new plugin exports preserve profiles in 0.4 or explicitly project centerlines to 0.3.
 
-Implemented here: JSON Schema, semantic validation, a source-pinned Hershey data import, an SVG reference renderer, a selected-master Glyphs export script, and a v0.3-only Glyphs 4 export plugin. Guarded native import, atomic publication, source/export comparison, and independent JavaScript SVG interchange checks are included. Four [Hershey faces](fonts/README.md) have editable `.glyphspackage` sources and native JSON exports: Roman Simplex, Roman Duplex, Roman Triplex, and Script Simplex. Native source reopening, the actual export-script entry point, and curve/metadata/kerning qualification passed. The additional faces were created, populated, saved, and verified through Glyphs MCP in Glyphs 4.1.1. MCP builds advertising `create_document` and `document.create.v1` can create blank fonts directly; population uses a saved document binding.
+Implemented here: JSON Schema, semantic validation, a source-pinned Hershey data import, an SVG reference renderer, a selected-master Glyphs export script, and a dual-mode Glyphs 4 export plugin (0.4 profiles / explicit 0.3 centerlines). Guarded native import, atomic publication, source/export comparison, and independent JavaScript SVG interchange checks are included. Four [Hershey faces](fonts/README.md) have editable `.glyphspackage` sources and native JSON exports: Roman Simplex, Roman Duplex, Roman Triplex, and Script Simplex. Native source reopening, the actual export-script entry point, and curve/metadata/kerning qualification passed. The additional faces were created, populated, saved, and verified through Glyphs MCP in Glyphs 4.1.1. MCP builds advertising `create_document` and `document.create.v1` can create blank fonts directly; population uses a saved document binding.
 
 Review the [SVG specimens](examples/specimens/README.md). See the [milestone plan and completion evidence](docs/ROADMAP.md), [Hershey provenance](fonts/hershey-roman-simplex/README.md), [v0.3 JSON Schema](schemas/openplotfont-0.3.schema.json), and [export plugin instructions](docs/GLYPHS_EXPORT_PLUGIN.md). The [script workflow](docs/GLYPHS_EXPORT_SCRIPT.md) adds optional compiled layout.
 
@@ -49,7 +64,7 @@ version migrated to 0.3; the layout demo retains its compiled layout payload.
 font exports have been removed. Plugin builds live in `output/build/` and current
 qualification reports in `output/qualification/`. These generated files are
 ignored by Git; curated examples and compatibility fixtures remain tracked.
-The Glyphs plugin exports geometry-only 0.3; the scripted compiled-layout
+The Glyphs plugin exports 0.4 profiles or explicit 0.3 centerlines; the scripted compiled-layout
 workflow adds optional OpenType layout. The 0.2 schemas, examples and Hershey preparations remain
 supported compatibility material.
 

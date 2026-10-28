@@ -15,7 +15,7 @@ from openplotfont.glyphs_export import export_font
 from openplotfont.storage import write_font
 
 
-def main(font=None, destination=None, master_id=None, *, layout_bytes=None, glyph_order=None, feature_settings=None):
+def main(font=None, destination=None, master_id=None, *, layout_bytes=None, glyph_order=None, feature_settings=None, output_version='0.4', centerlines_only=False):
     font = Glyphs.font if font is None else font
     if font is None:
         raise RuntimeError("Open a font in Glyphs before running this script.")
@@ -30,7 +30,7 @@ def main(font=None, destination=None, master_id=None, *, layout_bytes=None, glyp
     if selected is None:
         raise RuntimeError("Select a master before exporting.")
     data = export_font(font, selected.id, {"line": LINE, "curve": CURVE, "qcurve": QCURVE, "offcurve": OFFCURVE},
-                       layout_bytes=layout_bytes,glyph_order=glyph_order,feature_settings=feature_settings)
+                       layout_bytes=layout_bytes,glyph_order=glyph_order,feature_settings=feature_settings, output_version=output_version, centerlines_only=centerlines_only)
     for warning in data["metadata"]["exportWarnings"]:
         print("OpenPlotFont warning:", warning)
     # Existing output is deliberately preserved; change destination for another export.

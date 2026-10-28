@@ -1,0 +1,15 @@
+{
+export = 0;
+glyphname = componentDiagnostic;
+layers = (
+{
+layerId = "4E3B99EE-7979-4E93-9BAB-4251CFA6E861";
+shapes = (
+{
+ref = constant;
+},
+);
+width = 650;
+},
+);
+}
