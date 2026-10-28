@@ -39,7 +39,7 @@ python3 -m openplotfont centerlines examples/pen-profile-demo.opf.json -o output
 - [Stroke-font candidates](docs/STROKE_FONT_CANDIDATES.md): researched Hershey, SVG, UFO, CAD, and procedural font sources, with licenses and proposed conversion priorities.
 - [Outline-to-stroke research study](docs/OUTLINE_TO_STROKE_STUDY.md): mathematical methods, font-specific and 2026 research, Glyphs review, and possible future width profiles; tracing remains a separate companion; the 0.4 profile extension is implemented.
 - [Converted stroke-font library](docs/FONT_LIBRARY.md): 87 local OpenPlotFont/Glyphs preparations, per-font licenses, authors, previews and downloadable bundles.
-- [Glyphs 4 export plugin](docs/GLYPHS_EXPORT_PLUGIN.md): build a self-contained selected-master exporter with a master chooser and save dialog; native class/action tested and installation verified, startup/menu qualification pending.
+- [Glyphs 4 export plugin](docs/GLYPHS_EXPORT_PLUGIN.md): build a self-contained selected-master exporter with a master chooser and save dialog; native 0.2.0 class/action tested in Glyphs 4.2; installation and startup/menu qualification pending.
 - [Using OpenPlotFont in other software](docs/USING_OPENPLOTFONT.md): consumer responsibilities, geometry interchange, and reproducible text layout.
 - [Minimal font example](examples/minimal.opf.json): an illustrative `A`, space, and fallback glyph.
 - [Script font example](examples/script.opf.json): ordered curves, entry/exit points, anchors, and glyph user data for optional letter connections.

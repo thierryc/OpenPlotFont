@@ -1,6 +1,6 @@
 # Editing in Glyphs and exporting OpenPlotFont
 
-Target: Glyphs **4 and later**. A selected-master Python export script and [geometry export plugin](GLYPHS_EXPORT_PLUGIN.md) are included, with offline adapter tests. Native execution, source reopening, and Hershey source-to-export comparison passed in Glyphs 4.1. The plugin's class/action passed direct MCP qualification in 4.1.1 and installation was verified; startup and visible export-tab qualification remain pending. The format stores one resolved static font per file; resolved instance export is a later task. See [script setup and annotations](GLYPHS_EXPORT_SCRIPT.md).
+Target: Glyphs **4 and later**. A selected-master Python export script and [geometry export plugin](GLYPHS_EXPORT_PLUGIN.md) are included, with offline adapter tests. Native execution, source reopening, and Hershey source-to-export comparison passed in Glyphs 4.1. The 0.2.0 plugin's class, native settings and both export actions passed qualification in Glyphs 4.2 build 4202; installation, cold startup and visible Export-menu loading remain unqualified. The format stores one resolved static font per file; resolved instance export is a later task. See [script setup and annotations](GLYPHS_EXPORT_SCRIPT.md).
 
 For new exports, use **plugin 0.2.0**: preserve flexible strokes in 0.4 or choose an explicit 0.3 centerline projection.
 For optional compiled OpenType layout, use the source-bound scripted workflow.
